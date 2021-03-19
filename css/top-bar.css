@@ -1,0 +1,56 @@
+:root{
+    --verde_escuro: #004D40;
+    --verde_claro: #57958A;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+header{
+    height: 100px;
+    width: 100vw;
+    background-color:var(--verde_escuro);
+    display: flex;
+}
+header ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li#logo-box{
+    margin-top: 8px;
+    width: 50%;
+    height: 100%;
+}
+#logo{
+    width: 45%;
+    padding-left: 130px;
+}
+div#botoes-menu{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 45px;
+}
+div#botoes-menu li{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-right:10px ;
+    padding-left: 10px;
+
+}
+#link-menu{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
