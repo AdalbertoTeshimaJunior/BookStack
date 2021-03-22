@@ -2,10 +2,6 @@
     --verde_escuro: #004D40;
     --verde_claro: #57958A;
 }
-*{
-    margin: 0;
-    padding: 0;
-}
 html{
     scroll-behavior: smooth;
 }

@@ -1,0 +1,109 @@
+:root{
+    --verde_escuro: #004D40;
+    --verde_claro: #57958A;
+    --verde_card_back: rgb(98, 166, 151,0.34);
+    --text_branco: #FFFFFF;
+}
+
+#formulario-area{
+    width: 63.5vw;
+    margin: 0 auto;
+    background-color: var(--verde_card_back);
+    border-radius:10px;
+}
+#form_dados{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5%;
+    padding-bottom: 4%; 
+}
+input[type=text],input[type=number]{
+    border: 1px solid #004D40;
+    box-sizing: border-box;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    margin-bottom: 1.5%;
+    outline-style: none;
+    height: 40%;
+}
+input[type=submit],
+input[type=reset]{
+    outline-style: none;
+}
+#dados_pessoais{
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 3.5%;
+    width: 30%;
+}
+#dados_pessoais h3,
+#endereco_pessoal h3{
+    text-align: center;
+}
+#endereco_pessoal{
+    margin-left: 3%;
+    margin-right: 3%;
+    width: 30%;
+}
+#titulo-formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cep-numero-container,
+#bairro-estado-container{
+    display: flex;
+    justify-content: space-between;
+}
+#termos_check,
+#radio_container{
+    margin-top: 3%;
+}
+.input-area{
+    width: 100%;
+}
+#numero_input,
+#cep_input,
+#estado_input,
+#bairro_input{
+    height: 45%;
+}
+
+#estado-conteiner,
+#numero-container{
+    padding-left: 1.5%;
+}
+#cep-container{
+    width: 100%;
+}
+#numero-container{
+    width: 43%;
+}
+#termos_check:checked{
+    background-color: var(--verde_escuro);
+    border-color: var(--verde_escuro);
+}
+#botoes-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10%;
+}
+#botao-reset{
+    width: 30%;
+    height: 3vh;
+    background: #62A697;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 2px;
+    color: var(--text_branco);
+}
+#botao-submit{
+    width: 30%;
+    height: 3vh;
+    background: #004D40;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+    border: none;
+    color: var(--text_branco);
+}

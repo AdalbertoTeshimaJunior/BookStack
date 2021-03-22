@@ -1,4 +1,9 @@
-
+:root{
+    --verde_escuro: #004D40;
+    --verde_claro: #57958A;
+    --verde_card_back: rgb(98, 166, 151,0.34);
+    --text_branco: #FFFFFF;
+}
 #titulo{
     display: flex;
     width: 100vw;
@@ -7,12 +12,11 @@
 }
 
 #carrinho-area{
-    width: 60vw;
+    width: 63.5vw;
     display: grid;
     grid-template-columns:  0.8fr 0.5fr 0.5fr 0.5fr 0.5fr;
     grid-template-rows:10% 90%;
     margin: 0 auto;
-    margin-top: 2vh;
 }
 .carrinho{
     height: 43vh;
@@ -30,12 +34,10 @@
 #titulo-total{
     width: 100%;
     display: flex;
-    padding-left: 12%;
     justify-content: center;
     align-items: baseline;
 }
 #item{
-    width: 60vw;
     height: 25%;
     display: grid;
     grid-template-columns: 0.8fr 0.5fr 0.5fr 0.5fr 0.5fr;
@@ -44,12 +46,12 @@
     border: 0.1vh solid black;
     padding-top: 2%;
     padding-left: 2%;
-    padding-right: 2%;
 }
 #item-imagem{
     width: 25%;
     height: 90%;
     margin-top: 5%;
+    margin-left: 5%;
 }
 #livro{
     display: flex;
@@ -68,7 +70,7 @@
     justify-content: center;
 }
 #quantidade-menos{
-    width: 10%;
+    width: 6%;
     height: 10%;
     margin-right: 5%;
 }
@@ -81,8 +83,8 @@
     width: 25%;
     height: 20%;
 }
-#quantidade::-webkit-outer-spin-button,
-#quantidade::-webkit-inner-spin-button {
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -110,4 +112,40 @@
 #remover_botao{
     width: 30%;
     height: 30%;
+}
+
+/*Informações de preço*/
+#preco-area{
+    width: 63.5vw;
+    display: flex;
+    margin: 0 auto;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#info-preco{
+    width: 16%;
+}
+#info-preco p{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-right: 5%;
+}
+#info-preco #valor-pedido,
+#info-preco #desconto-box
+{
+    display: flex;
+    margin-top: 8%;
+    justify-self: flex-end;
+}
+
+#info-preco #total-pedido{
+    display: flex;
+    margin-top: 20%;
+    margin-bottom: 5%;
+    justify-self: flex-end;
+}
+#desconto{
+    width: 25%;
+    height: 15%;
 }

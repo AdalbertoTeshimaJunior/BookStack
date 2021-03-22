@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/conclusion.css">
+        <link rel="stylesheet" href="css/carrinho.css">
+        <link rel="stylesheet" href="css/formulario.css">
         <link rel="stylesheet" href="css/top-bar.css">
         <title>Conclusão de Pedido</title>
     </head>
@@ -38,11 +39,11 @@
             </div>
             
             <div id="titulo-unitario">
-            <p>Preço Unit.</p>
+            <p>Preço Unit.(R$)</p>
             </div>
 
             <div id="titulo-total">
-                <p>Preço Total</p>
+                <p>Preço Total(R$)</p>
             </div>                 
     
             <article class="carrinho">
@@ -214,9 +215,109 @@
                         <img id="remover_botao" src="imagens/remover.svg" alt="">
                     </div>
                 </article>
-    
-            </section>
+
+            </article>
         </section>
         
+        <section id="preco-area">
+            <article id="info-preco">
+                <div id="valor-pedido">
+                    <p>Valor do Pedido:</p>
+                    <p>812,23</p>
+                </div>
+
+                <div id="desconto-box">
+                    <p>Desconto aplicado:</p>
+                    <input id="desconto"type="number" min="0">
+                </div>
+
+                <div id="total-pedido">
+                    <p>Total à ser pago:</p>
+                    <p>75,23</p>
+                </div>
+                
+            </article>
+            
+        </section>
+
+        <section id="formulario-area">
+
+            <article id="titulo-formulario">
+                <h1>FORMULÁRIO</h1>
+            </article>
+
+            <form id="form_dados" name="dados">
+                <article id="dados_pessoais">
+                    <h3> Dados Pessoais</h3>
+
+                    <label>Nome Completo: </label><br>
+                    <input type="text" name="nome" id="nome_input" class = "input-area">
+                    <br>
+                    <label>E-mail: </label><br>
+                    <input type="text" name="email" id="email_input"  class = "input-area">
+                    <br>
+                    <label>CPF: </label><br>
+                    <input type="number" name="cpf" id="cfp_input"  class = "input-area">
+                    <br>
+                    
+                    <div id="radio_container">
+                        <label>Quer receber e-mails sobre promoções personalizadas? </label><br>
+                        <input type="radio" name="ad" id="sim_ad_input"> Sim
+                        <input type="radio" name="ad" id="nao_ad_input"> Não
+                    </div>
+                    
+                </article>
+
+                <article id="endereco_pessoal">
+                    <h3> Endereço</h3>
+
+                    <label>Rua: </label><br>
+                    <input type="text" name="rua" id="rua_input" class = "input-area">
+                    <br>
+                    
+                    <div id="bairro-estado-container">
+                        <div>
+                            <label>Bairro: </label> <br>
+                            <input type="text" name="bairro" id="bairro_input"
+                            class = "input-area"
+                            size="90%">
+                        </div>
+                        
+                        <div id="estado-conteiner">
+                            <label>Estado: </label><br>
+                            <input type="text" name="estado" id="estado_input"
+                            size="10%">
+                        </div>
+                    
+                    </div>
+                    
+                    <div id="cep-numero-container">
+                        <div id="cep-container">
+                            <label>CEP: </label> <br>
+                            <input type="number" name="cep" id="cep_input"
+                            class = "input-area">
+                        </div>
+                        
+                        <div id="numero-container">
+                            <label>Número: </label><br>
+                            <input type="number" name="numero" id="numero_input"
+                            class = "input-area">
+                        </div>
+                    </div>
+                    
+                    <label>
+                        <input type="checkbox" name="termos" id="termos_check">Aceito os termos da política de compra do site
+                    </label>
+                    
+
+                    <div id="botoes-container">
+                        <input type="reset" id="botao-reset" name="reset" value="APAGAR"> 
+                        <input type="submit" id="botao-submit" name="submit" value="FINALIZAR">
+                    </div>
+                </article>
+            </form>
+
+            
+        </section>        
     </body>
 </html>

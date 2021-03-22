@@ -19,6 +19,8 @@ header ul{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 li#logo-box{
     margin-top: 8px;
