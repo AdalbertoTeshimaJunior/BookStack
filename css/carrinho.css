@@ -30,6 +30,7 @@
     display: flex;
     justify-content: center;
     align-items: baseline;
+    font-weight: bold;
 
     font-family: "Open Sans";
 }
@@ -132,6 +133,9 @@ input[type=number]::-webkit-inner-spin-button {
     margin-left: 5%;
     font-size: 20px;
 }
+#valor-sem-desconto{
+    color: #57958A;
+}
 #valor-total{
     font-size: 26px;
 }
@@ -143,9 +147,11 @@ input[type=number]::-webkit-inner-spin-button {
     justify-content: flex-end;
     justify-self: flex-end;
     align-items: center;
+    font-weight: bold;
     
     font-family: "Segoe UI";
     font-size: 20px;
+    color: var(--verde_escuro);
 }
 
 #info-preco #total-pedido{
@@ -155,9 +161,11 @@ input[type=number]::-webkit-inner-spin-button {
     justify-self: flex-end;
     justify-content: flex-end;
     align-items: center;
+    font-weight: bold;
 
     font-family: "Segoe UI";
     font-size: 20px;
+    color: var(--verde_escuro);
 }
 #desconto{
     margin-block-start: 0;
