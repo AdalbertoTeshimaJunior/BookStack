@@ -36,42 +36,12 @@
             </aside>
 
             <article class="grid-products">
-                <div class="product">
+                <div class="product" id="livro-titulo">
                     <div id="book-container">
-                        <img src="imagens/a_guerra_da_rainha_vermelha.jpg" alt="A Guerra da Rainhas Vermelha">
+                        <img id="book-image" alt="">
                     </div>
-                    <p id="titulo">A Guerra da Rainha Vermelha</p>
-                    <p id="book-price">R$ 41,79</p>
-                    <div id="button-container">
-                        <button>COMPRAR</button>
-                    </div>
-                </div>
-                <div class="product">
-                    <div id="book-container">
-                        <img src="imagens/a_guerra_da_rainha_vermelha.jpg" alt="A Guerra da Rainhas Vermelha">
-                    </div>
-                    <p id="titulo">A Guerra da Rainha Vermelha</p>
-                    <p id="book-price">R$ 41,79</p>
-                    <div id="button-container">
-                        <button>COMPRAR</button>
-                    </div>
-                </div>
-                <div class="product">
-                    <div id="book-container">
-                        <img src="imagens/a_guerra_da_rainha_vermelha.jpg" alt="A Guerra da Rainhas Vermelha">
-                    </div>
-                    <p id="titulo">A Guerra da Rainha Vermelha</p>
-                    <p id="book-price">R$ 41,79</p>
-                    <div id="button-container">
-                        <button>COMPRAR</button>
-                    </div>
-                </div>
-                <div class="product">
-                    <div id="book-container">
-                        <img src="imagens/a_guerra_da_rainha_vermelha.jpg" alt="A Guerra da Rainhas Vermelha">
-                    </div>
-                    <p id="titulo">A Guerra da Rainha Vermelha</p>
-                    <p id="book-price">R$ 41,79</p>
+                    <p id="titulo"></p>
+                    <p id="book-price"></p>
                     <div id="button-container">
                         <button>COMPRAR</button>
                     </div>
@@ -86,9 +56,7 @@
     $json = json_decode($arquivo);
     $livros = $json->livros;
     
-    foreach($livros as $livro){
-        echo "<script>
-        atribuirInformacoes(".json_encode($livro).");
+    echo "<script>
+    exibirProdutos(".json_encode($livros).");
     </script>";
-    }
 ?>
