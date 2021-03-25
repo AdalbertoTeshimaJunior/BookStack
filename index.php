@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/storepage.css">
         <link rel="stylesheet" href="css/top-bar.css">
+        <script src="scripts/lojinha.js" type="text/javascript"></script>
         <link rel="icon" type="image/x-icon" href="imagens/booklogo.png">
         <title>Book Stack</title>
     </head>
@@ -79,3 +80,15 @@
         </section>
     </body>
 </html>
+
+<?php
+    $arquivo= file_get_contents('livros.json');
+    $json = json_decode($arquivo);
+    $livros = $json->livros;
+    
+    foreach($livros as $livro){
+        echo "<script>
+        atribuirInformacoes(".json_encode($livro).");
+    </script>";
+    }
+?>
