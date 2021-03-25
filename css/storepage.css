@@ -31,7 +31,8 @@ aside img{
     display: grid;
     grid-template-rows: 400px 400px 400px 400px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 30px;
+    column-gap: 1.5%;
+    row-gap: 5%;
     margin-top: 5vw;
     width: 80%;
     height: 100%;
@@ -43,24 +44,29 @@ article .product{
 article .product #book-container{
     display: flex;
     width: 100%;
+    height: 80%;
     align-items: center;
     justify-content: center;
 }
 article .product img{
-    width: 40%;
+    width: 50%;
+    height: 80%;
 }
 article .product #titulo{
+    margin-top: 0%;
+    height: 15%;
     font-size: 22px;
     font-family: "Open Sans";
     font-weight: 400;
     color: black;  
 }
 article .product #book-price{
+    margin-top: 10%;
+    margin-bottom: 5%;
     font-size: 24px;
     font-family: "Segoe UI";
     font-weight: 700;
     color: #004D40;
-    padding: 5px;
 }
 article .product p{
     text-align: center;
