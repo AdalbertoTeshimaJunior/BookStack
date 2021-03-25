@@ -1,3 +1,11 @@
+fetch('carrinho.json')
+    .then(res=>res.json())
+    .then(res=>
+        {
+            var ultimaChave = Object.keys(res).sort().reverse()[0];
+            verificarLocalStorage(ultimaChave);
+        })
+
 function exibirProdutos(livros){
     
     var armazemClone = document.getElementsByClassName("grid-products")[0];
@@ -26,4 +34,12 @@ function preencheInformacoes(livro, elemento, posicao) {
     imagem.src = livro.foto;
     titulo.textContent = livro.titulo;
     preco.textContent = "R$ " + livro.preco;
+}
+
+function verificarLocalStorage(ultimaChave){
+    var idUsuario = localStorage.getItem("idUsuario");
+    if(idUsuario == null){
+        var chaveInt = parseInt(ultimaChave) + 1;
+        localStorage.setItem("idUsuario", chaveInt);
+    }
 }
