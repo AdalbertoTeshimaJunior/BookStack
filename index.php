@@ -11,7 +11,7 @@
                 $titulo = $livro->titulo;
                 $autor = $livro->autor;
                 $preco = $livro->preco;
-                
+
                 atribuirAoCarrinho($titulo,$autor,$preco, $livro-> id);
                 break;
             };
@@ -24,7 +24,7 @@
             $dados = html_entity_decode($_COOKIE['carrinho']);
             $json = json_decode($dados, true);
 
-            $json[] = [ "id" => $id, 'titulo' => $titulo, "autor" => $autor, "preco" => $preco];
+            $json[] = [ "id" => $id, 'titulo' => $titulo, "autor" => $autor, "preco" => $preco, "quantidade" => 1];
 
             setcookie('carrinho', json_encode($json));
         }else{
@@ -33,7 +33,8 @@
                     "id": "'.$id.'",
                     "titulo": "'.$titulo.'",
                     "autor":"'.$autor.'",
-                    "preco":'.$preco.'
+                    "preco":'.$preco.',
+                    "quantidade": 1
                 }
             ]';
             setcookie('carrinho', $json);
