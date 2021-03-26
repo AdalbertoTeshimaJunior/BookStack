@@ -77,14 +77,18 @@ article .product #button-container{
     height: 30%;
     justify-content: center;
 }
-article .product #button-container button{
+article .product #button-container a{
     width: 40%;
     height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     background: #004D40;
     box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     outline: none;
+    cursor: pointer;
 
     font-family: "Nunito";
     color: white;
@@ -96,6 +100,6 @@ article .product #button-container button{
     border-color: none;
     border-image: none;
 }
-article .product #button-container button:hover{
+article .product #button-container a:hover{
     background: #57958A;
 }

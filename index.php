@@ -1,3 +1,46 @@
+<?php
+    $arquivo= file_get_contents('livros.json');
+    $json = json_decode($arquivo);
+    $livros = $json->livros;
+
+    if(isset($_GET['adicionar'])){
+        $idDoLivro = $_GET['adicionar'];
+        foreach($livros as $livro){
+
+            if($livro->id == $idDoLivro){
+                $titulo = $livro->titulo;
+                $autor = $livro->autor;
+                $preco = $livro->preco;
+                
+                atribuirAoCarrinho($titulo,$autor,$preco, $livro-> id);
+                break;
+            };
+        }
+    }
+
+    function atribuirAoCarrinho($titulo,$autor,$preco, $id){
+        
+        if(isset($_COOKIE['carrinho'])){
+            $dados = html_entity_decode($_COOKIE['carrinho']);
+            $json = json_decode($dados, true);
+
+            $json[] = [ "id" => $id, 'titulo' => $titulo, "autor" => $autor, "preco" => $preco];
+
+            setcookie('carrinho', json_encode($json));
+        }else{
+            $json = '[
+                {
+                    "id": "'.$id.'",
+                    "titulo": "'.$titulo.'",
+                    "autor":"'.$autor.'",
+                    "preco":'.$preco.'
+                }
+            ]';
+            setcookie('carrinho', $json);
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     
@@ -11,6 +54,7 @@
         <script src="scripts/lojinha.js" type="text/javascript"></script>
         <link rel="icon" type="image/x-icon" href="imagens/booklogo.png">
         <title>Book Stack</title>
+
     </head>
 
     <body>
@@ -43,7 +87,7 @@
                     <p id="titulo"></p>
                     <p id="book-price"></p>
                     <div id="button-container">
-                        <button>COMPRAR</button>
+                        <a href="index.php" onclick="location.href = this.href+'?adicionar='+ this.id;return false;">COMPRAR</a>
                     </div>
                 </div>
             </article>
@@ -52,10 +96,6 @@
 </html>
 
 <?php
-    $arquivo= file_get_contents('livros.json');
-    $json = json_decode($arquivo);
-    $livros = $json->livros;
-    
     echo "<script>
     exibirProdutos(".json_encode($livros).");
     </script>";
