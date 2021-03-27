@@ -11,20 +11,22 @@
                 $titulo = $livro->titulo;
                 $autor = $livro->autor;
                 $preco = $livro->preco;
+                $foto = $livro->foto;
+                $id = $livro->id;
 
-                atribuirAoCarrinho($titulo,$autor,$preco, $livro-> id);
+                atribuirAoCarrinho($titulo,$autor,$preco, $id, $foto);
                 break;
             };
         }
     }
 
-    function atribuirAoCarrinho($titulo,$autor,$preco, $id){
+    function atribuirAoCarrinho($titulo,$autor,$preco, $id, $foto){
         
         if(isset($_COOKIE['carrinho'])){
             $dados = html_entity_decode($_COOKIE['carrinho']);
             $json = json_decode($dados, true);
 
-            $json[] = [ "id" => $id, 'titulo' => $titulo, "autor" => $autor, "preco" => $preco, "quantidade" => 1];
+            $json[] = [ "id" => $id, 'titulo' => $titulo, "autor" => $autor, "preco" => $preco, "quantidade" => 1, "foto" => $foto ];
 
             setcookie('carrinho', json_encode($json));
         }else{
@@ -34,7 +36,8 @@
                     "titulo": "'.$titulo.'",
                     "autor":"'.$autor.'",
                     "preco":'.$preco.',
-                    "quantidade": 1
+                    "quantidade": 1,
+                    "foto":"'.$foto.'"
                 }
             ]';
             setcookie('carrinho', $json);
@@ -53,6 +56,7 @@
         <link rel="stylesheet" href="css/storepage.css">
         <link rel="stylesheet" href="css/top-bar.css">
         <script src="scripts/lojinha.js" type="text/javascript"></script>
+        <script src="jquery-3.5.1.min.js"></script>
         <link rel="icon" type="image/x-icon" href="imagens/booklogo.png">
         <title>Book Stack</title>
 
@@ -62,11 +66,11 @@
         <header>
             <ul>
                 <li id="logo-box">
-                    <a id="link-menu-logo"  href="index.html"><img id="logo" src="imagens/Logo.png" alt=""></a>
+                    <a id="link-menu-logo"  href="index.php"><img id="logo" src="imagens/Logo.png" alt=""></a>
                 </li>
                 <div id="botoes-menu">
                     <li id="Carrinho">
-                        <a id="link-menu" href="carrinho.html"><img id="img-carrinho" src="imagens/carinho.png" alt="Carrinho"></a>
+                        <a id="link-menu" href="carrinho.php"><img id="img-carrinho" src="imagens/carinho.png" alt="Carrinho"></a>
                     </li>
                 </div>
             </ul>
