@@ -4,19 +4,36 @@
     $livros = $json->livros;
 
     if(isset($_GET['adicionar'])){
+
         $idDoLivro = $_GET['adicionar'];
-        foreach($livros as $livro){
 
-            if($livro->id == $idDoLivro){
-                $titulo = $livro->titulo;
-                $autor = $livro->autor;
-                $preco = $livro->preco;
-                $foto = $livro->foto;
-                $id = $livro->id;
+        if (!verificaItensRepetidos($idDoLivro)) {
+            foreach($livros as $livro){
 
-                atribuirAoCarrinho($titulo,$autor,$preco, $id, $foto);
-                break;
-            };
+                if($livro->id == $idDoLivro){
+                    $titulo = $livro->titulo;
+                    $autor = $livro->autor;
+                    $preco = $livro->preco;
+                    $foto = $livro->foto;
+                    $id = $livro->id;
+
+                    atribuirAoCarrinho($titulo,$autor,$preco, $id, $foto);
+                    break;
+                }
+            }
+        }
+    }
+
+    function verificaItensRepetidos($id) {
+        if (isset($_COOKIE['carrinho'])) {
+            $carrinhoCookie = $_COOKIE['carrinho'];
+            $carrinhoCookie = json_decode($carrinhoCookie);
+            foreach($carrinhoCookie as $item) {
+                if ($id == $item -> id) {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 
@@ -92,7 +109,7 @@
                     <p id="titulo"></p>
                     <p id="book-price"></p>
                     <div id="button-container">
-                        <a href="index.php" onclick="location.href = this.href+'?adicionar='+ this.id;return false;">COMPRAR</a>
+                        <a href="index.php" onclick="location.href = this.href+'?adicionar='+ this.id;return false;">Adicionar ao Carrinho</a>
                     </div>
                 </div>
             </article>

@@ -26,6 +26,7 @@ function preencheInformacoes(item, elemento, posicao) {
     var unitario = elemento.children[2];
     var total = elemento.children[3];
     var quantidade = elemento.children[1].children[1];
+    var remover = elemento.children[4].children[0];
 
     imagem.src = item.foto;
     titulo.textContent = item.titulo;
@@ -34,4 +35,5 @@ function preencheInformacoes(item, elemento, posicao) {
     quantidade.value = item.quantidade;
     total.textContent = (item.preco*item.quantidade);
     elemento.setAttribute('id', "item-" + posicao);
+    remover.setAttribute('id', posicao);
 }

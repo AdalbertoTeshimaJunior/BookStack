@@ -78,11 +78,12 @@ article .product #button-container{
     justify-content: center;
 }
 article .product #button-container a{
-    width: 40%;
-    height: 40%;
+    width: 45%;
+    height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     background: #004D40;
     box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3);
@@ -92,7 +93,7 @@ article .product #button-container a{
 
     font-family: "Nunito";
     color: white;
-    font-size: 15px;
+    font-size: 18px;
     text-decoration: none;
 
     border-width: 0;

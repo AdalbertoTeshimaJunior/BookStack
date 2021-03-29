@@ -1,4 +1,21 @@
+<?php
+    if(isset($_GET['remover'])){
+
+        $idDoLivro = $_GET['remover'];
+                
+        if (isset($_COOKIE['carrinho'])) {
+            $carrinhoCookie = $_COOKIE['carrinho'];
+            $carrinhoCookie = json_decode($carrinhoCookie);
+
+            unset($carrinhoCookie[$idDoLivro]);
+            $json_arr = array_values($carrinhoCookie);
+            setcookie('carrinho', json_encode($json_arr));
+        }
+    }
+?>
+
 <!DOCTYPE html>
+
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
@@ -66,7 +83,9 @@
                     <p id="total"></p>
     
                     <div id="botao_item">
-                        <img id="remover_botao" src="imagens/remover.svg" alt="">
+                        <a href="carrinho.php" onclick="location.href = this.href+'?remover='+ this.id;return false;">
+                            <img id="remover_botao" src="imagens/remover.svg" alt=""></img>
+                        </a>
                     </div>
                 </div>
 
