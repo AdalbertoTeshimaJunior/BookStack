@@ -42,7 +42,7 @@
     justify-content: center;
     border: 0.1vh solid black;
     padding-top: 2%;
-    padding-left: 2%;
+    padding-left: 3%;
 }
 #item-imagem{
     width: 25%;
@@ -53,8 +53,13 @@
 #livro{
     display: flex;
     width: 80%;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+}
+#info-livro{
+    width: 100%;
+    display: block;
+    justify-content: center;
 }
 #info-livro p{
     text-align: center;
