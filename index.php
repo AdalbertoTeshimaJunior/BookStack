@@ -73,7 +73,7 @@
         <link rel="stylesheet" href="css/storepage.css">
         <link rel="stylesheet" href="css/top-bar.css">
         <script src="scripts/lojinha.js" type="text/javascript"></script>
-        <script src="jquery-3.5.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <link rel="icon" type="image/x-icon" href="imagens/booklogo.png">
         <title>Book Stack</title>
 

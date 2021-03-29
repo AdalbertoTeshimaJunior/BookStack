@@ -1,12 +1,11 @@
 <?php
-    if(isset($_GET['remover'])){
-
-        $idDoLivro = $_GET['remover'];
-                
-        if (isset($_COOKIE['carrinho'])) {
-            $carrinhoCookie = $_COOKIE['carrinho'];
-            $carrinhoCookie = json_decode($carrinhoCookie);
-
+    if(isset($_COOKIE['carrinho'])){
+        $carrinhoCookie = $_COOKIE['carrinho'];
+        $carrinhoCookie = json_decode($carrinhoCookie);
+        
+        if (isset($_GET['remover'])) {
+            $idDoLivro = $_GET['remover'];
+    
             unset($carrinhoCookie[$idDoLivro]);
             $json_arr = array_values($carrinhoCookie);
             setcookie('carrinho', json_encode($json_arr));
@@ -25,7 +24,6 @@
         <link rel="stylesheet" href="css/carrinho.css">
         <link rel="stylesheet" href="css/formulario.css">
         <link rel="stylesheet" href="css/top-bar.css">
-        
         <link rel="icon" type="image/x-icon" href="imagens/carinho.png">
         <title>Carrinho</title>
     </head>
@@ -61,7 +59,7 @@
                 <p>PREÇO TOTAL(R$)</p>
             </div>                 
     
-            <article class="carrinho">
+            <article class="carrinho" id="carrinho">
     
                 <div class="item" id="item-0">
                     <div id="livro">
@@ -190,7 +188,10 @@
                 </article>
             </form>
 
-            <script src="scripts/pagamento.js" type="text/javascript"></script>
-        </section>        
+
+        </section>      
+        <script src="scripts/pagamento.js" type="text/javascript"></script>
+        <script src="scripts/verificar.js" type="text/javascript"></script>
     </body>
 </html>
+
