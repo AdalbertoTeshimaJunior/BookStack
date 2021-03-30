@@ -1,26 +1,29 @@
     var armazemClone = document.getElementsByClassName("carrinho")[0];
     var itemPadrao = document.getElementById("item-0");
-    console.log(itemPadrao);
     var carrinho = "carrinho=";
     var cookieArray = document.cookie.split(";");
     var carrinhoJSON = null;
 
-    if(cookieArray.length > 0){
+    if(cookieArray[0] != ""){
         var cookieDecoded = decodeURIComponent(cookieArray[0].replace(carrinho, ""));
-        carrinhoJSON = JSON.parse(cookieDecoded);
+        if(cookieDecoded != ""){
+            carrinhoJSON = JSON.parse(cookieDecoded);
+        }
     }
 
-    for (i = 0; i < carrinhoJSON.length; i++) {
-        if (i == 0) {
-            itemPadrao.setAttribute("id", "item-" + i);
-            preencheInformacoes(carrinhoJSON[i], itemPadrao, i);
-        }  else {
-            var clone = itemPadrao.cloneNode(true);
-            clone.setAttribute("id", "item-" + i);
-            armazemClone.appendChild(clone);
-            var modelo = document.getElementById("item-" + i);
-            preencheInformacoes(carrinhoJSON[i], modelo, i);
-        }
+    if(carrinhoJSON != null){
+        for (i = 0; i < carrinhoJSON.length; i++) {
+            if (i == 0) {
+                itemPadrao.setAttribute("id", "item-" + i);
+                preencheInformacoes(carrinhoJSON[i], itemPadrao, i);
+            }  else {
+                var clone = itemPadrao.cloneNode(true);
+                clone.setAttribute("id", "item-" + i);
+                armazemClone.appendChild(clone);
+                var modelo = document.getElementById("item-" + i);
+                preencheInformacoes(carrinhoJSON[i], modelo, i);
+            }
+        }    
     }
 
 function preencheInformacoes(item, elemento, posicao) {

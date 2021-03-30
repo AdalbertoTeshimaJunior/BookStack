@@ -5,13 +5,15 @@ var cookieArray = document.cookie.split(";");
 var carrinhoJSON = null;
 
 itemPadrao.style.display = 'none';
-if(cookieArray.length > 0){
+if(cookieArray[0] != ""){
     itemPadrao.style.display = 'grid';
     var cookieDecoded = decodeURIComponent(cookieArray[0].replace(carrinho, ""));
-    carrinhoJSON = JSON.parse(cookieDecoded);
+    if(cookieDecoded != ""){
+        carrinhoJSON = JSON.parse(cookieDecoded);
+    }
 }
 
-if(carrinhoJSON.length > 4 && carrinhoJSON != null){
+if(carrinhoJSON != null  && carrinhoJSON.length > 4 ){
     box.style.overflowY = "scroll";
 }else{
     var box = document.getElementById("carrinho");
