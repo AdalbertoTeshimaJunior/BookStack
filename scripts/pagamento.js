@@ -3,8 +3,12 @@
     console.log(itemPadrao);
     var carrinho = "carrinho=";
     var cookieArray = document.cookie.split(";");
-    var cookieDecoded = decodeURIComponent(cookieArray[0].replace(carrinho, ""));
-    var carrinhoJSON = JSON.parse(cookieDecoded);
+    var carrinhoJSON = null;
+
+    if(cookieArray.length > 0){
+        var cookieDecoded = decodeURIComponent(cookieArray[0].replace(carrinho, ""));
+        carrinhoJSON = JSON.parse(cookieDecoded);
+    }
 
     for (i = 0; i < carrinhoJSON.length; i++) {
         if (i == 0) {

@@ -2,19 +2,20 @@
 var itemPadrao = document.getElementById("item-0");
 var carrinho = "carrinho=";
 var cookieArray = document.cookie.split(";");
-var cookieDecoded = decodeURIComponent(cookieArray[0].replace(carrinho, ""));
-var carrinhoJSON = JSON.parse(cookieDecoded);
+var carrinhoJSON = null;
 
-console.log(carrinhoJSON.length)
-if(carrinhoJSON.length == 0){
-    itemPadrao.style.display = 'none';
+itemPadrao.style.display = 'none';
+if(cookieArray.length > 0){
+    itemPadrao.style.display = 'grid';
+    var cookieDecoded = decodeURIComponent(cookieArray[0].replace(carrinho, ""));
+    carrinhoJSON = JSON.parse(cookieDecoded);
 }
 
-if(carrinhoJSON.length < 4){
+if(carrinhoJSON.length > 4 && carrinhoJSON != null){
+    box.style.overflowY = "scroll";
+}else{
     var box = document.getElementById("carrinho");
     box.style.overflowY = "hidden";
-}else{
-    box.style.overflowY = "scroll";
 }
 
 // Validação do Formulário //
