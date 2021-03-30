@@ -70,6 +70,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Adalberto Teshima, Davi Henrique e Yngredh Cruz">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/storepage.css">
         <link rel="stylesheet" href="css/top-bar.css">
         <script src="scripts/lojinha.js" type="text/javascript"></script>
