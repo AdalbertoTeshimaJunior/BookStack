@@ -1,23 +1,31 @@
 // Verifica se o carrinho está vazio, não paro de comentar seu codigo XD
 var itemPadrao = document.getElementById("item-0");
+var box = document.getElementById("carrinho");
 var carrinho = "carrinho=";
 var cookieArray = document.cookie.split(";");
-var carrinhoJSON = null;
+var cookieDecoded = decodeURIComponent(cookieArray[0].replace(carrinho, ""));
 
-itemPadrao.style.display = 'none';
-if(cookieArray[0] != ""){
-    itemPadrao.style.display = 'grid';
-    var cookieDecoded = decodeURIComponent(cookieArray[0].replace(carrinho, ""));
-    if(cookieDecoded != ""){
-        carrinhoJSON = JSON.parse(cookieDecoded);
-    }
+if(cookieDecoded != ""){
+    var carrinhoJSON = JSON.parse(cookieDecoded);
+    verificaCarrinho();
+}else{
+    itemPadrao.style.display = 'none';
+    box.style.overflowY = "hidden";
 }
 
-if(carrinhoJSON != null  && carrinhoJSON.length > 4 ){
-    box.style.overflowY = "scroll";
-}else{
-    var box = document.getElementById("carrinho");
-    box.style.overflowY = "hidden";
+function verificaCarrinho(){
+    console.log(carrinhoJSON.length)
+
+    if(carrinhoJSON.length == 0){
+        itemPadrao.style.display = 'none';
+    }
+    if(carrinhoJSON.length > 3){
+        console.log("maior que 3")
+        box.style.overflowY = "scroll";
+    }else{
+        console.log("menor que 3")
+        box.style.overflowY = "hidden";
+    }
 }
 
 // Validação do Formulário //

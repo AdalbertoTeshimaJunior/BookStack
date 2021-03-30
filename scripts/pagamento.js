@@ -1,30 +1,28 @@
-    var armazemClone = document.getElementsByClassName("carrinho")[0];
-    var itemPadrao = document.getElementById("item-0");
-    var carrinho = "carrinho=";
-    var cookieArray = document.cookie.split(";");
-    var carrinhoJSON = null;
+var armazemClone = document.getElementsByClassName("carrinho")[0];
+var itemPadrao = document.getElementById("item-0");
+var carrinho = "carrinho=";
+var cookieArray = document.cookie.split(";");
+var cookieDecoded = decodeURIComponent(cookieArray[0].replace(carrinho, ""));
 
-    if(cookieArray[0] != ""){
-        var cookieDecoded = decodeURIComponent(cookieArray[0].replace(carrinho, ""));
-        if(cookieDecoded != ""){
-            carrinhoJSON = JSON.parse(cookieDecoded);
+if(cookieDecoded != ""){
+    var carrinhoJSON = JSON.parse(cookieDecoded);;
+    percorrerCarrinho();
+}
+
+function percorrerCarrinho(){
+    for (i = 0; i < carrinhoJSON.length; i++) {
+        if (i == 0) {
+            itemPadrao.setAttribute("id", "item-" + i);
+            preencheInformacoes(carrinhoJSON[i], itemPadrao, i);
+        }  else {
+            var clone = itemPadrao.cloneNode(true);
+            clone.setAttribute("id", "item-" + i);
+            armazemClone.appendChild(clone);
+            var modelo = document.getElementById("item-" + i);
+            preencheInformacoes(carrinhoJSON[i], modelo, i);
         }
     }
-
-    if(carrinhoJSON != null){
-        for (i = 0; i < carrinhoJSON.length; i++) {
-            if (i == 0) {
-                itemPadrao.setAttribute("id", "item-" + i);
-                preencheInformacoes(carrinhoJSON[i], itemPadrao, i);
-            }  else {
-                var clone = itemPadrao.cloneNode(true);
-                clone.setAttribute("id", "item-" + i);
-                armazemClone.appendChild(clone);
-                var modelo = document.getElementById("item-" + i);
-                preencheInformacoes(carrinhoJSON[i], modelo, i);
-            }
-        }    
-    }
+}
 
 function preencheInformacoes(item, elemento, posicao) {
     var imagem = elemento.children[0].children[0];
