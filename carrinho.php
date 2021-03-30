@@ -117,23 +117,23 @@
                 <h1>FORMULÁRIO</h1>
             </article>
 
-            <form id="form_dados" name="dados">
+            <form action="" method="post" id="form_dados" name="dados">
                 <article id="dados_pessoais">
                     <h3> Dados Pessoais</h3>
 
                     <label>Nome Completo: </label><br>
-                    <input type="text" name="nome" id="nome_input" class = "input-area">
+                    <input type="text" name="nome" id="nome_input" class = "input-area" onchange="validacaoReset(this);">
                     <br>
                     <label>E-mail: </label><br>
-                    <input type="text" name="email" id="email_input"  class = "input-area">
+                    <input type="text" name="email" id="email_input"  class = "input-area" onchange="validacaoReset(this);">
                     <br>
                     <label>CPF: </label><br>
-                    <input type="number" name="cpf" id="cfp_input"  class = "input-area">
+                    <input type="number" name="cpf" id="cpf_input"  class = "input-area" onchange="validacaoReset(this);">
                     <br>
                     
                     <div id="radio_container">
                         <label>Quer receber e-mails sobre promoções personalizadas? </label><br>
-                        <input type="radio" name="ad" id="sim_ad_input"> Sim
+                        <input type="radio" name="ad" id="sim_ad_input" checked> Sim
                         <input type="radio" name="ad" id="nao_ad_input"> Não
                     </div>
                     
@@ -143,7 +143,7 @@
                     <h3> Endereço</h3>
 
                     <label>Rua: </label><br>
-                    <input type="text" name="rua" id="rua_input" class = "input-area">
+                    <input type="text" name="rua" id="rua_input" class = "input-area" onchange="validacaoReset(this);">
                     <br>
                     
                     <div id="bairro-estado-container">
@@ -151,13 +151,13 @@
                             <label>Bairro: </label> <br>
                             <input type="text" name="bairro" id="bairro_input"
                             class = "input-area"
-                            size="90%">
+                            size="90%" onchange="validacaoReset(this);">
                         </div>
                         
                         <div id="estado-conteiner">
                             <label>Estado: </label><br>
                             <input type="text" name="estado" id="estado_input"
-                            size="10%">
+                            size="10%" onchange="validacaoReset(this);">
                         </div>
                     
                     </div>
@@ -166,13 +166,13 @@
                         <div id="cep-container">
                             <label>CEP: </label> <br>
                             <input type="number" name="cep" id="cep_input"
-                            class = "input-area">
+                            class = "input-area" onchange="validacaoReset(this);">
                         </div>
                         
                         <div id="numero-container">
                             <label>Número: </label><br>
                             <input type="number" name="numero" id="numero_input"
-                            class = "input-area">
+                            class = "input-area" onchange="validacaoReset(this);">
                         </div>
                     </div>
                     
@@ -183,7 +183,7 @@
 
                     <div id="botoes-container">
                         <input type="reset" id="botao-reset" name="reset" value="APAGAR"> 
-                        <input type="submit" id="botao-submit" name="submit" value="FINALIZAR">
+                        <input id="botao-submit" name="submit" value="FINALIZAR" onclick="validacao();">
                     </div>
                 </article>
             </form>

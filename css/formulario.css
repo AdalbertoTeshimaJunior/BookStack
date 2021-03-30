@@ -27,7 +27,7 @@ input[type=text],input[type=number]{
     outline-style: none;
     height: 40%;
 }
-input[type=submit],
+#botao-submit,
 input[type=reset]{
     outline-style: none;
 }
@@ -122,6 +122,8 @@ input[type=reset]{
     border: none;
     color: var(--text_branco);
     cursor: pointer;
+    text-align: center;
+    caret-color: transparent;
 }
 #botao-submit:hover,
 #botao-reset:hover{
