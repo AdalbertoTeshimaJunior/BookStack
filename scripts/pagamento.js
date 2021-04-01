@@ -3,6 +3,7 @@ var itemPadrao = document.getElementById("item-0");
 var carrinho = "carrinho=";
 var cookieArray = document.cookie.split(";");
 var cookieDecoded = decodeURIComponent(cookieArray[0].replace(carrinho, ""));
+var valorTotal = 0;
 
 if(cookieDecoded != ""){
     var carrinhoJSON = JSON.parse(cookieDecoded);;
@@ -38,7 +39,55 @@ function preencheInformacoes(item, elemento, posicao) {
     autor.textContent = item.autor;
     unitario.textContent = item.preco;
     quantidade.value = item.quantidade;
-    total.textContent = (item.preco*item.quantidade);
+    calcularUnidade(item.preco, item.quantidade, total);
     elemento.setAttribute('id', "item-" + posicao);
     remover.setAttribute('id', posicao);
+}
+
+function acrescentarQuantidade(elemento) {
+    var pai = elemento.parentElement;
+    var input = pai.children[1];
+
+    input.value = parseInt(input.value) + 1;
+    armazenarQuantidade(input.value, pai)
+}
+
+function diminuirQuantidade(elemento) {
+    var pai = elemento.parentElement;
+    var input = pai.children[1];
+
+    if (input.value > 1) {
+        input.value = parseInt(input.value) - 1;
+        armazenarQuantidade(input.value, pai)
+    }
+}
+
+function armazenarQuantidade(quantidade, elementoPai) {
+    var avo = elementoPai.parentElement;
+    var preco = avo.children[2].textContent;
+    var total = avo.children[3];
+    var index = parseInt(avo.id.split("-")[1]);
+    
+    carrinhoJSON[index].quantidade = quantidade;
+    document.cookie = "carrinho=" + JSON.stringify(carrinhoJSON);
+
+    calcularUnidade(preco, quantidade, total);
+}
+
+function calcularUnidade(preco, quantidade, elementoTotal) {
+    elementoTotal.textContent = (preco * quantidade).toFixed(2);
+    calcularPedido();
+}
+
+function calcularPedido() {
+    var totais = document.getElementsByClassName("total");
+    var total = 0;
+
+    for (i = 0; i < totais.length; i++) {
+        var item = totais[i];
+        total += parseFloat(item.textContent);
+    }
+    
+    var valorCru = document.getElementById("valor-sem-desconto");
+    valorCru.textContent = "R$ " + total;
 }

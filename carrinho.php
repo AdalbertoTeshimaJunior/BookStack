@@ -71,14 +71,14 @@
                     </div>
     
                     <div id="quantidade-unitario-book">
-                        <img id= "quantidade-menos" src="imagens/menos.svg" alt="">
+                        <img id= "quantidade-menos" onclick="diminuirQuantidade(this);" src="imagens/menos.svg" alt="">
                         <input id="quantidade" type="number" min="1">
-                        <img id= "quantidade-mais" src="imagens/mais.svg" alt="">
+                        <img id= "quantidade-mais" onclick="acrescentarQuantidade(this);" src="imagens/mais.svg" alt="">
                     </div>
     
                     <p id="unidade"></p>
     
-                    <p id="total"></p>
+                    <p id="total" class="total"></p>
     
                     <div id="botao_item">
                         <a href="carrinho.php" onclick="location.href = this.href+'?remover='+ this.id;return false;">
@@ -94,7 +94,7 @@
             <article id="info-preco">
                 <label id="valor-pedido">
                     Valor do Pedido:
-                    <p id="valor-sem-desconto">R$ 812,23</p>
+                    <p id="valor-sem-desconto"></p>
                 </label>
 
                 <label id="desconto-box">

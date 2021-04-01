@@ -14,16 +14,14 @@ if(cookieDecoded != ""){
 }
 
 function verificaCarrinho(){
-    console.log(carrinhoJSON.length)
+    console.log(carrinhoJSON.length);
 
     if(carrinhoJSON.length == 0){
         itemPadrao.style.display = 'none';
     }
     if(carrinhoJSON.length > 3){
-        console.log("maior que 3")
         box.style.overflowY = "scroll";
     }else{
-        console.log("menor que 3")
         box.style.overflowY = "hidden";
     }
 }
