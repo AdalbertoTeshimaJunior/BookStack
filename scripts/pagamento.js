@@ -1,25 +1,12 @@
-var armazemClone = document.getElementsByClassName("carrinho")[0];
+var box = document.getElementById("carrinho");
 var itemPadrao = document.getElementById("item-0");
-
+var carrinhoVazio = document.getElementById('carrinho-vazio');
 var cookieArray = document.cookie.split(";");
-var carrinhoIndex = obterIndex("carrinho=");
 var descontoIndex = obterIndex("desconto=");
+var carrinhoIndex = obterIndex("carrinho=");
 var descontoCookie = cookieArray[descontoIndex].replace("desconto=", "");
+
 document.getElementById("desconto").value = parseFloat(descontoCookie);
-
-
-if(cookieArray[carrinhoIndex] != null){
-    var cookieDecoded = decodeURIComponent(cookieArray[carrinhoIndex].replace("carrinho=", ""));
-}else{
-    var cookieDecoded = [];
-}
-
-if(cookieDecoded.length != 0){
-    var carrinhoJSON = JSON.parse(cookieDecoded);;
-    percorrerCarrinho();
-}else{
-    mudaDisplayCarrinho(true);
-}
 
 function obterIndex(chave){
     for(i= 0; i< cookieArray.length; i++){
@@ -38,7 +25,7 @@ function percorrerCarrinho(){
         } else {
             var clone = itemPadrao.cloneNode(true);
             clone.setAttribute("id", "item-" + i);
-            armazemClone.appendChild(clone);
+            box.appendChild(clone);
             var modelo = document.getElementById("item-" + i);
             preencheInformacoes(carrinhoJSON[i], modelo, i);
         }

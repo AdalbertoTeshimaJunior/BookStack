@@ -1,45 +1,40 @@
 // Verifica se o carrinho está vazio, não paro de comentar seu codigo XD
-var itemPadrao = document.getElementById("item-0");
-var box = document.getElementById("carrinho");
-var cookieArray = document.cookie.split(";");
-
-var carrinhoIndex = obterIndex("carrinho=");
-
 
 if(cookieArray[carrinhoIndex] != null){
     var cookieDecoded = decodeURIComponent(cookieArray[carrinhoIndex].replace("carrinho=", ""));
+    if(cookieDecoded.length != 0){
+        var carrinhoJSON = JSON.parse(cookieDecoded);
+        mudarDisplayCarrinhoVazio(false);;
+    }else{
+        mudarDisplayCarrinhoVazio(true);
+    }
 }else{
-    var cookieDecoded = [];
-}
-if(cookieDecoded.length != 0){
-    mudaDisplayCarrinho(false);
-    var carrinhoJSON = JSON.parse(cookieDecoded);
-    verificaCarrinho();
-}else{
-    itemPadrao.style.display = 'none';
-    box.style.overflowY = "hidden";
-    mudaDisplayCarrinho(true);
+    mudarDisplayCarrinhoVazio(true);
 }
 
-function mudaDisplayCarrinho(vazio){
-    var carrinhoVazio = document.getElementById('carrinho-vazio');
-    if (vazio){
+function mudarDisplayCarrinhoVazio(vazio){
+    if(vazio){
+        itemPadrao.style.display = 'none';
+        box.style.overflowY = "hidden";
         carrinhoVazio.style.display = "flex";
+        document.getElementById("valor-sem-desconto").textContent = "R$ 0.0";
+        document.getElementById("valor-total").textContent = "R$ 0.0";
     }else{
-        carrinhoVazio.style.display = "none";
+        verificaCarrinho();
     }
 }
 
 function verificaCarrinho(){
 
     if(carrinhoJSON.length == 0){
-        itemPadrao.style.display = 'none';
-        mudaDisplayCarrinho(true);
+       mudarDisplayCarrinhoVazio(true)
     }
     if(carrinhoJSON.length > 3){
         box.style.overflowY = "scroll";
+        percorrerCarrinho();
     }else{
         box.style.overflowY = "hidden";
+        percorrerCarrinho();
     }
 }
 
