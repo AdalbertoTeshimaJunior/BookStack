@@ -4,10 +4,15 @@ var itemPadrao = document.getElementById("item-0");
 var cookieArray = document.cookie.split(";");
 var carrinhoIndex = obterIndex("carrinho=");
 var descontoIndex = obterIndex("desconto=");
-var cookieDecoded = decodeURIComponent(cookieArray[carrinhoIndex].replace("carrinho=", ""));
 var descontoCookie = cookieArray[descontoIndex].replace("desconto=", "");
-
 document.getElementById("desconto").value = parseFloat(descontoCookie);
+
+
+if(cookieArray[carrinhoIndex] != null){
+    var cookieDecoded = decodeURIComponent(cookieArray[carrinhoIndex].replace("carrinho=", ""));
+}else{
+    var cookieDecoded = "";
+}
 
 if(cookieDecoded != ""){
     var carrinhoJSON = JSON.parse(cookieDecoded);;

@@ -4,7 +4,12 @@ var box = document.getElementById("carrinho");
 var cookieArray = document.cookie.split(";");
 
 var carrinhoIndex = obterIndex("carrinho=");
-var cookieDecoded = decodeURIComponent(cookieArray[carrinhoIndex].replace("carrinho=", ""));
+
+if(cookieArray[carrinhoIndex] != null){
+    var cookieDecoded = decodeURIComponent(cookieArray[carrinhoIndex].replace("carrinho=", ""));
+}else{
+    var cookieDecoded = "";
+}
 
 if(cookieDecoded != ""){
     var carrinhoJSON = JSON.parse(cookieDecoded);
