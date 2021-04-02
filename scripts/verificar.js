@@ -83,9 +83,14 @@ function validacao(){
         return false;
     }
 
-    var botaoSubmit = document.getElementById('botao-submit');
-    botaoSubmit.type = "submit"
-    botaoSubmit.click();
+    if(cookieArray[carrinhoIndex] != null && carrinhoJSON.length > 0){
+        var botaoSubmit = document.getElementById('botao-submit');
+        botaoSubmit.type = "submit"
+        botaoSubmit.click();
+    } else {
+        alert("Seu carrinho está vazio.");
+    }
+    
 }
 function validacaoReset(elemento){
     
