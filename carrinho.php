@@ -117,7 +117,7 @@
                 <h1>FORMULÁRIO</h1>
             </article>
 
-            <form action="" method="post" id="form_dados" name="dados">
+            <form action="conclusao.php" method="post" id="form_dados" name="dados">
                 <article id="dados_pessoais">
                     <h3> Dados Pessoais</h3>
 
