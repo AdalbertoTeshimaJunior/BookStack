@@ -5,24 +5,36 @@ var cookieArray = document.cookie.split(";");
 
 var carrinhoIndex = obterIndex("carrinho=");
 
+
 if(cookieArray[carrinhoIndex] != null){
     var cookieDecoded = decodeURIComponent(cookieArray[carrinhoIndex].replace("carrinho=", ""));
 }else{
-    var cookieDecoded = "";
+    var cookieDecoded = [];
 }
-
-if(cookieDecoded != ""){
+if(cookieDecoded.length != 0){
+    mudaDisplayCarrinho(false);
     var carrinhoJSON = JSON.parse(cookieDecoded);
     verificaCarrinho();
 }else{
     itemPadrao.style.display = 'none';
     box.style.overflowY = "hidden";
+    mudaDisplayCarrinho(true);
+}
+
+function mudaDisplayCarrinho(vazio){
+    var carrinhoVazio = document.getElementById('carrinho-vazio');
+    if (vazio){
+        carrinhoVazio.style.display = "flex";
+    }else{
+        carrinhoVazio.style.display = "none";
+    }
 }
 
 function verificaCarrinho(){
 
     if(carrinhoJSON.length == 0){
         itemPadrao.style.display = 'none';
+        mudaDisplayCarrinho(true);
     }
     if(carrinhoJSON.length > 3){
         box.style.overflowY = "scroll";

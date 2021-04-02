@@ -11,12 +11,14 @@ document.getElementById("desconto").value = parseFloat(descontoCookie);
 if(cookieArray[carrinhoIndex] != null){
     var cookieDecoded = decodeURIComponent(cookieArray[carrinhoIndex].replace("carrinho=", ""));
 }else{
-    var cookieDecoded = "";
+    var cookieDecoded = [];
 }
 
-if(cookieDecoded != ""){
+if(cookieDecoded.length != 0){
     var carrinhoJSON = JSON.parse(cookieDecoded);;
     percorrerCarrinho();
+}else{
+    mudaDisplayCarrinho(true);
 }
 
 function obterIndex(chave){
@@ -111,8 +113,7 @@ function calcularUnidadeInput(elemento) {
     }else{
         alert("Insira uma quantidade válida!");
         elemento.value = 1;
-    }
-    
+    }  
 }
 
 function calcularPedido() {
@@ -143,5 +144,4 @@ function calculoTotal(){
         document.cookie = "desconto="+ parseFloat(descontoInserido);
         document.getElementById("valor-total").textContent = "R$" + total.toFixed(2);
     }
-
 }

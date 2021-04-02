@@ -60,7 +60,9 @@
             </div>                 
     
             <article class="carrinho" id="carrinho">
-    
+                <div id="carrinho-vazio">
+                    <img id="sadpepe" src="imagens/sadPepe.png">
+                </div>
                 <div class="item" id="item-0">
                     <div id="livro">
                         <img id= "item-imagem">
