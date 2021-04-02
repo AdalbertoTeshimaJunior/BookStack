@@ -72,7 +72,7 @@
     
                     <div id="quantidade-unitario-book">
                         <img id= "quantidade-menos" onclick="diminuirQuantidade(this);" src="imagens/menos.svg" alt="">
-                        <input id="quantidade" type="number" min="1">
+                        <input id="quantidade" type="number" min="1" onchange="calcularUnidadeInput(this);">
                         <img id= "quantidade-mais" onclick="acrescentarQuantidade(this);" src="imagens/mais.svg" alt="">
                     </div>
     
@@ -98,13 +98,13 @@
                 </label>
 
                 <label id="desconto-box">
-                    Desconto aplicado:
-                    <input id="desconto"type="number" min="0">
+                    Desconto aplicado(%):
+                    <input id="desconto"type="number" min="0" onchange="calculoTotal();">
                 </label>
 
                 <label id="total-pedido">
                     Total à ser pago:
-                    <p id="valor-total">R$ 75,23</p>
+                    <p id="valor-total"></p>
                 </label>
                 
             </article>

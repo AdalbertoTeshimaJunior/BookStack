@@ -1,4 +1,9 @@
 <?php
+            
+    if(!isset($_COOKIE['desconto'])){
+        setcookie('desconto', 0);
+    }
+
     $arquivo= file_get_contents('livros.json');
     $json = json_decode($arquivo);
     $livros = $json->livros;

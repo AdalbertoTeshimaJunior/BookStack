@@ -1,9 +1,10 @@
 // Verifica se o carrinho está vazio, não paro de comentar seu codigo XD
 var itemPadrao = document.getElementById("item-0");
 var box = document.getElementById("carrinho");
-var carrinho = "carrinho=";
 var cookieArray = document.cookie.split(";");
-var cookieDecoded = decodeURIComponent(cookieArray[0].replace(carrinho, ""));
+
+var carrinhoIndex = obterIndex("carrinho=");
+var cookieDecoded = decodeURIComponent(cookieArray[carrinhoIndex].replace("carrinho=", ""));
 
 if(cookieDecoded != ""){
     var carrinhoJSON = JSON.parse(cookieDecoded);
@@ -14,7 +15,6 @@ if(cookieDecoded != ""){
 }
 
 function verificaCarrinho(){
-    console.log(carrinhoJSON.length);
 
     if(carrinhoJSON.length == 0){
         itemPadrao.style.display = 'none';
@@ -70,7 +70,10 @@ function validacao(){
         alert("Aceite os termos da política de compra do site.");
         return false;
     }
-    return true;
+
+    var botaoSubmit = document.getElementById('botao-submit');
+    botaoSubmit.type = "submit"
+    botaoSubmit.click();
 }
 function validacaoReset(elemento){
     

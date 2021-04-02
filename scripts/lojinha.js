@@ -1,3 +1,4 @@
+console.log(document.cookie);
 function exibirProdutos(livros){
     
     var armazemClone = document.getElementsByClassName("grid-products")[0];

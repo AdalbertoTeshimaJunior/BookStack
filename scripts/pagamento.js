@@ -1,13 +1,25 @@
 var armazemClone = document.getElementsByClassName("carrinho")[0];
 var itemPadrao = document.getElementById("item-0");
-var carrinho = "carrinho=";
+
 var cookieArray = document.cookie.split(";");
-var cookieDecoded = decodeURIComponent(cookieArray[0].replace(carrinho, ""));
-var valorTotal = 0;
+var carrinhoIndex = obterIndex("carrinho=");
+var descontoIndex = obterIndex("desconto=");
+var cookieDecoded = decodeURIComponent(cookieArray[carrinhoIndex].replace("carrinho=", ""));
+var descontoCookie = cookieArray[descontoIndex].replace("desconto=", "");
+
+document.getElementById("desconto").value = parseFloat(descontoCookie);
 
 if(cookieDecoded != ""){
     var carrinhoJSON = JSON.parse(cookieDecoded);;
     percorrerCarrinho();
+}
+
+function obterIndex(chave){
+    for(i= 0; i< cookieArray.length; i++){
+        if(cookieArray[i].includes(chave)){
+            return i;
+        }
+    }
 }
 
 function percorrerCarrinho(){
@@ -15,7 +27,8 @@ function percorrerCarrinho(){
         if (i == 0) {
             itemPadrao.setAttribute("id", "item-" + i);
             preencheInformacoes(carrinhoJSON[i], itemPadrao, i);
-        }  else {
+            i=0;
+        } else {
             var clone = itemPadrao.cloneNode(true);
             clone.setAttribute("id", "item-" + i);
             armazemClone.appendChild(clone);
@@ -68,9 +81,8 @@ function armazenarQuantidade(quantidade, elementoPai) {
     var total = avo.children[3];
     var index = parseInt(avo.id.split("-")[1]);
     
-    carrinhoJSON[index].quantidade = quantidade;
-    document.cookie = "carrinho=" + JSON.stringify(carrinhoJSON);
-
+    carrinhoJSON[index].quantidade = parseInt(quantidade);
+    document.cookie = "carrinho="+ JSON.stringify(carrinhoJSON);
     calcularUnidade(preco, quantidade, total);
 }
 
@@ -79,15 +91,52 @@ function calcularUnidade(preco, quantidade, elementoTotal) {
     calcularPedido();
 }
 
+function calcularUnidadeInput(elemento) {
+    var item = elemento.parentElement.parentElement;
+    var preco = item.children[2].textContent;
+    var total = item.children[3];
+    var index = parseInt(item.id.split("-")[1]);
+    var quantidadeValue = parseInt(elemento.value);
+
+    if(quantidadeValue > 0){
+        total.textContent = parseFloat(preco * quantidadeValue).toFixed(2);
+        carrinhoJSON[index].quantidade = quantidadeValue;
+        document.cookie = "carrinho="+ JSON.stringify(carrinhoJSON);
+        calcularPedido();
+    }else{
+        alert("Insira uma quantidade válida!");
+        elemento.value = 1;
+    }
+    
+}
+
 function calcularPedido() {
     var totais = document.getElementsByClassName("total");
     var total = 0;
 
-    for (i = 0; i < totais.length; i++) {
-        var item = totais[i];
+    for (j = 0; j < totais.length; j++) {
+        var item = totais[j];
         total += parseFloat(item.textContent);
     }
     
     var valorCru = document.getElementById("valor-sem-desconto");
-    valorCru.textContent = "R$ " + total;
+    valorCru.textContent = "R$ " + total.toFixed(2);
+    calculoTotal();
+}
+
+function calculoTotal(){
+    var descontoInserido = document.getElementById("desconto").value;
+    descontoInserido = parseFloat(descontoInserido)
+    var total = document.getElementById("valor-sem-desconto").textContent.split(" ")[1];
+    total = parseFloat(total);
+
+    if(descontoInserido < 0 || descontoInserido > 100){
+        document.getElementById("desconto").value = 0;
+        alert("Insira um valor de desconto válido!");
+    }else{
+        total -= total * (parseFloat(descontoInserido)/100);
+        document.cookie = "desconto="+ parseFloat(descontoInserido);
+        document.getElementById("valor-total").textContent = "R$" + total.toFixed(2);
+    }
+
 }
