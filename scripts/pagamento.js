@@ -44,7 +44,7 @@ function preencheInformacoes(item, elemento, posicao) {
     imagem.src = item.foto;
     titulo.textContent = item.titulo;
     autor.textContent = item.autor;
-    unitario.textContent = item.preco;
+    unitario.textContent = formatarValor((item.preco).toFixed(2));;
     quantidade.value = item.quantidade;
     calcularUnidade(item.preco, item.quantidade, total);
     elemento.setAttribute('id', "item-" + posicao);
@@ -71,7 +71,7 @@ function diminuirQuantidade(elemento) {
 
 function armazenarQuantidade(quantidade, elementoPai) {
     var avo = elementoPai.parentElement;
-    var preco = avo.children[2].textContent;
+    var preco = avo.children[2].textContent.replace(',','.');
     var total = avo.children[3];
     var index = parseInt(avo.id.split("-")[1]);
     
@@ -81,19 +81,19 @@ function armazenarQuantidade(quantidade, elementoPai) {
 }
 
 function calcularUnidade(preco, quantidade, elementoTotal) {
-    elementoTotal.textContent = (preco * quantidade).toFixed(2);
+    elementoTotal.textContent = formatarValor((preco * quantidade).toFixed(2));
     calcularPedido();
 }
 
 function calcularUnidadeInput(elemento) {
     var item = elemento.parentElement.parentElement;
-    var preco = item.children[2].textContent;
+    var preco = item.children[2].textContent.replace(',','.');
     var total = item.children[3];
     var index = parseInt(item.id.split("-")[1]);
     var quantidadeValue = parseInt(elemento.value);
 
     if(quantidadeValue > 0){
-        total.textContent = parseFloat(preco * quantidadeValue).toFixed(2);
+        total.textContent = formatarValor(parseFloat(preco * quantidadeValue).toFixed(2));
         carrinhoJSON[index].quantidade = quantidadeValue;
         document.cookie = "carrinho="+ JSON.stringify(carrinhoJSON);
         calcularPedido();
@@ -109,18 +109,19 @@ function calcularPedido() {
 
     for (j = 0; j < totais.length; j++) {
         var item = totais[j];
-        total += parseFloat(item.textContent);
+        var valor = (item.textContent).replace(',','.');
+        total += parseFloat(valor);
     }
     
     var valorCru = document.getElementById("valor-sem-desconto");
-    valorCru.textContent = "R$ " + total.toFixed(2);
+    valorCru.textContent = "R$ " + formatarValor(total.toFixed(2));
     calculoTotal();
 }
 
 function calculoTotal(){
     var descontoInserido = document.getElementById("desconto").value;
     descontoInserido = parseFloat(descontoInserido)
-    var total = document.getElementById("valor-sem-desconto").textContent.split(" ")[1];
+    var total = document.getElementById("valor-sem-desconto").textContent.split(" ")[1].replace(',','.');
     total = parseFloat(total);
 
     if(descontoInserido < 0 || descontoInserido > 100){
@@ -129,6 +130,10 @@ function calculoTotal(){
     }else{
         total -= total * (parseFloat(descontoInserido)/100);
         document.cookie = "desconto="+ parseFloat(descontoInserido);
-        document.getElementById("valor-total").textContent = "R$" + total.toFixed(2);
+        document.getElementById("valor-total").textContent = "R$" + formatarValor(total.toFixed(2));
     }
+}
+
+function formatarValor(valor){
+    return valor.replace('.',',');
 }

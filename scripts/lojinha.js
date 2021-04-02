@@ -27,6 +27,6 @@ function preencheInformacoes(livro, elemento) {
 
     imagem.src = livro.foto;
     titulo.textContent = livro.titulo;
-    preco.textContent = "R$ " + livro.preco;
+    preco.textContent = ("R$ " + livro.preco).replace('.',',');
     botao.setAttribute('id', livro.id);
 }

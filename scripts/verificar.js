@@ -17,8 +17,8 @@ function mudarDisplayCarrinhoVazio(vazio){
         itemPadrao.style.display = 'none';
         box.style.overflowY = "hidden";
         carrinhoVazio.style.display = "flex";
-        document.getElementById("valor-sem-desconto").textContent = "R$ 0.0";
-        document.getElementById("valor-total").textContent = "R$ 0.0";
+        document.getElementById("valor-sem-desconto").textContent = "R$ 0,0";
+        document.getElementById("valor-total").textContent = "R$ 0,0";
     }else{
         verificaCarrinho();
     }

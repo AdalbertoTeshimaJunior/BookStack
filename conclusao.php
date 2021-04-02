@@ -14,7 +14,7 @@
     CEP: ".$_POST['cep']."
     Estado: ".$_POST['estado']."
 > PEDIDO\n";
-    echo "<h1>".$_COOKIE['carrinho']."</h1>";    
+
     $carrinhoCookie = $_COOKIE['carrinho'];
     $carrinhoCookie = json_decode($carrinhoCookie);
     $totalSemDesconto = 0;
@@ -22,18 +22,17 @@
         $quantidade = $item -> quantidade;
         $titulo = $item -> titulo;
         $preco = $item -> preco;
-
         $totalSemDesconto += $preco * $quantidade;
-        $linha = "    (".$quantidade.") ".$titulo." R$".$preco."\n";
+        $linha = "    (".$quantidade.") ".$titulo." R$".number_format($preco, 2, "," , ".")."\n";
         $info = $info.$linha;
     }
 
     $desconto = $_COOKIE['desconto'];
     $total = $totalSemDesconto - ($totalSemDesconto * ($desconto/100));
     $totalPedido = "> TOTAL DO PEDIDO
-    Total: R$".$totalSemDesconto."
+    Total: R$".number_format($totalSemDesconto, 2, "," , ".")."
     Desconto: ".$desconto."%
-    Total à ser pago: R$".$total;
+    Total à ser pago: R$".number_format($total, 2, "," , ".");
     $info = $info.$totalPedido;
     // Criação do arquivo comprovante.txt
     $comprovante = fopen('comprovanteBS.txt','w');
@@ -71,7 +70,9 @@
 
         <article>
             <div class="option-button">
-                <a href="">Baixar comprovante de compra</a>
+                <a href="download.php" _blank>
+                    Baixar comprovante de compra
+                </a>
             </div>
             <div class="option-button">
                 <a href="index.php">Continue comprando</a>
