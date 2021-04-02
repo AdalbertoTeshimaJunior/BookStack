@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/top-bar.css">
+        <link rel="stylesheet" href="css/conclusao.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <link rel="icon" type="image/x-icon" href="imagens/booklogo.png">
         <title>Book Stack</title>
@@ -24,5 +25,17 @@
                 </div>
             </ul>
         </header>
+
+        <article>
+            <div class="option-button">
+                <a href="">Baixar comprovante de compra</a>
+            </div>
+            <div class="option-button">
+                <a href="index.php">Continue comprando</a>
+            </div>
+            <div class="option-button">
+                <a href="index.php">Voltar ao início</a>
+            </div>
+        </article>
     </body>
 </html>

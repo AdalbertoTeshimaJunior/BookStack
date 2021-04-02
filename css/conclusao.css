@@ -1,0 +1,39 @@
+:root{
+    --verde_escuro: #004D40;
+    --verde_claro: #57958A;
+}
+article{
+    display: block;
+    width: 60%;
+    height: 80%;
+    margin: 0 auto;
+    margin-top: 10%;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.option-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 25%;
+    height: 18%;
+    margin: 0 auto;
+    margin-bottom: 3%;
+
+    background-color: var(--verde_escuro);
+    border-radius: 20px;
+    box-shadow: 0px 4px 3px rgb(0 0 0 / 30%);
+    cursor: pointer;
+}
+.option-button:hover{
+    background-color: var(--verde_claro);
+}
+article a{
+    font-family: "Nunito";
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
