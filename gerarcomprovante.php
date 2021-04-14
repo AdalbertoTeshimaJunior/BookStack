@@ -15,6 +15,15 @@
     Estado: ".$_POST['estado']."
     > PEDIDO\n";
 
+        $info = escreverProdutosETotal($info);
+        
+        // Criação do arquivo comprovante.txt
+        $comprovante = fopen('comprovanteBS.txt','w');
+        fwrite($comprovante, $info);
+        fclose($comprovante);
+    }
+
+    function escreverProdutosETotal($info){
         $carrinhoCookie = $_COOKIE['carrinho'];
         $carrinhoCookie = json_decode($carrinhoCookie);
         $totalSemDesconto = 0;
@@ -29,19 +38,10 @@
 
         $desconto = $_COOKIE['desconto'];
         $total = $totalSemDesconto - ($totalSemDesconto * ($desconto/100));
-        $totalPedido = "    > TOTAL DO PEDIDO
-    Total: R$".number_format($totalSemDesconto, 2, "," , ".")."
-    Desconto: ".$desconto."%
-    Total à ser pago: R$".number_format($total, 2, "," , ".");
+        $totalPedido = "    > TOTAL DO PEDIDO \n    Total: R$".number_format($totalSemDesconto, 2, "," , ".")."\n    Desconto: ".$desconto."%\n    Total à ser pago: R$".number_format($total, 2, "," , ".");
         $info = $info.$totalPedido;
-        // Criação do arquivo comprovante.txt
-        $comprovante = fopen('comprovanteBS.txt','w');
-        fwrite($comprovante, $info);
-        fclose($comprovante);
-
+        return $info;
     }
-
-
     
     function obterData(){
         date_default_timezone_set('America/Sao_Paulo');
