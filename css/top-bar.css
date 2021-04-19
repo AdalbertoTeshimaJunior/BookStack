@@ -74,10 +74,9 @@ div#botoes-menu li{
     align-items: center;
 
 }
-
 li#logo-box{
     position: absolute;
-    width: 35%;
+    width: 33%;
     height: 18%;
 }
 #logo{
