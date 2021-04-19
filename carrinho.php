@@ -95,103 +95,29 @@
         <section id="preco-area">
             <article id="info-preco">
                 <label id="valor-pedido">
-                    Valor do Pedido:
+                    <p>Valor do Pedido:</p>
                     <p id="valor-sem-desconto"></p>
                 </label>
 
                 <label id="desconto-box">
-                    Desconto aplicado(%):
+                    Desconto:
                     <input id="desconto"type="number" min="0" onchange="calculoTotal();">
                 </label>
 
                 <label id="total-pedido">
-                    Total à ser pago:
+                    TOTAL À SER PAGO:
                     <p id="valor-total"></p>
                 </label>
                 
+                <div id="next-button">
+                    <a href="form.php">
+                        <p>PROSSEGUIR</p>
+                        <img src="imagens/outline_arrow_forward_white_24dp.png">
+                    </a>
+                </div>
             </article>
-            
         </section>
-
-        <section id="formulario-area">
-
-            <article id="titulo-formulario">
-                <h1>FORMULÁRIO</h1>
-            </article>
-
-            <form action="conclusao.php" method="post" id="form_dados" name="dados">
-                <article id="dados_pessoais">
-                    <h3> Dados Pessoais</h3>
-
-                    <label>Nome Completo: </label><br>
-                    <input type="text" name="nome" id="nome_input" class = "input-area" onchange="validacaoReset(this);">
-                    <br>
-                    <label>E-mail: </label><br>
-                    <input type="text" name="email" id="email_input"  class = "input-area" onchange="validacaoReset(this);">
-                    <br>
-                    <label>CPF: </label><br>
-                    <input type="number" name="cpf" id="cpf_input"  class = "input-area" onchange="validacaoReset(this);">
-                    <br>
-                    
-                    <div id="radio_container">
-                        <label>Quer receber e-mails sobre promoções personalizadas? </label><br>
-                        <input type="radio" name="ad" id="sim_ad_input" checked> Sim
-                        <input type="radio" name="ad" id="nao_ad_input"> Não
-                    </div>
-                    
-                </article>
-
-                <article id="endereco_pessoal">
-                    <h3> Endereço</h3>
-
-                    <label>Rua: </label><br>
-                    <input type="text" name="rua" id="rua_input" class = "input-area" onchange="validacaoReset(this);">
-                    <br>
-                    
-                    <div id="bairro-estado-container">
-                        <div>
-                            <label>Bairro: </label> <br>
-                            <input type="text" name="bairro" id="bairro_input"
-                            class = "input-area"
-                            size="90%" onchange="validacaoReset(this);">
-                        </div>
-                        
-                        <div id="estado-conteiner">
-                            <label>Estado: </label><br>
-                            <input type="text" name="estado" id="estado_input"
-                            size="10%" onchange="validacaoReset(this);">
-                        </div>
-                    
-                    </div>
-                    
-                    <div id="cep-numero-container">
-                        <div id="cep-container">
-                            <label>CEP: </label> <br>
-                            <input type="number" name="cep" id="cep_input"
-                            class = "input-area" onchange="validacaoReset(this);">
-                        </div>
-                        
-                        <div id="numero-container">
-                            <label>Número: </label><br>
-                            <input type="number" name="numero" id="numero_input"
-                            class = "input-area" onchange="validacaoReset(this);">
-                        </div>
-                    </div>
-                    
-                    <label>
-                        <input type="checkbox" name="termos" id="termos_check">Aceito os termos da política de compra do site
-                    </label>
-                    
-
-                    <div id="botoes-container">
-                        <input type="reset" id="botao-reset" name="reset" value="APAGAR"> 
-                        <input id="botao-submit" name="submit" value="FINALIZAR" onclick="validacao();">
-                    </div>
-                </article>
-            </form>
-
-
-        </section>      
+      
         <script src="scripts/pagamento.js" type="text/javascript"></script>
         <script src="scripts/verificar.js" type="text/javascript"></script>
     </body>

@@ -153,33 +153,41 @@ input[type=number]::-webkit-inner-spin-button {
 #valor-sem-desconto{
     margin-block-start: 0;
     margin-block-end: 0;
-    margin-left: 5%;
-    font-size: 20px;
+    font-size: 28px;
 }
 #valor-sem-desconto{
+    text-align: end;
     color: #57958A;
+    width: 100%;
 }
 #valor-total{
-    font-size: 26px;
+    font-size: 28px;
 }
 #info-preco #valor-pedido,
 #info-preco #desconto-box
 {
     display: flex;
-    margin-top: 8%;
-    justify-content: flex-end;
+    margin-top: 3%;
     justify-self: flex-end;
+    justify-content: space-between;
     align-items: center;
     font-weight: bold;
     
     font-family: "Segoe UI";
-    font-size: 20px;
+    font-size: 24px;
     color: var(--verde_escuro);
 }
-
+#info-preco #desconto-box{
+    height: 40%;
+}
+#info-preco #valor-pedido p{
+    
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
 #info-preco #total-pedido{
     display: flex;
-    margin-top: 20%;
+    margin-top: 15%;
     margin-bottom: 5%;
     justify-self: flex-end;
     justify-content: flex-end;
@@ -187,13 +195,48 @@ input[type=number]::-webkit-inner-spin-button {
     font-weight: bold;
 
     font-family: "Segoe UI";
-    font-size: 20px;
+    font-size: 24px;
     color: var(--verde_escuro);
 }
 #desconto{
     margin-block-start: 0;
     margin-block-end: 0;
     margin-left: 5%;
-    width: 25%;
-    height: 15%;
+    width: 30%;
+    height: 40%;
+}
+#next-button{
+    width: 100%;
+    height: 5vh;
+    justify-self: center;
+
+    background: #004D40;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border: none;
+    color: var(--text_branco);
+    cursor: pointer;
+    text-align: center;
+    caret-color: transparent;
+}
+#next-button a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    font-family: 'Open Sans';
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--text_branco);
+}
+#next-button a p{
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+#next-button a img{
+    width: 13%;
+    height: 70%;
 }
