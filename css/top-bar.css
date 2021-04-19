@@ -8,7 +8,7 @@ body{
     overflow-x: hidden;
 }
 header{
-    height: 14vh;
+    height: 18vh;
     width: 100vw;
     display: flex;
     margin: 0;
@@ -26,7 +26,7 @@ header ul{
 #saudacao-icones{
     background-color: var(--verde_escuro);
     width: 100%;
-    height: 80%;
+    height: 60%;
     display: flex;
     justify-content: center;
 }
@@ -95,7 +95,7 @@ li#logo-box{
 #barra-navegacao{
     background-color: var(--verde_claro);
     width: 100%;
-    height: 50%;
+    height: 40%;
     display: flex;
     justify-content: center;
     align-items: center;

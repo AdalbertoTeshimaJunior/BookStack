@@ -108,7 +108,7 @@ if (isset($_GET['adicionar'])) {
                 <p id="titulo"></p>
                 <p id="book-price"></p>
                 <div id="button-container">
-                    <a href="index.php" onclick="location.href = this.href+'?adicionar='+ this.id;return false;">Adicionar ao Carrinho</a>
+                    <a href="store.php" onclick="location.href = this.href+'?adicionar='+ this.id;return false;">Adicionar ao Carrinho</a>
                 </div>
             </div>
         </article>
