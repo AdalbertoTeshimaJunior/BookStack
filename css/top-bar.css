@@ -8,51 +8,119 @@ body{
     overflow-x: hidden;
 }
 header{
-    height: 100px;
+    height: 14vh;
     width: 100vw;
-    background-color:var(--verde_escuro);
     display: flex;
-}
-header ul{
-    width: 100%;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 0;
     padding: 0;
 }
-li#logo-box{
-    margin-top: 8px;
-    width: 50%;
+header ul{
+    width: 100%;
     height: 100%;
+    list-style: none;
+    display: block;
+    margin: 0;
+    padding: 0;
 }
-#logo{
-    width: 45%;
-    padding-left: 130px;
+
+#saudacao-icones{
+    background-color: var(--verde_escuro);
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
 }
-div#botoes-menu{
-    width: 50%;
-    height: 100%;
+#menu-superior{
+    width: 80%;
+}
+#saudacao{
+    width: 100%;
+    height: 40%;
     display: flex;
     justify-content: flex-end;
+}
+#saudacao p{
+    margin-right: 11%;
+    color: white;
+    font-family: 'Open Sans';
+    font-size: 1.2em;
+}
+#pesquisa-carrinho{
+    display: flex;
+    height: 60%;
+    justify-content: flex-end;
     align-items: center;
-    padding-right: 45px;
+}
+#barra-pesquisa{
+    border: 1px solid #004D40;
+    box-sizing: border-box;
+    width: 60%;
+    margin-right: 3%;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    outline-style: none;
+    height: 45%;
+}
+div#botoes-menu{
+    width: 8%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 div#botoes-menu li{
     height: 100%;
     display: flex;
     align-items: center;
-    padding-right:10px ;
-    padding-left: 10px;
 
 }
-#link-menu{
-    display: flex;
+
+li#logo-box{
+    position: absolute;
+    width: 35%;
+    height: 18%;
+}
+#logo{
     width: 100%;
+}
+
+#link-menu-logo{
+    display: flex;
+    width: 65%;
     height: 100%;
-    text-decoration: none;
-    color: white;
+    margin-left: 20%;
     justify-content: center;
     align-items: center;
+}
+
+#barra-navegacao{
+    background-color: var(--verde_claro);
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#barra-navegacao #links{
+    width: 50%;
+    height: 90%;
+    margin-left: 15%;
+    display: flex;
+    justify-content: space-around
+}
+
+#links a{
+    color: white;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans';
+    cursor: pointer;
+    font-size: 1.3em;
+}
+#links a:hover{
+    background-color: var(--verde_escuro);
 }
