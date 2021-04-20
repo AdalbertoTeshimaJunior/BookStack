@@ -23,7 +23,6 @@ if (isset($_COOKIE['carrinho'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/carrinho.css">
-    <link rel="stylesheet" href="css/formulario.css">
     <link rel="stylesheet" href="css/top-bar.css">
     <link rel="icon" type="image/x-icon" href="imagens/carinho.png">
     <title>Carrinho</title>
@@ -136,7 +135,7 @@ if (isset($_COOKIE['carrinho'])) {
             </label>
 
             <label id="total-pedido">
-                TOTAL À SER PAGO:
+                <p>TOTAL À SER PAGO:</p>
                 <p id="valor-total"></p>
             </label>
 
