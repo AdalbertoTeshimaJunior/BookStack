@@ -1,4 +1,4 @@
-// Verifica se o carrinho está vazio, não paro de comentar seu codigo XD
+// Verifica se o carrinho está vazio
 
 if(cookieArray[carrinhoIndex] != null){
     var cookieDecoded = decodeURIComponent(cookieArray[carrinhoIndex].replace("carrinho=", ""));
@@ -81,17 +81,9 @@ function validacao(){
     if (!document.getElementById("termos_check").checked){
         alert("Aceite os termos da política de compra do site.");
         return false;
-    }
-
-    if(cookieArray[carrinhoIndex] != null && carrinhoJSON.length > 0){
-        var botaoSubmit = document.getElementById('botao-submit');
-        botaoSubmit.type = "submit"
-        botaoSubmit.click();
-    } else {
-        alert("Seu carrinho está vazio.");
-    }
-    
+    }    
 }
+
 function validacaoReset(elemento){
     
     if(elemento.value!= ""){

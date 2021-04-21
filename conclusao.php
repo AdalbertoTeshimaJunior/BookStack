@@ -63,19 +63,17 @@ escreverInformacoes();
         </ul>
     </header>
 
-    <article>
-        <div class="option-button">
-            <a href="download.php" _blank>
-                Baixar comprovante de compra
-            </a>
+    <section>
+        <div>
+            <h2>Obrigado por comprar conosco!</h2>
+            <p>Nós da BookStack estamos imensamente felizes com seu pedido, abaixo você pode fazer o download do comprovente e nos movimentaremos para realizar a entrega o mais rápido possível.</p>
         </div>
-        <div class="option-button">
-            <a href="index.php">Continue comprando</a>
-        </div>
-        <div class="option-button">
-            <a href="index.php">Voltar ao início</a>
-        </div>
-    </article>
+    </section>
+    <div id="download-button">
+        <a href="download.php" _blank>
+            Baixar comprovante de compra
+        </a>
+    </div>
 </body>
 
 </html>
