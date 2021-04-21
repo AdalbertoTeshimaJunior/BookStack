@@ -149,7 +149,7 @@ if (isset($_COOKIE['carrinho'])) {
     </section>
 
     <script src="scripts/pagamento.js" type="text/javascript"></script>
-    <script src="scripts/verificar.js" type="text/javascript"></script>
+    <script src="scripts/verificarCarrinho.js" type="text/javascript"></script>
 </body>
 
 </html>
