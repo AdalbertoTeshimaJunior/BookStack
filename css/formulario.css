@@ -6,17 +6,17 @@
 }
 
 #formulario-area{
-    width: 63.5vw;
+    width: 60vw;
     margin: 0 auto;
     background-color: var(--verde_card_back);
     border-radius:10px;
+    padding-top: 2%;
+    padding-bottom: 1%;
 }
-#form_dados{
+.sec-div{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 5%;
-    padding-bottom: 4%; 
+    justify-content: center;
+    align-content: center;
 }
 input[type=text],input[type=number]{
     border: 1px solid #004D40;
@@ -25,34 +25,37 @@ input[type=text],input[type=number]{
     border-radius: 15px;
     margin-bottom: 1.5%;
     outline-style: none;
-    height: 40%;
+    height: 15%;
 }
-#botao-submit,
-input[type=reset]{
+#parcelas{
+    border: 1px solid #004D40;
+    box-sizing: border-box;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    margin-bottom: 1.5%;
     outline-style: none;
+    height: 15%;
+
+    width: 100%;
 }
-#dados_pessoais{
+.article_pattern{
     margin-left: 3%;
     margin-right: 3%;
     margin-bottom: 3.5%;
-    width: 30%;
+    width: 40%;
 }
-#dados_pessoais h3,
-#endereco_pessoal h3{
+hr {
+    width: 70%;
+}
+h3{
     text-align: center;
     font-family: "Open Sans";
-    font-size: 16px;
+    
     color:#004D40;
 }
-#endereco_pessoal{
-    margin-left: 3%;
-    margin-right: 3%;
-    width: 30%;
-}
-#dados_pessoais label,
-#endereco_pessoal label{
+label{
     font-family: "Open Sans";
-    font-size: 14px;
+    font-size: 15px;
 }
 #titulo-formulario{
     display: flex;
@@ -63,9 +66,13 @@ input[type=reset]{
     color: #004D40;
 }
 #cep-numero-container,
-#bairro-estado-container{
+#bairro-estado-container,
+#cpf-cvv-container{
     display: flex;
     justify-content: space-between;
+}
+#cep-numero-container{
+    padding-top: 3%;
 }
 #termos_check,
 #radio_container{
@@ -81,19 +88,25 @@ input[type=reset]{
 #numero_input,
 #cep_input,
 #estado_input,
-#bairro_input{
-    height: 45%;
+#bairro_input,
+#cidade_input,
+#cpftitular_input,
+#cvv_input{
+    height: 73%;
 }
-
-#estado-conteiner,
-#numero-container{
+#cpf-div{
+    width: 80%;
+}
+#cvv-div{
+    width: 20%;
     padding-left: 1.5%;
 }
-#cep-container{
-    width: 100%;
+#estado-conteiner,
+#numero-container, #cidade-container{
+    padding-left: 1.5%;
 }
 #numero-container{
-    width: 43%;
+    width: 25%;
 }
 #termos_check:checked{
     background-color: var(--verde_escuro);
@@ -110,7 +123,7 @@ input[type=reset]{
     background:var(--verde_claro);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: none;
-    border-radius: 2px;
+    border-radius: 7px;
     color: var(--text_branco);
 }
 #botao-submit{
@@ -118,7 +131,7 @@ input[type=reset]{
     height: 3vh;
     background: #004D40;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 2px;
+    border-radius: 7px;
     border: none;
     color: var(--text_branco);
     cursor: pointer;
@@ -128,4 +141,8 @@ input[type=reset]{
 #botao-submit:hover,
 #botao-reset:hover{
     background:var(--verde_claro);
+}
+#botao-submit,
+input[type=reset]{
+    outline-style: none;
 }
