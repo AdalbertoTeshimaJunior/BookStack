@@ -10,11 +10,9 @@
     <link rel="icon" type="image/x-icon" href="imagens/carinho.png">
     <title>Formulário</title>
 </head>
-<!-- BARRA SUPERIOR -->
-
-<!-- FORMULÁRIO -->
 
 <body>
+    <!-- BARRA SUPERIOR -->
     <header>
         <ul>
             <li id="logo-box">
@@ -56,6 +54,8 @@
             </li>
         </ul>
     </header>
+    <!-- BARRA SUPERIOR -->
+
     <article id="titulo-formulario">
         <h1>Preencha os dados abaixo</h1>
     </article>
@@ -174,7 +174,7 @@
 
                     <div id="botoes-container">
                         <input type="reset" id="botao-reset" name="reset" value="APAGAR">
-                        <input id="botao-submit" type="submit" name="submit" value="FINALIZAR" onclick="validacao();">
+                        <input id="botao-submit" name="submit" value="FINALIZAR" onclick="validacao();">
                     </div>
                 </article>
             </section>

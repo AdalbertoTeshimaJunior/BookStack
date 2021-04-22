@@ -29,6 +29,7 @@ if (isset($_COOKIE['carrinho'])) {
 </head>
 
 <body>
+    <!-- BARRA SUPERIOR -->
     <header>
         <ul>
             <li id="logo-box">
@@ -70,6 +71,7 @@ if (isset($_COOKIE['carrinho'])) {
             </li>
         </ul>
     </header>
+    <!-- BARRA SUPERIOR -->
 
     <section id="carrinho-area">
 
