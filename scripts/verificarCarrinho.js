@@ -1,3 +1,5 @@
+/* VERIFICAÇÕES DA PÁGINA DO CARRINHO */
+
 // Verifica se o carrinho está vazio
 if (cookieArray[carrinhoIndex] != null) {
     var cookieDecoded = decodeURIComponent(cookieArray[carrinhoIndex].replace("carrinho=", ""));
@@ -11,6 +13,7 @@ if (cookieArray[carrinhoIndex] != null) {
     mudarDisplayCarrinhoVazio(true);
 }
 
+// Função que muda a visualização do site caso o carrinho esteja vazio
 function mudarDisplayCarrinhoVazio(vazio) {
     if (vazio) {
         itemPadrao.style.display = 'none';
@@ -24,7 +27,6 @@ function mudarDisplayCarrinhoVazio(vazio) {
 }
 
 function verificaCarrinho() {
-
     if (carrinhoJSON.length == 0) {
         mudarDisplayCarrinhoVazio(true)
     }

@@ -1,3 +1,5 @@
+/* LÓGICA DAS FUNCIONALIDADES DA PÁGINA DO CARRINHO */
+
 var box = document.getElementById("carrinho");
 var itemPadrao = document.getElementById("item-0");
 var carrinhoVazio = document.getElementById('carrinho-vazio');
@@ -32,6 +34,7 @@ function percorrerCarrinho(){
     }
 }
 
+//Preenche a estrutura HTML do carrinho com os respectivos atributos//
 function preencheInformacoes(item, elemento, posicao) {
     var imagem = elemento.children[0].children[0];
     var titulo = elemento.children[0].children[1].children[0];
@@ -51,6 +54,7 @@ function preencheInformacoes(item, elemento, posicao) {
     remover.setAttribute('id', posicao);
 }
 
+//Funções do botão de acréscimo e decréscimo de quantidade//
 function acrescentarQuantidade(elemento) {
     var pai = elemento.parentElement;
     var input = pai.children[1];
