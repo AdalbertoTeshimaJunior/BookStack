@@ -21,6 +21,7 @@ escreverInformacoes();
 </head>
 
 <body>
+    <!-- BARRA SUPERIOR -->
     <header>
         <ul>
             <li id="logo-box">
@@ -62,7 +63,8 @@ escreverInformacoes();
             </li>
         </ul>
     </header>
-
+    <!-- BARRA SUPERIOR -->
+    
     <section>
         <div>
             <h2>Obrigado por comprar conosco!</h2>

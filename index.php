@@ -9,10 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Book Stack</title>
 </head>
 
 <body>
+  <!-- BARRA SUPERIOR -->
   <header>
     <ul>
       <li id="logo-box">
@@ -54,6 +55,9 @@
       </li>
     </ul>
   </header>
+  <!-- BARRA SUPERIOR -->
+
+  <!-- FOOTER -->
   <footer>
     <div class="top-footer">
       <div id="mobile-info">
@@ -91,6 +95,7 @@
       </div>
     </div>
   </footer>
+  <!-- FOOTER -->
 </body>
 
 </html>

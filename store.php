@@ -29,7 +29,6 @@ if (isset($_GET['adicionar'])) {
         }
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -43,14 +42,16 @@ if (isset($_GET['adicionar'])) {
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/storepage.css">
     <link rel="stylesheet" href="css/top-bar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="icon" type="image/x-icon" href="imagens/booklogo.png">
     <script src="scripts/store.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <link rel="icon" type="image/x-icon" href="imagens/booklogo.png">
     <title>Book Stack</title>
 
 </head>
 
 <body>
+    <!-- BARRA SUPERIOR -->
     <header>
         <ul>
             <li id="logo-box">
@@ -92,6 +93,8 @@ if (isset($_GET['adicionar'])) {
             </li>
         </ul>
     </header>
+    <!-- BARRA SUPERIOR -->
+
     <section>
         <aside>
             <div class="filter">
@@ -113,7 +116,48 @@ if (isset($_GET['adicionar'])) {
             </div>
         </article>
     </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="top-footer">
+            <div id="mobile-info">
+                <h2>Mobile app</h2>
+                <div>
+                    <p><a href="">Baixar agora para Android</a></p>
+                    <p><a href="">Baixar agora para IOS</a></p>
+                </div>
+            </div>
+            <div id="about-info">
+                <h2>About Us</h2>
+                <div>
+                    <p><a href="www.github.com/Yngredh" target="_BLANK">github.com/Yngredh</a></p>
+                    <p><a href="www.github.com/davihenrique05" target="_BLANK">github.com/davihenrique05</a></p>
+                    <p><a href="www.github.com/AdalbertoTeshimaJunior" target="_BLANK">github.com/AdalbertoTeshimaJunior</a></p>
+                </div>
+            </div>
+            <div id="contact-info">
+                <h2>Contact Us</h2>
+                <div>
+                    <p><a href="www.linkedin.com/in/yngredh-cruz" target="_BLANK">linkedin.com/in/yngredh-cruz</a></p>
+                    <p><a href="www.linkedin.com/in/davi-hg-silva" target="_BLANK">linkedin.com/in/davi-hg-silva</a></p>
+                    <p><a href="www.linkedin.com/in/adalberto-teshima-júnior" target="_BLANK">linkedin.com/in/adalberto-teshima-júnior</a></p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="bottom-footer">
+            <p id="assinatura">© BookStack, Inc. 2021. We love books!</p>
+            <div id="social-media">
+                <p>Follow us: </p>
+                <img src="imagens/instagram-icone.png">
+                <img src="imagens/twitter-icone.png">
+                <img src="imagens/facebook-icone.png">
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER -->
 </body>
+
 
 </html>
 

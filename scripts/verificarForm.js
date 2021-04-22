@@ -67,6 +67,9 @@ function validacao() {
         alert("Aceite os termos da política de compra do site.");
         return false;
     }
+    var submit = document.getElementById("botao-submit");
+    submit.setAttribute("type", "submit");
+    submit.click();
 }
 
 //Valida se há algum campo preechido para alterar o estilo do botão RESET
