@@ -8,16 +8,15 @@ html{
 /* >> */
 section{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     margin: 1vw 10vw 1vw 10vw;
-    height: 100vh;
 }
 /* >> ASIDE << */
 aside{
     display: block;
     width: 20%;
-    height: 100%;
+    justify-self: bas;
 }
 .filter{
     margin: 1vw 5vw 1vw 1vw;
