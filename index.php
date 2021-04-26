@@ -70,17 +70,17 @@
       <div id="about-info">
         <h2>About Us</h2>
         <div>
-          <p><a href="www.github.com/Yngredh" target="_BLANK">github.com/Yngredh</a></p>
-          <p><a href="www.github.com/davihenrique05" target="_BLANK">github.com/davihenrique05</a></p>
-          <p><a href="www.github.com/AdalbertoTeshimaJunior" target="_BLANK">github.com/AdalbertoTeshimaJunior</a></p>
+          <p><a href="http://www.github.com/Yngredh" target="_BLANK">github.com/Yngredh</a></p>
+          <p><a href="http://www.github.com/davihenrique05" target="_BLANK">github.com/davihenrique05</a></p>
+          <p><a href="http://www.github.com/AdalbertoTeshimaJunior" target="_BLANK">github.com/AdalbertoTeshimaJunior</a></p>
         </div>
       </div>
       <div id="contact-info">
         <h2>Contact Us</h2>
         <div>
-          <p><a href="www.linkedin.com/in/yngredh-cruz" target="_BLANK">linkedin.com/in/yngredh-cruz</a></p>
-          <p><a href="www.linkedin.com/in/davi-hg-silva" target="_BLANK">linkedin.com/in/davi-hg-silva</a></p>
-          <p><a href="www.linkedin.com/in/adalberto-teshima-júnior" target="_BLANK">linkedin.com/in/adalberto-teshima-júnior</a></p>
+          <p><a href="http://www.linkedin.com/in/yngredh-cruz" target="_BLANK">linkedin.com/in/yngredh-cruz</a></p>
+          <p><a href="http://www.linkedin.com/in/davi-hg-silva" target="_BLANK">linkedin.com/in/davi-hg-silva</a></p>
+          <p><a href="http://www.linkedin.com/in/adalberto-teshima-júnior" target="_BLANK">linkedin.com/in/adalberto-teshima-júnior</a></p>
         </div>
       </div>
     </div>
