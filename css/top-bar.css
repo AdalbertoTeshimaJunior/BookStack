@@ -114,6 +114,7 @@ li#logo-box{
     width: 50%;
     height: 100%;
     display: flex;
+    text-decoration: none;
     justify-content: center;
     align-items: center;
     font-family: 'Open Sans';
