@@ -36,12 +36,12 @@
             </div>
             <li id="barra-navegacao">
                 <div id="links">
-                    <a>
+                    <a href="index.php">
                         INÍCIO
                     </a>
 
-                    <a>
-                        CATEGORIAS
+                    <a href="store.php">
+                        LOJA
                     </a>
 
                     <a>
