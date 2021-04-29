@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="css/top-bar.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/index.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,12 +37,12 @@
       </div>
       <li id="barra-navegacao">
         <div id="links">
-          <a>
+          <a href="index.php">
             INÍCIO
           </a>
 
-          <a>
-            CATEGORIAS
+          <a href="store.php">
+            LOJA
           </a>
 
           <a>
@@ -56,7 +57,18 @@
     </ul>
   </header>
   <!-- BARRA SUPERIOR -->
+  <section class="banner-container">
+    <img class="banner" src="imagens/header1.png">
+  </section>
 
+  <section class="lancamentos-container">
+  </section>
+
+  <section class="ad-container">
+    <img src="imagens/AD02.png" class="ad" id="ad-1">
+    <img src="imagens/AD01.png" class="ad" id="ad-2">
+    <img src="imagens/AD03.png" class="ad" id="ad-3">
+  </section>
   <!-- FOOTER -->
   <footer>
     <div class="top-footer">

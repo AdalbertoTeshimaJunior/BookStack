@@ -27,8 +27,7 @@
                         <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa">
                         <div id="botoes-menu">
                             <li id="Carrinho">
-                                <a id="link-menu" href="carrinho.php"><img id="img-carrinho" src="imagens/carinho.png"
-                                        alt="Carrinho"></a>
+                                <a id="link-menu" href="carrinho.php"><img id="img-carrinho" src="imagens/carinho.png" alt="Carrinho"></a>
                             </li>
                         </div>
                     </div>
@@ -36,12 +35,12 @@
             </div>
             <li id="barra-navegacao">
                 <div id="links">
-                    <a>
+                    <a href="index.php">
                         INÍCIO
                     </a>
 
-                    <a>
-                        CATEGORIAS
+                    <a href="store.php">
+                        LOJA
                     </a>
 
                     <a>
