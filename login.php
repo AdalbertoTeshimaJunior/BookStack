@@ -71,7 +71,7 @@
                 <div id="button-link">
                     <input id="login-button" name="login" value="ENTRAR"
                         onclick="loginValidation();">
-                    <p id="p-link">Não possui uma conta? <a href="signin.html"><i>clique aqui</i></a></p>
+                    <p id="p-link">Não possui uma conta? <a href="signin.php"><i>clique aqui</i></a></p>
                 </div>
             </form>
         </div>

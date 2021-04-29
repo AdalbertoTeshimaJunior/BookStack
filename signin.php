@@ -73,7 +73,7 @@
                 <div id="button-link">
                     <input id="signin-button" name="signin" value="REGISTRAR"
                         onclick="signinValidation();">
-                    <p id="p-link">Já possui uma conta? <a href="login.html"><i>clique aqui</i></a></p>
+                    <p id="p-link">Já possui uma conta? <a href="login.php"><i>clique aqui</i></a></p>
                 </div>
             </form>
         </div>
