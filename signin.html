@@ -64,20 +64,21 @@
             <p>Encontre seus livros favoritos</p>
             <p>Crie e compartilhe sua estante dos sonhos</p>
         </div>
-        <div class="field" id="register-form">
-            <h4>Crie sua conta</h4>
-            <form>
-                <input type="text" placeholder="Email address" id="user-email">
-                <input type="password" placeholder="Password" id="user-password">
-                <div id="buttom-link">
-                    <input href="profile.html" id="signin-buttom" name="signin" value="REGISTRAR"
-                        onclick="signInValidation();">
+        <div class="field" id="signin-form">
+            <h4 id="signinH4">Crie sua conta</h4>
+            <form action="profile.php" id="signinForm">
+                <input type="text" placeholder="Nome" name="userName" id="user-Name">
+                <input type="text" placeholder="Email address" name="userEmail" id="user-Email">
+                <input type="password" placeholder="Password" name="userPassword" id="user-Password">
+                <div id="button-link">
+                    <input id="signin-button" name="signin" value="REGISTRAR"
+                        onclick="signinValidation();">
                     <p id="p-link">Já possui uma conta? <a href="login.html"><i>clique aqui</i></a></p>
                 </div>
             </form>
         </div>
     </section>
-
+    <script src="scripts/register.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -23,7 +23,7 @@ section{
     margin-left: 5%;
     text-align: start;
 }
-#register-form{
+#signin-form, #login-form{
     margin-right: 5%;
     padding: 2%;
     width: 400px;
@@ -48,6 +48,10 @@ h4{
     font-size: 20px;
     color: var(--verde_escuro);
 }
+#signinH4{
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+}
 p{
     font-family: "Open Sans";
     font-weight: lighter;
@@ -55,19 +59,19 @@ p{
     color: var(--verde_escuro);
 }
 input{
-    margin: 10px;
+    margin: 7px;
     width: 330px;
     height: 30px;
     border-style: solid;
     border-width: 1;
     border-color: var(--verde_claro);
+    outline: none;
 }
-
-#buttom-link{
+#button-link{
     display: flex;
 }
-#login-buttom,
-#signin-buttom{
+#login-button,
+#signin-button{
     width: 30%;
     height: 3vh;
     background: #004D40;
@@ -80,8 +84,9 @@ input{
     caret-color: transparent;
     outline-style: none;
 }
-#login-buttom :hover{
-    background: var(--verde_claro);
+#login-button:hover,
+#signin-button:hover{
+    background:var(--verde_claro);
 }
 #p-link{
     color: black;

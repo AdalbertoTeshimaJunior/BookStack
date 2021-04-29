@@ -64,20 +64,20 @@
             <p>Encontre seus livros favoritos</p>
             <p>Crie e compartilhe sua estante dos sonhos</p>
         </div>
-        <div class="field" id="register-form">
+        <div class="field" id="login-form">
             <h4>Faça seu Login</h4>
-            <form>
-                <input type="text" placeholder="Email address" id="user-email">
-                <input type="password" placeholder="Password" id="user-password">
-                <div id="buttom-link">
-                    <input href="profile.html" id="login-buttom" name="login" value="ENTRAR"
-                        onclick="logInValidation();">
+            <form action="profile.php" id="loginForm">
+                <input type="text" placeholder="Email address" name="userEmail" id="user-Email">
+                <input type="password" placeholder="Password" name="userPassword" id="user-Password">
+                <div id="button-link">
+                    <input id="login-button" name="login" value="ENTRAR"
+                        onclick="loginValidation();">
                     <p id="p-link">Não possui uma conta? <a href="signin.html"><i>clique aqui</i></a></p>
                 </div>
             </form>
         </div>
     </section>
-
+    <script src="scripts/register.js" type="text/javascript"></script>
 </body>
 
 </html>
