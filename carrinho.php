@@ -52,20 +52,20 @@ if (isset($_COOKIE['carrinho'])) {
             </div>
             <li id="barra-navegacao">
                 <div id="links">
-                    <a>
+                    <a href="index.php">
                         INÍCIO
                     </a>
 
-                    <a>
-                        CATEGORIAS
+                    <a href="store.php">
+                        LOJA
                     </a>
 
-                    <a>
+                    <a href="profile.php">
                         PERFIL
                     </a>
 
-                    <a>
-                        LISTA DE DESEJOS
+                    <a href="bookshelf.php">
+                        ESTANTE<br>DOS SONHOS
                     </a>
                 </div>
             </li>

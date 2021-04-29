@@ -43,12 +43,12 @@
                         LOJA
                     </a>
 
-                    <a>
+                    <a href="profile.php">
                         PERFIL
                     </a>
 
-                    <a>
-                        LISTA DE DESEJOS
+                    <a href="bookshelf.php">
+                        ESTANTE<br>DOS SONHOS
                     </a>
                 </div>
             </li>
@@ -69,8 +69,7 @@
                 <input type="text" placeholder="Email address" name="userEmail" id="user-Email">
                 <input type="password" placeholder="Password" name="userPassword" id="user-Password">
                 <div id="button-link">
-                    <input id="login-button" name="login" value="ENTRAR"
-                        onclick="loginValidation();">
+                    <input id="login-button" name="login" value="ENTRAR" onclick="loginValidation();">
                     <p id="p-link">Não possui uma conta? <a href="signin.php"><i>clique aqui</i></a></p>
                 </div>
             </form>

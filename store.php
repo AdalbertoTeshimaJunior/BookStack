@@ -82,12 +82,12 @@ if (isset($_GET['adicionar'])) {
                         LOJA
                     </a>
 
-                    <a>
+                    <a href="profile.php">
                         PERFIL
                     </a>
 
-                    <a>
-                        LISTA DE DESEJOS
+                    <a href="bookshelf.php">
+                        ESTANTE<br>DOS SONHOS
                     </a>
                 </div>
             </li>

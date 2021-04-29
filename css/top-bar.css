@@ -120,6 +120,7 @@ li#logo-box{
     font-family: 'Open Sans';
     cursor: pointer;
     font-size: 1.3em;
+    text-align: center;
 }
 #links a:hover{
     background-color: var(--verde_escuro);

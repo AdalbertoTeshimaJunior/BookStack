@@ -35,20 +35,20 @@
             </div>
             <li id="barra-navegacao">
                 <div id="links">
-                    <a>
+                    <a href="index.php">
                         INÍCIO
                     </a>
 
-                    <a>
-                        CATEGORIAS
+                    <a href="store.php">
+                        LOJA
                     </a>
 
-                    <a>
+                    <a href="profile.php">
                         PERFIL
                     </a>
 
-                    <a>
-                        LISTA DE DESEJOS
+                    <a href="bookshelf.php">
+                        ESTANTE<br>DOS SONHOS
                     </a>
                 </div>
             </li>
@@ -73,7 +73,7 @@
                     <input type="text" name="email" id="email_input" class="input-area" onchange="validacaoReset(this);">
                     <br>
                     <label>CPF: </label><br>
-                    <input type="number" name="cpf" id="cpf_input" class="input-area" maxlength = "11" onchange="validacaoReset(this);">
+                    <input type="number" name="cpf" id="cpf_input" class="input-area" maxlength="11" onchange="validacaoReset(this);">
                     <br>
                 </article>
 
@@ -137,13 +137,13 @@
                     <div id="cpf-cvv-container">
                         <div id="cpf-div">
                             <label>CPF do Titular: </label><br>
-                            <input type="text" name="cpftitular" id="cpftitular_input" class="input-area" maxlength = "11" onchange="validacaoReset(this);">
+                            <input type="text" name="cpftitular" id="cpftitular_input" class="input-area" maxlength="11" onchange="validacaoReset(this);">
                             <br>
                         </div>
 
                         <div id="cvv-div">
                             <label>CVV: </label><br>
-                            <input type="text" name="cvv" id="cvv_input" class="input-area" maxlength = "3" onchange="validacaoReset(this);">
+                            <input type="text" name="cvv" id="cvv_input" class="input-area" maxlength="3" onchange="validacaoReset(this);">
                             <br>
                         </div>
                     </div>

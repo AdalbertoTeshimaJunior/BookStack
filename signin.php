@@ -27,8 +27,7 @@
                         <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa">
                         <div id="botoes-menu">
                             <li id="Carrinho">
-                                <a id="link-menu" href="carrinho.php"><img id="img-carrinho" src="imagens/carinho.png"
-                                        alt="Carrinho"></a>
+                                <a id="link-menu" href="carrinho.php"><img id="img-carrinho" src="imagens/carinho.png" alt="Carrinho"></a>
                             </li>
                         </div>
                     </div>
@@ -44,12 +43,12 @@
                         LOJA
                     </a>
 
-                    <a>
+                    <a href="profile.php">
                         PERFIL
                     </a>
 
-                    <a>
-                        LISTA DE DESEJOS
+                    <a href="bookshelf.php">
+                        ESTANTE<br>DOS SONHOS
                     </a>
                 </div>
             </li>
@@ -71,8 +70,7 @@
                 <input type="text" placeholder="Email address" name="userEmail" id="user-Email">
                 <input type="password" placeholder="Password" name="userPassword" id="user-Password">
                 <div id="button-link">
-                    <input id="signin-button" name="signin" value="REGISTRAR"
-                        onclick="signinValidation();">
+                    <input id="signin-button" name="signin" value="REGISTRAR" onclick="signinValidation();">
                     <p id="p-link">Já possui uma conta? <a href="login.php"><i>clique aqui</i></a></p>
                 </div>
             </form>
