@@ -39,7 +39,9 @@ if (isset($_GET['adicionar'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Adalberto Teshima, Davi Henrique e Yngredh Cruz">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/storepage.css">
     <link rel="stylesheet" href="css/top-bar.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -98,8 +100,86 @@ if (isset($_GET['adicionar'])) {
     <section>
         <aside>
             <div class="filter">
-                <img src="imagens/ad_banner2.png" alt="as vantagens de ser invisível - nova edição">
-                <img src="imagens/ad_banner.png" alt="fahrenheit 451 - em promoção">
+                <div>
+                    <div class="filter-title">
+                        <p>FILTRAR LIVROS</p>
+                    </div>
+
+                    <div class="filter-button">
+                        <a href="">
+                            <p>TODOS</p>
+                        </a>
+                    </div>
+                    <div class="filter-button">
+                        <a href="">
+                            <p>A - Z</p>
+                        </a>
+                    </div>
+                    <div class="filter-button">
+                        <a href="">
+                            <p>MENOR PREÇO</p>
+                        </a>
+                    </div>
+                    <div class="filter-button">
+                        <a href="">
+                            <p>MAIOR PREÇO</p>
+                        </a>
+                    </div>
+                    <div class="filter-button">
+                        <a href="">
+                            <p>MAIS VENDIDO</p>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="filter-title">
+                        <p>PUBLICAÇÃO</p>
+                    </div>
+
+                    <div class="filter-button">
+                        <a href="">
+                            <p>AUTOR</p>
+                        </a>
+                    </div>
+                    <div class="filter-button">
+                        <a href="">
+                            <p>EDITORA</p>
+                        </a>
+                    </div>
+                    <div class="filter-button">
+                        <a href="">
+                            <p>IDIOMA</p>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="filter-title">
+                        <p>GÊNEROS</p>
+                    </div>
+
+                    <div class="filter-button">
+                        <a href="">
+                            <p>FICÇÃO</p>
+                        </a>
+                    </div>
+                    <div class="filter-button">
+                        <a href="">
+                            <p>CIÊNCIA</p>
+                        </a>
+                    </div>
+                    <div class="filter-button">
+                        <a href="">
+                            <p>LITERATURA</p>
+                        </a>
+                    </div>
+                    <div class="filter-button">
+                        <a href="">
+                            <p>SUSPENSE</p>
+                        </a>
+                    </div>
+                </div>
+                <!-- <img src="imagens/ad_banner2.png" alt="as vantagens de ser invisível - nova edição">
+                <img src="imagens/ad_banner.png" alt="fahrenheit 451 - em promoção"> -->
             </div>
         </aside>
 

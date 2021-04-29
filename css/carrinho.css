@@ -245,3 +245,6 @@ input[type=number]::-webkit-inner-spin-button {
     width: 13%;
     height: 70%;
 }
+#next-button:hover{
+    background-color: #57958A;
+}
