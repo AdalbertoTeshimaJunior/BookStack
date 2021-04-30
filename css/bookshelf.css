@@ -1,0 +1,47 @@
+:root{
+    --verde_escuro: #004D40;
+    --verde_claro: #57958A;
+    --verde_card_back: rgb(98, 166, 151,0.34);
+}
+.shelf{
+    background-color: var(--verde_card_back);
+}
+.grid-shelf{
+    display: grid;
+    grid-template-rows: 500px 500px 500px 500px;
+    grid-template-columns: 400px 400px 400px 400px;
+    column-gap: 1.5%;
+    row-gap: 5%;
+
+    margin-left: 5%;
+    margin-right: 5%;
+
+    height: 100%;
+    align-items: center;
+}
+.shelf-icon{
+    width: 60%;
+    height: 70%;
+    background-color: var(--verde_escuro);
+    margin: 0 auto;
+}
+
+/* >> BOTOES << */
+.shelf-button{
+    display: flex;
+    flex-direction: column;
+}
+.buy-button{
+    background-color: var(--verde_escuro);
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+    margin: 0 auto;
+}
+.remove-button{
+    background-color: var(--verde_escuro);
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+    
+}
