@@ -37,7 +37,6 @@ if (isset($_GET['adicionar'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Adalberto Teshima, Davi Henrique e Yngredh Cruz">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
@@ -98,6 +97,7 @@ if (isset($_GET['adicionar'])) {
     <!-- BARRA SUPERIOR -->
 
     <section>
+        <!-- FILTROS -->
         <aside>
             <div class="filter">
                 <div>
@@ -182,7 +182,8 @@ if (isset($_GET['adicionar'])) {
                 <img src="imagens/ad_banner.png" alt="fahrenheit 451 - em promoção"> -->
             </div>
         </aside>
-
+        <!-- FILTROS -->
+        
         <article class="grid-products">
             <div class="product" id="livro-titulo">
                 <div id="book-container">
@@ -237,8 +238,6 @@ if (isset($_GET['adicionar'])) {
     </footer>
     <!-- FOOTER -->
 </body>
-
-
 </html>
 
 <?php
