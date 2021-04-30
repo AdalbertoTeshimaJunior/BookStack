@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/index.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">~
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Stack</title>
 </head>
@@ -73,67 +73,73 @@
         <div id="imagem-container">
           <img src="imagens/as_vantagens_de_ser_invisivel.jpg" id="livro-imagem">
         </div>
-        <p id="titulo">As Vantagens de Ser nvisível</p>
+        <p id="titulo">As Vantagens de Ser Invisível</p>
         <p id="preco">R$ 41,79</p>
         <div id="button-container">
           <a id="button">Comprar</a>
         </div>
       </div>
+
       <div id="livro">
         <div id="imagem-container">
           <img src="imagens/as_vantagens_de_ser_invisivel.jpg" id="livro-imagem">
         </div>
-        <p id="titulo">As vantagens de ser invisível</p>
+        <p id="titulo">As Vantagens de Ser Invisível</p>
         <p id="preco">R$ 41,79</p>
         <div id="button-container">
           <a id="button">Comprar</a>
         </div>
       </div>
+
       <div id="livro">
         <div id="imagem-container">
           <img src="imagens/as_vantagens_de_ser_invisivel.jpg" id="livro-imagem">
         </div>
-        <p id="titulo">As vantagens de ser invisível</p>
+        <p id="titulo">As Vantagens de Ser Invisível</p>
         <p id="preco">R$ 41,79</p>
         <div id="button-container">
           <a id="button">Comprar</a>
         </div>
       </div>
+
       <div id="livro">
         <div id="imagem-container">
           <img src="imagens/as_vantagens_de_ser_invisivel.jpg" id="livro-imagem">
         </div>
-        <p id="titulo">As vantagens de ser invisível</p>
+        <p id="titulo">As Vantagens de Ser Invisível</p>
         <p id="preco">R$ 41,79</p>
         <div id="button-container">
           <a id="button">Comprar</a>
         </div>
       </div>
+
       <div id="livro">
         <div id="imagem-container">
           <img src="imagens/as_vantagens_de_ser_invisivel.jpg" id="livro-imagem">
         </div>
-        <p id="titulo">As vantagens de ser invisível</p>
+        <p id="titulo">As Vantagens de Ser Invisível</p>
         <p id="preco">R$ 41,79</p>
         <div id="button-container">
           <a id="button">Comprar</a>
         </div>
       </div>
+
       <div id="livro">
         <div id="imagem-container">
           <img src="imagens/as_vantagens_de_ser_invisivel.jpg" id="livro-imagem">
         </div>
-        <p id="titulo">As vantagens de ser invisível</p>
+        <p id="titulo">As Vantagens de Ser Invisível</p>
         <p id="preco">R$ 41,79</p>
         <div id="button-container">
           <a id="button">Comprar</a>
         </div>
       </div>
+
       <div id="livro">
         <div id="imagem-container">
           <img src="imagens/as_vantagens_de_ser_invisivel.jpg" id="livro-imagem">
         </div>
-        <p id="titulo">As vantagens de ser invisível</p>
+        <p id="titulo">As Vantagens de Ser Invisível</p>
         <p id="preco">R$ 41,79</p>
         <div id="button-container">
           <a id="button">Comprar</a>
