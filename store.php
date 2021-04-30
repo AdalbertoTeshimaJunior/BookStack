@@ -178,12 +178,12 @@ if (isset($_GET['adicionar'])) {
                         </a>
                     </div>
                 </div>
-                <!-- <img src="imagens/ad_banner2.png" alt="as vantagens de ser invisível - nova edição">
-                <img src="imagens/ad_banner.png" alt="fahrenheit 451 - em promoção"> -->
+                <img src="imagens/ad_banner2.png" alt="as vantagens de ser invisível - nova edição">
+                <img src="imagens/ad_banner.png" alt="fahrenheit 451 - em promoção">
             </div>
         </aside>
         <!-- FILTROS -->
-        
+
         <article class="grid-products">
             <div class="product" id="livro-titulo">
                 <div id="book-container">
@@ -238,6 +238,7 @@ if (isset($_GET['adicionar'])) {
     </footer>
     <!-- FOOTER -->
 </body>
+
 </html>
 
 <?php
