@@ -5,10 +5,120 @@ body{
 .banner-container{
     width: 100%;
     height: 62%;
-    margin-bottom: 2%;
 }
 .banner-container img{
     height: 100%;
+}
+.lancamentos-container{
+    height: 50%;
+    width: 100%;
+    margin-bottom:2%;
+    margin-top: 2%;
+
+    display: flex;
+    align-items: center;
+}
+.lancamentos-container #botao-esquerdo{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    background-color: rgb(98, 166, 151,0.4);
+    cursor: pointer;
+}
+.lancamentos-container #botao-direito{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    background-color: rgb(98, 166, 151,0.4);
+    cursor: pointer;
+}
+.lancamentos-container #livros-container{
+    height: 100%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.lancamentos-container #livros-container::-webkit-scrollbar {
+    display: none;
+  }
+.lancamentos-container #livros-container #livro{
+    width: 20%;
+    height: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.lancamentos-container #livros-container #livro #titulo{
+    font-size: 22px;
+    font-family: "Open Sans";
+    margin: 0 auto;
+    margin-top: 4%;
+    width: 80%;
+    font-weight: 400;
+    color: black;  
+}
+.lancamentos-container #livros-container #livro #preco{
+    font-size: 28px;
+    font-family: "Segoe UI";
+    margin-top: 2%;
+    font-weight: 700;
+    color: #004D40;
+}
+.lancamentos-container #livro p{
+    text-align: center;
+}
+.lancamentos-container #livro #imagem-container{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+}
+.lancamentos-container #livro #imagem-container img {
+    width: 66%;
+    justify-self: center;
+}
+#button-container{
+    display: flex;
+    width: 100%;
+    height: 8%;
+    justify-content: center;
+}
+#button-container a{
+    width: 45%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: #004D40;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+
+    font-family: "Nunito";
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+
+    border-width: 0;
+    border-style: none;
+    border-color: none;
+    border-image: none;
+}
+#button-container a:hover{
+    background: #57958A;
 }
 .ad-container{
     width: 90%;
