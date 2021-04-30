@@ -59,12 +59,103 @@
         </ul>
     </header>
     <!-- BARRA SUPERIOR -->
-
+    <h1>Estante dos Sonhos</h1>
     <section id="shelf">
         <article class="grid-shelf">
-            <div>
+            <div class="book">
                 <div class="shelf-icon">
-                    <!-- <img src="fahrenheit_451.jpg" alt=""> -->
+                    <img src="imagens/as_vantagens_de_ser_invisivel.jpg" alt="">
+                </div>
+                <div class="shelf-button">
+                    <div class="buy-button"><a href="">
+                            <p>COMPRAR</p>
+                        </a></div>
+                    <div class="remove-button"><a href="">
+                            <p>REMOVER</p>
+                        </a></div>
+                </div>
+            </div>
+            <div class="book">
+                <div class="shelf-icon">
+                    <img src="imagens/as_vantagens_de_ser_invisivel.jpg" alt="">
+                </div>
+                <div class="shelf-button">
+                    <div class="buy-button"><a href="">
+                            <p>COMPRAR</p>
+                        </a></div>
+                    <div class="remove-button"><a href="">
+                            <p>REMOVER</p>
+                        </a></div>
+                </div>
+            </div>
+            <div class="book">
+                <div class="shelf-icon">
+                    <img src="imagens/as_vantagens_de_ser_invisivel.jpg" alt="">
+                </div>
+                <div class="shelf-button">
+                    <div class="buy-button"><a href="">
+                            <p>COMPRAR</p>
+                        </a></div>
+                    <div class="remove-button"><a href="">
+                            <p>REMOVER</p>
+                        </a></div>
+                </div>
+            </div>
+            <div class="book">
+                <div class="shelf-icon">
+                    <img src="imagens/as_vantagens_de_ser_invisivel.jpg" alt="">
+                </div>
+                <div class="shelf-button">
+                    <div class="buy-button"><a href="">
+                            <p>COMPRAR</p>
+                        </a></div>
+                    <div class="remove-button"><a href="">
+                            <p>REMOVER</p>
+                        </a></div>
+                </div>
+            </div>
+            <div class="book">
+                <div class="shelf-icon">
+                    <img src="imagens/as_vantagens_de_ser_invisivel.jpg" alt="">
+                </div>
+                <div class="shelf-button">
+                    <div class="buy-button"><a href="">
+                            <p>COMPRAR</p>
+                        </a></div>
+                    <div class="remove-button"><a href="">
+                            <p>REMOVER</p>
+                        </a></div>
+                </div>
+            </div>
+            <div class="book">
+                <div class="shelf-icon">
+                    <img src="imagens/as_vantagens_de_ser_invisivel.jpg" alt="">
+                </div>
+                <div class="shelf-button">
+                    <div class="buy-button"><a href="">
+                            <p>COMPRAR</p>
+                        </a></div>
+                    <div class="remove-button"><a href="">
+                            <p>REMOVER</p>
+                        </a></div>
+                </div>
+            </div>
+            <div class="book">
+                <div class="shelf-icon">
+                    <img src="imagens/as_vantagens_de_ser_invisivel.jpg" alt="">
+                </div>
+                <div class="shelf-button">
+                    <div class="buy-button"><a href="">
+                            <p>COMPRAR</p>
+                        </a></div>
+                    <div class="remove-button"><a href="">
+                            <p>REMOVER</p>
+                        </a></div>
+                </div>
+            </div>
+            <div class="book">
+                <div class="shelf-icon">
+                    <img src="imagens/as_vantagens_de_ser_invisivel.jpg" alt="">
                 </div>
                 <div class="shelf-button">
                     <div class="buy-button"><a href="">
