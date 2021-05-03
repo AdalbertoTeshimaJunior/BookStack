@@ -62,35 +62,50 @@
     <!-- CONTEÚDO -->
     <section>
 
-        <h3>Meu Perfil</h3>
+        <h3 id="profile_title">Meu Perfil</h3>
+
 
         <article class="profile_block">
-            <button><img src="./imagens/Vector.svg"></button>
 
-            <div class="profile_content">
-                <img src="./imagens/ayaya.svg">
+            <div id="logout">
+                <a href id="logout_button">
+                    <img src="./imagens/Vector.svg">
+                </a>
             </div>
 
-            <div class="profile_content">
-                <h4>DAVI HENRIQUE</h4>
-                <br>
-                <section>
-                    <div class="pcontent_info">
-                        <p>E-MAIL:</p>
-                    </div>
-                    <div class="pcontent_info">
-                        <p>davizindofront@gmail.com</p>
-                    </div>
-                </section>
 
-                <section>
-                    <div class="pcontent_info">
-                        <p>SENHA:</p>
+            <div id="profile_content">
+
+                <div class="content_img">
+                    <div class="frame">
+                        <img src="./imagens/ayaya.svg" id="profile_photo">
                     </div>
-                    <div class="pcontent_info">
-                        <button>Alterar Senha</button>
-                    </div>
-                </section>
+                </div>
+
+                <div class="content_info">
+                    <h4 b>DAVI HENRIQUE</h4>
+                    <br>
+                    <section class="pcontent_info">
+                        <div>
+                            <p>E-MAIL:</p>
+                        </div>
+                        <div>
+                            <p>davizindofront@gmail.com</p>
+                        </div>
+                    </section>
+
+                    <section class="pcontent_info">
+                        <div>
+                            <p>SENHA:</p>
+                        </div>
+                        <div>
+                            <a href>
+                                <p id="change_password">Alterar Senha</p>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+
             </div>
         </article>
 

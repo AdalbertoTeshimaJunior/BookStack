@@ -1,0 +1,88 @@
+#profile_title{
+    width:100%;
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+
+    color: #004D40;
+}
+
+
+
+.profile_block{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    background-color: rgb(98, 166, 151,0.34);
+
+    margin: 0 auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 20px;
+
+    padding: 1.5%;
+}
+
+
+
+    #logout_button{
+        background-color: #C52121;
+        width: 2.5vw;
+        height: 5vh;
+        
+        border-radius: 10px;
+        padding: 0.5%;
+    }
+
+    #logout{
+        display: flex;
+        align-self: flex-end;
+    }
+
+
+
+    #profile_content{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+        #profile_photo{
+            position: relative;
+            top: -4vh;
+            left: 2vw;
+        }
+
+        .frame{
+            max-width: fit-content;
+            max-height: fit-content;
+
+            background-color: #004D40;
+            margin: 5%;
+        }
+
+
+
+        .pcontent_info{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            font-size: 30px;
+        }
+
+        .content_info h4{
+            font-size: 40px;
+            color: #004D40;
+        }
+
+        #change_password{
+            background-color: #004D40;
+            width: fit-content;
+            height: fit-content;
+            
+            border-radius: 5px;
+            padding: 0.5%;
+
+            color: white;
+        }
