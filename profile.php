@@ -99,8 +99,8 @@
                             <p>SENHA:</p>
                         </div>
                         <div>
-                            <a href>
-                                <p id="change_password">Alterar Senha</p>
+                            <a href class="change_password">
+                                <p class="change_password">Alterar Senha</p>
                             </a>
                         </div>
                     </section>

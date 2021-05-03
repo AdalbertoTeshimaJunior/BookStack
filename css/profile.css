@@ -1,3 +1,7 @@
+section{
+    line-height: 3vh;
+}
+
 #profile_title{
     width:100%;
     text-align: center;
@@ -28,11 +32,14 @@
 
     #logout_button{
         background-color: #C52121;
-        width: 2.5vw;
+        width: 3vw;
         height: 5vh;
         
         border-radius: 10px;
-        padding: 0.5%;
+        padding: 10%;
+
+        display: flex;
+        justify-content: center;
     }
 
     #logout{
@@ -76,13 +83,17 @@
             color: #004D40;
         }
 
-        #change_password{
+        .change_password{
+            text-decoration: none;
+        }
+        .change_password p{
             background-color: #004D40;
             width: fit-content;
             height: fit-content;
             
-            border-radius: 5px;
+            border-radius: 10px;
             padding: 0.5%;
 
             color: white;
+            padding: 3%;
         }
