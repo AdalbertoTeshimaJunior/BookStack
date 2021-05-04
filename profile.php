@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/profile.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Stack</title>
 </head>
@@ -83,7 +84,7 @@
                 </div>
 
                 <div class="content_info">
-                    <h4 b>DAVI HENRIQUE</h4>
+                    <h4>DAVI HENRIQUE GONÇALVES</h4>
                     <br>
                     <section class="pcontent_info">
                         <div>
