@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2021 at 07:00 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.2
+-- Tempo de geração: 05-Maio-2021 às 07:47
+-- Versão do servidor: 10.4.17-MariaDB
+-- versão do PHP: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bookstack`
+-- Banco de dados: `bookstack`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `compra`
+-- Estrutura da tabela `compra`
 --
 
 CREATE TABLE `compra` (
@@ -37,7 +37,7 @@ CREATE TABLE `compra` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `desconto`
+-- Estrutura da tabela `desconto`
 --
 
 CREATE TABLE `desconto` (
@@ -49,7 +49,7 @@ CREATE TABLE `desconto` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `favoritos`
+-- Estrutura da tabela `favoritos`
 --
 
 CREATE TABLE `favoritos` (
@@ -61,7 +61,7 @@ CREATE TABLE `favoritos` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `livro`
+-- Estrutura da tabela `livro`
 --
 
 CREATE TABLE `livro` (
@@ -80,10 +80,53 @@ CREATE TABLE `livro` (
   `imagem` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `livro`
+--
+
+INSERT INTO `livro` (`codigo`, `titulo`, `autor`, `editora`, `descricao`, `genero`, `publicacao`, `paginas`, `edicao`, `dimensoes`, `idioma`, `preco`, `imagem`) VALUES
+(137, 'AS VANTAGENS DE SER INVISÍVEL', 'Stephen Chbosky', 'Rocco Jovens Leitores', 'O LIVRO QUE INSPIROU O FILMENOVA EDIÇÃO COM TRECHO INÉDITO Manter-se à margem oferece uma única e passiva perspectiva. Mas, de uma hora para outra, sempre chega o momento de encarar a vida do centro d', 'Drama', '15 agosto 2020', 288, 2, '21.08 x 13.97 x 2.03', 'Português', 40.00, 'imagens/as_vantagens_de_ser_invisivel.jpg'),
+(138, 'A DIVINA COMÉDIA', 'Dante Alighieri', 'Principis', 'A Divina Comédia é um poema clássico da literatura italiana e mundial com características épica e teológica, escrito por Dante Alighieri no século XIV período renascentista e dividido em três partes: ', 'Épico', '18 junho 2020', 720, 1, '23.2 x 16.2 x 4.6 cm', 'Português', 20.00, 'imagens/a_divina_comedia.jpg'),
+(139, 'O CORTIÇO', 'Aluísio Azevedo', 'Principis', 'Pobreza, corrupção, injustiça, traição são elementos integram O cortiço, principal obra do Naturalismo brasileiro. Nela, Aluísio Azevedo denuncia as mazelas sociais enfrentadas pelos moradores de um c', 'Romance', '17 outubro 2019', 224, 3, '22.8 x 15.8 x 0.6 cm', 'Português', 11.80, 'imagens/o_cortico.jpg'),
+(140, 'Mitologia Nórdica', 'Neil Gaiman', 'Intrínseca', 'Uma jornada da origem do universo até o fim do mundo.Quem, além de Neil Gaiman, poderia se tornar cúmplice dos deuses e usar de sua habilidade com as palavras para recontar as histórias dos mitos nórd', 'Mitologia', '13 março 2017', 288, 1, '21.6 x 14 x 2 cm', 'Português', 28.00, 'imagens/mitologia_nordica.jpg'),
+(141, 'O Hobbit', 'J.R.R Tolkien', 'HarperCollins', 'Bilbo Bolseiro era um dos mais respeitáveis hobbits de todo o Condado até que, um dia, o mago Gandalf bate à sua porta. A partir de então, toda sua vida pacata e campestre soprando anéis de fumaça com', 'Fantasia', '15 julho 2019', 336, 1, '22.8 x 15.8 x 0.6 cm', 'Português', 30.00, 'imagens/o_hobbit.jpg'),
+(142, 'O guia definitivo do Mochileiro das Galáxias', 'Douglas Adams', 'Arqueiro', 'Pela primeira vez, reunimos em um único volume os cinco livros da cultuada série O Mochileiro das Galáxias, de Douglas Adams. Com mais de 15 milhões de exemplares vendidos, a saga do britânico esquisi', 'Ficção', '05 maio 2016', 672, 1, '23.4 x 16.4 x 3.8 cm', 'Português', 69.90, 'imagens/guia_definitivo_do_mochileiro_das_galaxias.jpg'),
+(143, 'A Guerra da Rainha Vermelha - Vol. 1', 'Mark Lawrence', 'Darkside', 'Mark Lawrence, um dos autores de fantasia mais consagrados dos últimos anos, expande seu universo fantástico com uma nova e instigante trilogia. A DarkSide Books tem o prazer de apresentar A GUERRA DA', 'Ficção', '03 novembro 2015', 420, 1, '23.4 x 16.2 x 3.2 cm', 'Português', 41.70, 'imagens/a_guerra_da_rainha_vermelha.jpg'),
+(144, 'Box Percy Jackson e os Olimpianos', 'Rick Riordan', 'Intrínseca', 'Combinando mitologia grega e muita aventura, a saga do menino Percy Jackson, que aos 12 anos descobre que é um semideus, filho de Poseidon, tornou-se um fenômeno mundial. Foram mais de 15 milhões de l', 'Mitologia', '31 março 2015', 1816, 1, '21.6 x 13.6 x 9.6 cm', 'Português', 99.99, 'imagens/box_percy_jackson_e_os_olimpianos.jpg'),
+(145, 'O vilarejo', 'Raphael Montes', 'Suma', 'lustrações coloridas dão vida a romance com elementos de horror gótico e suspense. Do criador da série original Netflix Bom dia, Verônica. Em 1589, o padre e demonologista Peter Binsfeld fez a ligação', 'Ficção', '14 agosto 2015', 96, 1, '22.8 x 15.4 x 0.8 cm', 'Português', 22.89, 'imagens/o_vilarejo.jpg'),
+(146, 'Box Trilogia O Senhor dos Anéis', 'J.R.R Tolkien', 'HarperCollins', 'OApesar de ter sido publicado em três volumes – A Sociedade do Anel, As Duas Torres e O Retorno do Rei – desde os anos 1950, O Senhor dos Anéis não é exatamente uma trilogia, mas um único grande roman', 'Fantasia', '25 novembro 2019', 1568, 1, '22.2 x 14.4 x 10.4 c', 'Português', 99.99, 'imagens/box_senhor_dos_aneis.jpg'),
+(147, 'Fahrenheit 451', 'Ray Bradbury', 'Biblioteca Azul', 'Guy Montag é um bombeiro. Sua profissão é atear fogo nos livros. Em um mundo onde as pessoas vivem em função das telas e a literatura está ameaçada de extinção, os livros são objetos proibidos, e seus', 'Ficção', '1 junho 2012', 216, 1, '20.8 x 13.8 x 1.4 cm', 'Português', 21.90, 'imagens/fahrenheit_451.jpg'),
+(148, 'A dança do Universo', 'Marcelo Gleiser', 'Companhia de Bolso', 'O que aconteceu no momento da Criação? Houve um minuto determinado em que o Universo que nos rodeia surgiu? Essas são questões tão antigas como a própria humanidade. Muitos procuram a resposta nos mit', 'Ciência', '9 junho 2006', 416, 3, '17.8 x 12.4 x 2 cm', 'Português', 26.89, 'imagens/a-danca-do-universo.jpg'),
+(149, '1984', 'George Orwell', 'Companhia das Letras', 'Winston, herói de 1984, último romance de George Orwell, vive aprisionado na engrenagem totalitária de uma sociedade completamente dominada pelo Estado, onde tudo é feito coletivamente, mas cada qual ', 'Ficção', '21 Julho 2009', 416, 1, '', 'Português', 21.99, 'imagens/1984.png'),
+(150, 'Vivendo com as estrelas', 'Diulia de Mello', 'Panda Books', 'Depois de ouvir perguntas como “Para que serve a astronomia?”, “Como é o trabalho de um astrônomo?” de vários jovens nas palestras e em seu blog, Mulher das Estrelas, a astrônoma brasileira Duília de ', 'Ciência', '7 agosto 2009', 64, 1, '22.8 x 14.8 x 0.6 cm', 'Português', 20.00, ''),
+(151, 'Cosmos', 'Carl Sagan', 'Companhia das Letras', 'Escrito por um dos maiores divulgadores de ciência do século XX, Cosmos retraça 14 bilhões de anos de evolução cósmica, explorando tópicos como a origem da vida, o cérebro humano, hieróglifos egípcios', 'Ciência', '6 novembro 2017', 560, 2, '21 x 13.6 x 3 cm', 'Português', 48.90, 'imagens/cosmos.jpg'),
+(152, 'Astrofísica para Apressados', 'Neil deGrasse Tyson', 'Planetas', 'Quem nunca olhou para o céu numa noite estrelada e se perguntou: que lugar ocupo no espaço? O que tudo isso significa? Como funciona? Em Astrofísica para apressados, o aclamado astrofísico e pesquisad', 'Ciência', '31 agosto 2020', 192, 2, '21 x 13.6 x 1.4 cm', 'Português', 24.90, 'imagens/astrofisica-para-apressados.png'),
+(153, 'A Simples beleza do inesperado', 'Marcelo Gleiser', 'Record', 'A simples beleza do inesperado é um tributo à natureza, um ensaio sobre a conexão entre o homem e o planeta Terra, e uma exploração do significado da existência – dos átomos ao cosmos, passando pelas ', 'Ciência', '28 outubro 2016', 196, 3, 'A 23 cm / L 15,6 cm ', 'Português', 29.89, 'imagens/a-simples-beleza-do-inesperado.jpg'),
+(154, 'Humano Mais Humano', 'Brian Christian', 'Companhia das Letras', 'O humano mais humano é uma investigação abrangente e fascinante de como computadores estão nos fazendo repensar o papel da humanidade no século XXI. Brian Christian alinha os avanços da inteligência a', 'Ciência', '1 Março de 2013', 368, 1, '14.00 X 21.00 cm / 0', 'Português', 45.90, 'imagens/humanomaishumano.jpg'),
+(155, 'Cidade dos Ossos (Vol.1 Os Instrumentos Mortais)', 'Cassandra Clare', 'Galera', 'Clary Fray, 15 anos, decide passar a noite em uma boate em Nova York. O maior de seus problemas provavelmente seria lidar com o truculento segurança da porta, certo? Errado. Clary testemunha um crime,', 'Infantojuvenil', '1 Janeiro 2016', 462, 51, '22.8 x 15.4 x 2.6 cm', 'Português', 31.90, ''),
+(156, 'Cidade das Cinzas (Vol.2 Os Instrumentos Mortais)', 'Cassandra Clare', 'Galera', 'Nesta sequência de tirar o fôlego, Cassandra Clare atrai seus leitores de volta às garras sombrias do submundo de Nova York, onde o amor nunca é seguro e o poder se torna a tentação mais mortal. Clary', 'Infantojuvenil', '1 Janeiro 2014', 406, 20, '22.8 x 15.6 x 2.4 cm', 'Português', 31.90, ''),
+(157, 'Cidade de Vidro (Vol.3 Os Instrumentos Mortais)', 'Cassandra Clare', 'Galera', 'Nesse terceiro volume da inesquecível saga Os instrumentos mortais, o amor é um pecado mortal e os segredos do passado serão decisivos.Para salvar a vida de sua mãe, Clary deve viajar até a Cidade de ', 'Infantojuvenil', '1 Janeiro 2014', 476, 14, '22.8 x 15.2 x 3 cm', 'Português', 29.00, ''),
+(158, 'Cidade dos Anjos Caídos (Vol.4 Os Instrumentos Mortais)', 'Cassandra Clare', 'Galera', 'O quarto volume da série Os Instrumentos Mortais, fenômeno mundial de vendas Amor. Sangue. Traição. Vingança. As apostas e os riscos são mais altos que nunca na Cidade dos Anjos Caídos. Neste imperdív', 'Infantojuvenil', '1 Janeiro 2014', 476, 13, '22.6 x 15.2 x 2 cm', 'Português', 34.00, ''),
+(159, 'Cidade das Almas Perdidas (Vol.5 Os Instrumentos Mortais)', 'Cassandra Clare', 'Galera', 'O quinto volume da série best-seller Os Instrumentos Mortais, de Cassandra Clare. Depois ser apresentada ao Mundo de Sombras e a Jace ― um Caçador que tem a aparência de um anjo, mas a língua tão afia', 'Infantojuvenil', '1 Janeiro 2014', 434, 7, '22.8 x 15.6 x 2.6 cm', 'Português', 37.90, ''),
+(160, 'Cidade das Fogo Celestial (Vol.6 Os Instrumentos Mortais)', 'Cassandra Clare', 'Galera', 'O sexto volume da série best-seller Os Instrumentos Mortais, de Cassandra Clare, Caçador de Sombras contra Caçador de Sombras. Irmão contra irmã. Alianças quebradas. Morte, sangue, icor demoníaco. Seb', 'Infantojuvenil', '11 Junho 2014', 532, 18, '22.86 x 15.49 x 3.3 ', 'Português', 25.00, ''),
+(161, 'Assassinato no Expresso do Oriente', 'Agatha Christie', 'HarperCollins', 'Em meio a uma viagem, Hercule Poirot é surpreendido por um telegrama solicitando seu retorno a Londres. Então, o famoso detetive belga embarca no Expresso do Oriente, que está inesperadamente cheio pa', 'Misterio', '9 março 2020', 240, 1, '21.4 x 14.2 x 2 cm', 'Português', 39.49, ''),
+(162, 'Inferno', 'Dan Brown', 'Editora Arqueiro', 'Inferno é uma leitura eletrizante e um convite a pensarmos no papel da ciência para o futuro da humanidade. Autor de suspense mais popular da atualidade, com mais de 150 milhões de livros vendidos, Da', 'Misterio', '19 setembro 2016', 448, 2, '22.8 x 15.4 x 2.6 cm', 'Português', 14.20, ''),
+(163, 'O Símbolo Perdido', 'Dan Brown', 'Editora Arqueiro', 'Robert Langdon, o célebre simbologista de Harvard, é convidado por seu amigo e mentor Peter Solomon – eminente maçom e filantropo – a dar uma palestra no Capitólio dos Estados Unidos. Ao chegar lá, de', 'Misterio', '15 janeiro 2021', 640, 1, '20 x 13.4 x 4 cm', 'Português', 17.95, ''),
+(164, 'Morte no Nilo', 'Agatha Christie', 'Agatha Christie', 'A tranquilidade de um cruzeiro de luxo pelo Nilo chega ao fim quando o corpo de Linnet Doyle, uma bela e jovem milionária, é descoberto em sua cabine. Porém, para azar do autor do crime, o brilhante d', 'Misterio', '15 setembro 2020', 320, 1, '13.5 x 0.7 x 20.8 cm', 'Português', 26.90, ''),
+(165, 'A Garota do Lago', 'Charlie Donlea', 'Faro Editorial', 'Summit Lake, uma pequena cidade entre montanhas, é esse tipo de lugar, bucólico e com encantadoras casas dispostas à beira de um longo trecho de água intocada.Duas semanas atrás, a estudante de direit', 'Misterio', '1 janeiro 2017', 296, 1, '22.4 x 15.6 x 2.8 cm', 'Português', 8.30, ''),
+(166, 'O Homem de Giz', 'C. J. TUDOR', 'Intrínseca', 'Em 1986, Eddie e os amigos passam a maior parte dos dias andando de bicicleta pela pacata vizinhança em busca de aventuras. Os desenhos a giz são seu código secreto: homenzinhos rabiscados no asfalto;', 'Misterio', '15 março 2018', 272, 1, '23.6 x 16 x 2 cm', 'Português', 32.79, ''),
+(167, 'Eu sei o que você está pensando', 'John Verdon', 'Editora Arqueiro', 'De forma magistral,Verdon mantém seu protagonista sempre um passo à frente do leitor. E cria o tipo de mistério que faria Sherlock Holmes perder o sono.” - The New York Times Eu sei o que você está pe', 'Misterio', '15 julho 2011', 352, 1, '22.6 x 15.8 x 1.8 cm', 'Português', 49.90, ''),
+(168, '20 mil léguas submarinas', 'Jules Verne', 'Clássicos Zahar', 'Em 20 mil léguas submarinas, o leitor é transportado para 1866, ano em que navios de diferentes nacionalidades começam a naufragar e sofrer misteriosas avarias. As descrições revelam que um ser compri', 'Ficção', '14 novembro 2011', 456, 1, '23.6 x 16.4 x 3 cm', 'Português', 46.73, ''),
+(169, 'Viagem ao centro da Terra', 'Jules Verne', 'Clássicos Zahar', 'Em 1863 o renomado professor Otto Lidenbrock, geólogo e mineralogista, descobre uma mensagem cifrada descrevendo uma viagem ao centro da Terra. É o quanto basta para o impetuoso cientista se lançar na', 'Ficção', '14 abril 2016', 240, 1, '23.4 x 16.4 x 1.8 cm', 'Português', 52.00, ''),
+(170, 'Eu, Robô', 'Isaac Asimov', 'Editora Aleph', 'Eu, Robô é um conjunto de nove contos que relatam a evolução dos autômatos através do tempo. É neste livro que são apresentadas as célebres Três Leis da Robótica: os princípios que regem o comportamen', 'Ficcao Cientifica', '24 novembro 2014', 320, 1, '21 x 13.8 x 2 cm', 'Português', 54.90, ''),
+(171, 'Edgar Allan Poe - Medo Clássico', 'Edgar Allan Poe', 'Darkside', 'É meia-noite. As asas de um corvo se misturam à escuridão. A velha casa em ruínas observa com janelas que pareciam olhos. Você jura ouvir a voz de alguém que já partiu para o outro lado, bem na hora e', '[Horror, Literatura]', '2 fevereiro 2017', 384, 1, '23.4 x 16.2 x 3.2 cm', 'Português', 64.90, ''),
+(172, 'A Arte da Guerra', 'SUN TZU', 'Novo Século', 'O que faz de um tratado militar, escrito por volta de 500 a.C., manter-se atual a ponto de ser publicado praticamente no mundo todo até os dias de hoje? Você verá que, em A arte da guerra, as estratég', 'Educacao', '20 maio 2015', 158, 1, '24.2 x 16.2 x 2 cm', 'Português', 29.93, ''),
+(173, 'Box Sherlock Holmes', 'Arthur Conan Doyle', 'HarperCollins', 'Em 1887, o escritor escocês sir Arthur Conan Doyle criou Sherlock Holmes, o infalível detetive a quem os agentes da Scotland Yard recorriam para solucionar os mistérios mais intrigantes da Inglaterra ', 'Misterio', '1 junho 2019', 1808, 1, '24.4 x 16.6 x 11.2 c', 'Português', 74.90, '');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -107,7 +150,21 @@ CREATE TABLE `usuario` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `utiliza`
+-- Estrutura da tabela `usuário`
+--
+
+CREATE TABLE `usuário` (
+  `CÓDIGO` int(4) NOT NULL,
+  `NOME` varchar(50) NOT NULL,
+  `EMAIL` varchar(50) NOT NULL,
+  `CPF` char(11) DEFAULT NULL,
+  `TELEFONE` int(9) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tabela de usuários';
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `utiliza`
 --
 
 CREATE TABLE `utiliza` (
@@ -118,43 +175,51 @@ CREATE TABLE `utiliza` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indexes for dumped tables
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `compra`
+-- Índices para tabela `compra`
 --
 ALTER TABLE `compra`
   ADD PRIMARY KEY (`valor_total`,`codigo_usuario`,`codigo_livro`),
   ADD KEY `codigo_usuario` (`codigo_usuario`);
 
 --
--- Indexes for table `desconto`
+-- Índices para tabela `desconto`
 --
 ALTER TABLE `desconto`
   ADD PRIMARY KEY (`codigo`);
 
 --
--- Indexes for table `favoritos`
+-- Índices para tabela `favoritos`
 --
 ALTER TABLE `favoritos`
   ADD PRIMARY KEY (`codigo_livro`,`codigo_usuario`,`data_adicao`),
   ADD KEY `codigo_usuario` (`codigo_usuario`);
 
 --
--- Indexes for table `livro`
+-- Índices para tabela `livro`
 --
 ALTER TABLE `livro`
   ADD PRIMARY KEY (`codigo`);
 
 --
--- Indexes for table `usuario`
+-- Índices para tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`codigo`);
 
 --
--- Indexes for table `utiliza`
+-- Índices para tabela `usuário`
+--
+ALTER TABLE `usuário`
+  ADD PRIMARY KEY (`CÓDIGO`),
+  ADD UNIQUE KEY `EMAIL` (`EMAIL`),
+  ADD UNIQUE KEY `CPF` (`CPF`);
+
+--
+-- Índices para tabela `utiliza`
 --
 ALTER TABLE `utiliza`
   ADD PRIMARY KEY (`valor_total`,`codigo_usuario`,`codigo_livro`,`codigo_desconto`),
@@ -163,46 +228,46 @@ ALTER TABLE `utiliza`
   ADD KEY `codigo_desconto` (`codigo_desconto`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `desconto`
+-- AUTO_INCREMENT de tabela `desconto`
 --
 ALTER TABLE `desconto`
   MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `livro`
+-- AUTO_INCREMENT de tabela `livro`
 --
 ALTER TABLE `livro`
-  MODIFY `codigo` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `codigo` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
 
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for dumped tables
+-- Restrições para despejos de tabelas
 --
 
 --
--- Constraints for table `compra`
+-- Limitadores para a tabela `compra`
 --
 ALTER TABLE `compra`
   ADD CONSTRAINT `compra_ibfk_1` FOREIGN KEY (`codigo_usuario`) REFERENCES `usuario` (`codigo`);
 
 --
--- Constraints for table `favoritos`
+-- Limitadores para a tabela `favoritos`
 --
 ALTER TABLE `favoritos`
   ADD CONSTRAINT `favoritos_ibfk_1` FOREIGN KEY (`codigo_livro`) REFERENCES `livro` (`codigo`),
   ADD CONSTRAINT `favoritos_ibfk_2` FOREIGN KEY (`codigo_usuario`) REFERENCES `usuario` (`codigo`);
 
 --
--- Constraints for table `utiliza`
+-- Limitadores para a tabela `utiliza`
 --
 ALTER TABLE `utiliza`
   ADD CONSTRAINT `utiliza_ibfk_1` FOREIGN KEY (`valor_total`) REFERENCES `compra` (`valor_total`),
