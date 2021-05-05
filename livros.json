@@ -177,7 +177,11 @@
             "paginas": 416,
             "dimensoes": "17.8 x 12.4 x 2 cm",
             "preco": 26.89,
+<<<<<<< HEAD
             "foto": "",
+=======
+            "foto": "imagens/a-danca-do-universo.jpg",
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "genero": "Ciência"
         },
         {
@@ -209,8 +213,12 @@
             "preco": 20.00,
             "foto": "",
             "genero": "Ciência"
+<<<<<<< HEAD
         },
         {
+=======
+        },{
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "id": "27",
             "titulo": "Cosmos",
             "descricao": "Escrito por um dos maiores divulgadores de ciência do século XX, Cosmos retraça 14 bilhões de anos de evolução cósmica, explorando tópicos como a origem da vida, o cérebro humano, hieróglifos egípcios, missões espaciais, a morte do sol, a evolução das galáxias e as forças e indivíduos que ajudaram a moldar a ciência moderna. Numa prosa transparente, Carl Sagan revela os segredos do planeta azul habitado por uma forma de vida que apenas começa a descobrir sua própria identidade e a se aventurar no vasto oceano do espaço sideral.",
@@ -222,10 +230,16 @@
             "paginas": 560,
             "dimensoes": "21 x 13.6 x 3 cm",
             "preco": 48.90,
+<<<<<<< HEAD
             "foto": "",
             "genero": "Ciência"
         },
         {
+=======
+            "foto": "imagens/cosmos.jpg",
+            "genero": "Ciência"
+        },{
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "id": "28",
             "titulo": "Astrofísica para Apressados",
             "descricao": "Quem nunca olhou para o céu numa noite estrelada e se perguntou: que lugar ocupo no espaço? O que tudo isso significa? Como funciona? Em Astrofísica para apressados, o aclamado astrofísico e pesquisador Neil deGrasse Tyson responde a essas e outras perguntas que certamente todos já fizeram sobre o universo. De forma clara e sucinta, Tyson traduz o cosmos numa obra organizada em capítulos enxutos, escritos para quem tem pressa, mas que oferecem conhecimentos fundamentais sobre todas as principais ideias e descobertas relacionadas ao universo. Um guia para todos aqueles que apreciam ciência, astrofísica e se interessam pelos mistérios do espaço universal, tão bem revelado ao público por este autor best-seller.",
@@ -237,6 +251,7 @@
             "paginas": 192,
             "dimensoes": "21 x 13.6 x 1.4 cm",
             "preco": 24.90,
+<<<<<<< HEAD
             "foto": "",
             "genero": "Ciência"
         },
@@ -256,6 +271,25 @@
             "genero": "Ciência"
         },
         {
+=======
+            "foto": "imagens/astrofisica-para-apressados.png",
+            "genero": "Ciência"
+        },{
+          "id": "29",
+          "titulo": "A Simples beleza do inesperado",
+          "descricao": "A simples beleza do inesperado é um tributo à natureza, um ensaio sobre a conexão entre o homem e o planeta Terra, e uma exploração do significado da existência – dos átomos ao cosmos, passando pelas trutas.",
+          "editora": "Record",
+          "publicacao": "28 outubro 2016",
+          "autor": "Marcelo Gleiser",
+          "idioma": "Português",
+          "edicao": 3,
+          "paginas": 196,
+          "dimensoes": "A 23 cm / L 15,6 cm / P 1,1 cm / 270 gr",
+          "preco": 29.89,
+          "foto": "imagens/a-simples-beleza-do-inesperado.jpg",
+          "genero": "Ciência"
+        },{
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "id": "30",
             "titulo": "Humano Mais Humano",
             "descricao": "O humano mais humano é uma investigação abrangente e fascinante de como computadores estão nos fazendo repensar o papel da humanidade no século XXI. Brian Christian alinha os avanços da inteligência artificial aos solavancos da interação social para questionar: em uma era de máquinas inteligentes, o que significa ser humano?",
@@ -267,10 +301,16 @@
             "paginas": 368,
             "dimensoes": "14.00 X 21.00 cm / 0.446 kg",
             "preco": 45.90,
+<<<<<<< HEAD
             "foto": "",
             "genero": "Ciência"
         },
         {
+=======
+            "foto": "imagens/humanomaishumano.jpg",
+            "genero": "Ciência"
+        },{
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "id": "31",
             "titulo": "Cidade dos Ossos (Vol.1 Os Instrumentos Mortais)",
             "descricao": "Clary Fray, 15 anos, decide passar a noite em uma boate em Nova York. O maior de seus problemas provavelmente seria lidar com o truculento segurança da porta, certo? Errado. Clary testemunha um crime, e não um crime qualquer: um assassinato cometido por três adolescentes cobertos por enigmáticas tatuagens, brandindo armas esquisitas.",
@@ -278,14 +318,23 @@
             "publicacao": "1 Janeiro 2016",
             "autor": "Cassandra Clare",
             "idioma": "Português",
+<<<<<<< HEAD
             "edicao": 51,
+=======
+            "edicao":51,
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "paginas": 462,
             "dimensoes": "22.8 x 15.4 x 2.6 cm",
             "preco": 31.90,
             "foto": "",
+<<<<<<< HEAD
             "genero": "Infantojuvenil"
         },
         {
+=======
+	        "genero":"Infantojuvenil"
+        },{
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "id": "32",
             "titulo": "Cidade das Cinzas (Vol.2 Os Instrumentos Mortais)",
             "descricao": "Nesta sequência de tirar o fôlego, Cassandra Clare atrai seus leitores de volta às garras sombrias do submundo de Nova York, onde o amor nunca é seguro e o poder se torna a tentação mais mortal. Clary Fray só queria que sua vida voltasse ao normal. Mas o que é 'normal' quando você é uma Caçadora de Sombras assassina de demônios, sua mãe está em um coma magicamente induzido e você de repente descobre que criaturas como lobisomens, vampiros e fadas realmente existem?",
@@ -293,14 +342,23 @@
             "publicacao": "1 Janeiro 2014",
             "autor": "Cassandra Clare",
             "idioma": "Português",
+<<<<<<< HEAD
             "edicao": 20,
+=======
+            "edicao":20,
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "paginas": 406,
             "dimensoes": "22.8 x 15.6 x 2.4 cm",
             "preco": 31.90,
             "foto": "",
+<<<<<<< HEAD
             "genero": "Infantojuvenil"
         },
         {
+=======
+            "genero":"Infantojuvenil"
+        },{
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "id": "33",
             "titulo": "Cidade de Vidro (Vol.3 Os Instrumentos Mortais)",
             "descricao": "Nesse terceiro volume da inesquecível saga Os instrumentos mortais, o amor é um pecado mortal e os segredos do passado serão decisivos.Para salvar a vida de sua mãe, Clary deve viajar até a Cidade de Vidro, lar ancestral dos Caçadores de Sombras - podemos pular a regra que diz que entrar em Alicante sem permissão é contra a lei e ir contra a lei pode significar a morte?",
@@ -308,14 +366,23 @@
             "publicacao": "1 Janeiro 2014",
             "autor": "Cassandra Clare",
             "idioma": "Português",
+<<<<<<< HEAD
             "edicao": 14,
+=======
+            "edicao":14,
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "paginas": 476,
             "dimensoes": "22.8 x 15.2 x 3 cm",
             "preco": 29.00,
             "foto": "",
+<<<<<<< HEAD
             "genero": "Infantojuvenil"
         },
         {
+=======
+            "genero":"Infantojuvenil"
+        },{
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "id": "34",
             "titulo": "Cidade dos Anjos Caídos (Vol.4 Os Instrumentos Mortais)",
             "descricao": "O quarto volume da série Os Instrumentos Mortais, fenômeno mundial de vendas Amor. Sangue. Traição. Vingança. As apostas e os riscos são mais altos que nunca na Cidade dos Anjos Caídos. Neste imperdível volume da série Os instrumentos Mortais, acompanhamos os últimos meses na vida de Clary. Demônios, um ex-caçador de sombras com jeito de supervilão - detalhe: seu pai -, um triângulo amoroso com o melhor amigo (a quem pode inadvertidamente ter ajudado a transformar em vampiro) e um conflito entre dimensões. Mas agora a guerra chegou ao fim, e a garota voltou a Nova York para aperfeiçoar seus poderes e assistir ao casamento da mãe.",
@@ -323,14 +390,23 @@
             "publicacao": "1 Janeiro 2014",
             "autor": "Cassandra Clare",
             "idioma": "Português",
+<<<<<<< HEAD
             "edicao": 13,
+=======
+            "edicao":13,
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "paginas": 476,
             "dimensoes": "22.6 x 15.2 x 2 cm",
             "preco": 34.00,
             "foto": "",
+<<<<<<< HEAD
             "genero": "Infantojuvenil"
         },
         {
+=======
+            "genero":"Infantojuvenil"
+        },{
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "id": "35",
             "titulo": "Cidade das Almas Perdidas (Vol.5 Os Instrumentos Mortais)",
             "descricao": "O quinto volume da série best-seller Os Instrumentos Mortais, de Cassandra Clare. Depois ser apresentada ao Mundo de Sombras e a Jace ― um Caçador que tem a aparência de um anjo, mas a língua tão afiada quanto Lúcifer ―, Clary Fray só queria que sua vida voltasse ao normal.",
@@ -338,14 +414,23 @@
             "publicacao": "1 Janeiro 2014",
             "autor": "Cassandra Clare",
             "idioma": "Português",
+<<<<<<< HEAD
             "edicao": 7,
+=======
+            "edicao":7,
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "paginas": 434,
             "dimensoes": "22.8 x 15.6 x 2.6 cm",
             "preco": 37.90,
             "foto": "",
+<<<<<<< HEAD
             "genero": "Infantojuvenil"
         },
         {
+=======
+            "genero":"Infantojuvenil"
+        },{
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "id": "36",
             "titulo": "Cidade das Fogo Celestial (Vol.6 Os Instrumentos Mortais)",
             "descricao": "O sexto volume da série best-seller Os Instrumentos Mortais, de Cassandra Clare, Caçador de Sombras contra Caçador de Sombras. Irmão contra irmã. Alianças quebradas. Morte, sangue, icor demoníaco. Sebastian Morgenstern espalha o terror pelo universo dos Nephilim e, ainda, pelo Submundo. Nada parece segurar sua sede de poder.",
@@ -353,14 +438,23 @@
             "publicacao": "11 Junho 2014",
             "autor": "Cassandra Clare",
             "idioma": "Português",
+<<<<<<< HEAD
             "edicao": 18,
+=======
+            "edicao":18,
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "paginas": 532,
             "dimensoes": "22.86 x 15.49 x 3.3 cm",
             "preco": 25.00,
             "foto": "",
+<<<<<<< HEAD
             "genero": "Infantojuvenil"
         },
         {
+=======
+            "genero":"Infantojuvenil"
+        },{
+>>>>>>> 7e859a94f72aa4162fee10e6bf1f34e4e8631c63
             "id": "11",
             "titulo": "Assassinato no Expresso do Oriente",
             "genero": "Misterio",
