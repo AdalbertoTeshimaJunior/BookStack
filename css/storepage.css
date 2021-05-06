@@ -16,7 +16,6 @@ section{
 aside{
     display: block;
     width: 20%;
-    justify-self: bas;
 }
 
 /* > FILTERS < */
@@ -61,27 +60,27 @@ a{
 /* >> ARTICLE << */
 .grid-products{
     display: grid;
-    grid-template-rows: 400px 400px 400px 400px;
+    grid-auto-rows: 48vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 1.5%;
-    row-gap: 5%;
     width: 80%;
-    height: 100%;
+    margin-top: 3vw;
     align-items: center;
 }
 article .product{
-    height: 80%;
+    height: 100%;
 }
 article .product #book-container{
     display: flex;
     width: 100%;
-    height: 80%;
+    height: 60%;
     align-items: center;
     justify-content: center;
+    margin-top: 5%;
 }
 article .product img{
-    width: 50%;
-    height: 80%;
+    width: 60%;
+    height: 90%;
 }
 article .product #titulo{
     margin-top: 0%;
@@ -90,14 +89,17 @@ article .product #titulo{
     font-family: "Open Sans";
     font-weight: 400;
     color: black;  
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 article .product #book-price{
-    margin-top: 10%;
-    margin-bottom: 5%;
     font-size: 24px;
     font-family: "Segoe UI";
     font-weight: 700;
     color: #004D40;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-bottom: 2%;
 }
 article .product p{
     text-align: center;
@@ -105,11 +107,11 @@ article .product p{
 article .product #button-container{
     display: flex;
     width: 100%;
-    height: 30%;
+    height: 20%;
     justify-content: center;
 }
 article .product #button-container a{
-    width: 45%;
+    width: 60%;
     height: 50%;
     display: flex;
     justify-content: center;

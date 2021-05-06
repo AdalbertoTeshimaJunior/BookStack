@@ -1,3 +1,8 @@
+:root{
+    --verde_escuro: #004D40;
+    --verde_claro: #57958A;
+    --verde_card_back: rgb(98, 166, 151,0.34);
+}
 section{
     line-height: 3vh;
 
@@ -6,21 +11,23 @@ section{
 
 #profile_title{
     width:100%;
+    margin-block-start: 0.8em;
+    margin-block-end: 0.8em;
+
     text-align: center;
+    font-family: 'Open Sans';
     font-style: normal;
-    font-weight: 500;
-    font-size: 64px;
+    font-weight: 600;
+    font-size: 50px;
 
-    color: #004D40;
+    color: var(--verde_escuro);
 }
-
-
 
 .profile_block{
     display: flex;
     flex-direction: column;
     flex-grow: 2;
-    background-color: rgb(98, 166, 151,0.34);
+    background-color: var(--verde_card_back);
 
     margin: 0 auto;
     margin-left: 10%;
@@ -29,8 +36,6 @@ section{
 
     padding: 1.5%;
 }
-
-
 
     #logout_button{
         background-color: #C52121;
@@ -48,14 +53,14 @@ section{
         display: flex;
         align-self: flex-end;
     }
-
-
+    #logout_button:hover{
+        background-color: #D44949;
+    }
 
     #profile_content{
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
-
 
         #profile_photo{
             position: relative;
@@ -67,35 +72,46 @@ section{
             max-width: fit-content;
             max-height: fit-content;
 
-            background-color: #004D40;
+            background-color: var(--verde_escuro);
             margin: 5%;
         }
-
-
+        .frame img{
+            border: 1px solid #000000;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+        }
 
         .pcontent_info{
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 0.5fr 0.5fr;
 
             font-size: 30px;
+            font-family: 'Open Sans';
         }
 
         .content_info h4{
-            font-size: 40px;
-            color: #004D40;
+            font-size: 45px;
+            font-family: 'Open Sans';
+            font-weight: 700;
+
+            margin-block-end: 0.5em;
+            color: var(--verde_escuro);
         }
 
         .change_password{
             text-decoration: none;
         }
         .change_password p{
-            background-color: #004D40;
+            background-color: var(--verde_escuro);
             width: fit-content;
             height: fit-content;
+
+            font-family: 'Open Sans';
             
             border-radius: 10px;
             padding: 0.5%;
-
             color: white;
             padding: 3%;
+        }
+        .change_password:hover{
+            background-color: var(--verde_claro);
         }

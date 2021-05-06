@@ -8,8 +8,11 @@ h1{
     text-align: center;
     font-style: normal;
     font-weight: 500;
-    font-size: 64px;
+    font-size: 50px;
+    font-family: 'Open Sans';
 
+    margin-block-start: 0.5em;
+    margin-block-end: 0;
     color: #004D40;
 }
 
@@ -26,7 +29,7 @@ h1{
 }
 .grid-shelf{
     display: grid;
-    grid-template-rows: 50vh;
+    grid-auto-rows: 54vh;
     grid-template-columns: 25% 25% 25% 25%;
     height: 90%;
     width: 100%;
@@ -48,6 +51,7 @@ h1{
     width: 90%;
     height: 100%;
     box-shadow: -10px 10px 0 var(--verde_escuro);
+    border: 1px solid #000000;
 }
 
 /* >> BOTOES << */
@@ -55,8 +59,8 @@ h1{
     display: flex;
     flex-direction: column;
     
-    margin-top:3%;
-    height: 40%;
+    margin-top: 6%;
+    height: 30%;
 }
 .buy-button{
     background-color: var(--verde_escuro);
@@ -70,6 +74,9 @@ h1{
     margin: 0 auto;
     margin-bottom: 2%;
 }
+.buy-button:hover{
+    background-color: var(--verde_claro);
+}
 .buy-button a{
     text-decoration: none;
     color: white;
@@ -77,6 +84,10 @@ h1{
     width: 100%;
     text-align: center;
     font-size: large;
+}
+.buy-button p{
+    font-family: 'Nunito';
+    font-size: 28px;
 }
 .remove-button{
     background-color: #C52121;;
@@ -91,9 +102,16 @@ h1{
     justify-items: center;
     align-items: center;
 }
+.remove-button:hover{
+    background-color: #D44949;
+}
 .remove-button a{
     text-decoration: none;
     width: 100%;
     color: white;
     text-align: center;
+}
+.remove-button p{
+    font-family: 'Nunito';
+    font-size: 20px;
 }
