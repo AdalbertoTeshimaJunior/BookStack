@@ -373,7 +373,7 @@
             "paginas": 240,
             "dimensoes": "21.4 x 14.2 x 2 cm",
             "preco": 39.49,
-            "foto": ""
+            "foto": "imagens/Expresso_Oriente.jpg"
         },
         {
             "id": "12",
@@ -388,7 +388,7 @@
             "paginas": 448,
             "dimensoes": "22.8 x 15.4 x 2.6 cm",
             "preco": 14.20,
-            "foto": ""
+            "foto": "imagens/Inferno.jpg"
         },
         {
             "id": "13",
@@ -403,7 +403,7 @@
             "paginas": 640,
             "dimensoes": "20 x 13.4 x 4 cm",
             "preco": 17.95,
-            "foto": ""
+            "foto": "imagens/Simbolo_Perdido.jpg"
         },
         {
             "id": "14",
@@ -418,7 +418,7 @@
             "paginas": 320,
             "dimensoes": "13.5 x 0.7 x 20.8 cm",
             "preco": 26.90,
-            "foto": ""
+            "foto": "imagens/Morte_Nilo.jpg"
         },
         {
             "id": "15",
@@ -433,7 +433,7 @@
             "paginas": 296,
             "dimensoes": "22.4 x 15.6 x 2.8 cm",
             "preco": 8.30,
-            "foto": ""
+            "foto": "imagens/Garota_Lago.jfif"
         },
         {
             "id": "16",
@@ -448,7 +448,7 @@
             "paginas": 272,
             "dimensoes": "23.6 x 16 x 2 cm",
             "preco": 32.79,
-            "foto": ""
+            "foto": "imagens/Homem_Giz.jpg"
         },
         {
             "id": "17",
@@ -463,7 +463,7 @@
             "paginas": 352,
             "dimensoes": "22.6 x 15.8 x 1.8 cm",
             "preco": 49.90,
-            "foto": ""
+            "foto": "imagens/Sei_Pensando.jpg"
         },
         {
             "id": "18",
@@ -478,7 +478,7 @@
             "paginas": 456,
             "dimensoes": "23.6 x 16.4 x 3 cm",
             "preco": 46.73,
-            "foto": ""
+            "foto": "imagens/20mil_Leguas.jfif"
         },
         {
             "id": "19",
@@ -493,7 +493,7 @@
             "paginas": 240,
             "dimensoes": "23.4 x 16.4 x 1.8 cm",
             "preco": 52.00,
-            "foto": ""
+            "foto": "imagens/Centro_Terra.jfif"
         },
         {
             "id": "20",
@@ -508,7 +508,7 @@
             "paginas": 320,
             "dimensoes": "21 x 13.8 x 2 cm",
             "preco": 54.90,
-            "foto": ""
+            "foto": "imagens/EuRobo.jfif"
         },
         {
             "id": "21",
@@ -523,7 +523,7 @@
             "paginas": 384,
             "dimensoes": "23.4 x 16.2 x 3.2 cm",
             "preco": 64.90,
-            "foto": ""
+            "foto": "imagens/Medo_Classico.jpg"
         },
         {
             "id": "22",
@@ -538,7 +538,7 @@
             "paginas": 158,
             "dimensoes": "24.2 x 16.2 x 2 cm",
             "preco": 29.93,
-            "foto": ""
+            "foto": "imagens/Arte_Guerra.jpg"
         },
         {
             "id": "23",
@@ -553,7 +553,97 @@
             "paginas": 1808,
             "dimensoes": "24.4 x 16.6 x 11.2 cm",
             "preco": 74.90,
-            "foto": ""
+            "foto": "imagens/Sherlock.jpg"
+        },
+        {
+            "id": "24",
+            "titulo": "MAZE RUNNER: Correr ou morrer",
+            "genero": "Misterio",
+            "descricao": "Ao acordar dentro de um escuro elevador em movimento, a única coisa que Thomas consegue lembrar é de seu nome. Sua memória está completamente apagada. Mas ele não está sozinho. Quando a caixa metálica chega a seu destino e as portas se abrem, Thomas se vê rodeado por garotos que o acolhem e o apresentam A Clareira, um espaço aberto cercado por muros gigantescos. Assim como Thomas, nenhum deles sabe como foi parar ali, nem por quê. Sabem apenas que todas as manhãs as portas de pedra do Labirinto que os cerca se abrem, e, à noite, se fecham. E que a cada trinta dias um novo garoto é entregue pelo elevador. Porém, um fato altera de forma radical a rotina do lugar - chega uma garota, a primeira enviada à Clareira. E mais surpreendente ainda é a mensagem que ela traz consigo. Thomas será mais importante do que imagina, mas para isso terá de descobrir os sombrios segredos guardados em sua mente.",
+            "editora": "Vergara & Riba",
+            "publicacao": "1 janeiro 2010",
+            "autor": "James Dashner",
+            "idioma": "Português",
+            "edicao": 1,
+            "paginas": 428,
+            "dimensoes": "8.27 x 5.59 x 1.18 cm",
+            "preco": 176.84,
+            "foto": "imagens/mazeRunner.jpg"
+        },
+        {
+            "id": "25",
+            "titulo": "Batman - A Piada Mortal - Volume 1",
+            "genero": "Fantasia",
+            "descricao": "Do premiado roteirista Alan Moore (Watchmen, V de Vingança) conta como um dia ruim na vida de um homem pode significar a linha que separa a sanidade da loucura. Principalmente quando se trata do Coringa, o maior e mais conhecido vilão do mundo dos quadrinhos. Os desenhos de Brian Bolland (Camelot 3000), um dos maiores ilustradores dos quadrinhos, elevaram a história praticamente à perfeição retratando com maestria o mundo imaginado por Alan Moore. Mas faltava um detalhe para completar a obra. Bolland não pôde colorir a edição original, e agora, vinte anos depois, isso foi corrigido e as cores foram completamente refeitas pelo artista, seguindo fielmente a sua imaginação. Edição obrigatória para os fãs do Coringa, do Batman e dos quadrinhos.",
+            "editora": "Panini",
+            "publicacao": "1 janeiro 2015",
+            "autor": "Alan Moore",
+            "idioma": "Português",
+            "edicao": 1,
+            "paginas": 80,
+            "dimensoes": "10.47 x 6.85 x 0.39 cm",
+            "preco": 39.90,
+            "foto": "imagens/aPiadaMortal.jpg"
+        },
+        {
+            "id": "26",
+            "titulo": "Solo Leveling - Volume 01",
+            "genero": "Fantasia",
+            "descricao": "Um grande fenômeno um dia aconteceu, portais desconhecidos surgiram ligando o mundo que conhecemos a uma realidade totalmente extraordinária de monstros e seres fantasiosos, cujo único objetivo era matar humanos. Em resposta a esse novo perigo, surgiram os “Caçadores”, humanos que foram “despertados” e ganharam poderes capazes de bater de frente com essas criaturas. Dentre eles, há um conhecido por ser “a pior arma da humanidade”, Sung Jin-woo. Mas sua sorte irá mudar quando uma incursão que deveria ser fácil se torna um verdadeiro pesadelo.",
+            "editora": "NewPOP",
+            "publicacao": "1 janeiro 2020",
+            "autor": "Chugong",
+            "idioma": "Português",
+            "edicao": 1,
+            "paginas": 320,
+            "dimensoes": "8.19 x 5.59 x 0.39 cm",
+            "preco": 152.38,
+            "foto": "imagens/soloLeveling.jpg"
+        },
+        {
+            "id": "27",
+            "titulo": "Love Is War: Kaguya Sama - Vol. 1",
+            "genero": "Fantasia",
+            "descricao": "Família e aparência impecáveis!! No Colégio Shuchiin, onde os prodígios do amanhã são reunidos para estudar!! Foi lá que Kaguya Shinomiya, vice-presidente da Associação Estudantil, e Miyuki Shirogane, o presidente, se conheceram e passaram a sentir atração um pelo outro. Mas… meio ano se passou e nada aconteceu!! Os dois têm orgulho forte e obstinação e adquiriram a enfadonha mania de pensar sempre em como fazer para que o outro confesse seus sentimentos! Vai ser divertido acompanhar como esse romance evolui!! Que comece essa nova comédia romântica em forma de batalha de intelectos!!",
+            "editora": "Panini",
+            "publicacao": "20 fevereiro 2021",
+            "autor": "Aka Akasaka",
+            "idioma": "Português",
+            "edicao": 1,
+            "paginas": 320,
+            "dimensoes": "19.8 x 13.6 x 1.4 cm",
+            "preco": 23.92,
+            "foto": "imagens/loveIsWar.jpg"
+        },
+        {
+            "id": "0",
+            "titulo": "Berserk - Volume 1",
+            "genero": "Fantasia",
+            "descricao": "Berserk é uma série de mangá escrita e ilustrada por Kentaro Miura. Situado em um mundo de fantasia sombria inspirado na Europa medieval, a história gira em torno do solitário Guts, um ex-mercenário e agora um espadachim amaldiçoado e forçado a vagar sem descanso para sobreviver e buscar vingança, e Griffith, o líder de um bando de mercenários chamado de 'Bando do Falcão'. Temas de isolamento, traição, a ilusão do livre-arbítrio, autopreservação e a questão de se a humanidade é fundamentalmente boa ou má permeiam a história, explorando o melhor e o pior lado da natureza humana.",
+            "editora": "Panini",
+            "publicacao": "1 maio 2005",
+            "autor": "Kentaro Miura",
+            "idioma": "Português",
+            "edicao": 1,
+            "paginas": 130,
+            "dimensoes": "13 x 1.78 x 18.31 cm",
+            "preco": 149.99,
+            "foto": "imagens/berserk.jpg"
+        },
+        {
+            "id": "29",
+            "titulo": "Guerra Civil",
+            "genero": "Fantasia",
+            "descricao": "Nessa versão em prosa da graphic novel, Stuart Moore adapta uma das histórias mais famosas do universo Marvel para um livro de tirar o fôlego. Homem de Ferro e Capitão América são dois membros essenciais para os Vingadores, a maior equipe de super-heróis do mundo. Quando uma trágica batalha deixa um buraco na cidade de Stamford, matando centenas de pessoas, o governo americano exige que todos os super-heróis revelem sua identidade e registrem seus poderes. Para Tony Stark – o Homem de Ferro – é um passo lamentável, porém necessário, o que o leva a apoiar a lei. Para o Capitão América, é uma intolerável agressão à liberdade cívica. Assim começa a Guerra Civil.",
+            "editora": "Novo Século",
+            "publicacao": "January 1 2015",
+            "autor": "Stuart Moore",
+            "idioma": "Português",
+            "edicao": 1,
+            "paginas": 320,
+            "dimensoes": "21.4 x 13.8 x 2.4 cm",
+            "preco": 23.90,
+            "foto": "imagens/guerraCivil.jpg"
         }
     ]
 }
