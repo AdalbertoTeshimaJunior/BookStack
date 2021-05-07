@@ -30,8 +30,8 @@ section{
     background-color: var(--verde_card_back);
 
     margin: 0 auto;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
     border-radius: 20px;
 
     padding: 1.5%;
@@ -39,8 +39,8 @@ section{
 
     #logout_button{
         background-color: #C52121;
-        width: 3vw;
-        height: 5vh;
+        width: 2vw;
+        height: 3vh;
         
         border-radius: 10px;
         padding: 10%;
@@ -67,25 +67,30 @@ section{
             top: -4vh;
             left: 2vw;
         }
-
         .frame{
             max-width: fit-content;
             max-height: fit-content;
 
-            background-color: var(--verde_escuro);
             margin: 5%;
         }
         .frame img{
-            border: 1px solid #000000;
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: -25px 25px 0 var(--verde_escuro);
+
+            max-width: 90%;
+            max-height: 90%;
         }
 
         .pcontent_info{
             display: grid;
-            grid-template-columns: 0.5fr 0.5fr;
+            grid-template-columns: 30% 1fr;
 
             font-size: 30px;
             font-family: 'Open Sans';
+        }
+
+        .pcontent_info div{
+            display: flex;
+            align-items: center;
         }
 
         .content_info h4{
@@ -99,7 +104,9 @@ section{
 
         .change_password{
             text-decoration: none;
+            width: 100%;
         }
+
         .change_password p{
             background-color: var(--verde_escuro);
             width: fit-content;
@@ -112,6 +119,6 @@ section{
             color: white;
             padding: 3%;
         }
-        .change_password:hover{
+        .change_password p:hover{
             background-color: var(--verde_claro);
         }
