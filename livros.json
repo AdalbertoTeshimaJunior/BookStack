@@ -166,7 +166,7 @@
             "genero": "Ficção"
         },
         {
-            "id": "24",
+            "id": "11",
             "titulo": "A dança do Universo",
             "descricao": "O que aconteceu no momento da Criação? Houve um minuto determinado em que o Universo que nos rodeia surgiu? Essas são questões tão antigas como a própria humanidade. Muitos procuram a resposta nos mitos e na religião. Outros nas teorias científicas. Em A dança do Universo, o físico Marcelo Gleiser mostra em linguagem clara que esses dois enfoques não são tão distantes quanto imaginamos, apresentando versões de diversas culturas para o mistério da Criação, até desembocar na explicação da ciência moderna para o surgimento do Universo.",
             "editora": "Companhia de Bolso",
@@ -181,7 +181,7 @@
             "genero": "Ciência"
         },
         {
-            "id": "25",
+            "id": "12",
             "titulo": "1984",
             "descricao": "Winston, herói de 1984, último romance de George Orwell, vive aprisionado na engrenagem totalitária de uma sociedade completamente dominada pelo Estado, onde tudo é feito coletivamente, mas cada qual vive sozinho. Ninguém escapa à vigilância do Grande Irmão, a mais famosa personificação literária de um poder cínico e cruel ao infinito, além de vazio de sentido histórico. De fato, a ideologia do Partido dominante em Oceânia não visa nada de coisa alguma para ninguém, no presente ou no futuro. OBrien, hierarca do Partido, é quem explica a Winston que  só nos interessa o poder em si. Nem riqueza, nem luxo, nem vida longa, nem felicidade: só o poder pelo poder, poder puro .",
             "editora": "Companhia das Letras",
@@ -196,7 +196,7 @@
             "genero": "Ficção"
         },
         {
-            "id": "26",
+            "id": "13",
             "titulo": "Vivendo com as estrelas",
             "descricao": "Depois de ouvir perguntas como “Para que serve a astronomia?”, “Como é o trabalho de um astrônomo?” de vários jovens nas palestras e em seu blog, Mulher das Estrelas, a astrônoma brasileira Duília de Mello resolveu contar neste livro a sua trajetória profissional, que começou na adolescência com o sonho de desvendar o Universo, e chegou à Nasa, a Agência Espacial Norte-Americana. A autora fala do dia a dia de um astrônomo, explica quais cursos fazer para se tornar um profissional da área e divide com os leitores sua grande descoberta: a supernova SN1997D, entre várias outras novidades.",
             "editora": "Panda Books",
@@ -211,7 +211,7 @@
             "genero": "Ciência"
         },
         {
-            "id": "27",
+            "id": "14",
             "titulo": "Cosmos",
             "descricao": "Escrito por um dos maiores divulgadores de ciência do século XX, Cosmos retraça 14 bilhões de anos de evolução cósmica, explorando tópicos como a origem da vida, o cérebro humano, hieróglifos egípcios, missões espaciais, a morte do sol, a evolução das galáxias e as forças e indivíduos que ajudaram a moldar a ciência moderna. Numa prosa transparente, Carl Sagan revela os segredos do planeta azul habitado por uma forma de vida que apenas começa a descobrir sua própria identidade e a se aventurar no vasto oceano do espaço sideral.",
             "editora": "Companhia das Letras",
@@ -226,7 +226,7 @@
             "genero": "Ciência"
         },
         {
-            "id": "28",
+            "id": "15",
             "titulo": "Astrofísica para Apressados",
             "descricao": "Quem nunca olhou para o céu numa noite estrelada e se perguntou: que lugar ocupo no espaço? O que tudo isso significa? Como funciona? Em Astrofísica para apressados, o aclamado astrofísico e pesquisador Neil deGrasse Tyson responde a essas e outras perguntas que certamente todos já fizeram sobre o universo. De forma clara e sucinta, Tyson traduz o cosmos numa obra organizada em capítulos enxutos, escritos para quem tem pressa, mas que oferecem conhecimentos fundamentais sobre todas as principais ideias e descobertas relacionadas ao universo. Um guia para todos aqueles que apreciam ciência, astrofísica e se interessam pelos mistérios do espaço universal, tão bem revelado ao público por este autor best-seller.",
             "editora": "Planetas",
@@ -241,7 +241,7 @@
             "genero": "Ciência"
         },
         {
-            "id": "29",
+            "id": "16",
             "titulo": "A Simples beleza do inesperado",
             "descricao": "A simples beleza do inesperado é um tributo à natureza, um ensaio sobre a conexão entre o homem e o planeta Terra, e uma exploração do significado da existência – dos átomos ao cosmos, passando pelas trutas.",
             "editora": "Record",
@@ -256,7 +256,7 @@
             "genero": "Ciência"
         },
         {
-            "id": "30",
+            "id": "17",
             "titulo": "Humano Mais Humano",
             "descricao": "O humano mais humano é uma investigação abrangente e fascinante de como computadores estão nos fazendo repensar o papel da humanidade no século XXI. Brian Christian alinha os avanços da inteligência artificial aos solavancos da interação social para questionar: em uma era de máquinas inteligentes, o que significa ser humano?",
             "editora": "Companhia das Letras",
@@ -271,7 +271,7 @@
             "genero": "Ciência"
         },
         {
-            "id": "31",
+            "id": "18",
             "titulo": "Cidade dos Ossos (Vol.1 Os Instrumentos Mortais)",
             "descricao": "Clary Fray, 15 anos, decide passar a noite em uma boate em Nova York. O maior de seus problemas provavelmente seria lidar com o truculento segurança da porta, certo? Errado. Clary testemunha um crime, e não um crime qualquer: um assassinato cometido por três adolescentes cobertos por enigmáticas tatuagens, brandindo armas esquisitas.",
             "editora": "Galera",
@@ -286,7 +286,7 @@
             "genero": "Infantojuvenil"
         },
         {
-            "id": "32",
+            "id": "19",
             "titulo": "Cidade das Cinzas (Vol.2 Os Instrumentos Mortais)",
             "descricao": "Nesta sequência de tirar o fôlego, Cassandra Clare atrai seus leitores de volta às garras sombrias do submundo de Nova York, onde o amor nunca é seguro e o poder se torna a tentação mais mortal. Clary Fray só queria que sua vida voltasse ao normal. Mas o que é  normal  quando você é uma Caçadora de Sombras assassina de demônios, sua mãe está em um coma magicamente induzido e você de repente descobre que criaturas como lobisomens, vampiros e fadas realmente existem?",
             "editora": "Galera",
@@ -301,7 +301,7 @@
             "genero": "Infantojuvenil"
         },
         {
-            "id": "33",
+            "id": "20",
             "titulo": "Cidade de Vidro (Vol.3 Os Instrumentos Mortais)",
             "descricao": "Nesse terceiro volume da inesquecível saga Os instrumentos mortais, o amor é um pecado mortal e os segredos do passado serão decisivos.Para salvar a vida de sua mãe, Clary deve viajar até a Cidade de Vidro, lar ancestral dos Caçadores de Sombras - podemos pular a regra que diz que entrar em Alicante sem permissão é contra a lei e ir contra a lei pode significar a morte?",
             "editora": "Galera",
@@ -316,7 +316,7 @@
             "genero": "Infantojuvenil"
         },
         {
-            "id": "34",
+            "id": "21",
             "titulo": "Cidade dos Anjos Caídos (Vol.4 Os Instrumentos Mortais)",
             "descricao": "O quarto volume da série Os Instrumentos Mortais, fenômeno mundial de vendas Amor. Sangue. Traição. Vingança. As apostas e os riscos são mais altos que nunca na Cidade dos Anjos Caídos. Neste imperdível volume da série Os instrumentos Mortais, acompanhamos os últimos meses na vida de Clary. Demônios, um ex-caçador de sombras com jeito de supervilão - detalhe: seu pai -, um triângulo amoroso com o melhor amigo (a quem pode inadvertidamente ter ajudado a transformar em vampiro) e um conflito entre dimensões. Mas agora a guerra chegou ao fim, e a garota voltou a Nova York para aperfeiçoar seus poderes e assistir ao casamento da mãe.",
             "editora": "Galera",
@@ -331,7 +331,7 @@
             "genero": "Infantojuvenil"
         },
         {
-            "id": "35",
+            "id": "22",
             "titulo": "Cidade das Almas Perdidas (Vol.5 Os Instrumentos Mortais)",
             "descricao": "O quinto volume da série best-seller Os Instrumentos Mortais, de Cassandra Clare. Depois ser apresentada ao Mundo de Sombras e a Jace ― um Caçador que tem a aparência de um anjo, mas a língua tão afiada quanto Lúcifer ―, Clary Fray só queria que sua vida voltasse ao normal.",
             "editora": "Galera",
@@ -346,7 +346,7 @@
             "genero": "Infantojuvenil"
         },
         {
-            "id": "36",
+            "id": "23",
             "titulo": "Cidade das Fogo Celestial (Vol.6 Os Instrumentos Mortais)",
             "descricao": "O sexto volume da série best-seller Os Instrumentos Mortais, de Cassandra Clare, Caçador de Sombras contra Caçador de Sombras. Irmão contra irmã. Alianças quebradas. Morte, sangue, icor demoníaco. Sebastian Morgenstern espalha o terror pelo universo dos Nephilim e, ainda, pelo Submundo. Nada parece segurar sua sede de poder.",
             "editora": "Galera",
@@ -361,7 +361,7 @@
             "genero": "Infantojuvenil"
         },
         {
-            "id": "11",
+            "id": "24",
             "titulo": "Assassinato no Expresso do Oriente",
             "genero": "Misterio",
             "descricao": "Em meio a uma viagem, Hercule Poirot é surpreendido por um telegrama solicitando seu retorno a Londres. Então, o famoso detetive belga embarca no Expresso do Oriente, que está inesperadamente cheio para aquela época do ano. Pouco tempo após a meia-noite, o excesso de neve nos trilhos obriga o trem a parar. Na manhã seguinte, o corpo de um dos passageiros é encontrado, golpeado por múltiplas facadas. Com os passageiros isolados por conta da neve, e tendo um assassino entre eles, a única solução é que Poirot inicie uma investigação para descobrir quem é o criminoso ― antes que se faça mais uma vítima.",
@@ -376,7 +376,7 @@
             "foto": "imagens/Expresso_Oriente.jpg"
         },
         {
-            "id": "12",
+            "id": "25",
             "titulo": "Inferno",
             "genero": "Misterio",
             "descricao": "Inferno é uma leitura eletrizante e um convite a pensarmos no papel da ciência para o futuro da humanidade. Autor de suspense mais popular da atualidade, com mais de 150 milhões de livros vendidos, Dan Brown nos leva por uma viagem pela cultura, pela arte e pela literatura italianas, passando por lugares como a Galleria degli Uffizi, o Duomo de Florença e a Basílica de São Marcos. No meio da noite, o renomado simbologista Robert Langdon acorda de um pesadelo, num hospital. Desorientado e com um ferimento à bala na cabeça, ele não tem a menor ideia de como foi parar ali. Ao olhar pela janela e reconhecer a silhueta do Palazzo Vecchio, em Florença, Langdon tem um choque. Ele nem se lembra de ter deixado os Estados Unidos. Na verdade, não tem nenhuma recordação das últimas 36 horas. Quando um novo atentado contra a sua vida acontece dentro do hospital, Langdon se vê obrigado a fugir e, para isso, conta apenas com a ajuda da jovem médica Sienna Brooks. De posse de um macabro objeto que Sienna encontrou no paletó de Langdon, os dois têm que seguir uma série inquietante de códigos criada por uma mente brilhante, obcecada tanto pelo fim do mundo quanto por uma das maiores obras-primas literárias de todos os tempos: A Divina Comédia, de Dante Alighieri.",
@@ -391,7 +391,7 @@
             "foto": "imagens/Inferno.jpg"
         },
         {
-            "id": "13",
+            "id": "26",
             "titulo": "O Símbolo Perdido",
             "genero": "Misterio",
             "descricao": "Robert Langdon, o célebre simbologista de Harvard, é convidado por seu amigo e mentor Peter Solomon – eminente maçom e filantropo – a dar uma palestra no Capitólio dos Estados Unidos. Ao chegar lá, descobre que caiu numa armadilha: não há palestra, Solomon está desaparecido e, ao que parece, correndo perigo.",
@@ -406,7 +406,7 @@
             "foto": "imagens/Simbolo_Perdido.jpg"
         },
         {
-            "id": "14",
+            "id": "27",
             "titulo": "Morte no Nilo",
             "genero": "Misterio",
             "descricao": "A tranquilidade de um cruzeiro de luxo pelo Nilo chega ao fim quando o corpo de Linnet Doyle, uma bela e jovem milionária, é descoberto em sua cabine. Porém, para azar do autor do crime, o brilhante detetive Hercule Poirot está a bordo. Ele logo descobre que cada passageiro é suspeito, pois todos tinham motivos para tirar a vida de Linnet. Em um rio de mentiras, Poirot precisa descobrir a verdade sobre esse estranho assassinato.",
@@ -421,7 +421,7 @@
             "foto": "imagens/Morte_Nilo.jpg"
         },
         {
-            "id": "15",
+            "id": "28",
             "titulo": "A Garota do Lago",
             "genero": "Misterio",
             "descricao": "Summit Lake, uma pequena cidade entre montanhas, é esse tipo de lugar, bucólico e com encantadoras casas dispostas à beira de um longo trecho de água intocada.Duas semanas atrás, a estudante de direito Becca Eckersley foi brutalmente assassinada em uma dessas casas. Filha de um poderoso advogado, Becca estava no auge de sua vida. Atraída instintivamente pela notícia, a repórter Kelsey Castle vai até a cidade para investigar o caso. ...E LOGO SE ESTABELECE UMA CONEXÃO ÍNTIMA QUANDO UM VIVO CAMINHA NAS MESMAS PEGADAS DOS MORTOS...E enquanto descobre sobre as amizades de Becca, sua vida amorosa e os segredos que ela guardava, a repórter fica cada vez mais convencida de que a verdade sobre o que aconteceu com Becca pode ser a chave para superar as marcas sombrias de seu próprio passado.",
@@ -436,7 +436,7 @@
             "foto": "imagens/Garota_Lago.jfif"
         },
         {
-            "id": "16",
+            "id": "29",
             "titulo": "O Homem de Giz",
             "genero": "Misterio",
             "descricao": "Em 1986, Eddie e os amigos passam a maior parte dos dias andando de bicicleta pela pacata vizinhança em busca de aventuras. Os desenhos a giz são seu código secreto: homenzinhos rabiscados no asfalto; mensagens que só eles entendem. Mas um desenho misterioso leva o grupo de crianças até um corpo desmembrado e espalhado em um bosque. Depois disso, nada mais é como antes.",
@@ -451,7 +451,7 @@
             "foto": "imagens/Homem_Giz.jpg"
         },
         {
-            "id": "17",
+            "id": "30",
             "titulo": "Eu sei o que você está pensando",
             "genero": "Misterio",
             "descricao": "De forma magistral,Verdon mantém seu protagonista sempre um passo à frente do leitor. E cria o tipo de mistério que faria Sherlock Holmes perder o sono.” - The New York Times Eu sei o que você está pensando propõe um enigma que parece insolúvel. Um homem recebe pelo correio uma carta provocadora que termina da seguinte forma: “Se alguém lhe dissesse para pensar em um número, sei em que número você pensaria. Não acredita? Vou provar. Pense em qualquer número de um a mil. Agora veja como conheço seus segredos.” O destinatário, Mark Mellery, pensa no número 658 e, ao abrir um envelope que acompanha a mensagem, descobre que o autor da carta previu corretamente o número que ele acabara de escolher de modo aleatório. Como isso seria possível?",
@@ -466,7 +466,7 @@
             "foto": "imagens/Sei_Pensando.jpg"
         },
         {
-            "id": "18",
+            "id": "31",
             "titulo": "20 mil léguas submarinas",
             "genero": "Ficção",
             "descricao": "Em 20 mil léguas submarinas, o leitor é transportado para 1866, ano em que navios de diferentes nacionalidades começam a naufragar e sofrer misteriosas avarias. As descrições revelam que um ser comprido, fusiforme, fosforescente em certas ocasiões, infinitamente maior e mais veloz que uma baleia seria o responsável. Imediatamente, governantes e homens da ciência mobilizam-se para deter o misterioso monstro marinho. A missão, porém, não sai como esperado. Os responsáveis pela expedição são capturados pelo capitão Nemo, enigmático e problemático, criador do moderno submarino Náutilus, confundido com o tal monstro misterioso. A aventura só começou. A trupe vai viajar pelo fundo do mar, enfrentando águas remotas, criaturas das profundezas e uma fauna e flora exuberantes.",
@@ -481,7 +481,7 @@
             "foto": "imagens/20mil_Leguas.jfif"
         },
         {
-            "id": "19",
+            "id": "32",
             "titulo": "Viagem ao centro da Terra",
             "genero": "Ficção",
             "descricao": "Em 1863 o renomado professor Otto Lidenbrock, geólogo e mineralogista, descobre uma mensagem cifrada descrevendo uma viagem ao centro da Terra. É o quanto basta para o impetuoso cientista se lançar na mesma aventura - levando consigo o sobrinho Axel, colega de profissão mas defensor de diferentes teorias científicas, e o impassível Hans, guia que se mostrará indispensável para a empreitada e seu espantoso desfecho!",
@@ -496,7 +496,7 @@
             "foto": "imagens/Centro_Terra.jfif"
         },
         {
-            "id": "20",
+            "id": "33",
             "titulo": "Eu, Robô",
             "genero": "Ficção",
             "descricao": "Eu, Robô é um conjunto de nove contos que relatam a evolução dos autômatos através do tempo. É neste livro que são apresentadas as célebres Três Leis da Robótica: os princípios que regem o comportamento dos robôs e que mudaram definitivamente a percepção que se tem sobre eles na própria ciência. Eu, Robô inicia-se com uma entrevista com a Dra. Susan Calvin, uma psicóloga roboticista da U.S Robots & Mechanical. Ela é o fio condutor da obra, responsável por contar os relatos de seu trabalho e também da evolução dos autômatos. Algumas histórias são mais leves e emocionantes como Robbie, o robô baba, outras, como Razão, levam o leitor a refletir sobre religião e até sobre sua condição humana.",
@@ -511,7 +511,7 @@
             "foto": "imagens/EuRobo.jfif"
         },
         {
-            "id": "21",
+            "id": "34",
             "titulo": "Edgar Allan Poe - Medo Clássico",
             "genero": "[Horror, Literatura]",
             "descricao": "É meia-noite. As asas de um corvo se misturam à escuridão. A velha casa em ruínas observa com janelas que pareciam olhos. Você jura ouvir a voz de alguém que já partiu para o outro lado, bem na hora em que um gato preto cruza seu caminho.Tudo o que hoje conhecemos como terror começou a ganhar forma na obra de Edgar Allan Poe. Genial e maldito, Poe é considerado o mestre dos mestres da literatura fantástica.",
@@ -526,7 +526,7 @@
             "foto": "imagens/Medo_Classico.jpg"
         },
         {
-            "id": "22",
+            "id": "35",
             "titulo": "A Arte da Guerra",
             "genero": "Educacao",
             "descricao": "O que faz de um tratado militar, escrito por volta de 500 a.C., manter-se atual a ponto de ser publicado praticamente no mundo todo até os dias de hoje? Você verá que, em A arte da guerra, as estratégias transmitidas pelo general chinês Sun Tzu carregam um profundo conhecimento da natureza humana. Elas transcendem os limites dos campos de batalha e alcançam o contexto das pequenas ou grandes lutas cotidianas, sejam em ambientes competitivos – como os do mundo corporativo – sejam nos desafios internos, em que temos de encarar nossas próprias dificuldades. Se você não conhece a si mesmo nem o inimigo, sucumbirá a todas as batalhas.",
@@ -541,7 +541,7 @@
             "foto": "imagens/Arte_Guerra.jpg"
         },
         {
-            "id": "23",
+            "id": "36",
             "titulo": "Box Sherlock Holmes",
             "genero": "Misterio",
             "descricao": "Em 1887, o escritor escocês sir Arthur Conan Doyle criou Sherlock Holmes, o infalível detetive a quem os agentes da Scotland Yard recorriam para solucionar os mistérios mais intrigantes da Inglaterra vitoriana. Desde então, as aventuras do mestre da investigação atraem leitores ávidos por chegar à última página e ver o enigma desvendado. Esta obra completa reúne os quatro romances e os 56 contos sobre as aventuras do detetive mais famoso do mundo e de seu fiel companheiro, o dr. Watson. Para desvendar mistérios, o faro e a astúcia de Sherlock Holmes levam às fontes menos óbvias, às informações mais precisas. Um modelo que influencia até hoje a literatura policial e revela fôlego para impressionar gerações de leitores através dos tempos.",
@@ -556,7 +556,7 @@
             "foto": "imagens/Sherlock.jpg"
         },
         {
-            "id": "24",
+            "id": "37",
             "titulo": "MAZE RUNNER: Correr ou morrer",
             "genero": "Misterio",
             "descricao": "Ao acordar dentro de um escuro elevador em movimento, a única coisa que Thomas consegue lembrar é de seu nome. Sua memória está completamente apagada. Mas ele não está sozinho. Quando a caixa metálica chega a seu destino e as portas se abrem, Thomas se vê rodeado por garotos que o acolhem e o apresentam A Clareira, um espaço aberto cercado por muros gigantescos. Assim como Thomas, nenhum deles sabe como foi parar ali, nem por quê. Sabem apenas que todas as manhãs as portas de pedra do Labirinto que os cerca se abrem, e, à noite, se fecham. E que a cada trinta dias um novo garoto é entregue pelo elevador. Porém, um fato altera de forma radical a rotina do lugar - chega uma garota, a primeira enviada à Clareira. E mais surpreendente ainda é a mensagem que ela traz consigo. Thomas será mais importante do que imagina, mas para isso terá de descobrir os sombrios segredos guardados em sua mente.",
@@ -571,7 +571,7 @@
             "foto": "imagens/mazeRunner.jpg"
         },
         {
-            "id": "25",
+            "id": "38",
             "titulo": "Batman - A Piada Mortal - Volume 1",
             "genero": "Fantasia",
             "descricao": "Do premiado roteirista Alan Moore (Watchmen, V de Vingança) conta como um dia ruim na vida de um homem pode significar a linha que separa a sanidade da loucura. Principalmente quando se trata do Coringa, o maior e mais conhecido vilão do mundo dos quadrinhos. Os desenhos de Brian Bolland (Camelot 3000), um dos maiores ilustradores dos quadrinhos, elevaram a história praticamente à perfeição retratando com maestria o mundo imaginado por Alan Moore. Mas faltava um detalhe para completar a obra. Bolland não pôde colorir a edição original, e agora, vinte anos depois, isso foi corrigido e as cores foram completamente refeitas pelo artista, seguindo fielmente a sua imaginação. Edição obrigatória para os fãs do Coringa, do Batman e dos quadrinhos.",
@@ -586,7 +586,7 @@
             "foto": "imagens/aPiadaMortal.jpg"
         },
         {
-            "id": "26",
+            "id": "39",
             "titulo": "Solo Leveling - Volume 01",
             "genero": "Fantasia",
             "descricao": "Um grande fenômeno um dia aconteceu, portais desconhecidos surgiram ligando o mundo que conhecemos a uma realidade totalmente extraordinária de monstros e seres fantasiosos, cujo único objetivo era matar humanos. Em resposta a esse novo perigo, surgiram os “Caçadores”, humanos que foram “despertados” e ganharam poderes capazes de bater de frente com essas criaturas. Dentre eles, há um conhecido por ser “a pior arma da humanidade”, Sung Jin-woo. Mas sua sorte irá mudar quando uma incursão que deveria ser fácil se torna um verdadeiro pesadelo.",
@@ -601,7 +601,7 @@
             "foto": "imagens/soloLeveling.jpg"
         },
         {
-            "id": "27",
+            "id": "40",
             "titulo": "Love Is War: Kaguya Sama - Vol. 1",
             "genero": "Fantasia",
             "descricao": "Família e aparência impecáveis!! No Colégio Shuchiin, onde os prodígios do amanhã são reunidos para estudar!! Foi lá que Kaguya Shinomiya, vice-presidente da Associação Estudantil, e Miyuki Shirogane, o presidente, se conheceram e passaram a sentir atração um pelo outro. Mas… meio ano se passou e nada aconteceu!! Os dois têm orgulho forte e obstinação e adquiriram a enfadonha mania de pensar sempre em como fazer para que o outro confesse seus sentimentos! Vai ser divertido acompanhar como esse romance evolui!! Que comece essa nova comédia romântica em forma de batalha de intelectos!!",
@@ -616,7 +616,7 @@
             "foto": "imagens/loveIsWar.jpg"
         },
         {
-            "id": "0",
+            "id": "41",
             "titulo": "Berserk - Volume 1",
             "genero": "Fantasia",
             "descricao": "Berserk é uma série de mangá escrita e ilustrada por Kentaro Miura. Situado em um mundo de fantasia sombria inspirado na Europa medieval, a história gira em torno do solitário Guts, um ex-mercenário e agora um espadachim amaldiçoado e forçado a vagar sem descanso para sobreviver e buscar vingança, e Griffith, o líder de um bando de mercenários chamado de 'Bando do Falcão'. Temas de isolamento, traição, a ilusão do livre-arbítrio, autopreservação e a questão de se a humanidade é fundamentalmente boa ou má permeiam a história, explorando o melhor e o pior lado da natureza humana.",
@@ -631,7 +631,7 @@
             "foto": "imagens/berserk.jpg"
         },
         {
-            "id": "29",
+            "id": "42",
             "titulo": "Guerra Civil",
             "genero": "Fantasia",
             "descricao": "Nessa versão em prosa da graphic novel, Stuart Moore adapta uma das histórias mais famosas do universo Marvel para um livro de tirar o fôlego. Homem de Ferro e Capitão América são dois membros essenciais para os Vingadores, a maior equipe de super-heróis do mundo. Quando uma trágica batalha deixa um buraco na cidade de Stamford, matando centenas de pessoas, o governo americano exige que todos os super-heróis revelem sua identidade e registrem seus poderes. Para Tony Stark – o Homem de Ferro – é um passo lamentável, porém necessário, o que o leva a apoiar a lei. Para o Capitão América, é uma intolerável agressão à liberdade cívica. Assim começa a Guerra Civil.",
