@@ -1,3 +1,17 @@
+<?php
+$link = mysqli_connect('localhost', 'root', '');
+if (!$link) {
+  die('Not connected : PUTS');
+}
+
+$db_selected = mysqli_select_db($link, 'bookstack');
+
+if (!$db_selected) {
+  include("createdatabase.php");
+  create();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
