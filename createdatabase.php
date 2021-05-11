@@ -78,6 +78,7 @@ function create()
     `cpf` int(11) DEFAULT NULL,
     `nome` varchar(100) DEFAULT NULL,
     `email` varchar(100) DEFAULT NULL,
+    `senha` varchar(38) DEFAULT NULL,
     `telefone` varchar(10) DEFAULT NULL,
     `endereco_CEP` varchar(10) DEFAULT NULL,
     `endereco_Estado` varchar(50) DEFAULT NULL,
