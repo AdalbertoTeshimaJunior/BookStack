@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts/register.js" type="text/javascript"></script>
     <title>Login</title>
 </head>
 
@@ -65,7 +66,7 @@
         </div>
         <div class="field" id="login-form">
             <h4>Faça seu Login</h4>
-            <form action="profile.php" id="loginForm">
+            <form action="login.php" id="loginForm" method="POST">
                 <input type="text" placeholder="Email address" name="userEmail" id="user-Email">
                 <input type="password" placeholder="Password" name="userPassword" id="user-Password">
                 <div id="button-link">
@@ -75,7 +76,28 @@
             </form>
         </div>
     </section>
-    <script src="scripts/register.js" type="text/javascript"></script>
+    
+    
 </body>
 
 </html>
+
+<?php
+
+    include ('dbmanager.php');
+    $userPassword = $userEmail = null;
+
+    if(isset($_POST['userEmail'])){
+        $userEmail = $_POST['userEmail'];  
+    }
+    if(isset($_POST['userPassword'])){
+        $userPassword = $_POST['userPassword']; 
+    }
+    if($userEmail != null && $userPassword != null){
+        $loginErr = enterAccount($userEmail, $userPassword);
+        if(!$loginErr){
+            echo "<script> loginErrorChanges(); </script>";
+        }
+    }
+
+?>
