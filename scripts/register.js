@@ -34,7 +34,10 @@ function signinValidation(){
     submit.setAttribute("type", "submit");
     submit.click();
 }
-function loginErrorChanges(){
+function loginErrorResponse(){
     //mudar o nome dessa função
-    console.log("oi");
+    console.log("Login invalido")
+    document.getElementById('user-Email').style.cssText = "border-color: #C52121;";
+    document.getElementById('user-Password').style.cssText = "border-color: #C52121;";
+    document.getElementById('loginErrorMessage').style.cssText = "visibility: visible;";
 }

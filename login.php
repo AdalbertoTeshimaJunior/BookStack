@@ -67,6 +67,7 @@
         <div class="field" id="login-form">
             <h4>Faça seu Login</h4>
             <form action="login.php" id="loginForm" method="POST">
+                <p id="loginErrorMessage">Email ou senha incorreto. Tente novamente</p>
                 <input type="text" placeholder="Email address" name="userEmail" id="user-Email">
                 <input type="password" placeholder="Password" name="userPassword" id="user-Password">
                 <div id="button-link">
@@ -76,7 +77,6 @@
             </form>
         </div>
     </section>
-    
     
 </body>
 
@@ -96,8 +96,7 @@
     if($userEmail != null && $userPassword != null){
         $loginErr = enterAccount($userEmail, $userPassword);
         if(!$loginErr){
-            echo "<script> loginErrorChanges(); </script>";
+            echo "<script> loginErrorResponse(); </script>";
         }
     }
-
 ?>
