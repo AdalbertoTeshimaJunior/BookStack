@@ -1,9 +1,5 @@
 <?php
 $conexao = mysqli_connect("localhost", "root", "", "bookstack") or die("Erro de conexão com localhost");
-if (!$conexao) {
-  die('Not connected : PUTS');
-}
-
 $db_selected = mysqli_select_db($conexao, 'bookstack');
 
 if (!$db_selected) {

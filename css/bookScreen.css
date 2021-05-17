@@ -1,8 +1,7 @@
 section{
     justify-content: center;
-    align-items: center;
     display: grid;
-    width: 1150px;
+    width: 62%;
     font-family: "Nunito";
 
     margin: 0 auto;
@@ -11,13 +10,18 @@ section{
 
 .book_main{
     display: grid;
-    grid-template-columns: 380px 1fr;
+    grid-template-columns: 30% 1fr;
     padding: 1%;
 }
 
+    .image_book {
+        width: 350px;
+        height: 550px;
+    }
+
     #livro_imagem{
-        width: 318px;
-        height: 458, 6px;
+        width: 100%;
+        height: 100%;
     }
 
     .dados h3,
@@ -30,41 +34,54 @@ section{
     .dados h3{
         font-weight: bold;
         font-size: 50px;
-        text-align: end;
         color: #004D40;
 
         margin-bottom: 4px;
     }
 
+    .dados #book_title{
+        margin-top: 3%;
+        margin-left: 8%;
+        font-weight: 700;
+        margin-left: 20%;
+    }
+
     .dados #autor{
-        font-size: 25px;
-        text-align: end;
+        font-size: 33px;
+        margin-left: 21%;
     }
 
     .preco{
-        margin-left: 40px;
+        margin-left: 20%;
     }
 
     .dados #preco{
         font-family: "Open Sans";
         font-size: 55px;
         
-        margin-top: 35px;
+        margin-top: 5%;
     }
 
     .dados #parcela{
-        font-size: 18px;
+        font-size: 25px;
     }
         .adicionar{
+            font-weight: 700;
             display: grid;
             grid-template-columns: 1fr 1fr;
 
-            margin-top: 25px;
+            margin-left: 15%;
+            margin-top: 3%;
         }
+            #mais_informacoes{
+                font-size: 20px;
+            }
             #button_container{
+                font-family: "Nunito";
+                font-size: 20px;
                 margin: 0 auto;
-                width: 200px;
-                height: 50px;
+                width: 75%;
+                height: 125%;
                 border-radius: 6px;
 
                 background-color: #004D40;
@@ -74,6 +91,9 @@ section{
                 align-items: center;
                 text-align: center;
             }
+                #button {
+                   padding: 1%; 
+                }
 
 .descricao{
     background-color: rgba(98, 166, 151, 0.4);;

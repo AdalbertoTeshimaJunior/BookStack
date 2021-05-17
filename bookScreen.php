@@ -1,3 +1,15 @@
+<?php
+$conexao = mysqli_connect("localhost", "root", "", "bookstack") or die("Erro de conexão com localhost");
+if (isset($_GET['codigo'])) {
+    $idDoLivro = $_GET['codigo'];
+}
+$sql = "SELECT * 
+			FROM livro 
+			WHERE codigo = '$idDoLivro'";
+$tabela = mysqli_query($conexao, $sql);
+$linha = mysqli_fetch_array($tabela);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,6 +23,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Stack</title>
 </head>
@@ -63,20 +76,30 @@
     <section class="book_main">
 
         <nav class="image_book">
-            <img src="imagens/as_vantagens_de_ser_invisivel.jpg" id="livro_imagem">
+            <img src="<?php echo $linha['imagem']; ?>" id="livro_imagem">
         </nav>
 
         <article class="dados">
             <div class="titulo">
-                <h3 id="book_title">As Vantagens de Ser InvisívelAs Vantagens de Ser Invisível</h3>
-                <p id="autor">Stephen Chbosky</p>
+                <h3 id="book_title"><?php echo $linha['titulo']; ?></h3>
+                <p id="autor"><?php echo $linha['autor']; ?></p>
             </div>
 
             <div class="preco">
-                <h4 id="preco">R$ 41,79</h4>
-                <p id="parcela">até 2x no cartão de créditos</p>
+                <h4 id="preco">R$ <?php echo number_format($linha['preco'], 2, ",", "."); ?></h4>
+                <p id="parcela">até
+                    <?php
+                    if ($linha['preco'] > 79) {
+                        echo 4;
+                    } else if ($linha['preco'] > 44) {
+                        echo 3;
+                    } else if ($linha['preco'] > 19) {
+                        echo 2;
+                    } else echo 1;
+                    ?>
+                    x no cartão de crédito</p>
                 <br>
-                <a id="mais_informacoes" href="index.php">Mais informações</a>
+                <a id="mais_informacoes" href=<?php echo "bookScreen.php?codigo=$idDoLivro#descricao"  ?>>mais informações</a>
             </div>
 
             <div class="adicionar">
@@ -94,41 +117,41 @@
     <section class="descricao">
         <article class="descricao_descricao">
             <h3 id="descricao">Descrição</h3>
-            <p id="descricao_descricao">"O LIVRO QUE INSPIROU O FILMENOVA EDIÇÃO COM TRECHO INÉDITO Manter-se à margem oferece uma única e passiva perspectiva. Mas, de uma hora para outra, sempre chega o momento de encarar a vida do centro dos holofotes. Mais íntimas do que um diário, as cartas de Charlie são estranhas e únicas, hilárias e devastadoras. Não se sabe onde ele mora. Não se sabe para quem ele escreve. Tudo o que se conhece é o mundo que ele compartilha com o leitor. Estar encurralado entre o desejo de viver sua vida e fugir dela o coloca num novo caminho através de um território inexplorado. Um mundo de primeiros encontros amorosos, dramas familiares e novos amigos. Um mundo de sexo, drogas e rock’n’roll, quando o que todo mundo quer é aquela música certa que provoca o impulso perfeito para se sentir infinito. A luta entre apatia e entusiasmo marca o fim da adolescência de Charlie nesta história divertida e ao mesmo tempo instigante."</p>
+            <p id="descricao_descricao"><?php echo $linha['descricao']; ?></p>
         </article>
 
         <article class="outras_descricoes">
             <div id="outras_descricoes">
                 <p id="titulo_descricao">Número de páginas:</p>
-                <p id="informacao_descricao">288</p>
+                <p id="informacao_descricao"><?php echo $linha['paginas']; ?></p>
             </div>
 
             <hr>
 
             <div id="outras_descricoes">
                 <p id="titulo_descricao">Dimensões:</p>
-                <p id="informacao_descricao">21.08 x 13.97 x 2.03 cm</p>
+                <p id="informacao_descricao"><?php echo $linha['dimensoes']; ?></p>
             </div>
 
             <hr>
 
             <div id="outras_descricoes">
                 <p id="titulo_descricao">Idioma:</p>
-                <p id="informacao_descricao">Português</p>
+                <p id="informacao_descricao"><?php echo $linha['idioma']; ?></p>
             </div>
 
             <hr>
 
             <div id="outras_descricoes">
                 <p id="titulo_descricao">Editora:</p>
-                <p id="informacao_descricao">Rocco Jovens Leitores</p>
+                <p id="informacao_descricao"><?php echo $linha['editora']; ?></p>
             </div>
 
             <hr>
 
             <div id="outras_descricoes">
                 <p id="titulo_descricao">Data de Publicação:</p>
-                <p id="informacao_descricao">15 agosto 2020</p>
+                <p id="informacao_descricao"><?php echo $linha['publicacao']; ?></p>
             </div>
         </article>
     </section>
