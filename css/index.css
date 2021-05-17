@@ -63,15 +63,17 @@ body{
     margin: 0 auto;
     margin-top: 4%;
     width: 80%;
+    height: 15%;
     font-weight: 400;
-    color: black;  
+    color: black;
 }
 .lancamentos-container #livros-container #livro #preco{
     font-size: 28px;
     font-family: "Segoe UI";
-    margin-top: 2%;
+    margin-top: 0;
     font-weight: 700;
     color: #004D40;
+    margin-bottom: 3%;
 }
 .lancamentos-container #livro p{
     text-align: center;

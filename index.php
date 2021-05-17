@@ -1,10 +1,10 @@
 <?php
-$link = mysqli_connect('localhost', 'root', '');
-if (!$link) {
+$conexao = mysqli_connect("localhost", "root", "", "bookstack") or die("Erro de conexão com localhost");
+if (!$conexao) {
   die('Not connected : PUTS');
 }
 
-$db_selected = mysqli_select_db($link, 'bookstack');
+$db_selected = mysqli_select_db($conexao, 'bookstack');
 
 if (!$db_selected) {
   include("createdatabase.php");
@@ -72,7 +72,6 @@ if (!$db_selected) {
     </ul>
   </header>
   <!-- BARRA SUPERIOR -->
-
   <section class="banner-container">
     <img class="banner" src="imagens/header1.png">
   </section>
@@ -83,88 +82,36 @@ if (!$db_selected) {
     </div>
 
     <div id="livros-container">
-      <div id="livro">
-        <div id="imagem-container">
-          <img src="imagens/as_vantagens_de_ser_invisivel.jpg" id="livro-imagem">
+      <?php
+      $sql = "SELECT * 
+			FROM livro 
+			ORDER BY codigo DESC";
+      $tabela = mysqli_query($conexao, $sql);
+      $contagem = 10;
+      while ($linha = mysqli_fetch_array($tabela)) {
+      ?>
+        <div id="livro">
+          <div id="imagem-container">
+            <img src="<?php echo $linha['imagem']; ?>" id="livro-imagem">
+          </div>
+          <p id="titulo"><?php echo $linha['titulo']; ?></p>
+          <p id="preco">R$ <?php echo $linha['preco']; ?></p>
+          <div id="button-container">
+            <a id="button">Comprar</a>
+          </div>
         </div>
-        <p id="titulo">As Vantagens de Ser Invisível</p>
-        <p id="preco">R$ 41,79</p>
-        <div id="button-container">
-          <a id="button">Comprar</a>
-        </div>
-      </div>
-
-      <div id="livro">
-        <div id="imagem-container">
-          <img src="imagens/as_vantagens_de_ser_invisivel.jpg" id="livro-imagem">
-        </div>
-        <p id="titulo">As Vantagens de Ser Invisível</p>
-        <p id="preco">R$ 41,79</p>
-        <div id="button-container">
-          <a id="button">Comprar</a>
-        </div>
-      </div>
-
-      <div id="livro">
-        <div id="imagem-container">
-          <img src="imagens/as_vantagens_de_ser_invisivel.jpg" id="livro-imagem">
-        </div>
-        <p id="titulo">As Vantagens de Ser Invisível</p>
-        <p id="preco">R$ 41,79</p>
-        <div id="button-container">
-          <a id="button">Comprar</a>
-        </div>
-      </div>
-
-      <div id="livro">
-        <div id="imagem-container">
-          <img src="imagens/as_vantagens_de_ser_invisivel.jpg" id="livro-imagem">
-        </div>
-        <p id="titulo">As Vantagens de Ser Invisível</p>
-        <p id="preco">R$ 41,79</p>
-        <div id="button-container">
-          <a id="button">Comprar</a>
-        </div>
-      </div>
-
-      <div id="livro">
-        <div id="imagem-container">
-          <img src="imagens/as_vantagens_de_ser_invisivel.jpg" id="livro-imagem">
-        </div>
-        <p id="titulo">As Vantagens de Ser Invisível</p>
-        <p id="preco">R$ 41,79</p>
-        <div id="button-container">
-          <a id="button">Comprar</a>
-        </div>
-      </div>
-
-      <div id="livro">
-        <div id="imagem-container">
-          <img src="imagens/as_vantagens_de_ser_invisivel.jpg" id="livro-imagem">
-        </div>
-        <p id="titulo">As Vantagens de Ser Invisível</p>
-        <p id="preco">R$ 41,79</p>
-        <div id="button-container">
-          <a id="button">Comprar</a>
-        </div>
-      </div>
-
-      <div id="livro">
-        <div id="imagem-container">
-          <img src="imagens/as_vantagens_de_ser_invisivel.jpg" id="livro-imagem">
-        </div>
-        <p id="titulo">As Vantagens de Ser Invisível</p>
-        <p id="preco">R$ 41,79</p>
-        <div id="button-container">
-          <a id="button">Comprar</a>
-        </div>
-      </div>
+      <?php
+        $contagem--;
+        if ($contagem == 0) {
+          break;
+        }
+      }
+      ?>
     </div>
 
     <div id="botao-direito">
       <img src="imagens/icone-direito.png" alt="">
     </div>
-
   </section>
 
   <section class="ad-container">
@@ -217,3 +164,6 @@ if (!$db_selected) {
 </body>
 
 </html>
+<?php
+mysqli_close($conexao);
+?>
