@@ -1,13 +1,10 @@
 <?php
-$conexao = mysqli_connect("localhost", "root", "", "bookstack") or die("Erro de conexão com localhost");
+include("dbmanager.php");
 if (isset($_GET['codigo'])) {
     $idDoLivro = $_GET['codigo'];
 }
-$sql = "SELECT * 
-			FROM livro 
-			WHERE codigo = '$idDoLivro'";
-$tabela = mysqli_query($conexao, $sql);
-$linha = mysqli_fetch_array($tabela);
+
+$linha = getBook($idDoLivro);
 ?>
 
 <!DOCTYPE html>

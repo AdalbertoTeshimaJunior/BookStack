@@ -1,28 +1,10 @@
 <?php
 include("gerenciarcarrinho.php");
+include("dbmanager.php");
 
 $link = mysqli_connect("localhost", "root", "", "bookstack");
-$arquivo = file_get_contents('livros.json');
 
-$sql = "SELECT * FROM livro";
-$answer = mysqli_query($link, $sql);
-$livros = array();
-$aux = 0;
-if (mysqli_num_rows($answer) > 0) {
-    while ($data = mysqli_fetch_array($answer)) {
-        $codigo = $data['codigo'];
-        $preco = $data['preco'];
-        $titulo = $data['titulo'];
-        $imagem = $data['imagem'];
-
-        $livro = array('codigo' => $codigo, 'preco' => $preco, 'titulo' => $titulo, 'imagem' => $imagem);
-
-        $livros[$aux] = $livro;
-        $aux++;
-    }
-} else {
-    //nada
-}
+$livros = getAllBooks();
 
 ?>
 

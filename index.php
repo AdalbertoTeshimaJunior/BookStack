@@ -1,8 +1,7 @@
 <?php
-$conexao = mysqli_connect("localhost", "root", "", "bookstack") or die("Erro de conexão com localhost");
-$db_selected = mysqli_select_db($conexao, 'bookstack');
+$conexao = mysqli_connect("localhost", "root", "", "bookstack");
 
-if (!$db_selected) {
+if (!$conexao) {
   include("createdatabase.php");
   create();
 }
