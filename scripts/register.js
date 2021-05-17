@@ -35,9 +35,18 @@ function signinValidation(){
     submit.click();
 }
 function loginErrorResponse(){
-    //mudar o nome dessa função
+    //Muda atributos da interface da página login caso haja um erro
     console.log("Login invalido")
     document.getElementById('user-Email').style.cssText = "border-color: #C52121;";
     document.getElementById('user-Password').style.cssText = "border-color: #C52121;";
-    document.getElementById('loginErrorMessage').style.cssText = "visibility: visible;";
+    document.getElementById('errorMessage').style.cssText = "visibility: visible;";
+}
+function signinErrorResponse(){
+    //Muda atributos da interface da página sign in caso haja um erro
+    console.log("Erro de Registro") 
+    document.getElementById('user-Name').style.cssText = "border-color: #C52121;";
+    document.getElementById('user-Email').style.cssText = "border-color: #C52121;";
+    document.getElementById('user-Password').style.cssText = "border-color: #C52121;";
+    document.getElementById('errorMessage').style.cssText = "visibility: visible;";
+
 }

@@ -67,7 +67,7 @@
         <div class="field" id="login-form">
             <h4>Faça seu Login</h4>
             <form action="login.php" id="loginForm" method="POST">
-                <p id="loginErrorMessage">Email ou senha incorreto. Tente novamente</p>
+                <p id="errorMessage">Email ou senha incorreto. Tente novamente</p>
                 <input type="text" placeholder="Email address" name="userEmail" id="user-Email">
                 <input type="password" placeholder="Password" name="userPassword" id="user-Password">
                 <div id="button-link">
@@ -83,8 +83,8 @@
 </html>
 
 <?php
-
     include ('dbmanager.php');
+    session_start();
     $userPassword = $userEmail = null;
 
     if(isset($_POST['userEmail'])){

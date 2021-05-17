@@ -95,7 +95,7 @@ input{
 a{
     color: black;
 }
-#loginErrorMessage{
+#errorMessage{
     visibility: hidden;
     font-family: "Open Sans";
     font-weight: lighter;

@@ -1,23 +1,4 @@
-<?php
-    include ('dbmanager.php');
-    $userName = $userPassword = $userEmail = null;
 
-    if(isset($_POST['userName'])){
-        $userName = $_POST['userName'];
-    }
-    if(isset($_POST['userEmail'])){
-        $userEmail = $_POST['userEmail'];  
-    }
-    if(isset($_POST['userPassword'])){
-        $userPassword = $_POST['userPassword']; 
-    }
-    if($userName != null && $userEmail != null && $userPassword != null){
-        createAccount($userName, $userEmail, $userPassword);
-    } else {
-        //Retornar uma mensagem de erro;
-    }
-
-?>
 <html>
 
 <head>
@@ -86,6 +67,7 @@
         <div class="field" id="signin-form">
             <h4 id="signinH4">Crie sua conta</h4>
             <form action="signin.php" id="signinForm" method="POST">
+                <p id="errorMessage">Email já está cadastrado.</p>
                 <input type="text" placeholder="Nome" name="userName" id="user-Name">
                 <input type="text" placeholder="Email address" name="userEmail" id="user-Email">
                 <input type="password" placeholder="Password" name="userPassword" id="user-Password">
@@ -100,3 +82,25 @@
 </body>
 
 </html>
+<?php
+    include ('dbmanager.php');
+    session_start();
+    $userName = $userPassword = $userEmail = null;
+
+    if(isset($_POST['userName'])){
+        $userName = $_POST['userName'];
+    }
+    if(isset($_POST['userEmail'])){
+        $userEmail = $_POST['userEmail'];  
+    }
+    if(isset($_POST['userPassword'])){
+        $userPassword = $_POST['userPassword']; 
+    }
+    if($userName != null && $userEmail != null && $userPassword != null){
+        $signinErr = createAccount($userName, $userEmail, $userPassword);
+        if(!$signinErr){
+            echo "<script> signinErrorResponse(); </script>";
+        }
+    }
+
+?>
