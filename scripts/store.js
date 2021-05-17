@@ -1,10 +1,10 @@
 //Multiplica a estrutura do HTML para receber as informações do arquivo JSON//
 console.log(document.cookie);
-function exibirProdutos(livros){
-    
+function exibirProdutos(livros) {
+
     var armazemClone = document.getElementsByClassName("grid-products")[0];
     var produtoPadrao = document.getElementsByClassName("product");
-    
+
     for (i = 0; i < livros.length; i++) {
         if (i == 0) {
             var modelo = document.getElementById("livro-titulo");
@@ -21,13 +21,20 @@ function exibirProdutos(livros){
 }
 //Preenche a estrutura do HTML com os atributos do JSON//
 function preencheInformacoes(livro, elemento) {
+    var container = elemento.children[0];
     var imagem = elemento.children[0].children[0];
     var titulo = elemento.children[1];
     var preco = elemento.children[2];
     var botao = elemento.children[3].children[0];
 
-    imagem.src = livro.foto;
+    container.setAttribute('class', livro.codigo);
+    imagem.src = livro.imagem;
     titulo.textContent = livro.titulo;
-    preco.textContent = ("R$ " + livro.preco).replace('.',',');
-    botao.setAttribute('id', livro.id);
+    preco.textContent = ("R$ " + livro.preco).replace('.', ',');
+    botao.setAttribute('id', livro.codigo);
+}
+
+function enviarId(elemento) {
+    var codigo = elemento.className;
+    window.location.href = 'livro.php' + '?codigo=' + codigo;
 }

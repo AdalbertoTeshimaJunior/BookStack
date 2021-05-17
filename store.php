@@ -1,34 +1,29 @@
 <?php
 include("gerenciarcarrinho.php");
-include("json.php");
 
-if (!isset($_COOKIE['desconto'])) {
-    setcookie('desconto', 0);
-}
+$link = mysqli_connect("localhost", "root", "", "bookstack");
+$arquivo = file_get_contents('livros.json');
 
-$json = pegarLivrosJson();
-$livros = $json->livros;
+$sql = "SELECT * FROM livro";
+$answer = mysqli_query($link, $sql);
+$livros = array();
+$aux = 0;
+if (mysqli_num_rows($answer) > 0) {
+    while ($data = mysqli_fetch_array($answer)) {
+        $codigo = $data['codigo'];
+        $preco = $data['preco'];
+        $titulo = $data['titulo'];
+        $imagem = $data['imagem'];
 
-if (isset($_GET['adicionar'])) {
+        $livro = array('codigo' => $codigo, 'preco' => $preco, 'titulo' => $titulo, 'imagem' => $imagem);
 
-    $idDoLivro = $_GET['adicionar'];
-
-    if (!verificaItensRepetidos($idDoLivro)) {
-        foreach ($livros as $livro) {
-
-            if ($livro->id == $idDoLivro) {
-                $titulo = $livro->titulo;
-                $autor = $livro->autor;
-                $preco = $livro->preco;
-                $foto = $livro->foto;
-                $id = $livro->id;
-
-                atribuirAoCarrinho($titulo, $autor, $preco, $id, $foto);
-                break;
-            }
-        }
+        $livros[$aux] = $livro;
+        $aux++;
     }
+} else {
+    //nada
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -186,7 +181,7 @@ if (isset($_GET['adicionar'])) {
 
         <article class="grid-products">
             <div class="product" id="livro-titulo">
-                <div id="book-container">
+                <div id="book-container" onclick="enviarId(this);">
                     <img id="book-image" alt="">
                 </div>
                 <p id="titulo"></p>
