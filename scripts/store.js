@@ -36,5 +36,5 @@ function preencheInformacoes(livro, elemento) {
 
 function enviarId(elemento) {
     var codigo = elemento.className;
-    window.location.href = 'livro.php' + '?codigo=' + codigo;
+    window.location.href = 'bookScreen.php' + '?codigo=' + codigo;
 }
