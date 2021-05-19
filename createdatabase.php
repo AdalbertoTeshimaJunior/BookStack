@@ -164,11 +164,6 @@ ADD KEY `codigo_desconto` (`codigo_desconto`);";
 
     executarQuery($link, $sql);
 
-    $sql = "ALTER TABLE `desconto`
-MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT;";
-
-    executarQuery($link, $sql);
-
     $sql = "ALTER TABLE `livro`
 MODIFY `codigo` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;";
 
@@ -203,6 +198,12 @@ ADD CONSTRAINT `utiliza_ibfk_4` FOREIGN KEY (`codigo_desconto`) REFERENCES `desc
     ('emcasa30', true);";
 
     executarQuery($link, $sql);
+
+    $sql = "ALTER TABLE `desconto`
+MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT=1;";
+
+    executarQuery($link, $sql);
+
 
 }
 
