@@ -81,7 +81,6 @@ section{
                 font-size: 20px;
                 margin: 0 auto;
                 width: 75%;
-                height: 125%;
                 border-radius: 6px;
 
                 background-color: #004D40;
@@ -92,8 +91,14 @@ section{
                 text-align: center;
             }
                 #button {
-                   padding: 1%; 
+                   padding: 3%; 
                 }
+            #button_container :hover{
+                background-color: #009a80;
+                box-shadow: 6px 5px 0px #004D40;
+                border-radius: 6px;
+                cursor: pointer;
+            }
 
 .descricao{
     background-color: rgba(98, 166, 151, 0.4);;

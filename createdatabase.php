@@ -198,6 +198,12 @@ ADD CONSTRAINT `utiliza_ibfk_3` FOREIGN KEY (`codigo_livro`) REFERENCES `compra`
 ADD CONSTRAINT `utiliza_ibfk_4` FOREIGN KEY (`codigo_desconto`) REFERENCES `desconto` (`codigo`);";
 
     executarQuery($link, $sql);
+
+    $sql = "INSERT INTO `desconto` (cupom, valido) VALUES
+    ('emcasa30', true);";
+
+    executarQuery($link, $sql);
+
 }
 
 function executarQuery($link, $sql)

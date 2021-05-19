@@ -110,9 +110,9 @@ if (!$conexao) {
   </section>
 
   <section class="ad-container">
-    <img src="imagens/AD02.png" class="ad" id="ad-1">
-    <img src="imagens/AD01.png" class="ad" id="ad-2">
-    <img src="imagens/AD03.png" class="ad" id="ad-3">
+    <img src="imagens/AD01.png" class="ad" id="ad-2" onclick="window.location.href = 'bookScreen.php?codigo=1'">
+    <img src="imagens/AD04.png" class="ad" id="ad-1">
+    <img src="imagens/AD03.png" class="ad" id="ad-3" onclick="window.location.href = 'bookScreen.php?codigo=13'">
   </section>
   <!-- FOOTER -->
   <footer>
