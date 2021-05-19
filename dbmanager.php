@@ -21,8 +21,8 @@ function createAccount($userName, $userEmail, $userPassword)
         $userCode = "SELECT * from usuario where email = '" . $userEmail . "';";
         $sessionCode = mysqli_query($link, $userCode);
         $code = mysqli_fetch_array($sessionCode);
-        $code["codigo"];
-        $_SESSION["id"] = $code;
+        session_start();
+        $_SESSION['id'] = $code['codigo'];
         header("location: profile.php");
         return true;
     }
@@ -45,7 +45,8 @@ function enterAccount($userEmail, $userPassword)
     if (mysqli_num_rows($answer) > 0) {
         // Armazenar o código do usuario na SESSION
         $code = mysqli_fetch_array($answer);
-        $_SESSION["id"] = $code;
+        session_start();
+        $_SESSION['id'] = $code['codigo'];
         header("location: profile.php");
         return true;
     } else {
@@ -89,4 +90,26 @@ function getBook($id)
                 WHERE codigo = '$id'";
     $tabela = mysqli_query($conexao, $sql);
     return mysqli_fetch_array($tabela);
+}
+
+function getProfileName()
+{
+    $link = mysqli_connect("localhost", "root", "", "bookstack");
+
+    if (isset($_SESSION['id'])) {
+
+        $getName = "SELECT nome FROM usuario 
+        WHERE codigo = " . intval($_SESSION['id']) . ";";
+        $answer = mysqli_query($link, $getName);
+
+        if (mysqli_num_rows($answer) > 0) {
+            $data = mysqli_fetch_array($answer);
+
+            return $data['nome'];
+        } else {
+            return "Visitante";
+        }
+    } else {
+        return "Visitante";
+    }
 }

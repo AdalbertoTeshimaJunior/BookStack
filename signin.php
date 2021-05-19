@@ -1,4 +1,3 @@
-
 <html>
 
 <head>
@@ -22,7 +21,8 @@
             <div id="saudacao-icones">
                 <div id="menu-superior">
                     <div id="saudacao">
-                        <p>Olá, Davi</p>
+                        <p>Olá, <?php include('dbmanager.php');;
+                                echo getProfileName(); ?></p>
                     </div>
                     <div id="pesquisa-carrinho">
                         <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa">
@@ -44,7 +44,7 @@
                         LOJA
                     </a>
 
-                    <a href="profile.php">
+                    <a href="<?php echo $urlDestino ?>">
                         PERFIL
                     </a>
 
@@ -83,24 +83,25 @@
 
 </html>
 <?php
-    include ('dbmanager.php');
-    session_start();
-    $userName = $userPassword = $userEmail = null;
+include("sessionManager.php");
+$urlDestino = obterUsuario();
 
-    if(isset($_POST['userName'])){
-        $userName = $_POST['userName'];
+$userName = $userPassword = $userEmail = null;
+
+if (isset($_POST['userName'])) {
+    $userName = $_POST['userName'];
+}
+if (isset($_POST['userEmail'])) {
+    $userEmail = $_POST['userEmail'];
+}
+if (isset($_POST['userPassword'])) {
+    $userPassword = $_POST['userPassword'];
+}
+if ($userName != null && $userEmail != null && $userPassword != null) {
+    $signinErr = createAccount($userName, $userEmail, $userPassword);
+    if (!$signinErr) {
+        echo "<script> signinErrorResponse(); </script>";
     }
-    if(isset($_POST['userEmail'])){
-        $userEmail = $_POST['userEmail'];  
-    }
-    if(isset($_POST['userPassword'])){
-        $userPassword = $_POST['userPassword']; 
-    }
-    if($userName != null && $userEmail != null && $userPassword != null){
-        $signinErr = createAccount($userName, $userEmail, $userPassword);
-        if(!$signinErr){
-            echo "<script> signinErrorResponse(); </script>";
-        }
-    }
+}
 
 ?>

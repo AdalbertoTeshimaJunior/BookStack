@@ -22,7 +22,8 @@
             <div id="saudacao-icones">
                 <div id="menu-superior">
                     <div id="saudacao">
-                        <p>Olá, Davi</p>
+                        <p>Olá, <?php include('dbmanager.php');
+                                echo getProfileName(); ?></p>
                     </div>
                     <div id="pesquisa-carrinho">
                         <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa">
@@ -44,7 +45,7 @@
                         LOJA
                     </a>
 
-                    <a href="profile.php">
+                    <a href="<?php echo $urlDestino ?>">
                         PERFIL
                     </a>
 
@@ -77,26 +78,27 @@
             </form>
         </div>
     </section>
-    
+
 </body>
 
 </html>
 
 <?php
-    include ('dbmanager.php');
-    session_start();
-    $userPassword = $userEmail = null;
+include("sessionManager.php");
+$urlDestino = obterUsuario();
 
-    if(isset($_POST['userEmail'])){
-        $userEmail = $_POST['userEmail'];  
+$userPassword = $userEmail = null;
+
+if (isset($_POST['userEmail'])) {
+    $userEmail = $_POST['userEmail'];
+}
+if (isset($_POST['userPassword'])) {
+    $userPassword = $_POST['userPassword'];
+}
+if ($userEmail != null && $userPassword != null) {
+    $loginErr = enterAccount($userEmail, $userPassword);
+    if (!$loginErr) {
+        echo "<script> loginErrorResponse(); </script>";
     }
-    if(isset($_POST['userPassword'])){
-        $userPassword = $_POST['userPassword']; 
-    }
-    if($userEmail != null && $userPassword != null){
-        $loginErr = enterAccount($userEmail, $userPassword);
-        if(!$loginErr){
-            echo "<script> loginErrorResponse(); </script>";
-        }
-    }
+}
 ?>

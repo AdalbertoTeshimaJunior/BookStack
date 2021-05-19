@@ -1,3 +1,8 @@
+<?php
+include("dbmanager.php");
+include("sessionManager.php");
+$urlDestino = obterUsuario();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -25,7 +30,7 @@
             <div id="saudacao-icones">
                 <div id="menu-superior">
                     <div id="saudacao">
-                        <p>Olá, Davi</p>
+                        <p>Olá, <?php echo getProfileName(); ?></p>
                     </div>
                     <div id="pesquisa-carrinho">
                         <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa">
@@ -47,7 +52,7 @@
                         LOJA
                     </a>
 
-                    <a href="profile.php">
+                    <a href="<?php echo $urlDestino ?>">
                         PERFIL
                     </a>
 

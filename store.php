@@ -1,9 +1,8 @@
 <?php
 include("gerenciarcarrinho.php");
 include("dbmanager.php");
-
-$link = mysqli_connect("localhost", "root", "", "bookstack");
-
+include("sessionManager.php");
+$urlDestino = obterUsuario();
 $livros = getAllBooks();
 
 ?>
@@ -23,6 +22,7 @@ $livros = getAllBooks();
     <link rel="stylesheet" href="css/footer.css">
     <link rel="icon" type="image/x-icon" href="imagens/booklogo.png">
     <script src="scripts/store.js" type="text/javascript"></script>
+    <script src="scripts/profile.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <title>Book Stack</title>
 
@@ -38,7 +38,7 @@ $livros = getAllBooks();
             <div id="saudacao-icones">
                 <div id="menu-superior">
                     <div id="saudacao">
-                        <p>Olá, Davi</p>
+                        <p>Olá, <?php echo getProfileName() ?></p>
                     </div>
                     <div id="pesquisa-carrinho">
                         <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa">
@@ -60,7 +60,7 @@ $livros = getAllBooks();
                         LOJA
                     </a>
 
-                    <a href="profile.php">
+                    <a href="<?php echo $urlDestino ?>">
                         PERFIL
                     </a>
 

@@ -1,4 +1,8 @@
 <?php
+include("dbmanager.php");
+include("sessionManager.php");
+$urlDestino = obterUsuario();
+
 if (isset($_COOKIE['carrinho'])) {
     $carrinhoCookie = $_COOKIE['carrinho'];
     $carrinhoCookie = json_decode($carrinhoCookie);
@@ -38,7 +42,7 @@ if (isset($_COOKIE['carrinho'])) {
             <div id="saudacao-icones">
                 <div id="menu-superior">
                     <div id="saudacao">
-                        <p>Olá, Davi</p>
+                        <p>Olá, <?php echo getProfileName() ?></p>
                     </div>
                     <div id="pesquisa-carrinho">
                         <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa">
@@ -60,7 +64,7 @@ if (isset($_COOKIE['carrinho'])) {
                         LOJA
                     </a>
 
-                    <a href="profile.php">
+                    <a href="<?php echo $urlDestino ?>">
                         PERFIL
                     </a>
 

@@ -1,6 +1,9 @@
 <?php
-$conexao = mysqli_connect("localhost", "root", "", "bookstack");
+include("dbmanager.php");
+include("sessionManager.php");
+$urlDestino = obterUsuario();
 
+$conexao = mysqli_connect("localhost", "root", "", "bookstack");
 if (!$conexao) {
   include("createdatabase.php");
   create();
@@ -33,7 +36,7 @@ if (!$conexao) {
       <div id="saudacao-icones">
         <div id="menu-superior">
           <div id="saudacao">
-            <p>Olá, Davi</p>
+            <p>Olá, <?php echo getProfileName(); ?></p>
           </div>
           <div id="pesquisa-carrinho">
             <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa">
@@ -55,7 +58,7 @@ if (!$conexao) {
             LOJA
           </a>
 
-          <a href="profile.php">
+          <a href="<?php echo $urlDestino ?>">
             PERFIL
           </a>
 
