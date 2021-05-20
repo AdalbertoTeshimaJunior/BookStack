@@ -17,6 +17,7 @@ $urlDestino = obterUsuario();
     <link rel="stylesheet" href="css/top-bar.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="icon" type="image/x-icon" href="imagens/booklogo.png">
+    <script src="scripts/bookshelf.js" type="text/javascript"></script>
     <title>Estante dos Sonhos</title>
 </head>
 
@@ -68,100 +69,9 @@ $urlDestino = obterUsuario();
     <h1>Estante dos Sonhos</h1>
     <section id="shelf">
         <article class="grid-shelf">
-            <div class="book">
+            <div class="book" id = "book-title">
                 <div class="shelf-icon">
-                    <img src="imagens/fahrenheit_451.jpg" alt="">
-                </div>
-                <div class="shelf-button">
-                    <div class="buy-button"><a href="">
-                            <p>COMPRAR</p>
-                        </a></div>
-                    <div class="remove-button"><a href="">
-                            <p>REMOVER</p>
-                        </a></div>
-                </div>
-            </div>
-            <div class="book">
-                <div class="shelf-icon">
-                    <img src="imagens/as_vantagens_de_ser_invisivel.jpg" alt="">
-                </div>
-                <div class="shelf-button">
-                    <div class="buy-button"><a href="">
-                            <p>COMPRAR</p>
-                        </a></div>
-                    <div class="remove-button"><a href="">
-                            <p>REMOVER</p>
-                        </a></div>
-                </div>
-            </div>
-            <div class="book">
-                <div class="shelf-icon">
-                    <img src="imagens/as_vantagens_de_ser_invisivel.jpg" alt="">
-                </div>
-                <div class="shelf-button">
-                    <div class="buy-button"><a href="">
-                            <p>COMPRAR</p>
-                        </a></div>
-                    <div class="remove-button"><a href="">
-                            <p>REMOVER</p>
-                        </a></div>
-                </div>
-            </div>
-            <div class="book">
-                <div class="shelf-icon">
-                    <img src="imagens/as_vantagens_de_ser_invisivel.jpg" alt="">
-                </div>
-                <div class="shelf-button">
-                    <div class="buy-button"><a href="">
-                            <p>COMPRAR</p>
-                        </a></div>
-                    <div class="remove-button"><a href="">
-                            <p>REMOVER</p>
-                        </a></div>
-                </div>
-            </div>
-            <div class="book">
-                <div class="shelf-icon">
-                    <img src="imagens/as_vantagens_de_ser_invisivel.jpg" alt="">
-                </div>
-                <div class="shelf-button">
-                    <div class="buy-button"><a href="">
-                            <p>COMPRAR</p>
-                        </a></div>
-                    <div class="remove-button"><a href="">
-                            <p>REMOVER</p>
-                        </a></div>
-                </div>
-            </div>
-            <div class="book">
-                <div class="shelf-icon">
-                    <img src="imagens/as_vantagens_de_ser_invisivel.jpg" alt="">
-                </div>
-                <div class="shelf-button">
-                    <div class="buy-button"><a href="">
-                            <p>COMPRAR</p>
-                        </a></div>
-                    <div class="remove-button"><a href="">
-                            <p>REMOVER</p>
-                        </a></div>
-                </div>
-            </div>
-            <div class="book">
-                <div class="shelf-icon">
-                    <img src="imagens/as_vantagens_de_ser_invisivel.jpg" alt="">
-                </div>
-                <div class="shelf-button">
-                    <div class="buy-button"><a href="">
-                            <p>COMPRAR</p>
-                        </a></div>
-                    <div class="remove-button"><a href="">
-                            <p>REMOVER</p>
-                        </a></div>
-                </div>
-            </div>
-            <div class="book">
-                <div class="shelf-icon">
-                    <img src="imagens/as_vantagens_de_ser_invisivel.jpg" alt="">
+                    <img src="" alt="">
                 </div>
                 <div class="shelf-button">
                     <div class="buy-button"><a href="">
@@ -219,3 +129,8 @@ $urlDestino = obterUsuario();
 </body>
 
 </html>
+<?php
+echo "<script>
+    bookShelfClones(" . json_encode($favbooks) . ");
+    </script>";
+?>
