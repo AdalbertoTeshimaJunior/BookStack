@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/formulario.css">
     <link rel="stylesheet" href="css/top-bar.css">
+    <script src="scripts/search.js" type="text/javascript"></script>
     <link rel="icon" type="image/x-icon" href="imagens/carinho.png">
     <title>Formulário</title>
 </head>
@@ -24,7 +25,7 @@
                         <p>Olá, Davi</p>
                     </div>
                     <div id="pesquisa-carrinho">
-                        <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa">
+                        <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa" onkeypress="iniciarBusca(event)">
                         <div id="botoes-menu">
                             <li id="Carrinho">
                                 <a id="link-menu" href="carrinho.php"><img id="img-carrinho" src="imagens/carinho.png" alt="Carrinho"></a>

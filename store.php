@@ -2,8 +2,15 @@
 include("gerenciarcarrinho.php");
 include("dbmanager.php");
 include("sessionManager.php");
-$urlDestino = obterUsuario();
-$livros = getAllBooks();
+$urlPerfil = urlPerfil();
+$urlEstante = urlEstanteDoSonho();
+$urlCarrinho = urlCarrinho();
+
+if (isset($_GET['pesquisa'])) {
+    $livros = searchBooks($_GET['pesquisa']);
+} else {
+    $livros = getAllBooks();
+}
 
 ?>
 
@@ -23,6 +30,7 @@ $livros = getAllBooks();
     <link rel="icon" type="image/x-icon" href="imagens/booklogo.png">
     <script src="scripts/store.js" type="text/javascript"></script>
     <script src="scripts/profile.js" type="text/javascript"></script>
+    <script src="scripts/search.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <title>Book Stack</title>
 
@@ -41,10 +49,10 @@ $livros = getAllBooks();
                         <p>Olá, <?php echo getProfileName() ?></p>
                     </div>
                     <div id="pesquisa-carrinho">
-                        <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa">
+                        <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa" onkeypress="iniciarBusca(event)" />
                         <div id="botoes-menu">
                             <li id="Carrinho">
-                                <a id="link-menu" href="carrinho.php"><img id="img-carrinho" src="imagens/carinho.png" alt="Carrinho"></a>
+                                <a id="link-menu" href="<?php echo $urlCarrinho ?>"><img id="img-carrinho" src="imagens/carinho.png" alt="Carrinho"></a>
                             </li>
                         </div>
                     </div>
@@ -60,11 +68,11 @@ $livros = getAllBooks();
                         LOJA
                     </a>
 
-                    <a href="<?php echo $urlDestino ?>">
+                    <a href="<?php echo $urlPerfil ?>">
                         PERFIL
                     </a>
 
-                    <a href="bookshelf.php">
+                    <a href="<?php echo $urlEstante ?>">
                         ESTANTE<br>DOS SONHOS
                     </a>
                 </div>

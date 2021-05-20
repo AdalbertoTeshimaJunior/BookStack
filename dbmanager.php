@@ -96,6 +96,10 @@ function getProfileName()
 {
     $link = mysqli_connect("localhost", "root", "", "bookstack");
 
+    if (session_id() == '') {
+        session_start();
+    }
+
     if (isset($_SESSION['id'])) {
 
         $getName = "SELECT nome FROM usuario 
@@ -111,5 +115,27 @@ function getProfileName()
         }
     } else {
         return "Visitante";
+    }
+}
+function searchBooks($tittle)
+{
+    $link = mysqli_connect("localhost", "root", "", "bookstack");
+    $sql = "SELECT * FROM livro WHERE titulo LIKE '%" . $tittle . "%'";
+    $answer = mysqli_query($link, $sql);
+    $livros = array();
+    $aux = 0;
+    if (mysqli_num_rows($answer) > 0) {
+        while ($data = mysqli_fetch_array($answer)) {
+            $codigo = $data['codigo'];
+            $preco = $data['preco'];
+            $titulo = $data['titulo'];
+            $imagem = $data['imagem'];
+
+            $livro = array('codigo' => $codigo, 'preco' => $preco, 'titulo' => $titulo, 'imagem' => $imagem);
+
+            $livros[$aux] = $livro;
+            $aux++;
+        }
+        return $livros;
     }
 }
