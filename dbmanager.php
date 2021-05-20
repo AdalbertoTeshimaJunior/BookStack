@@ -139,3 +139,34 @@ function searchBooks($tittle)
         return $livros;
     }
 }
+/**
+ * Função que contrói um array que contém todos os livro da tabela 'favoritos' do banco de dados
+ * @return array que possui os atributos dos livros da tabela 'favoritos'
+ */
+function getFavoriteBooks()
+{
+    //TODO: include the archieve that has getUserID() function here //
+    $userID = getUserID();
+    $link = mysqli_connect("localhost", "root", "", "bookstack");
+    $sql = "SELECT * from favoritos where codigo_usuario = " . $userID . ";";
+    $queryAnswer = mysqli_query($link, $sql);
+    $favbooks = array();
+    $i = 0;
+    if (mysqli_num_rows($queryAnswer) > 0) {
+        while ($data = mysqli_fetch_array($queryAnswer)) {
+            $id = $data['id'];
+            $image = $data['image'];
+            $favbooks = array('id' => $id, 'image' => $image);
+            $favbooks[$i] = $favbooks;
+            $i++;
+        }
+        return $favbooks;
+    }
+}
+
+
+function getUserID()
+{
+    session_start();
+    return $_SESSION['id'];
+}
