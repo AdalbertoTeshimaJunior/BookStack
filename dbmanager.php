@@ -96,6 +96,10 @@ function getProfileName()
 {
     $link = mysqli_connect("localhost", "root", "", "bookstack");
 
+    if (session_id() == '') {
+        session_start();
+    }
+
     if (isset($_SESSION['id'])) {
 
         $getName = "SELECT nome FROM usuario 
@@ -113,21 +117,44 @@ function getProfileName()
         return "Visitante";
     }
 }
+function searchBooks($tittle)
+{
+    $link = mysqli_connect("localhost", "root", "", "bookstack");
+    $sql = "SELECT * FROM livro WHERE titulo LIKE '%" . $tittle . "%'";
+    $answer = mysqli_query($link, $sql);
+    $livros = array();
+    $aux = 0;
+    if (mysqli_num_rows($answer) > 0) {
+        while ($data = mysqli_fetch_array($answer)) {
+            $codigo = $data['codigo'];
+            $preco = $data['preco'];
+            $titulo = $data['titulo'];
+            $imagem = $data['imagem'];
+
+            $livro = array('codigo' => $codigo, 'preco' => $preco, 'titulo' => $titulo, 'imagem' => $imagem);
+
+            $livros[$aux] = $livro;
+            $aux++;
+        }
+        return $livros;
+    }
+}
 /**
  * Função que contrói um array que contém todos os livro da tabela 'favoritos' do banco de dados
  * @return array que possui os atributos dos livros da tabela 'favoritos'
  */
 function getFavoriteBooks()
-{   
+{
     //TODO: include the archieve that has getUserID() function here //
     // Ler a tabela favoritos e obter todos os livros que possuirem o código do usuario x
     // a partir desse dado eu obtenho a chave estrangeira q aponta para o livro em questao
     // Montar um array com ID do livro e a foto dele que estão na tabela livro
     $userID = getUserID();
     $link = mysqli_connect("localhost", "root", "", "bookstack");
-    $sql = "SELECT * from favoritos where codigo_usuario = ".$userID.";";
+    $sql = "SELECT * from favoritos where codigo_usuario = " . $userID . ";";
     $queryAnswer = mysqli_query($link, $sql);
-    $favbooks = array(); $i = 0;
+    $favbooks = array();
+    $i = 0;
     if (mysqli_num_rows($queryAnswer) > 0) {
         while ($data = mysqli_fetch_array($queryAnswer)) {
             $bookID = $data['codigo_livro'];
@@ -148,8 +175,7 @@ function getFavoriteBooks()
 
 
 function getUserID()
-{   
-
+{
     session_start();
     return $_SESSION['id'];
 }

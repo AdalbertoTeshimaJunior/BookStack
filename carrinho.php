@@ -1,7 +1,5 @@
 <?php
 include("dbmanager.php");
-include("sessionManager.php");
-$urlDestino = obterUsuario();
 
 if (isset($_COOKIE['carrinho'])) {
     $carrinhoCookie = $_COOKIE['carrinho'];
@@ -28,6 +26,7 @@ if (isset($_COOKIE['carrinho'])) {
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/carrinho.css">
     <link rel="stylesheet" href="css/top-bar.css">
+    <script src="scripts/search.js" type="text/javascript"></script>
     <link rel="icon" type="image/x-icon" href="imagens/carinho.png">
     <title>Carrinho</title>
 </head>
@@ -45,7 +44,7 @@ if (isset($_COOKIE['carrinho'])) {
                         <p>Olá, <?php echo getProfileName() ?></p>
                     </div>
                     <div id="pesquisa-carrinho">
-                        <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa">
+                        <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa" onkeypress="iniciarBusca(event)">
                         <div id="botoes-menu">
                             <li id="Carrinho">
                                 <a id="link-menu" href="carrinho.php"><img id="img-carrinho" src="imagens/carinho.png" alt="Carrinho"></a>
@@ -64,7 +63,7 @@ if (isset($_COOKIE['carrinho'])) {
                         LOJA
                     </a>
 
-                    <a href="<?php echo $urlDestino ?>">
+                    <a href="profile.php">
                         PERFIL
                     </a>
 

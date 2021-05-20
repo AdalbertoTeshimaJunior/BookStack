@@ -1,7 +1,5 @@
 <?php
 include("dbmanager.php");
-include("sessionManager.php");
-$urlDestino = obterUsuario();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,6 +14,7 @@ $urlDestino = obterUsuario();
     <link rel="stylesheet" href="css/bookshelf.css">
     <link rel="stylesheet" href="css/top-bar.css">
     <link rel="stylesheet" href="css/footer.css">
+    <script src="scripts/search.js" type="text/javascript"></script>
     <link rel="icon" type="image/x-icon" href="imagens/booklogo.png">
     <script src="scripts/bookshelf.js" type="text/javascript"></script>
     <title>Estante dos Sonhos</title>
@@ -34,7 +33,7 @@ $urlDestino = obterUsuario();
                         <p>Olá, <?php echo getProfileName(); ?></p>
                     </div>
                     <div id="pesquisa-carrinho">
-                        <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa">
+                        <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa" onkeypress="iniciarBusca(event)">
                         <div id="botoes-menu">
                             <li id="Carrinho">
                                 <a id="link-menu" href="carrinho.php"><img id="img-carrinho" src="imagens/carinho.png" alt="Carrinho"></a>
@@ -53,7 +52,7 @@ $urlDestino = obterUsuario();
                         LOJA
                     </a>
 
-                    <a href="<?php echo $urlDestino ?>">
+                    <a href="profile.php">
                         PERFIL
                     </a>
 

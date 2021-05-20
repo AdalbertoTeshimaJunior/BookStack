@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts/search.js" type="text/javascript"></script>
     <script src="scripts/register.js" type="text/javascript"></script>
     <title>Login</title>
 </head>
@@ -29,7 +30,7 @@
                         <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa">
                         <div id="botoes-menu">
                             <li id="Carrinho">
-                                <a id="link-menu" href="carrinho.php"><img id="img-carrinho" src="imagens/carinho.png" alt="Carrinho"></a>
+                                <a id="link-menu" href="<?php echo $urlCarrinho ?>"><img id="img-carrinho" src="imagens/carinho.png" alt="Carrinho"></a>
                             </li>
                         </div>
                     </div>
@@ -45,11 +46,11 @@
                         LOJA
                     </a>
 
-                    <a href="<?php echo $urlDestino ?>">
+                    <a href="<?php echo $urlPerfil ?>">
                         PERFIL
                     </a>
 
-                    <a href="bookshelf.php">
+                    <a href="<?php echo $urlEstante ?>">
                         ESTANTE<br>DOS SONHOS
                     </a>
                 </div>
@@ -85,8 +86,9 @@
 
 <?php
 include("sessionManager.php");
-$urlDestino = obterUsuario();
-
+$urlPerfil = urlPerfil();
+$urlEstante = urlEstanteDoSonho();
+$urlCarrinho = urlCarrinho();
 $userPassword = $userEmail = null;
 
 if (isset($_POST['userEmail'])) {
