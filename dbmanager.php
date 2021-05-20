@@ -139,6 +139,53 @@ function searchBooks($tittle)
         return $livros;
     }
 }
+function filterBooks($filterType, $filter)
+{
+    if ($filterType != "genero") {
+        $order = "ASC";
+        if ($filter == "Maior preço") {
+            $order = "DESC";
+        }
+
+        $link = mysqli_connect("localhost", "root", "", "bookstack");
+        $sql = "SELECT * FROM livro ORDER BY " . $filterType . " " . $order;
+        $answer = mysqli_query($link, $sql);
+        $livros = array();
+        $aux = 0;
+
+        while ($data = mysqli_fetch_array($answer)) {
+            $codigo = $data['codigo'];
+            $preco = $data['preco'];
+            $titulo = $data['titulo'];
+            $imagem = $data['imagem'];
+
+            $livro = array('codigo' => $codigo, 'preco' => $preco, 'titulo' => $titulo, 'imagem' => $imagem);
+
+            $livros[$aux] = $livro;
+            $aux++;
+        }
+        return $livros;
+    } else {
+        $link = mysqli_connect("localhost", "root", "", "bookstack");
+        $sql = "SELECT * FROM livro WHERE genero = '" . $filter . "'";
+        $answer = mysqli_query($link, $sql);
+        $livros = array();
+        $aux = 0;
+
+        while ($data = mysqli_fetch_array($answer)) {
+            $codigo = $data['codigo'];
+            $preco = $data['preco'];
+            $titulo = $data['titulo'];
+            $imagem = $data['imagem'];
+
+            $livro = array('codigo' => $codigo, 'preco' => $preco, 'titulo' => $titulo, 'imagem' => $imagem);
+
+            $livros[$aux] = $livro;
+            $aux++;
+        }
+        return $livros;
+    }
+}
 /**
  * Função que contrói um array que contém todos os livro da tabela 'favoritos' do banco de dados
  * @return array que possui os atributos dos livros da tabela 'favoritos'
@@ -163,7 +210,6 @@ function getFavoriteBooks()
         return $favbooks;
     }
 }
-
 
 function getUserID()
 {
