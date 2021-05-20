@@ -193,6 +193,9 @@ function filterBooks($filterType, $filter)
 function getFavoriteBooks()
 {
     //TODO: include the archieve that has getUserID() function here //
+    // Ler a tabela favoritos e obter todos os livros que possuirem o código do usuario x
+    // a partir desse dado eu obtenho a chave estrangeira q aponta para o livro em questao
+    // Montar um array com ID do livro e a foto dele que estão na tabela livro
     $userID = getUserID();
     $link = mysqli_connect("localhost", "root", "", "bookstack");
     $sql = "SELECT * from favoritos where codigo_usuario = " . $userID . ";";
@@ -201,14 +204,20 @@ function getFavoriteBooks()
     $i = 0;
     if (mysqli_num_rows($queryAnswer) > 0) {
         while ($data = mysqli_fetch_array($queryAnswer)) {
-            $id = $data['id'];
-            $image = $data['image'];
-            $favbooks = array('id' => $id, 'image' => $image);
+            $bookID = $data['codigo_livro'];
+            
+            $link = mysqli_connect("localhost", "root", "", "bookstack");
+            $books = "SELECT * from livros where codigo = ".$bookID.";";
+            $queryOfBooks = mysqli_query($link, $books);
+
+
+            $favbooks = array('codigo_livro' => $bookID);
             $favbooks[$i] = $favbooks;
             $i++;
         }
+        
         return $favbooks;
-    }
+    } // Usuário ainda não possui nenhum livro nos favoritos?
 }
 
 function getUserID()
