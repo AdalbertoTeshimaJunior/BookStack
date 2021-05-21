@@ -122,20 +122,15 @@ function calcularPedido() {
     calculoTotal();
 }
 
-function calculoTotal() {
-    var descontoInserido = document.getElementById("desconto").value;
-    descontoInserido = parseFloat(descontoInserido)
+function calculoTotal(desconto, cupom) {
+    document.getElementById("desconto").value = cupom;
+    descontoInserido = parseFloat(desconto);
     var total = document.getElementById("valor-sem-desconto").textContent.split(" ")[1].replace(',', '.');
     total = parseFloat(total);
 
-    if (descontoInserido < 0 || descontoInserido > 100) {
-        document.getElementById("desconto").value = 0;
-        alert("Insira um valor de desconto válido!");
-    } else {
-        total -= total * (parseFloat(descontoInserido) / 100);
-        document.cookie = "desconto=" + parseFloat(descontoInserido);
-        document.getElementById("valor-total").textContent = "R$" + formatarValor(total.toFixed(2));
-    }
+    total -= total * (parseFloat(descontoInserido) / 100);
+    document.cookie = "desconto=" + parseFloat(descontoInserido);
+    document.getElementById("valor-total").textContent = "R$" + formatarValor(total.toFixed(2));
 }
 
 function formatarValor(valor) {

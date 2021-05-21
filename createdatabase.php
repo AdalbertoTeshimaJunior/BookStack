@@ -114,7 +114,8 @@ function create()
     $sql = "CREATE TABLE `desconto` (
     `codigo` int(11) NOT NULL,
     `cupom` varchar(10) DEFAULT NULL,
-    `valido` tinyint(1) DEFAULT NULL
+    `valido` tinyint(1) DEFAULT NULL,
+    `valor` double(4,2) NOT NULL
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
     executarQuery($link, $sql);
@@ -194,17 +195,15 @@ ADD CONSTRAINT `utiliza_ibfk_4` FOREIGN KEY (`codigo_desconto`) REFERENCES `desc
 
     executarQuery($link, $sql);
 
-    $sql = "INSERT INTO `desconto` (cupom, valido) VALUES
-    ('emcasa30', true);";
+    $sql = "INSERT INTO `desconto` (cupom, valido, valor) VALUES
+    ('emcasa30', true, 30.00);";
 
     executarQuery($link, $sql);
 
     $sql = "ALTER TABLE `desconto`
-MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT=1;";
+MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT=2";
 
     executarQuery($link, $sql);
-
-
 }
 
 function executarQuery($link, $sql)

@@ -1,57 +1,3 @@
-<?php
-include("dbmanager.php");
-
-function livroCarrinho()
-{
-    $conexao = mysqli_connect("localhost", "root", "", "bookstack");
-    session_start();
-    $usuario_id = $_SESSION['id'];
-    $sql = "SELECT *
-            FROM compra
-            WHERE codigo_usuario = $usuario_id";
-    $tabela = mysqli_query($conexao, $sql);
-    $livros = array();
-    $aux = 0;
-    if (mysqli_num_rows($tabela) > 0) {
-        while ($linha = mysqli_fetch_array($tabela)) {
-            $sqlLivros = "SELECT *
-                        FROM livro
-                        WHERE codigo = " . $linha['codigo_livro'];
-            $table = mysqli_query($conexao, $sqlLivros);
-            while ($line = mysqli_fetch_array($table)) {
-                $codigo = $line['codigo'];
-                $titulo = $line['titulo'];
-                $autor = $line['autor'];
-                $preco = $line['preco'];
-                $imagem = $line['imagem'];
-                $quantidade = $linha['quantidade'];
-
-                $livro = array('codigo' => $codigo, 'titulo' => $titulo, 'autor' => $autor, 'preco' => $preco, 'imagem' => $imagem, 'quantidade' => $quantidade);
-
-                $livros[$aux] = $livro;
-                $aux++;
-            }
-        }
-    }
-    return $livros;
-}
-
-if (isset($_COOKIE['carrinho'])) {
-    $carrinhoCookie = $_COOKIE['carrinho'];
-    $carrinhoCookie = json_decode($carrinhoCookie);
-
-    if (isset($_GET['remover'])) {
-        $idDoLivro = $_GET['remover'];
-
-        unset($carrinhoCookie[$idDoLivro]);
-        $json_arr = array_values($carrinhoCookie);
-        setcookie('carrinho', json_encode($json_arr));
-    }
-} else {
-    setcookie('carrinho', json_encode(livroCarrinho()));
-}
-?>
-
 <!DOCTYPE html>
 
 <html lang="pt-br">
@@ -195,3 +141,32 @@ if (isset($_COOKIE['carrinho'])) {
 </body>
 
 </html>
+<?php
+include("dbmanager.php");
+session_start();
+$usuario_id = $_SESSION['id'];
+
+if (isset($_COOKIE['carrinho'])) {
+    $carrinhoCookie = $_COOKIE['carrinho'];
+    $carrinhoCookie = json_decode($carrinhoCookie);
+
+    if (isset($_GET['remover'])) {
+        $idDoLivro = $_GET['remover'];
+
+        unset($carrinhoCookie[$idDoLivro]);
+        $json_arr = array_values($carrinhoCookie);
+        setcookie('carrinho', json_encode($json_arr));
+    }
+} else {
+    setcookie('carrinho', json_encode(getUserCart($usuario_id)));
+}
+
+if (isset($_GET['desconto'])) {
+    $cupom = $_GET['desconto'];
+    $valorDesconto = getDiscount($cupom);
+
+    if ($valorDesconto != false) {
+        intval($valorDesconto);
+    }
+}
+?>

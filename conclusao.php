@@ -1,6 +1,6 @@
 <?php
 include("gerarcomprovante.php");
-
+include("dgmanager.php");
 escreverInformacoes();
 //--Pega os dados--
 //! Sem Telefone !
@@ -16,28 +16,15 @@ $pagamento_NumeroCartao = $_POST['cartao'];
 $pagamento_CPFTitular = $_POST['cpftitular'];
 $pagamento_CVV = $_POST['cvv'];
 
-//--Conectar com o Banco de Dados--
-$conexao = mysqli_connect("localhost", "root", "", "bookstack");
+//--Atualiza o carrinho do usuário no Banco de Dados--
 session_start();
 $usuario_id = $_SESSION['id'];
-
-//--Deletar o carrinho antigo do usuário--
-$delete = "DELETE FROM compra
-        WHERE codigo_usuario = $usuario_id";
-mysqli_query($conexao, $delete);
-
-//--Atualiza o carrinho do usuário no Banco de Dados--
 $dados = html_entity_decode($_COOKIE['carrinho']);
 $livrosCarrinho = json_decode($dados, true);
-foreach ($livrosCarrinho as $livro) {
-    $valorTotal = $livro['preco'] * $livro['quantidade'];
-    $insert = "INSERT INTO compra
-    (valor_total, codigo_usuario, codigo_livro, quantidade)
-    VALUES
-    ($valorTotal, $usuario_id, " . $livro['codigo'] . ", " . $livro['quantidade'] . ")";
-    mysqli_query($conexao, $insert);
-}
+updateBooksInCart($usuario_id, $livrosCarrinho);
+
 //--Atualiza os dados do usuário no Banco de Dados--
+$conexao = mysqli_connect("localhost", "root", "", "bookstack");
 $update = "UPDATE usuario SET
 cpf = $cpf,
 endereco_CEP = '$endereco_CEP',

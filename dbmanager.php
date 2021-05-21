@@ -30,7 +30,6 @@ function createAccount($userName, $userEmail, $userPassword)
     // Close connection
     mysqli_close($link);
 }
-
 function enterAccount($userEmail, $userPassword)
 {
     // Open connection
@@ -57,41 +56,6 @@ function enterAccount($userEmail, $userPassword)
     // Close connection
     mysqli_close($link);
 }
-
-function getAllBooks()
-{
-    $link = mysqli_connect("localhost", "root", "", "bookstack");
-    $sql = "SELECT * FROM livro";
-    $answer = mysqli_query($link, $sql);
-    $livros = array();
-    $aux = 0;
-    if (mysqli_num_rows($answer) > 0) {
-        while ($data = mysqli_fetch_array($answer)) {
-            $codigo = $data['codigo'];
-            $preco = $data['preco'];
-            $titulo = $data['titulo'];
-            $imagem = $data['imagem'];
-
-            $livro = array('codigo' => $codigo, 'preco' => $preco, 'titulo' => $titulo, 'imagem' => $imagem);
-
-            $livros[$aux] = $livro;
-            $aux++;
-        }
-        return $livros;
-    }
-}
-
-function getBook($id)
-{
-    $conexao = mysqli_connect("localhost", "root", "", "bookstack") or die("Erro de conexão com localhost");
-
-    $sql = "SELECT * 
-                FROM livro 
-                WHERE codigo = '$id'";
-    $tabela = mysqli_query($conexao, $sql);
-    return mysqli_fetch_array($tabela);
-}
-
 function getProfileName()
 {
     $link = mysqli_connect("localhost", "root", "", "bookstack");
@@ -116,6 +80,104 @@ function getProfileName()
     } else {
         return "Visitante";
     }
+}
+function getUserCart($usuario_id)
+{
+    $conexao = mysqli_connect("localhost", "root", "", "bookstack");
+    $sql = "SELECT *
+            FROM compra
+            WHERE codigo_usuario = $usuario_id";
+    $tabela = mysqli_query($conexao, $sql);
+    $livros = array();
+    $aux = 0;
+    if (mysqli_num_rows($tabela) > 0) {
+        while ($linha = mysqli_fetch_array($tabela)) {
+            $sqlLivros = "SELECT *
+                        FROM livro
+                        WHERE codigo = " . $linha['codigo_livro'];
+            $table = mysqli_query($conexao, $sqlLivros);
+            while ($line = mysqli_fetch_array($table)) {
+                $codigo = $line['codigo'];
+                $titulo = $line['titulo'];
+                $autor = $line['autor'];
+                $preco = $line['preco'];
+                $imagem = $line['imagem'];
+                $quantidade = $linha['quantidade'];
+
+                $livro = array('codigo' => $codigo, 'titulo' => $titulo, 'autor' => $autor, 'preco' => $preco, 'imagem' => $imagem, 'quantidade' => $quantidade);
+
+                $livros[$aux] = $livro;
+                $aux++;
+            }
+        }
+    }
+    return $livros;
+}
+function updateBooksInCart($usuario_id, $livrosCarrinho)
+{
+    $conexao = mysqli_connect("localhost", "root", "", "bookstack");
+
+    $delete = "DELETE FROM compra
+        WHERE codigo_usuario = $usuario_id";
+    mysqli_query($conexao, $delete);
+
+    foreach ($livrosCarrinho as $livro) {
+        $valorTotal = $livro['preco'] * $livro['quantidade'];
+        $insert = "INSERT INTO compra
+    (valor_total, codigo_usuario, codigo_livro, quantidade)
+    VALUES
+    ($valorTotal, $usuario_id, " . $livro['codigo'] . ", " . $livro['quantidade'] . ")";
+        mysqli_query($conexao, $insert);
+    }
+}
+function getDiscount($cupom)
+{
+    $conexao = mysqli_connect("localhost", "root", "", "bookstack");
+
+    $getCupom = "SELECT valor FROM desconto
+        WHERE cupom =" . $cupom . " AND valido = 1";
+
+    $value = mysqli_query($conexao, $getCupom);
+
+    if (mysqli_num_rows($value) > 0) {
+        while ($response = mysqli_fetch_array($value)) {
+            return $response['valor'];
+        }
+    } else {
+        return false;
+    }
+}
+function getAllBooks()
+{
+    $link = mysqli_connect("localhost", "root", "", "bookstack");
+    $sql = "SELECT * FROM livro";
+    $answer = mysqli_query($link, $sql);
+    $livros = array();
+    $aux = 0;
+    if (mysqli_num_rows($answer) > 0) {
+        while ($data = mysqli_fetch_array($answer)) {
+            $codigo = $data['codigo'];
+            $preco = $data['preco'];
+            $titulo = $data['titulo'];
+            $imagem = $data['imagem'];
+
+            $livro = array('codigo' => $codigo, 'preco' => $preco, 'titulo' => $titulo, 'imagem' => $imagem);
+
+            $livros[$aux] = $livro;
+            $aux++;
+        }
+        return $livros;
+    }
+}
+function getBook($id)
+{
+    $conexao = mysqli_connect("localhost", "root", "", "bookstack") or die("Erro de conexão com localhost");
+
+    $sql = "SELECT * 
+                FROM livro 
+                WHERE codigo = '$id'";
+    $tabela = mysqli_query($conexao, $sql);
+    return mysqli_fetch_array($tabela);
 }
 function searchBooks($tittle)
 {
@@ -190,38 +252,32 @@ function filterBooks($filterType, $filter)
  * Função que contrói um array que contém todos os livro da tabela 'favoritos' do banco de dados
  * @return array que possui os atributos dos livros da tabela 'favoritos'
  */
-function getFavoriteBooks()
-{
-    //TODO: include the archieve that has getUserID() function here //
-    // Ler a tabela favoritos e obter todos os livros que possuirem o código do usuario x
-    // a partir desse dado eu obtenho a chave estrangeira q aponta para o livro em questao
-    // Montar um array com ID do livro e a foto dele que estão na tabela livro
-    $userID = getUserID();
-    $link = mysqli_connect("localhost", "root", "", "bookstack");
-    $sql = "SELECT * from favoritos where codigo_usuario = " . $userID . ";";
-    $queryAnswer = mysqli_query($link, $sql);
-    $favbooks = array();
-    $i = 0;
-    if (mysqli_num_rows($queryAnswer) > 0) {
-        while ($data = mysqli_fetch_array($queryAnswer)) {
-            $bookID = $data['codigo_livro'];
-            
-            $link = mysqli_connect("localhost", "root", "", "bookstack");
-            $books = "SELECT * from livros where codigo = ".$bookID.";";
-            $queryOfBooks = mysqli_query($link, $books);
+// function getFavoriteBooks()
+// {
+//     //TODO: include the archieve that has getUserID() function here //
+//     // Ler a tabela favoritos e obter todos os livros que possuirem o código do usuario x
+//     // a partir desse dado eu obtenho a chave estrangeira q aponta para o livro em questao
+//     // Montar um array com ID do livro e a foto dele que estão na tabela livro
+//     $userID = getUserID();
+//     $link = mysqli_connect("localhost", "root", "", "bookstack");
+//     $sql = "SELECT * from favoritos where codigo_usuario = " . $userID . ";";
+//     $queryAnswer = mysqli_query($link, $sql);
+//     $favbooks = array();
+//     $i = 0;
+//     if (mysqli_num_rows($queryAnswer) > 0) {
+//         while ($data = mysqli_fetch_array($queryAnswer)) {
+//             $bookID = $data['codigo_livro'];
+
+//             $link = mysqli_connect("localhost", "root", "", "bookstack");
+//             $books = "SELECT * from livros where codigo = " . $bookID . ";";
+//             $queryOfBooks = mysqli_query($link, $books);
 
 
-            $favbooks = array('codigo_livro' => $bookID);
-            $favbooks[$i] = $favbooks;
-            $i++;
-        }
-        
-        return $favbooks;
-    } // Usuário ainda não possui nenhum livro nos favoritos?
-}
+//             $favbooks = array('codigo_livro' => $bookID);
+//             $favbooks[$i] = $favbooks;
+//             $i++;
+//         }
 
-function getUserID()
-{
-    session_start();
-    return $_SESSION['id'];
-}
+//         return $favbooks;
+//     } // Usuário ainda não possui nenhum livro nos favoritos?
+// }
