@@ -6,6 +6,24 @@ $urlPerfil = urlPerfil();
 $urlEstante = urlEstanteDoSonho();
 $urlCarrinho = urlCarrinho();
 
+if (isset($_GET['adicionar'])) {
+
+    $idDoLivro = $_GET['adicionar'];
+
+    if (!verificaItensRepetidos($idDoLivro)) {
+
+        $livro = getBook($idDoLivro);
+
+        $codigo = $livro['codigo'];
+        $titulo = $livro['titulo'];
+        $autor = $livro['autor'];
+        $preco = $livro['preco'];
+        $imagem = $livro['imagem'];
+
+        atribuirAoCarrinho($titulo, $autor, $preco, $codigo, $imagem);
+    }
+}
+
 if (isset($_GET['pesquisa'])) {
     $livros = searchBooks($_GET['pesquisa']);
 } else {
@@ -29,7 +47,6 @@ if (isset($_GET['pesquisa'])) {
     <link rel="stylesheet" href="css/footer.css">
     <link rel="icon" type="image/x-icon" href="imagens/booklogo.png">
     <script src="scripts/store.js" type="text/javascript"></script>
-    <script src="scripts/profile.js" type="text/javascript"></script>
     <script src="scripts/search.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <title>Book Stack</title>
