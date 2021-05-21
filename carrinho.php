@@ -1,3 +1,23 @@
+<?php
+include("dbmanager.php");
+session_start();
+$usuario_id = $_SESSION['id'];
+
+if (isset($_COOKIE['carrinho'])) {
+    $carrinhoCookie = $_COOKIE['carrinho'];
+    $carrinhoCookie = json_decode($carrinhoCookie);
+
+    if (isset($_GET['remover'])) {
+        $idDoLivro = $_GET['remover'];
+
+        unset($carrinhoCookie[$idDoLivro]);
+        $json_arr = array_values($carrinhoCookie);
+        setcookie('carrinho', json_encode($json_arr));
+    }
+} else {
+    setcookie('carrinho', json_encode(getUserCart($usuario_id)));
+}
+?>
 <!DOCTYPE html>
 
 <html lang="pt-br">
@@ -119,7 +139,7 @@
 
             <label id="desconto-box">
                 Desconto:
-                <input id="desconto" type="number" min="0" onchange="calculoTotal();">
+                <input id="desconto" type="text" onchange="aplicarDesconto(this.value)">
             </label>
 
             <label id="total-pedido">
@@ -142,31 +162,15 @@
 
 </html>
 <?php
-include("dbmanager.php");
-session_start();
-$usuario_id = $_SESSION['id'];
-
-if (isset($_COOKIE['carrinho'])) {
-    $carrinhoCookie = $_COOKIE['carrinho'];
-    $carrinhoCookie = json_decode($carrinhoCookie);
-
-    if (isset($_GET['remover'])) {
-        $idDoLivro = $_GET['remover'];
-
-        unset($carrinhoCookie[$idDoLivro]);
-        $json_arr = array_values($carrinhoCookie);
-        setcookie('carrinho', json_encode($json_arr));
-    }
-} else {
-    setcookie('carrinho', json_encode(getUserCart($usuario_id)));
-}
-
 if (isset($_GET['desconto'])) {
     $cupom = $_GET['desconto'];
     $valorDesconto = getDiscount($cupom);
-
     if ($valorDesconto != false) {
-        intval($valorDesconto);
+        echo "<script> calculoTotal('" . $valorDesconto . "','" . $cupom . "') </script>";
+    } else {
+        echo "<script> calculoTotal('" . 0 . "','" . $cupom . "') </script>";
     }
+} else {
+    echo "<script> calculoTotal('" . 0 . "','') </script>";
 }
 ?>

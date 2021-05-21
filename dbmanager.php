@@ -135,13 +135,13 @@ function getDiscount($cupom)
     $conexao = mysqli_connect("localhost", "root", "", "bookstack");
 
     $getCupom = "SELECT valor FROM desconto
-        WHERE cupom =" . $cupom . " AND valido = 1";
+        WHERE cupom ='" . $cupom . "' AND valido = true";
 
     $value = mysqli_query($conexao, $getCupom);
 
-    if (mysqli_num_rows($value) > 0) {
+    if ($value != false) {
         while ($response = mysqli_fetch_array($value)) {
-            return $response['valor'];
+            return $response["valor"];
         }
     } else {
         return false;

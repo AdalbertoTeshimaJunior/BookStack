@@ -1,6 +1,7 @@
 <?php
 include("dbmanager.php");
-    $favbooks = getFavoriteBooks();
+include("sessionManager.php");
+$favbooks = getFavoriteBooks(obterIdDoUsuario());
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -130,7 +131,7 @@ include("dbmanager.php");
 
 </html>
 <?php
-    echo "<script>
+echo "<script>
     bookShelfClones(" . json_encode($favbooks) . ");
     </script>";
 ?>
