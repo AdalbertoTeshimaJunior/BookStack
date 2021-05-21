@@ -252,32 +252,32 @@ function filterBooks($filterType, $filter)
  * Função que contrói um array que contém todos os livro da tabela 'favoritos' do banco de dados
  * @return array que possui os atributos dos livros da tabela 'favoritos'
  */
-// function getFavoriteBooks()
-// {
-//     //TODO: include the archieve that has getUserID() function here //
-//     // Ler a tabela favoritos e obter todos os livros que possuirem o código do usuario x
-//     // a partir desse dado eu obtenho a chave estrangeira q aponta para o livro em questao
-//     // Montar um array com ID do livro e a foto dele que estão na tabela livro
-//     $userID = getUserID();
-//     $link = mysqli_connect("localhost", "root", "", "bookstack");
-//     $sql = "SELECT * from favoritos where codigo_usuario = " . $userID . ";";
-//     $queryAnswer = mysqli_query($link, $sql);
-//     $favbooks = array();
-//     $i = 0;
-//     if (mysqli_num_rows($queryAnswer) > 0) {
-//         while ($data = mysqli_fetch_array($queryAnswer)) {
-//             $bookID = $data['codigo_livro'];
+function getFavoriteBooks($userID)
+{
+    $link = mysqli_connect("localhost", "root", "", "bookstack");
+    $sql = "SELECT * from favoritos where codigo_usuario = " . $userID . ";";
+    $queryAnswer = mysqli_query($link, $sql);
+    $favbooks = array();
+    $i = 0;
+    if (mysqli_num_rows($queryAnswer) > 0) {
+        while ($data = mysqli_fetch_array($queryAnswer)) {
 
-//             $link = mysqli_connect("localhost", "root", "", "bookstack");
-//             $books = "SELECT * from livros where codigo = " . $bookID . ";";
-//             $queryOfBooks = mysqli_query($link, $books);
+            $bookID = $data['codigo_livro'];
 
+            $connect = mysqli_connect("localhost", "root", "", "bookstack");
+            $getAllBooks = "SELECT * from livro where codigo = " . $bookID . ";";
+            $queryOfBooks = mysqli_query($connect, $getAllBooks);
+            if (mysqli_num_rows($queryOfBooks) > 0) {
+                while ($books = mysqli_fetch_array($queryOfBooks)) {
 
-//             $favbooks = array('codigo_livro' => $bookID);
-//             $favbooks[$i] = $favbooks;
-//             $i++;
-//         }
+                    $bookImages = $books['imagem'];
+                }
+            }
+            $favbooksArray = array('codigo_livro' => $bookID, 'imagem' => $bookImages);
+            $favbooks[$i] = $favbooksArray;
+            $i++;
+        }
 
-//         return $favbooks;
-//     } // Usuário ainda não possui nenhum livro nos favoritos?
-// }
+        return $favbooks;
+    }
+}
