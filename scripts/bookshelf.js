@@ -6,17 +6,19 @@
  function bookShelfClones(favbooks) {
     var holdClone = document.getElementsByClassName("grid-shelf")[0];
     var product = document.getElementsByClassName("book");
+    console.log("Entrou na função bookShelfClones");
 
     for(i = 0; i < favbooks.length; i++){
+        console.log("Início do for loop");
         if(i == 0){
             var template = document.getElementById("book-title");
-            template.setAttribute("id", "book-" + favbooks[i].title);
+            template.setAttribute("id", "book-" + favbooks[i].codigo_livro);
             fillBookShelf(favbooks[i], template);
         } else {
             var clone = product[0].cloneNode(true);
-            clone.setAttribute("id", "book-" + favbooks[i].title);
+            clone.setAttribute("id", "book-" + favbooks[i].codigo_livro);
             holdClone.appendChild(clone);
-            var template = document.getElementById("book-" + favbooks[i].title);
+            var template = document.getElementById("book-" + favbooks[i].codigo_livro);
             fillBookShelf(favbooks[i], template);
         }
     }
@@ -28,13 +30,13 @@
  * @param {* Estrutura HTML da página bookshelf} template
  */
 function fillBookShelf(favbooks, template){
+    console.log("entrou na função fill bookShelf");
     var favBookdiv = template.children[0];
     var favBookImage = template.children[0].children[0];
-    var favBookBuyButton = template.children[1].children[1];
+    var favBookBuyButton = template.children[1].children[0];
     var favBookRemoveButton = template.children[1].children[1];
 
-    favBookdiv.setAttribute('class', favbooks.id);
-    favBookImage.src = favbooks.image;
-    favBookBuyButton.setAttribute('id', favbooks.id);
-    favBookRemoveButton.setAttribute('id', favbooks.id);
+    favBookImage.src = favbooks.imagem;
+    favBookBuyButton.setAttribute('id', favbooks.codigo_livro);
+    favBookRemoveButton.setAttribute('id', favbooks.codigo_livro);
 }

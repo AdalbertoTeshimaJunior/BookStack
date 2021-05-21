@@ -1,5 +1,6 @@
 <?php
 include("dbmanager.php");
+    $favbooks = getFavoriteBooks();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -68,7 +69,7 @@ include("dbmanager.php");
     <h1>Estante dos Sonhos</h1>
     <section id="shelf">
         <article class="grid-shelf">
-            <div class="book" id = "book-title">
+            <div class="book" id="book-title">
                 <div class="shelf-icon">
                     <img src="" alt="">
                 </div>
@@ -129,7 +130,7 @@ include("dbmanager.php");
 
 </html>
 <?php
-echo "<script>
+    echo "<script>
     bookShelfClones(" . json_encode($favbooks) . ");
     </script>";
 ?>
