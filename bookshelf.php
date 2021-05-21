@@ -1,6 +1,10 @@
 <?php
-include("dbmanager.php");
-    $favbooks = getFavoriteBooks();
+    include('dbmanager.php');
+
+    if (!isset($_COOKIE['favoritos'])) {
+        setcookie('favoritos', json_encode(getFavoriteBooks()));
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,7 +21,6 @@ include("dbmanager.php");
     <link rel="stylesheet" href="css/footer.css">
     <script src="scripts/search.js" type="text/javascript"></script>
     <link rel="icon" type="image/x-icon" href="imagens/booklogo.png">
-    <script src="scripts/bookshelf.js" type="text/javascript"></script>
     <title>Estante dos Sonhos</title>
 </head>
 
@@ -126,11 +129,8 @@ include("dbmanager.php");
         </div>
     </footer>
     <!-- FOOTER -->
+
+    <script src="scripts/bookshelf.js" type="text/javascript"></script>
 </body>
 
 </html>
-<?php
-    echo "<script>
-    bookShelfClones(" . json_encode($favbooks) . ");
-    </script>";
-?>

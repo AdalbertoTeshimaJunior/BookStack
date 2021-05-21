@@ -1,3 +1,22 @@
+var cookieArray = document.cookie.split(";");
+var favoritosIndex = obterIndex("favoritos=");
+
+function obterIndex(chave) {
+    for (i = 0; i < cookieArray.length; i++) {
+        if (cookieArray[i].includes(chave)) {
+            return i;
+        }
+    }
+}
+
+if (cookieArray[favoritosIndex] != null) {
+    var cookieDecoded = decodeURIComponent(cookieArray[favoritosIndex].replace("favoritos=", ""));
+    if (cookieDecoded.length != 0) {
+        var favoritosJSON = JSON.parse(cookieDecoded);
+        bookShelfClones(favoritosJSON);
+    }
+}
+
 /**
  * Função que cria clones da estrutura HTML da página bookshelf para cada livro da
  * tabela 'favoritos' do banco de dados.
@@ -6,10 +25,9 @@
  function bookShelfClones(favbooks) {
     var holdClone = document.getElementsByClassName("grid-shelf")[0];
     var product = document.getElementsByClassName("book");
-    console.log("Entrou na função bookShelfClones");
 
     for(i = 0; i < favbooks.length; i++){
-        console.log("Início do for loop");
+        console.log(favbooks[i].codigo_livro);
         if(i == 0){
             var template = document.getElementById("book-title");
             template.setAttribute("id", "book-" + favbooks[i].codigo_livro);
@@ -30,8 +48,6 @@
  * @param {* Estrutura HTML da página bookshelf} template
  */
 function fillBookShelf(favbooks, template){
-    console.log("entrou na função fill bookShelf");
-    var favBookdiv = template.children[0];
     var favBookImage = template.children[0].children[0];
     var favBookBuyButton = template.children[1].children[0];
     var favBookRemoveButton = template.children[1].children[1];

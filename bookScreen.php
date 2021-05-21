@@ -9,6 +9,23 @@ if (isset($_GET['codigo'])) {
 }
 
 $linha = getBook($idDoLivro);
+
+if (isset($_GET['adicionar'])) {
+    if($_GET['adicionar'] == 'estante'){
+        if (isset($_COOKIE['favoritos'])) {
+            $dados = html_entity_decode($_COOKIE['favoritos']);
+            $json = json_decode($dados, true);
+            
+            $json[] = ["codigo_livro" => $idDoLivro, "imagem" => $linha['imagem']];
+    
+            setcookie('favoritos', json_encode($json));
+        } else {
+            setcookie('favoritos', json_encode(getFavoriteBooks()));
+        }
+    } else {
+
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +43,7 @@ $linha = getBook($idDoLivro);
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
     <script src="scripts/search.js" type="text/javascript"></script>
+    <script src="scripts/buttons.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Stack</title>
 </head>
@@ -106,7 +124,7 @@ $linha = getBook($idDoLivro);
 
             <div class="adicionar">
                 <div id="button_container">
-                    <a id="button">ADICIONAR Á LISTA DE DESEJOS</a>
+                    <a class="<?php echo $idDoLivro?>" onclick="getBookCode(this,'estante');" id="button">ADICIONAR Á LISTA DE DESEJOS</a>
                 </div>
 
                 <div id="button_container">
