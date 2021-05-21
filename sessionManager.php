@@ -33,6 +33,8 @@ function verificarUsuarioLogado()
 }
 function obterIdDoUsuario()
 {
-    session_start();
+    if (session_id() == '') {
+        session_start();
+    }
     return $_SESSION['id'];
 }
