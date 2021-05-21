@@ -6,6 +6,24 @@ $urlPerfil = urlPerfil();
 $urlEstante = urlEstanteDoSonho();
 $urlCarrinho = urlCarrinho();
 
+if (isset($_GET['adicionar'])) {
+
+    $idDoLivro = $_GET['adicionar'];
+
+    if (!verificaItensRepetidos($idDoLivro)) {
+
+        $livro = getBook($idDoLivro);
+
+        $codigo = $livro['codigo'];
+        $titulo = $livro['titulo'];
+        $autor = $livro['autor'];
+        $preco = $livro['preco'];
+        $imagem = $livro['imagem'];
+
+        atribuirAoCarrinho($titulo, $autor, $preco, $codigo, $imagem);
+    }
+}
+
 if (isset($_GET['pesquisa'])) {
     $livros = searchBooks($_GET['pesquisa']);
 } else if (isset($_GET['filterType'])) {

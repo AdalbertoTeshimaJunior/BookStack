@@ -2,6 +2,56 @@
 include("gerarcomprovante.php");
 
 escreverInformacoes();
+//--Pega os dados--
+//! Sem Telefone !
+$cpf = $_POST['cpf'];
+$endereco_Rua = $_POST['rua'];
+$endereco_Bairro = $_POST['bairro'];
+$endereco_Estado = $_POST['estado'];
+$endereco_CEP = $_POST['cep'];
+$endereco_Cidade = $_POST['cidade'];
+$endereco_Numero = $_POST['numero'];
+$pagamento_NomeTitular = $_POST['titular'];
+$pagamento_NumeroCartao = $_POST['cartao'];
+$pagamento_CPFTitular = $_POST['cpftitular'];
+$pagamento_CVV = $_POST['cvv'];
+
+//--Conectar com o Banco de Dados--
+$conexao = mysqli_connect("localhost", "root", "", "bookstack");
+session_start();
+$usuario_id = $_SESSION['id'];
+
+//--Deletar o carrinho antigo do usuário--
+$delete = "DELETE FROM compra
+        WHERE codigo_usuario = $usuario_id";
+mysqli_query($conexao, $delete);
+
+//--Atualiza o carrinho do usuário no Banco de Dados--
+$dados = html_entity_decode($_COOKIE['carrinho']);
+$livrosCarrinho = json_decode($dados, true);
+foreach ($livrosCarrinho as $livro) {
+    $valorTotal = $livro['preco'] * $livro['quantidade'];
+    $insert = "INSERT INTO compra
+    (valor_total, codigo_usuario, codigo_livro, quantidade)
+    VALUES
+    ($valorTotal, $usuario_id, " . $livro['codigo'] . ", " . $livro['quantidade'] . ")";
+    mysqli_query($conexao, $insert);
+}
+//--Atualiza os dados do usuário no Banco de Dados--
+$update = "UPDATE usuario SET
+cpf = $cpf,
+endereco_CEP = '$endereco_CEP',
+endereco_Estado = '$endereco_Estado',
+endereco_Cidade = '$endereco_Cidade',
+endereco_Bairro = '$endereco_Bairro',
+endereco_Rua = '$endereco_Rua',
+endereco_Numero = $endereco_Numero,
+pagamento_NomeTitular = '$pagamento_NomeTitular',
+pagamento_CPFTitular = $pagamento_CPFTitular,
+pagamento_CVV = $pagamento_CVV,
+pagamento_NumeroCartao = $pagamento_NumeroCartao
+WHERE  codigo = $usuario_id";
+mysqli_query($conexao, $update);
 ?>
 
 <!DOCTYPE html>
