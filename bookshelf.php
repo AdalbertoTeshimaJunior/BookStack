@@ -1,10 +1,11 @@
 <?php
 include("dbmanager.php");
 include("sessionManager.php");
-$favbooks = getFavoriteBooks(obterIdDoUsuario());
+$userId = obterIdDoUsuario();
+$favbooks = getFavoriteBooks($userId);
 
 if (!isset($_COOKIE['favoritos'])) {
-    setcookie('favoritos', json_encode(getFavoriteBooks(obterIdDoUsuario())));
+    setcookie('favoritos', json_encode(getFavoriteBooks($userId)));
 }
 
 ?>
