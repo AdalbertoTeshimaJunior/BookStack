@@ -139,6 +139,53 @@ function searchBooks($tittle)
         return $livros;
     }
 }
+function filterBooks($filterType, $filter)
+{
+    if ($filterType != "genero") {
+        $order = "ASC";
+        if ($filter == "Maior preço") {
+            $order = "DESC";
+        }
+
+        $link = mysqli_connect("localhost", "root", "", "bookstack");
+        $sql = "SELECT * FROM livro ORDER BY " . $filterType . " " . $order;
+        $answer = mysqli_query($link, $sql);
+        $livros = array();
+        $aux = 0;
+
+        while ($data = mysqli_fetch_array($answer)) {
+            $codigo = $data['codigo'];
+            $preco = $data['preco'];
+            $titulo = $data['titulo'];
+            $imagem = $data['imagem'];
+
+            $livro = array('codigo' => $codigo, 'preco' => $preco, 'titulo' => $titulo, 'imagem' => $imagem);
+
+            $livros[$aux] = $livro;
+            $aux++;
+        }
+        return $livros;
+    } else {
+        $link = mysqli_connect("localhost", "root", "", "bookstack");
+        $sql = "SELECT * FROM livro WHERE genero = '" . $filter . "'";
+        $answer = mysqli_query($link, $sql);
+        $livros = array();
+        $aux = 0;
+
+        while ($data = mysqli_fetch_array($answer)) {
+            $codigo = $data['codigo'];
+            $preco = $data['preco'];
+            $titulo = $data['titulo'];
+            $imagem = $data['imagem'];
+
+            $livro = array('codigo' => $codigo, 'preco' => $preco, 'titulo' => $titulo, 'imagem' => $imagem);
+
+            $livros[$aux] = $livro;
+            $aux++;
+        }
+        return $livros;
+    }
+}
 /**
  * Função que contrói um array que contém todos os livro da tabela 'favoritos' do banco de dados
  * @return array que possui os atributos dos livros da tabela 'favoritos'
@@ -146,6 +193,9 @@ function searchBooks($tittle)
 function getFavoriteBooks()
 {
     //TODO: include the archieve that has getUserID() function here //
+    // Ler a tabela favoritos e obter todos os livros que possuirem o código do usuario x
+    // a partir desse dado eu obtenho a chave estrangeira q aponta para o livro em questao
+    // Montar um array com ID do livro e a foto dele que estão na tabela livro
     $userID = getUserID();
     $link = mysqli_connect("localhost", "root", "", "bookstack");
     $sql = "SELECT * from favoritos where codigo_usuario = " . $userID . ";";
@@ -154,16 +204,21 @@ function getFavoriteBooks()
     $i = 0;
     if (mysqli_num_rows($queryAnswer) > 0) {
         while ($data = mysqli_fetch_array($queryAnswer)) {
-            $id = $data['id'];
-            $image = $data['image'];
-            $favbooks = array('id' => $id, 'image' => $image);
+            $bookID = $data['codigo_livro'];
+            
+            $link = mysqli_connect("localhost", "root", "", "bookstack");
+            $books = "SELECT * from livros where codigo = ".$bookID.";";
+            $queryOfBooks = mysqli_query($link, $books);
+
+
+            $favbooks = array('codigo_livro' => $bookID);
             $favbooks[$i] = $favbooks;
             $i++;
         }
+        
         return $favbooks;
-    }
+    } // Usuário ainda não possui nenhum livro nos favoritos?
 }
-
 
 function getUserID()
 {

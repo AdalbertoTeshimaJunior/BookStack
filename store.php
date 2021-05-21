@@ -26,6 +26,12 @@ if (isset($_GET['adicionar'])) {
 
 if (isset($_GET['pesquisa'])) {
     $livros = searchBooks($_GET['pesquisa']);
+} else if (isset($_GET['filterType'])) {
+    if ($_GET['filter'] == "Todos") {
+        header("location: store.php");
+    } else {
+        $livros = filterBooks($_GET['filterType'], $_GET['filter']);
+    }
 } else {
     $livros = getAllBooks();
 }
@@ -108,49 +114,23 @@ if (isset($_GET['pesquisa'])) {
                     </div>
 
                     <div class="filter-button">
-                        <a href="">
+                        <a onclick="definirFiltro(this);">
                             <p>TODOS</p>
                         </a>
                     </div>
                     <div class="filter-button">
-                        <a href="">
+                        <a onclick="definirFiltro(this);">
                             <p>A - Z</p>
                         </a>
                     </div>
                     <div class="filter-button">
-                        <a href="">
+                        <a onclick="definirFiltro(this);">
                             <p>MENOR PREÇO</p>
                         </a>
                     </div>
                     <div class="filter-button">
-                        <a href="">
+                        <a onclick="definirFiltro(this)">
                             <p>MAIOR PREÇO</p>
-                        </a>
-                    </div>
-                    <div class="filter-button">
-                        <a href="">
-                            <p>MAIS VENDIDO</p>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <div class="filter-title">
-                        <p>PUBLICAÇÃO</p>
-                    </div>
-
-                    <div class="filter-button">
-                        <a href="">
-                            <p>AUTOR</p>
-                        </a>
-                    </div>
-                    <div class="filter-button">
-                        <a href="">
-                            <p>EDITORA</p>
-                        </a>
-                    </div>
-                    <div class="filter-button">
-                        <a href="">
-                            <p>IDIOMA</p>
                         </a>
                     </div>
                 </div>
@@ -160,23 +140,38 @@ if (isset($_GET['pesquisa'])) {
                     </div>
 
                     <div class="filter-button">
-                        <a href="">
+                        <a onclick="definirFiltro(this);">
                             <p>FICÇÃO</p>
                         </a>
                     </div>
                     <div class="filter-button">
-                        <a href="">
+                        <a onclick="definirFiltro(this);">
                             <p>CIÊNCIA</p>
                         </a>
                     </div>
                     <div class="filter-button">
-                        <a href="">
-                            <p>LITERATURA</p>
+                        <a onclick="definirFiltro(this);">
+                            <p>ÉPICO</p>
                         </a>
                     </div>
                     <div class="filter-button">
-                        <a href="">
-                            <p>SUSPENSE</p>
+                        <a onclick="definirFiltro(this);">
+                            <p>MISTERIO</p>
+                        </a>
+                    </div>
+                    <div class="filter-button">
+                        <a onclick="definirFiltro(this);">
+                            <p>DRAMA</p>
+                        </a>
+                    </div>
+                    <div class="filter-button">
+                        <a onclick="definirFiltro(this);">
+                            <p>ROMANCE</p>
+                        </a>
+                    </div>
+                    <div class="filter-button">
+                        <a onclick="definirFiltro(this);">
+                            <p>MITOLOGIA</p>
                         </a>
                     </div>
                 </div>
