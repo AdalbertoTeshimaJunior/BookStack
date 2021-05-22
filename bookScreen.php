@@ -11,19 +11,18 @@ if (isset($_GET['codigo'])) {
 $linha = getBook($idDoLivro);
 
 if (isset($_GET['adicionar'])) {
-    if($_GET['adicionar'] == 'estante'){
+    if ($_GET['adicionar'] == 'estante') {
         if (isset($_COOKIE['favoritos'])) {
             $dados = html_entity_decode($_COOKIE['favoritos']);
             $json = json_decode($dados, true);
-            
+
             $json[] = ["codigo_livro" => $idDoLivro, "imagem" => $linha['imagem']];
-    
+
             setcookie('favoritos', json_encode($json));
         } else {
-            setcookie('favoritos', json_encode(getFavoriteBooks()));
+            setcookie('favoritos', json_encode(getFavoriteBooks(obterIdDoUsuario())));
         }
     } else {
-
     }
 }
 ?>
@@ -124,7 +123,7 @@ if (isset($_GET['adicionar'])) {
 
             <div class="adicionar">
                 <div id="button_container">
-                    <a class="<?php echo $idDoLivro?>" onclick="getBookCode(this,'estante');" id="button">ADICIONAR Á LISTA DE DESEJOS</a>
+                    <a class="<?php echo $idDoLivro ?>" onclick="getBookCode(this,'estante');" id="button">ADICIONAR Á LISTA DE DESEJOS</a>
                 </div>
 
                 <div id="button_container">

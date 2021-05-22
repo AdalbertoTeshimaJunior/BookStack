@@ -25,6 +25,7 @@ if (!$conexao) {
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
   <script src="scripts/search.js" type="text/javascript"></script>
+  <script src="scripts/store.js" type="text/javascript"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Stack</title>
 </head>
@@ -93,12 +94,12 @@ if (!$conexao) {
       ?>
         <div id="livro">
           <div id="imagem-container">
-            <img src="<?php echo $linha['imagem']; ?>" id="livro-imagem">
+            <img src="<?php echo $linha['imagem']; ?>" class="<?php echo $linha['codigo'] ?>" onclick="enviarId(this);" id="livro-imagem">
           </div>
           <p id="titulo"><?php echo $linha['titulo']; ?></p>
           <p id="preco">R$ <?php echo $linha['preco']; ?></p>
           <div id="button-container">
-            <a id="button">Comprar</a>
+            <a id="button" class="<?php echo $linha['codigo'] ?>">Comprar</a>
           </div>
         </div>
       <?php

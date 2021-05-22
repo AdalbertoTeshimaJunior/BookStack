@@ -84,10 +84,12 @@ body{
     display: flex;
     margin-top: 3%;
     justify-content: center;
+    
 }
 .lancamentos-container #livro #imagem-container img {
     width: 66%;
     justify-self: center;
+    cursor: pointer;
 }
 #button-container{
     display: flex;
