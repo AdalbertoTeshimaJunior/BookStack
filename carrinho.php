@@ -121,7 +121,7 @@ if (isset($_COOKIE['carrinho'])) {
                 <p id="total" class="total"></p>
 
                 <div id="botao_item">
-                    <a href="carrinho.php" onclick="location.href = this.href+'?remover='+ this.id;return false;">
+                    <a href="carrinho.php" onclick="location.href = this.href+'?desconto='+document.getElementById('desconto').value+'&remover='+ this.id;return false;">
                         <img id="remover_botao" src="imagens/remover.svg" alt=""></img>
                     </a>
                 </div>
