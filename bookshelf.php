@@ -136,13 +136,10 @@ if (!isset($_COOKIE['favoritos'])) {
     <script src="scripts/bookshelf.js" type="text/javascript"></script>
 </body>
 
-<<<<<<< HEAD </html>
     <?php
     echo "<script>
     bookShelfClones(" . json_encode($favbooks) . ");
     </script>";
     ?>
-    =======
 
 </html>
->>>>>>> ab45def22f67b66a9d8bc0181129d4e477b2988f
