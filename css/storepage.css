@@ -82,6 +82,7 @@ article .product #book-container{
 article .product img{
     width: 60%;
     height: 90%;
+    cursor: pointer;
 }
 article .product #titulo{
     margin-top: 0%;
