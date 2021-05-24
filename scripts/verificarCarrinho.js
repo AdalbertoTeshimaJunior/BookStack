@@ -1,5 +1,4 @@
 /* VERIFICAÇÕES DA PÁGINA DO CARRINHO */
-
 // Verifica se o carrinho está vazio
 if (cookieArray[carrinhoIndex] != null) {
     var cookieDecoded = decodeURIComponent(cookieArray[carrinhoIndex].replace("carrinho=", ""));

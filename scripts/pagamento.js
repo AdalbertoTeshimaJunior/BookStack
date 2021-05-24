@@ -144,7 +144,6 @@ function calculoTotal(desconto, cupom) {
     total -= total * (parseFloat(descontoInserido) / 100);
     document.getElementById("valor-total").textContent = "R$" + formatarValor(total.toFixed(2));
 }
-
 function formatarValor(valor) {
     return valor.replace('.', ',');
 }

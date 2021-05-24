@@ -3,6 +3,15 @@ include("dbmanager.php");
 session_start();
 $usuario_id = $_SESSION['id'];
 
+if (isset($_GET['desconto'])) {
+    $cupom = $_GET['desconto'];
+    $valorDesconto = getDiscount($cupom);
+    if ($valorDesconto != false) {
+        setcookie('desconto', $cupom);
+        setcookie('valordesconto', $valorDesconto);
+    }
+}
+
 if (isset($_COOKIE['carrinho'])) {
     $carrinhoCookie = $_COOKIE['carrinho'];
     $carrinhoCookie = json_decode($carrinhoCookie);
@@ -162,9 +171,8 @@ if (isset($_COOKIE['carrinho'])) {
 
 </html>
 <?php
+
 if (isset($_GET['desconto'])) {
-    $cupom = $_GET['desconto'];
-    $valorDesconto = getDiscount($cupom);
     if ($valorDesconto != false) {
         echo "<script> calculoTotal('" . $valorDesconto . "','" . $cupom . "') </script>";
     } else {
