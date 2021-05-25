@@ -9,19 +9,7 @@ $urlCarrinho = urlCarrinho();
 if (isset($_GET['adicionar'])) {
 
     $idDoLivro = $_GET['adicionar'];
-
-    if (!verificaItensRepetidos($idDoLivro, 'carrinho')) {
-
-        $livro = getBook($idDoLivro);
-
-        $codigo = $livro['codigo'];
-        $titulo = $livro['titulo'];
-        $autor = $livro['autor'];
-        $preco = $livro['preco'];
-        $imagem = $livro['imagem'];
-
-        atribuirAoCarrinho($titulo, $autor, $preco, $codigo, $imagem);
-    }
+    executarAdicaoCarrinhoUrl($idDoLivro);
 }
 
 if (isset($_GET['pesquisa'])) {

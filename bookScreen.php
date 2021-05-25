@@ -14,27 +14,23 @@ $linha = getBook($idDoLivro);
 if (isset($_GET['adicionar'])) {
     if ($_GET['adicionar'] == 'estante') {
         if (isset($_COOKIE['favoritos'])) {
-            $dados = html_entity_decode($_COOKIE['favoritos']);
-            $json = json_decode($dados, true);
-            
-            if(!verificaItensRepetidos($idDoLivro, 'favoritos')){
-                $json[] = ["codigo_livro" => $idDoLivro, "imagem" => $linha['imagem']];
-                setcookie('favoritos', json_encode($json));
+
+            if (!verificaItensRepetidos($idDoLivro, 'favoritos')) {
+                atribuirAEstante($idDoLivro, $linha['imagem']);
             } else {
                 //Livro já existe na estante
             }
-            
         } else {
             setcookie('favoritos', json_encode(getFavoriteBooks(obterIdDoUsuario())));
         }
-    } else if ($_GET['adicionar'] == 'carrinho'){
+    } else if ($_GET['adicionar'] == 'carrinho') {
         if (isset($_COOKIE['carrinho'])) {
             $dados = html_entity_decode($_COOKIE['carrinho']);
             $json = json_decode($dados, true);
             // get all info about the book that's being added to the cart
             $allBookInfo = getBook($idDoLivro);
 
-            if(!verificaItensRepetidos($idDoLivro, 'carrinho')){
+            if (!verificaItensRepetidos($idDoLivro, 'carrinho')) {
                 $titulo = $allBookInfo['titulo'];
                 $autor = $allBookInfo['autor'];
                 $preco = $allBookInfo['preco'];
@@ -43,7 +39,6 @@ if (isset($_GET['adicionar'])) {
             } else {
                 //Livro já existe na estante
             }
-            
         } else {
             setcookie('carrinho', json_encode(getFavoriteBooks(obterIdDoUsuario())));
         }
