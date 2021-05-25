@@ -6,6 +6,10 @@ $urlPerfil = urlPerfil();
 $urlEstante = urlEstanteDoSonho();
 $urlCarrinho = urlCarrinho();
 
+if (!isset($_COOKIE['carrinho'])) {
+    setcookie('carrinho','');
+}
+
 if (isset($_GET['adicionar'])) {
 
     $idDoLivro = $_GET['adicionar'];
@@ -189,7 +193,7 @@ if (isset($_GET['pesquisa'])) {
                 <p id="titulo"></p>
                 <p id="book-price"></p>
                 <div id="button-container">
-                    <a href="store.php" onclick="location.href = this.href+'?adicionar='+ this.id;return false;">Adicionar ao Carrinho</a>
+                    <a onclick="alreadyAdded(this);">Adicionar ao Carrinho</a>
                 </div>
             </div>
         </article>

@@ -4,9 +4,7 @@ var box = document.getElementById("carrinho");
 var itemPadrao = document.getElementById("item-0");
 var carrinhoVazio = document.getElementById('carrinho-vazio');
 var cookieArray = document.cookie.split(";");
-//var descontoIndex = obterIndex("desconto=");
 var carrinhoIndex = obterIndex("carrinho=");
-//var descontoCookie = cookieArray[descontoIndex].replace("desconto=", "");
 
 var target = document.getElementById("valor-sem-desconto");
 var observer = new MutationObserver(function (mutations) {
