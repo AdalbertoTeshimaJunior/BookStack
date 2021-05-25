@@ -1,3 +1,6 @@
+
+var cookieArray = document.cookie.split(";");
+
 //Multiplica a estrutura do HTML para receber as informações do arquivo JSON//
 console.log(document.cookie);
 function exibirProdutos(livros) {
@@ -37,4 +40,37 @@ function preencheInformacoes(livro, elemento) {
 function enviarId(elemento) {
     var codigo = elemento.className;
     window.location.href = 'bookScreen.php' + '?codigo=' + codigo;
+}
+
+function obterIndex(chave) {
+    for (i = 0; i < cookieArray.length; i++) {
+        if (cookieArray[i].includes(chave)) {
+            return i;
+        }
+    }
+}
+
+function alreadyAdded(element){
+    var carrinhoIndex = obterIndex("carrinho=");
+
+    if (cookieArray[carrinhoIndex] != null) {
+        var cookieDecoded = decodeURIComponent(cookieArray[carrinhoIndex].replace("carrinho=", ""));
+            var carrinhoJSON = JSON.parse(cookieDecoded);
+            for(i = 0; i<carrinhoJSON; i++){
+                if(element.id == carrinhoJSON[i].codigo){
+                    alreadyAddedOnChange(element);
+                    return false;
+                } 
+            }
+            window.location.href = 'store.php?adicionar='+ element.id;
+            element.click();
+            alreadyAddedOnChange(element);
+    } 
+}
+
+function alreadyAddedOnChange(element){
+    var button = element.parent;
+    
+    button.style.cssText = "background-color: #009a80;";
+    element.innetHTML = 'Livro Adicionado';
 }
