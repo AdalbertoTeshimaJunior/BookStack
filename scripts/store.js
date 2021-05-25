@@ -1,5 +1,10 @@
 
 var cookieArray = document.cookie.split(";");
+var carrinhoIndex = obterIndex("carrinho=");
+if (cookieArray[carrinhoIndex] != null) {
+    var cookieDecoded = decodeURIComponent(cookieArray[carrinhoIndex].replace("carrinho=", ""));
+    var carrinhoJSON = JSON.parse(cookieDecoded);
+}
 
 //Multiplica a estrutura do HTML para receber as informações do arquivo JSON//
 console.log(document.cookie);
@@ -35,6 +40,10 @@ function preencheInformacoes(livro, elemento) {
     titulo.textContent = livro.titulo;
     preco.textContent = ("R$ " + livro.preco).replace('.', ',');
     botao.setAttribute('id', livro.codigo);
+    var verificar = alreadyAdded(livro.codigo);
+    if (verificar > 0) {
+        alreadyAddedOnChange(botao);
+    }
 }
 
 function enviarId(elemento) {
@@ -50,27 +59,17 @@ function obterIndex(chave) {
     }
 }
 
-function alreadyAdded(element){
-    var carrinhoIndex = obterIndex("carrinho=");
-
-    if (cookieArray[carrinhoIndex] != null) {
-        var cookieDecoded = decodeURIComponent(cookieArray[carrinhoIndex].replace("carrinho=", ""));
-            var carrinhoJSON = JSON.parse(cookieDecoded);
-            for(i = 0; i<carrinhoJSON; i++){
-                if(element.id == carrinhoJSON[i].codigo){
-                    alreadyAddedOnChange(element);
-                    return false;
-                } 
-            }
-            window.location.href = 'store.php?adicionar='+ element.id;
-            element.click();
-            alreadyAddedOnChange(element);
-    } 
+function alreadyAdded(id) {
+    if (carrinhoJSON != undefined) {
+        var livrosAdicionados = carrinhoJSON.filter(livro => livro.codigo == id);
+        console.log(livrosAdicionados.length);
+        return livrosAdicionados.length;
+    } else {
+        return 0;
+    }
 }
 
-function alreadyAddedOnChange(element){
-    var button = element.parent;
-    
-    button.style.cssText = "background-color: #009a80;";
-    element.innetHTML = 'Livro Adicionado';
+function alreadyAddedOnChange(element) {
+    element.style.cssText = "background-color: #009a80;";
+    element.textContent = 'Livro Adicionado';
 }

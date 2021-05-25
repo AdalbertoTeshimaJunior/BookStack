@@ -6,13 +6,16 @@ $urlPerfil = urlPerfil();
 $urlEstante = urlEstanteDoSonho();
 $urlCarrinho = urlCarrinho();
 
-if (!isset($_COOKIE['carrinho'])) {
-    setcookie('carrinho','');
-}
-
 if (isset($_GET['adicionar'])) {
-
     $idDoLivro = $_GET['adicionar'];
+    if (!isset($_COOKIE['carrinho'])) {
+        if (!verificarUsuarioLogado()) {
+            header("location: signin.php");
+        }
+        setcookie('carrinho', json_encode(getUserCart($_SESSION['id'])));
+        header("location: store.php?adicionar=" . $idDoLivro);
+    }
+
     executarAdicaoCarrinhoUrl($idDoLivro);
 }
 
@@ -181,7 +184,7 @@ if (isset($_GET['pesquisa'])) {
                 <p id="titulo"></p>
                 <p id="book-price"></p>
                 <div id="button-container">
-                    <a onclick="alreadyAdded(this);">Adicionar ao Carrinho</a>
+                    <a href="store.php" onclick="location.href = this.href+'?adicionar='+ this.id;return false;">Adicionar ao Carrinho</a>
                 </div>
             </div>
         </article>
