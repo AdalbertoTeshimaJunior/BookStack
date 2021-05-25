@@ -1,13 +1,21 @@
 <?php
 
-function verificaItensRepetidos($codigo)
+function verificaItensRepetidos($codigo, $destino)
 {
-    if (isset($_COOKIE['carrinho'])) {
-        $carrinhoCookie = $_COOKIE['carrinho'];
+    if (isset($_COOKIE[$destino])) {
+        $carrinhoCookie = $_COOKIE[$destino];
         $carrinhoCookie = json_decode($carrinhoCookie);
-        foreach ($carrinhoCookie as $item) {
-            if ($codigo == $item->codigo) {
-                return true;
+        if($destino == 'favoritos'){
+            foreach ($carrinhoCookie as $item) {
+                if ($codigo == $item->codigo_livro) {
+                    return true;
+                }
+            }
+        } else {
+            foreach ($carrinhoCookie as $item) {
+                if ($codigo == $item->codigo) {
+                    return true;
+                }
             }
         }
         return false;

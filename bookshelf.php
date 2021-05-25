@@ -2,9 +2,9 @@
 include("dbmanager.php");
 include("sessionManager.php");
 $userId = obterIdDoUsuario();
-$favbooks = getFavoriteBooks($userId);
 
 if (!isset($_COOKIE['favoritos'])) {
+
     setcookie('favoritos', json_encode(getFavoriteBooks($userId)));
 }
 
@@ -135,11 +135,4 @@ if (!isset($_COOKIE['favoritos'])) {
 
     <script src="scripts/bookshelf.js" type="text/javascript"></script>
 </body>
-
-    <?php
-    echo "<script>
-    bookShelfClones(" . json_encode($favbooks) . ");
-    </script>";
-    ?>
-
 </html>

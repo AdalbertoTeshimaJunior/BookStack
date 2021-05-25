@@ -27,17 +27,13 @@ if (cookieArray[favoritosIndex] != null) {
     var product = document.getElementsByClassName("book");
 
     for(i = 0; i < favbooks.length; i++){
-        console.log(favbooks[i].codigo_livro);
         if(i == 0){
             var template = document.getElementById("book-title");
-            template.setAttribute("id", "book-" + favbooks[i].codigo_livro);
             fillBookShelf(favbooks[i], template);
         } else {
             var clone = product[0].cloneNode(true);
-            clone.setAttribute("id", "book-" + favbooks[i].codigo_livro);
             holdClone.appendChild(clone);
-            var template = document.getElementById("book-" + favbooks[i].codigo_livro);
-            fillBookShelf(favbooks[i], template);
+            fillBookShelf(favbooks[i], clone);
         }
     }
 }

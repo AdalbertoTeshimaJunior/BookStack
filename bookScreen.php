@@ -1,6 +1,7 @@
 <?php
 include("dbmanager.php");
 include("sessionManager.php");
+include("gerenciarcarrinho.php");
 $urlPerfil = urlPerfil();
 $urlEstante = urlEstanteDoSonho();
 $urlCarrinho = urlCarrinho();
@@ -15,14 +16,39 @@ if (isset($_GET['adicionar'])) {
         if (isset($_COOKIE['favoritos'])) {
             $dados = html_entity_decode($_COOKIE['favoritos']);
             $json = json_decode($dados, true);
-
-            $json[] = ["codigo_livro" => $idDoLivro, "imagem" => $linha['imagem']];
-
-            setcookie('favoritos', json_encode($json));
+            
+            if(!verificaItensRepetidos($idDoLivro, 'favoritos')){
+                $json[] = ["codigo_livro" => $idDoLivro, "imagem" => $linha['imagem']];
+                setcookie('favoritos', json_encode($json));
+            } else {
+                //Livro já existe na estante
+            }
+            
         } else {
             setcookie('favoritos', json_encode(getFavoriteBooks(obterIdDoUsuario())));
         }
+    } else if ($_GET['adicionar'] == 'carrinho'){
+        if (isset($_COOKIE['carrinho'])) {
+            $dados = html_entity_decode($_COOKIE['carrinho']);
+            $json = json_decode($dados, true);
+            // get all info about the book that's being added to the cart
+            $allBookInfo = getBook($idDoLivro);
+
+            if(!verificaItensRepetidos($idDoLivro, 'carrinho')){
+                $titulo = $allBookInfo['titulo'];
+                $autor = $allBookInfo['autor'];
+                $preco = $allBookInfo['preco'];
+                $imagem = $allBookInfo['imagem'];
+                atribuirAoCarrinho($titulo, $autor, $preco, $idDoLivro, $imagem);
+            } else {
+                //Livro já existe na estante
+            }
+            
+        } else {
+            setcookie('carrinho', json_encode(getFavoriteBooks(obterIdDoUsuario())));
+        }
     } else {
+        echo "erro na leitura da URL";
     }
 }
 ?>
@@ -42,7 +68,7 @@ if (isset($_GET['adicionar'])) {
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
     <script src="scripts/search.js" type="text/javascript"></script>
-    <script src="scripts/buttons.js" type="text/javascript"></script>
+    <script src="scripts/addButtons.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Stack</title>
 </head>
@@ -123,11 +149,11 @@ if (isset($_GET['adicionar'])) {
 
             <div class="adicionar">
                 <div id="button_container">
-                    <a class="<?php echo $idDoLivro ?>" onclick="getBookCode(this,'estante');" id="button">ADICIONAR Á LISTA DE DESEJOS</a>
+                    <a class="<?php echo $idDoLivro ?>" onclick="addButton(this,'estante');" id="button">ADICIONAR À ESTANTE DOS SONHOS</a>
                 </div>
 
                 <div id="button_container">
-                    <a id="button">ADICIONAR AO CARRINHO</a>
+                    <a id="button" class="<?php echo $idDoLivro ?>" onclick="addButton(this,'carrinho');">ADICIONAR AO CARRINHO</a>
                 </div>
             </div>
         </article>

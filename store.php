@@ -10,7 +10,7 @@ if (isset($_GET['adicionar'])) {
 
     $idDoLivro = $_GET['adicionar'];
 
-    if (!verificaItensRepetidos($idDoLivro)) {
+    if (!verificaItensRepetidos($idDoLivro, 'carrinho')) {
 
         $livro = getBook($idDoLivro);
 
