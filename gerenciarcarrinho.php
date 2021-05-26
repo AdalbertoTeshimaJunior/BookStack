@@ -5,7 +5,7 @@ function verificaItensRepetidos($codigo, $destino)
     if (isset($_COOKIE[$destino])) {
         $carrinhoCookie = $_COOKIE[$destino];
         $carrinhoCookie = json_decode($carrinhoCookie);
-        if($destino == 'favoritos'){
+        if ($destino == 'favoritos') {
             foreach ($carrinhoCookie as $item) {
                 if ($codigo == $item->codigo_livro) {
                     return true;
@@ -21,28 +21,36 @@ function verificaItensRepetidos($codigo, $destino)
         return false;
     }
 }
+function executarAdicaoCarrinhoUrl($idDoLivro)
+{
+    if (!verificaItensRepetidos($idDoLivro, 'carrinho')) {
 
+        $livro = getBook($idDoLivro);
+
+        $codigo = $livro['codigo'];
+        $titulo = $livro['titulo'];
+        $autor = $livro['autor'];
+        $preco = $livro['preco'];
+        $imagem = $livro['imagem'];
+
+        atribuirAoCarrinho($titulo, $autor, $preco, $codigo, $imagem);
+    }
+}
 function atribuirAoCarrinho($titulo, $autor, $preco, $codigo, $imagem)
 {
+    $dados = html_entity_decode($_COOKIE['carrinho']);
+    $json = json_decode($dados, true);
 
-    if (isset($_COOKIE['carrinho'])) {
-        $dados = html_entity_decode($_COOKIE['carrinho']);
-        $json = json_decode($dados, true);
+    $json[] = ["codigo" => $codigo, 'titulo' => $titulo, "autor" => $autor, "preco" => $preco, "quantidade" => 1, "imagem" => $imagem];
 
-        $json[] = ["codigo" => $codigo, 'titulo' => $titulo, "autor" => $autor, "preco" => $preco, "quantidade" => 1, "imagem" => $imagem];
+    setcookie('carrinho', json_encode($json));
+}
+function atribuirAEstante($idDoLivro, $imagem)
+{
+    $dados = html_entity_decode($_COOKIE['favoritos']);
+    $json = json_decode($dados, true);
 
-        setcookie('carrinho', json_encode($json));
-    } else {
-        $json = '[
-                {
-                    "codigo": "' . $codigo . '",
-                    "titulo": "' . $titulo . '",
-                    "autor":"' . $autor . '",
-                    "preco":' . $preco . ',
-                    "quantidade": 1,
-                    "imagem":"' . $imagem . '"
-                }
-            ]';
-        setcookie('carrinho', $json);
-    }
+    $json[] = ["codigo_livro" => $idDoLivro, "imagem" => $imagem];
+
+    setcookie('favoritos', json_encode($json));
 }
