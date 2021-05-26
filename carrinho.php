@@ -176,9 +176,7 @@ if (isset($_GET['desconto'])) {
     if ($valorDesconto != false) {
         echo "<script> calculoTotal('" . $valorDesconto . "','" . $cupom . "') </script>";
     } else {
-        echo "<script> calculoTotal('" . 0 . "','" . $cupom . "') </script>";
+        echo "<script> calculoTotal('sem valor','" . $cupom . "') </script>";
     }
-} else {
-    echo "<script> calculoTotal('" . 0 . "','') </script>";
 }
 ?>
