@@ -134,13 +134,17 @@ function aplicarDesconto(input) {
 }
 
 function calculoTotal(desconto, cupom) {
-    document.getElementById('desconto').value = cupom;
-    descontoInserido = parseFloat(desconto);
-    var total = document.getElementById("valor-sem-desconto").textContent.split(" ")[1].replace(',', '.');
-    total = parseFloat(total);
+    if (desconto != 'sem valor') {
+        document.getElementById('desconto').value = cupom;
+        descontoInserido = parseFloat(desconto);
+        var total = document.getElementById("valor-sem-desconto").textContent.split(" ")[1].replace(',', '.');
+        total = parseFloat(total);
 
-    total -= total * (parseFloat(descontoInserido) / 100);
-    document.getElementById("valor-total").textContent = "R$" + formatarValor(total.toFixed(2));
+        total -= total * (parseFloat(descontoInserido) / 100);
+        document.getElementById("valor-total").textContent = "R$" + formatarValor(total.toFixed(2));
+    } else {
+        alert("Cupom-invalido!");
+    }
 }
 function formatarValor(valor) {
     return valor.replace('.', ',');
