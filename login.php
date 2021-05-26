@@ -101,6 +101,9 @@ if ($userEmail != null && $userPassword != null) {
     $loginErr = enterAccount($userEmail, $userPassword);
     if (!$loginErr) {
         echo "<script> loginErrorResponse(); </script>";
+    } else {
+        setcookie('favoritos', json_encode(getFavoriteBooks(obterIdDoUsuario())));
+        setcookie('carrinho', json_encode(getUserCart(obterIdDoUsuario())));
     }
 }
 ?>

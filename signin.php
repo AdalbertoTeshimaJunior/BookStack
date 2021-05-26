@@ -103,6 +103,9 @@ if ($userName != null && $userEmail != null && $userPassword != null) {
     $signinErr = createAccount($userName, $userEmail, $userPassword);
     if (!$signinErr) {
         echo "<script> signinErrorResponse(); </script>";
+    } else {
+        setcookie('favoritos', json_encode(getFavoriteBooks(obterIdDoUsuario())));
+        setcookie('carrinho', json_encode(getUserCart(obterIdDoUsuario())));
     }
 }
 
