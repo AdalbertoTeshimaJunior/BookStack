@@ -99,7 +99,7 @@ if (!$conexao) {
           <p id="titulo"><?php echo $linha['titulo']; ?></p>
           <p id="preco">R$ <?php echo $linha['preco']; ?></p>
           <div id="button-container">
-            <a id="button" class="<?php echo $linha['codigo'] ?>">Comprar</a>
+            <a id="button" onclick="enviarId(this);" class="<?php echo $linha['codigo'] ?>">Ver mais</a>
           </div>
         </div>
       <?php
