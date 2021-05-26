@@ -29,11 +29,11 @@ if (cookieArray[favoritosIndex] != null) {
     for(i = 0; i < favbooks.length; i++){
         if(i == 0){
             var template = document.getElementById("book-title");
-            fillBookShelf(favbooks[i], template);
+            fillBookShelf(favbooks[i], template, i);
         } else {
             var clone = product[0].cloneNode(true);
             holdClone.appendChild(clone);
-            fillBookShelf(favbooks[i], clone);
+            fillBookShelf(favbooks[i], clone, i);
         }
     }
 }
@@ -43,12 +43,12 @@ if (cookieArray[favoritosIndex] != null) {
  * @param {* JSON preenchido com os livros da tabela favoritos do banco de dados} favbooks
  * @param {* Estrutura HTML da página bookshelf} template
  */
-function fillBookShelf(favbooks, template){
+function fillBookShelf(favbooks, template, i){
     var favBookImage = template.children[0].children[0];
-    var favBookBuyButton = template.children[1].children[0];
-    var favBookRemoveButton = template.children[1].children[1];
+    var favBookBuyButton = template.children[1].children[0].children[0];
+    var favBookRemoveButton = template.children[1].children[1].children[0];
 
     favBookImage.src = favbooks.imagem;
-    favBookBuyButton.setAttribute('id', favbooks.codigo_livro);
-    favBookRemoveButton.setAttribute('id', favbooks.codigo_livro);
+    favBookBuyButton.setAttribute('id', favbooks.codigo_livro + "-" + i);
+    favBookRemoveButton.setAttribute('id', favbooks.codigo_livro + "-" + i);
 }

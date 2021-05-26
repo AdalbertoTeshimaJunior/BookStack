@@ -31,11 +31,7 @@ if (isset($_GET['adicionar'])) {
             $allBookInfo = getBook($idDoLivro);
 
             if (!verificaItensRepetidos($idDoLivro, 'carrinho')) {
-                $titulo = $allBookInfo['titulo'];
-                $autor = $allBookInfo['autor'];
-                $preco = $allBookInfo['preco'];
-                $imagem = $allBookInfo['imagem'];
-                atribuirAoCarrinho($titulo, $autor, $preco, $idDoLivro, $imagem);
+                atribuirAoCarrinho($allBookInfo['titulo'],$allBookInfo['autor'], $allBookInfo['preco'], $idDoLivro, $allBookInfo['imagem']);
             } else {
                 //Livro já existe na estante
             }

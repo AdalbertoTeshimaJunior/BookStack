@@ -1,11 +1,23 @@
 <?php
 include("dbmanager.php");
 include("sessionManager.php");
+include("gerenciarcarrinho.php");
 $userId = obterIdDoUsuario();
 
-if (!isset($_COOKIE['favoritos'])) {
+if(isset($_GET['action'])){
 
-    setcookie('favoritos', json_encode(getFavoriteBooks($userId)));
+    if($_GET['action'] == 'comprar'){
+        // adicionar o livro no carrinho
+        $codigo = $_GET['codigo'];
+        executarAdicaoCarrinhoUrl($codigo);
+
+        // remover da estante
+        removerItem($_GET['index']);
+
+    } else if($_GET['action'] == 'remover'){
+        // remover da estante
+        removerItem($_GET['index']);
+    }
 }
 
 ?>
@@ -23,6 +35,7 @@ if (!isset($_COOKIE['favoritos'])) {
     <link rel="stylesheet" href="css/top-bar.css">
     <link rel="stylesheet" href="css/footer.css">
     <script src="scripts/search.js" type="text/javascript"></script>
+    <script src="scripts/addButtons.js" type="text/javascript"></script>
     <link rel="icon" type="image/x-icon" href="imagens/booklogo.png">
     <title>Estante dos Sonhos</title>
 </head>
@@ -80,12 +93,16 @@ if (!isset($_COOKIE['favoritos'])) {
                     <img src="" alt="">
                 </div>
                 <div class="shelf-button">
-                    <div class="buy-button"><a href="">
+                    <div class="buy-button">
+                        <a onclick="sendButtonsAction(this,'comprar');">
                             <p>COMPRAR</p>
-                        </a></div>
-                    <div class="remove-button"><a href="">
+                        </a>
+                    </div>
+                    <div class="remove-button">
+                        <a onclick="sendButtonsAction(this,'remover');">
                             <p>REMOVER</p>
-                        </a></div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </article>
