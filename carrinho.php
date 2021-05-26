@@ -12,20 +12,18 @@ if (isset($_GET['desconto'])) {
     }
 }
 
-if (isset($_COOKIE['carrinho'])) {
-    $carrinhoCookie = $_COOKIE['carrinho'];
-    $carrinhoCookie = json_decode($carrinhoCookie);
 
-    if (isset($_GET['remover'])) {
-        $idDoLivro = $_GET['remover'];
+$carrinhoCookie = $_COOKIE['carrinho'];
+$carrinhoCookie = json_decode($carrinhoCookie);
 
-        unset($carrinhoCookie[$idDoLivro]);
-        $json_arr = array_values($carrinhoCookie);
-        setcookie('carrinho', json_encode($json_arr));
-    }
-} else {
-    setcookie('carrinho', json_encode(getUserCart($usuario_id)));
+if (isset($_GET['remover'])) {
+    $idDoLivro = $_GET['remover'];
+
+    unset($carrinhoCookie[$idDoLivro]);
+    $json_arr = array_values($carrinhoCookie);
+    setcookie('carrinho', json_encode($json_arr));
 }
+
 ?>
 <!DOCTYPE html>
 
