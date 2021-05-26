@@ -62,9 +62,9 @@ function alreadyAdded(element){
                     return false;
                 } 
             }
-            window.location.href = 'store.php?adicionar='+ element.id;
-            element.click();
-            alreadyAddedOnChange(element);
+        window.location.href = 'store.php?adicionar='+ element.id;
+        element.click();
+        alreadyAddedOnChange(element);
     } 
 }
 
