@@ -1,6 +1,6 @@
 <?php
 include("gerarcomprovante.php");
-include("dgmanager.php");
+include("dbmanager.php");
 escreverInformacoes();
 //--Pega os dados--
 //! Sem Telefone !
