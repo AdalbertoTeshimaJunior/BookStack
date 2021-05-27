@@ -83,3 +83,45 @@ function validacaoReset(elemento) {
         reset.style.background = "#57958A";
     }
 }
+
+function preencherCampos(usuario) {
+    var formulario = document.getElementById("form_dados");
+
+    formulario.nome.value = usuario.nome;
+    formulario.email.value = usuario.email;
+    if (usuario.cpf != null) {
+        formulario.cpf.value = usuario.cpf;
+    }
+
+    if (usuario.endereco_Rua != null) {
+        formulario.rua.value = usuario.endereco_Rua;
+    }
+    if (usuario.endereco_Numero != null) {
+        formulario.numero.value = usuario.endereco_Numero;
+    }
+    if (usuario.endereco_Bairro != null) {
+        formulario.bairro.value = usuario.endereco_Bairro;
+    }
+    if (usuario.endereco_Cidade != null) {
+        formulario.cidade.value = usuario.endereco_Cidade;
+    }
+    if (usuario.endereco_Estado != null) {
+        formulario.estado.value = usuario.endereco_Estado;
+    }
+    if (usuario.endereco_CEP != null) {
+        formulario.cep.value = usuario.endereco_CEP;
+    }
+
+    if (usuario.pagamento_NomeTitular != null) {
+        formulario.titular.value = usuario.pagamento_NomeTitular;
+    }
+    if (usuario.pagamento_NumeroCartao != null) {
+        formulario.cartao.value = usuario.pagamento_NumeroCartao;
+    }
+    if (usuario.pagamento_CPFTitular != null) {
+        formulario.cpftitular.value = usuario.pagamento_CPFTitular;
+    }
+    if (usuario.pagamento_CVV != null) {
+        formulario.cvv.value = usuario.pagamento_CVV;
+    }
+}
