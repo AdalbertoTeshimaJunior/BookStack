@@ -159,7 +159,7 @@ if (isset($_GET['remover'])) {
             </label>
 
             <div id="next-button">
-                <a href="form.php">
+                <a onclick="verificacaoBotaoProsseguir()">
                     <p>PROSSEGUIR</p>
                     <img src="imagens/outline_arrow_forward_white_24dp.png">
                 </a>

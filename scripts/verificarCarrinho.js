@@ -37,3 +37,11 @@ function verificaCarrinho() {
         percorrerCarrinho();
     }
 }
+
+function verificacaoBotaoProsseguir() {
+    if (carrinhoJSON.length != 0) {
+        window.location.href = "form.php"
+    } else {
+        alert("Seu carrinho está vazio");
+    }
+}
