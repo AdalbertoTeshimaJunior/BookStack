@@ -22,16 +22,17 @@ if (cookieArray[favoritosIndex] != null) {
  * tabela 'favoritos' do banco de dados.
  * @param {*json preenchido com os livros da tabela favoritos do banco de dados} favbooks 
  */
- function bookShelfClones(favbooks) {
+function bookShelfClones(favbooks) {
     var holdClone = document.getElementsByClassName("grid-shelf")[0];
     var product = document.getElementsByClassName("book");
 
-    if(favbooks == null || favbooks.length == 0){
+    if (favbooks == null || favbooks.length == 0) {
         holdClone.style.display = "none";
+        return false;
     }
 
-    for(i = 0; i < favbooks.length; i++){
-        if(i == 0){
+    for (i = 0; i < favbooks.length; i++) {
+        if (i == 0) {
             var template = document.getElementById("book-title");
             fillBookShelf(favbooks[i], template, i);
         } else {
@@ -47,7 +48,7 @@ if (cookieArray[favoritosIndex] != null) {
  * @param {* JSON preenchido com os livros da tabela favoritos do banco de dados} favbooks
  * @param {* Estrutura HTML da página bookshelf} template
  */
-function fillBookShelf(favbooks, template, i){
+function fillBookShelf(favbooks, template, i) {
     var favBookImage = template.children[0].children[0];
     var favBookBuyButton = template.children[1].children[0].children[0];
     var favBookRemoveButton = template.children[1].children[1].children[0];

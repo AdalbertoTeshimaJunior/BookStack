@@ -310,12 +310,14 @@ function updateBooksInShelf($usuario_id, $livrosEstante)
 
     deleteBooksInShelf($usuario_id);
 
-    foreach ($livrosEstante as $livro) {
-        $insert = "INSERT INTO favoritos
-    (codigo_livro, codigo_usuario, data_adicao)
-    VALUES
-    (" . $livro['codigo_livro'] . ", $usuario_id, " . date("d/m/Y") . ")";
-        mysqli_query($conexao, $insert);
+    if ($livrosEstante != null) {
+        foreach ($livrosEstante as $livro) {
+            $insert = "INSERT INTO favoritos
+        (codigo_livro, codigo_usuario, data_adicao)
+        VALUES
+        (" . $livro['codigo_livro'] . ", $usuario_id, " . date("d/m/Y") . ")";
+            mysqli_query($conexao, $insert);
+        }
     }
 }
 // Deleta a estante do Banco de Dados

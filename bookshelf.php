@@ -19,7 +19,7 @@ if (isset($_GET['action'])) {
     }
 }
 // Se tiver algo na estante será adicionado no Banco de Dados
-if (isset($_COOKIE['favoritos'])) {
+if (isset($_COOKIE['favoritos']) && $_COOKIE['favoritos'] != '') {
     $favoritosCookie = html_entity_decode($_COOKIE['favoritos']);
     $favoritosCookie = json_decode($favoritosCookie, true);
     updateBooksInShelf($userId, $favoritosCookie);
