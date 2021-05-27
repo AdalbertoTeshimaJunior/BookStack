@@ -1,7 +1,7 @@
 <?php
 include("dbmanager.php");
-session_start();
-$usuario_id = $_SESSION['id'];
+include("sessionManager.php");
+$usuario_id = obterIdDoUsuario();
 
 if (isset($_GET['desconto'])) {
     $cupom = $_GET['desconto'];
@@ -12,8 +12,12 @@ if (isset($_GET['desconto'])) {
     }
 }
 
-$carrinhoCookie = $_COOKIE['carrinho'];
-$carrinhoCookie = json_decode($carrinhoCookie);
+// Se tiver algo no carrinho será adicionado no Banco de Dados
+if (isset($_COOKIE['carrinho'])) {
+    $carrinhoCookie = html_entity_decode($_COOKIE['carrinho']);
+    $carrinhoCookie = json_decode($carrinhoCookie, true);
+    updateBooksInCart($usuario_id, $carrinhoCookie);
+}
 
 if (isset($_GET['remover'])) {
     $idDoLivro = $_GET['remover'];
@@ -36,6 +40,7 @@ if (isset($_GET['remover'])) {
     <link rel="stylesheet" href="css/carrinho.css">
     <link rel="stylesheet" href="css/top-bar.css">
     <script src="scripts/search.js" type="text/javascript"></script>
+    <script src="scripts/save.js" type="text/javascript"></script>
     <link rel="icon" type="image/x-icon" href="imagens/carinho.png">
     <title>Carrinho</title>
 </head>

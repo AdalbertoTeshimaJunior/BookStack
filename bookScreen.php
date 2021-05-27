@@ -1,7 +1,7 @@
 <?php
 include("dbmanager.php");
 include("sessionManager.php");
-include("gerenciarcarrinho.php");
+include("managecookies.php");
 $urlPerfil = urlPerfil();
 $urlEstante = urlEstanteDoSonho();
 $urlCarrinho = urlCarrinho();
@@ -31,7 +31,7 @@ if (isset($_GET['adicionar'])) {
             $allBookInfo = getBook($idDoLivro);
 
             if (!verificaItensRepetidos($idDoLivro, 'carrinho')) {
-                atribuirAoCarrinho($allBookInfo['titulo'],$allBookInfo['autor'], $allBookInfo['preco'], $idDoLivro, $allBookInfo['imagem']);
+                atribuirAoCarrinho($allBookInfo['titulo'], $allBookInfo['autor'], $allBookInfo['preco'], $idDoLivro, $allBookInfo['imagem']);
             } else {
                 //Livro já existe na estante
             }

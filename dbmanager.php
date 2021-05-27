@@ -127,13 +127,12 @@ function getUserCart($usuario_id)
     }
     return $livros;
 }
+// Atualiza o Banco de Dados com o carrinho do Cookie
 function updateBooksInCart($usuario_id, $livrosCarrinho)
 {
     $conexao = mysqli_connect("localhost", "root", "", "bookstack");
 
-    $delete = "DELETE FROM compra
-        WHERE codigo_usuario = $usuario_id";
-    mysqli_query($conexao, $delete);
+    deleteBooksInCart($usuario_id);
 
     foreach ($livrosCarrinho as $livro) {
         $valorTotal = $livro['preco'] * $livro['quantidade'];
@@ -143,6 +142,15 @@ function updateBooksInCart($usuario_id, $livrosCarrinho)
     ($valorTotal, $usuario_id, " . $livro['codigo'] . ", " . $livro['quantidade'] . ")";
         mysqli_query($conexao, $insert);
     }
+}
+// Deleta o carrinho do Banco de Dados
+function deleteBooksInCart($usuario_id)
+{
+    $conexao = mysqli_connect("localhost", "root", "", "bookstack");
+
+    $delete = "DELETE FROM compra
+        WHERE codigo_usuario = $usuario_id";
+    mysqli_query($conexao, $delete);
 }
 function getDiscount($cupom)
 {
@@ -294,4 +302,28 @@ function getFavoriteBooks($userID)
 
         return $favbooks;
     }
+}
+// Atualiza o Banco de Dados com a Estante do Cookie
+function updateBooksInShelf($usuario_id, $livrosEstante)
+{
+    $conexao = mysqli_connect("localhost", "root", "", "bookstack");
+
+    deleteBooksInShelf($usuario_id);
+
+    foreach ($livrosEstante as $livro) {
+        $insert = "INSERT INTO favoritos
+    (codigo_livro, codigo_usuario, data_adicao)
+    VALUES
+    (" . $livro['codigo_livro'] . ", $usuario_id, " . date("d/m/Y") . ")";
+        mysqli_query($conexao, $insert);
+    }
+}
+// Deleta a estante do Banco de Dados
+function deleteBooksInShelf($usuario_id)
+{
+    $conexao = mysqli_connect("localhost", "root", "", "bookstack");
+
+    $delete = "DELETE FROM favoritos
+        WHERE codigo_usuario = $usuario_id";
+    mysqli_query($conexao, $delete);
 }

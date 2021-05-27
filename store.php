@@ -1,5 +1,5 @@
 <?php
-include("gerenciarcarrinho.php");
+include("managecookies.php");
 include("dbmanager.php");
 include("sessionManager.php");
 $urlPerfil = urlPerfil();

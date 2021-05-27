@@ -1,25 +1,27 @@
 <?php
 include("dbmanager.php");
 include("sessionManager.php");
-include("gerenciarcarrinho.php");
+include("managecookies.php");
 $userId = obterIdDoUsuario();
 
-if(isset($_GET['action'])){
+if (isset($_GET['action'])) {
 
-    if($_GET['action'] == 'comprar'){
+    if ($_GET['action'] == 'comprar') {
         // adicionar o livro no carrinho
         $codigo = $_GET['codigo'];
         executarAdicaoCarrinhoUrl($codigo);
 
         // remover da estante
         removerItem($_GET['index']);
-
-    } else if($_GET['action'] == 'remover'){
+    } else if ($_GET['action'] == 'remover') {
         // remover da estante
         removerItem($_GET['index']);
     }
 }
-
+// Se tiver algo na estante será adicionado no Banco de Dados
+$favoritosCookie = html_entity_decode($_COOKIE['favoritos']);
+$favoritosCookie = json_decode($favoritosCookie, true);
+updateBooksInShelf($userId, $favoritosCookie);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -152,4 +154,5 @@ if(isset($_GET['action'])){
 
     <script src="scripts/bookshelf.js" type="text/javascript"></script>
 </body>
+
 </html>

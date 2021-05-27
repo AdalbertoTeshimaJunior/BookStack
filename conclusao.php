@@ -20,7 +20,8 @@ session_start();
 $usuario_id = $_SESSION['id'];
 $dados = html_entity_decode($_COOKIE['carrinho']);
 $livrosCarrinho = json_decode($dados, true);
-updateBooksInCart($usuario_id, $livrosCarrinho);
+deleteBooksInCart($usuario_id);
+setcookie('carrinho', "");
 
 //--Atualiza os dados do usuário no Banco de Dados--
 $conexao = mysqli_connect("localhost", "root", "", "bookstack");
