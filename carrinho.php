@@ -127,7 +127,7 @@ if (isset($_GET['remover'])) {
                 <p id="total" class="total"></p>
 
                 <div id="botao_item">
-                    <a href="carrinho.php" onclick="location.href = this.href+'?desconto='+document.getElementById('desconto').value+'&remover='+ this.id;return false;">
+                    <a onclick="removerItem(this);">
                         <img id="remover_botao" src="imagens/remover.svg" alt=""></img>
                     </a>
                 </div>

@@ -123,7 +123,14 @@ function calcularPedido() {
     var valorCru = document.getElementById("valor-sem-desconto");
     valorCru.textContent = "R$ " + formatarValor(total.toFixed(2));
 }
+function removerItem(elemento) {
 
+    if (document.getElementById('desconto').value != null && document.getElementById('desconto').value != "") {
+        window.location.href = 'carrinho.php?desconto=' + document.getElementById('desconto').value + '&remover=' + elemento.id;
+    } else {
+        window.location.href = 'carrinho.php?&remover=' + elemento.id;
+    }
+}
 function aplicarDesconto(input) {
 
     if (input != "") {
