@@ -73,6 +73,7 @@ h1{
     height: 30%;
     margin: 0 auto;
     margin-bottom: 2%;
+    cursor: pointer;
 }
 .buy-button:hover{
     background-color: var(--verde_claro);
@@ -101,6 +102,7 @@ h1{
     display: flex;
     justify-items: center;
     align-items: center;
+    cursor: pointer;
 }
 .remove-button:hover{
     background-color: #D44949;

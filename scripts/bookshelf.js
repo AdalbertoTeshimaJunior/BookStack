@@ -26,6 +26,10 @@ if (cookieArray[favoritosIndex] != null) {
     var holdClone = document.getElementsByClassName("grid-shelf")[0];
     var product = document.getElementsByClassName("book");
 
+    if(favbooks.length == 0){
+        document.getElementById('book-title').style.display = "none";
+    }
+
     for(i = 0; i < favbooks.length; i++){
         if(i == 0){
             var template = document.getElementById("book-title");
