@@ -12,7 +12,6 @@ if (isset($_GET['desconto'])) {
     }
 }
 
-
 $carrinhoCookie = $_COOKIE['carrinho'];
 $carrinhoCookie = json_decode($carrinhoCookie);
 

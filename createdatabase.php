@@ -75,9 +75,10 @@ function create()
 
     $sql = "CREATE TABLE `usuario` (
     `codigo` int(11) NOT NULL,
-    `cpf` int(11) DEFAULT NULL,
+    `cpf` bigint DEFAULT NULL,
     `nome` varchar(100) DEFAULT NULL,
     `email` varchar(100) DEFAULT NULL,
+    `foto` varchar(100) DEFAULT NULL,
     `senha` varchar(38) DEFAULT NULL,
     `telefone` varchar(10) DEFAULT NULL,
     `endereco_CEP` varchar(10) DEFAULT NULL,
@@ -87,9 +88,9 @@ function create()
     `endereco_Rua` varchar(50) DEFAULT NULL,
     `endereco_Numero` int(10) DEFAULT NULL,
     `pagamento_NomeTitular` varchar(100) DEFAULT NULL,
-    `pagamento_CPFTitular` int(11) DEFAULT NULL,
+    `pagamento_CPFTitular` bigint DEFAULT NULL,
     `pagamento_CVV` int(3) DEFAULT NULL,
-    `pagamento_NumeroCartao` int(16) DEFAULT NULL
+    `pagamento_NumeroCartao` bigint DEFAULT NULL
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
     executarQuery($link, $sql);
@@ -175,6 +176,17 @@ MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT;";
 
     executarQuery($link, $sql);
 
+
+    $sql = "INSERT INTO `desconto` (cupom, valido, valor) VALUES
+    ('emcasa30', true, 30.00);";
+
+    executarQuery($link, $sql);
+
+    $sql = "ALTER TABLE `desconto`
+MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;";
+
+    executarQuery($link, $sql);
+
     $sql = "ALTER TABLE `compra`
 ADD CONSTRAINT `compra_ibfk_1` FOREIGN KEY (`codigo_usuario`) REFERENCES `usuario` (`codigo`),
 ADD CONSTRAINT `compra_ibfk_2` FOREIGN KEY (`codigo_livro`) REFERENCES `livro` (`codigo`);";
@@ -194,17 +206,8 @@ ADD CONSTRAINT `utiliza_ibfk_3` FOREIGN KEY (`codigo_livro`) REFERENCES `compra`
 ADD CONSTRAINT `utiliza_ibfk_4` FOREIGN KEY (`codigo_desconto`) REFERENCES `desconto` (`codigo`);";
 
     executarQuery($link, $sql);
-
-    $sql = "INSERT INTO `desconto` (cupom, valido, valor) VALUES
-    ('emcasa30', true, 30.00);";
-
-    executarQuery($link, $sql);
-
-    $sql = "ALTER TABLE `desconto`
-MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT=2";
-
-    executarQuery($link, $sql);
 }
+
 
 function executarQuery($link, $sql)
 {

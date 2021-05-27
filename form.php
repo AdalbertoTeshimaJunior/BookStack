@@ -1,3 +1,9 @@
+<?php
+include('sessionManager.php');
+include('dbmanager.php');
+
+$usuario = getUserAccount(obterIdDoUsuario());
+?>
 <html>
 
 <head>
@@ -185,3 +191,6 @@
 </body>
 
 </html>
+<?php
+echo "<script> preencherCampos(" . json_encode($usuario) . "); </script>"
+?>

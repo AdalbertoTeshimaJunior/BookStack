@@ -9,6 +9,7 @@ $conexao = mysqli_connect("localhost", "root", "", "bookstack");
 if (!$conexao) {
   include("createdatabase.php");
   create();
+  header("location: index.php");
 }
 ?>
 

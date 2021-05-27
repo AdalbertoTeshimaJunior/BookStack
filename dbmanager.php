@@ -56,6 +56,20 @@ function enterAccount($userEmail, $userPassword)
     // Close connection
     mysqli_close($link);
 }
+function getUserAccount($user_id)
+{
+    $link = mysqli_connect("localhost", "root", "", "bookstack");
+
+    $getUser = "SELECT * FROM usuario 
+        WHERE codigo = " . intval($user_id) . ";";
+    $answer = mysqli_query($link, $getUser);
+
+    if (mysqli_num_rows($answer) > 0) {
+        $data = mysqli_fetch_array($answer);
+
+        return $data;
+    }
+}
 function getProfileName()
 {
     $link = mysqli_connect("localhost", "root", "", "bookstack");
