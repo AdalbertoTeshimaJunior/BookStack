@@ -3,7 +3,19 @@ include('sessionManager.php');
 include('dbmanager.php');
 
 $usuario = getUserAccount(obterIdDoUsuario());
+
+$userId = obterIdDoUsuario();
+$total = 0;
+$conexao = mysqli_connect("localhost", "root", "", "bookstack");
+$sql = "SELECT *
+        FROM compra
+        WHERE codigo_usuario = $userId";
+$tabela = mysqli_query($conexao, $sql);
+while ($linha = mysqli_fetch_array($tabela)) {
+    $total += $linha['valor_total'];
+}
 ?>
+
 <html>
 
 <head>
@@ -28,7 +40,7 @@ $usuario = getUserAccount(obterIdDoUsuario());
             <div id="saudacao-icones">
                 <div id="menu-superior">
                     <div id="saudacao">
-                        <p>Olá, Davi</p>
+                        <p>Olá, <?php echo getProfileName() ?></p>
                     </div>
                     <div id="pesquisa-carrinho">
                         <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa" onkeypress="iniciarBusca(event)">
@@ -160,10 +172,24 @@ $usuario = getUserAccount(obterIdDoUsuario());
                     <div>
                         <label>Parcelas:</label>
                         <select name="parcelamento" id="parcelas">
-                            <option value="1">1X de R$ 00,00</option>
-                            <option value="2">2X de R$ 00,00</option>
-                            <option value="3">3X de R$ 00,00</option>
-                            <option value="4">4X de R$ 00,00</option>
+                            <option value="1">1X de R$ <?php echo $total ?></option>
+                            <?php
+                            if ($total > 19) {
+                            ?><option value="2">2X de R$ <?php echo number_format(($total / 2), 2, ",", ".") ?></option>
+                            <?php
+                            }
+                            if ($total > 44) {
+                            ?><option value="3">3X de R$ <?php echo number_format(($total / 3), 2, ",", ".") ?></option>
+                            <?php
+                            }
+                            if ($total > 79) {
+                            ?><option value="4">4X de R$ <?php echo number_format(($total / 4), 2, ",", ".") ?></option>
+                            <?php
+                            }
+                            if ($total > 99) {
+                            ?><option value="5">5X de R$ <?php echo number_format(($total / 5), 2, ",", ".") ?></option>
+                            <?php } ?>
+
                         </select>
                     </div>
 
