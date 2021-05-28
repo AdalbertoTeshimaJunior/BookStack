@@ -95,6 +95,68 @@ function getProfileName()
         return "Visitante";
     }
 }
+function getProfileEmail()
+{
+    $link = mysqli_connect("localhost", "root", "", "bookstack");
+
+    if (session_id() == '') {
+        session_start();
+    }
+
+    if (isset($_SESSION['id'])) {
+
+        $getEmail = "SELECT email FROM usuario 
+        WHERE codigo = " . intval($_SESSION['id']) . ";";
+        $answer = mysqli_query($link, $getEmail);
+
+        if (mysqli_num_rows($answer) > 0) {
+            $data = mysqli_fetch_array($answer);
+
+            return $data['email'];
+        } else {
+            return "Visitante";
+        }
+    } else {
+        return "Visitante";
+    }
+}
+function getPassword()
+{
+    $link = mysqli_connect("localhost", "root", "", "bookstack");
+
+    if (session_id() == '') {
+        session_start();
+    }
+
+    if (isset($_SESSION['id'])) {
+
+        $getPassword = "SELECT senha FROM usuario 
+        WHERE codigo = " . intval($_SESSION['id']) . ";";
+        $answer = mysqli_query($link, $getPassword);
+
+        $data = mysqli_fetch_array($answer);
+        return $data['senha'];
+    }
+}
+function changePassword($new_password)
+{
+    $link = mysqli_connect("localhost", "root", "", "bookstack");
+
+    if (session_id() == '') {
+        session_start();
+    }
+
+    if (isset($_SESSION['id'])) {
+
+        $changePassword = "UPDATE usuario
+        SET senha='" . $new_password . "' 
+        WHERE codigo = " . intval($_SESSION['id']) . ";";
+
+        $answer = mysqli_query($link, $changePassword);
+        return $answer;
+    }
+}
+
 function getUserCart($usuario_id)
 {
     $conexao = mysqli_connect("localhost", "root", "", "bookstack");

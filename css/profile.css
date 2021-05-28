@@ -103,22 +103,94 @@ section{
         }
 
         .change_password{
-            text-decoration: none;
-            width: 100%;
-        }
-
-        .change_password p{
             background-color: var(--verde_escuro);
             width: fit-content;
             height: fit-content;
 
             font-family: 'Open Sans';
+            font-size: 30px;
             
             border-radius: 10px;
             padding: 0.5%;
             color: white;
             padding: 3%;
         }
-        .change_password p:hover{
-            background-color: var(--verde_claro);
-        }
+
+
+
+.modal-changepw{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+
+    font-family: 'Open Sans';
+    font-size: 30px;
+    line-height: 1vh;
+}
+
+.input-pw{
+    margin: 7px;
+    width: 90%;
+    height: 45px;
+    border-style: solid;
+    border-width: 1;
+    border-color: var(--verde_claro);
+    outline: none;
+    font-size: 30px;
+}
+
+.cpw-bts{
+    background-color: var(--verde_escuro);
+    width: fit-content;
+    height: fit-content;
+
+    font-family: 'Open Sans';
+    font-size: 20px;
+                
+    border-radius: 10px;
+    color: white;
+    padding: 2%;
+    margin: 1%;
+}
+
+#button-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-changepw.mostrar{
+    display: flex;
+}
+
+.modal{
+    background: white;
+    width: 25%;
+    min-width: 300px;
+    padding: 1%;
+    border-radius: 10px;
+
+}
+
+@keyframes modal{
+    from{
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.mostrar .modal{
+    animation: modal .3s;
+}

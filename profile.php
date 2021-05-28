@@ -73,7 +73,7 @@ include("dbmanager.php");
         <article class="profile_block">
 
             <div id="logout">
-                <a href id="logout_button">
+                <a href="login.php" id="logout_button">
                     <img src="./imagens/Vector.svg">
                 </a>
             </div>
@@ -88,14 +88,14 @@ include("dbmanager.php");
                 </div>
 
                 <div class="content_info">
-                    <h4>DAVI HENRIQUE GONÇALVES</h4>
+                    <h4><?php echo getProfileName(); ?></h4>
                     <br>
                     <section class="pcontent_info">
                         <div>
                             <p>E-MAIL:</p>
                         </div>
                         <div>
-                            <p>davizindofront@gmail.com</p>
+                            <p><?php echo getProfileEmail(); ?></p>
                         </div>
                     </section>
 
@@ -104,15 +104,31 @@ include("dbmanager.php");
                             <p>SENHA:</p>
                         </div>
                         <div>
-                            <a href class="change_password">
-                                <p class="change_password">Alterar Senha</p>
-                            </a>
+                            <button class="change_password" id="btCPW">Alterar Senha</button>
                         </div>
                     </section>
                 </div>
 
             </div>
         </article>
+
+        <div id="modal-changepw" class="modal-changepw">
+            <div class="modal">
+                <form>
+                    <p>Insira sua senha atual:</p>
+                    <input class="input-pw" type="password" id="old-pw">
+                    <p>Insira sua nova senha:</p>
+                    <input class="input-pw" type="password" id="new-pw">
+                    <p>Confirme sua nova senha:</p>
+                    <input class="input-pw" type="password" id="new-pw-confirm"><br><br>
+                    <div id="button-box">
+                        <button id="cancelCPW" class="cpw-bts">Cancelar</button>
+                        <input id="confirm-cpw" class="cpw-bts" type="button" value="Confirmar">
+                    </div>
+
+                </form>
+            </div>
+        </div>
 
     </section>
     <!-- CONTEÚDO -->
@@ -158,6 +174,21 @@ include("dbmanager.php");
         </div>
     </footer>
     <!-- FOOTER -->
+
+
+
 </body>
 
+<script src="scripts/changePassword.js" type="text/javascript"></script>
+<p id="senha_valor" style="display: none;"><?php echo getPassword(); ?></p>
+
 </html>
+
+<?php
+if (isset($_GET['np'])) {
+    $newP = $_GET['np'];
+    changePassword($newP);
+    echo "<script> alert('Senha alterada com sucesso!'); </script>";
+    echo "<script>  window.location.href = 'profile.php'; </script>";
+}
+?>
