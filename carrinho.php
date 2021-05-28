@@ -13,7 +13,7 @@ if (isset($_GET['desconto'])) {
 }
 
 // Se tiver algo no carrinho será adicionado no Banco de Dados
-if (isset($_COOKIE['carrinho'])) {
+if (isset($_COOKIE['carrinho']) && $_COOKIE['carrinho'] != null) {
     $carrinhoCookie = html_entity_decode($_COOKIE['carrinho']);
     $carrinhoCookie = json_decode($carrinhoCookie, true);
     updateBooksInCart($usuario_id, $carrinhoCookie);
