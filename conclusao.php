@@ -20,7 +20,7 @@ session_start();
 $usuario_id = $_SESSION['id'];
 $dados = html_entity_decode($_COOKIE['carrinho']);
 $livrosCarrinho = json_decode($dados, true);
-deleteBooksInCart($usuario_id);
+setBoughtItensCart($usuario_id);
 setcookie('carrinho', "");
 
 //--Atualiza os dados do usuário no Banco de Dados--

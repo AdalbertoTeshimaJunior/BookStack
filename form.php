@@ -8,7 +8,7 @@ $userId = obterIdDoUsuario();
 $total = 0;
 $conexao = mysqli_connect("localhost", "root", "", "bookstack");
 $sql = "SELECT *
-        FROM compra
+        FROM carrinho
         WHERE codigo_usuario = $userId";
 $tabela = mysqli_query($conexao, $sql);
 while ($linha = mysqli_fetch_array($tabela)) {

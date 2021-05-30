@@ -103,11 +103,14 @@ function create()
 
     executarQuery($link, $sql);
 
-    $sql = "CREATE TABLE `compra` (
+    $sql = "CREATE TABLE `carrinho` (
     `valor_total` double(4,2) NOT NULL,
-    `codigo_usuario` int(11) NOT NULL,
+    `nf_itens` int(11) DEFAULT NULL,
+    `codigo_usuario`int(11) NOT NULL,
     `codigo_livro` int(11) NOT NULL,
-    `quantidade` int(3) DEFAULT NULL
+    `quantidade` int(3) DEFAULT NULL,
+    `status_compra` tinyint(1) DEFAULT 0,
+    `data_adicao` varchar(20) NOT NULL
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
     executarQuery($link, $sql);
@@ -121,19 +124,19 @@ function create()
 
     executarQuery($link, $sql);
 
-    $sql = "CREATE TABLE `utiliza` (
+    $sql = "CREATE TABLE `nota_fiscal` (
     `preco_total` double(4,2) NOT NULL,
     `codigo_usuario` int(11) NOT NULL,
-    `codigo_livro` int(11) NOT NULL,
+    `nf_numero` int(11) NOT NULL,
     `codigo_desconto` int(11) NOT NULL
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
     executarQuery($link, $sql);
 
-    $sql = "ALTER TABLE `compra`
-ADD PRIMARY KEY (`valor_total`,`codigo_usuario`,`codigo_livro`),
-ADD KEY `codigo_usuario` (`codigo_usuario`),
-ADD KEY `codigo_livro` (`codigo_livro`);";
+    $sql = "ALTER TABLE `carrinho`
+ADD PRIMARY KEY (`valor_total`,`data_adicao`,`codigo_usuario`,`codigo_livro`),
+ADD KEY `codigo_livro` (`codigo_livro`),
+ADD KEY `codigo_usuario` (`codigo_usuario`);";
 
     executarQuery($link, $sql);
 
@@ -158,10 +161,9 @@ ADD PRIMARY KEY (`codigo`);";
 
     executarQuery($link, $sql);
 
-    $sql = "ALTER TABLE `utiliza`
-ADD PRIMARY KEY (`preco_total`,`codigo_usuario`,`codigo_livro`,`codigo_desconto`),
+    $sql = "ALTER TABLE `nota_fiscal`
+ADD PRIMARY KEY (`preco_total`, `nf_numero`,`codigo_usuario`,`codigo_desconto`),
 ADD KEY `codigo_usuario` (`codigo_usuario`),
-ADD KEY `codigo_livro` (`codigo_livro`),
 ADD KEY `codigo_desconto` (`codigo_desconto`);";
 
     executarQuery($link, $sql);
@@ -187,8 +189,9 @@ MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;";
 
     executarQuery($link, $sql);
 
-    $sql = "ALTER TABLE `compra`
+    $sql = "ALTER TABLE `carrinho`
 ADD CONSTRAINT `compra_ibfk_1` FOREIGN KEY (`codigo_usuario`) REFERENCES `usuario` (`codigo`),
+ADD CONSTRAINT `compra_ibfk_1` FOREIGN KEY (`nf_itens`) REFERENCES `nota_fiscal` (`nf_numero`),
 ADD CONSTRAINT `compra_ibfk_2` FOREIGN KEY (`codigo_livro`) REFERENCES `livro` (`codigo`);";
 
     executarQuery($link, $sql);
@@ -199,11 +202,9 @@ ADD CONSTRAINT `favoritos_ibfk_2` FOREIGN KEY (`codigo_usuario`) REFERENCES `usu
 
     executarQuery($link, $sql);
 
-    $sql = "ALTER TABLE `utiliza`
-ADD CONSTRAINT `utiliza_ibfk_1` FOREIGN KEY (`preco_total`) REFERENCES `compra` (`valor_total`),
-ADD CONSTRAINT `utiliza_ibfk_2` FOREIGN KEY (`codigo_usuario`) REFERENCES `compra` (`codigo_usuario`),
-ADD CONSTRAINT `utiliza_ibfk_3` FOREIGN KEY (`codigo_livro`) REFERENCES `compra` (`codigo_livro`),
-ADD CONSTRAINT `utiliza_ibfk_4` FOREIGN KEY (`codigo_desconto`) REFERENCES `desconto` (`codigo`);";
+    $sql = "ALTER TABLE `nota_fiscal`
+ADD CONSTRAINT `nota_fiscal_ibfk_2` FOREIGN KEY (`codigo_usuario`) REFERENCES `carrinho` (`codigo_usuario`),
+ADD CONSTRAINT `nota_fiscal_ibfk_4` FOREIGN KEY (`codigo_desconto`) REFERENCES `desconto` (`codigo`);";
 
     executarQuery($link, $sql);
 }

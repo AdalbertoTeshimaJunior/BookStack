@@ -161,8 +161,8 @@ function getUserCart($usuario_id)
 {
     $conexao = mysqli_connect("localhost", "root", "", "bookstack");
     $sql = "SELECT *
-            FROM compra
-            WHERE codigo_usuario = $usuario_id";
+            FROM carrinho
+            WHERE codigo_usuario = $usuario_id AND status_compra = 0";
     $tabela = mysqli_query($conexao, $sql);
     $livros = array();
     $aux = 0;
@@ -195,23 +195,34 @@ function updateBooksInCart($usuario_id, $livrosCarrinho)
     $conexao = mysqli_connect("localhost", "root", "", "bookstack");
 
     deleteBooksInCart($usuario_id);
-
+    $date = new DateTime("now", new DateTimeZone('America/Sao_Paulo'));
+    $date = $date->format('Y-m-d H:i:s');
     foreach ($livrosCarrinho as $livro) {
         $valorTotal = $livro['preco'] * $livro['quantidade'];
-        $insert = "INSERT INTO compra
-    (valor_total, codigo_usuario, codigo_livro, quantidade)
+        $insert = "INSERT INTO carrinho
+    (valor_total, codigo_usuario, codigo_livro, quantidade, data_adicao)
     VALUES
-    ($valorTotal, $usuario_id, " . $livro['codigo'] . ", " . $livro['quantidade'] . ")";
+    ($valorTotal, $usuario_id, " . $livro['codigo'] . ", " . $livro['quantidade'] . ", '" . $date . "');";
         mysqli_query($conexao, $insert);
     }
+}
+function setBoughtItensCart($usuario_id)
+{
+    $conexao = mysqli_connect("localhost", "root", "", "bookstack");
+    $update = "UPDATE carrinho SET
+    status_compra = 1
+    WHERE codigo_usuario = $usuario_id AND
+    status_compra = 0";
+    $executar = mysqli_query($conexao, $update);
 }
 // Deleta o carrinho do Banco de Dados
 function deleteBooksInCart($usuario_id)
 {
     $conexao = mysqli_connect("localhost", "root", "", "bookstack");
 
-    $delete = "DELETE FROM compra
-        WHERE codigo_usuario = $usuario_id";
+    $delete = "DELETE FROM carrinho
+        WHERE codigo_usuario = $usuario_id AND
+        status_compra = 0";
     mysqli_query($conexao, $delete);
 }
 function getDiscount($cupom)
