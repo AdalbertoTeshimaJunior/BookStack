@@ -23,8 +23,7 @@
             <div id="saudacao-icones">
                 <div id="menu-superior">
                     <div id="saudacao">
-                        <p>Olá, <?php include('dbmanager.php');
-                                echo getProfileName(); ?></p>
+                        <p>Olá, Visitante</p>
                     </div>
                     <div id="pesquisa-carrinho">
                         <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa">
@@ -85,6 +84,7 @@
 </html>
 
 <?php
+unset($_SESSION['id']);
 include("sessionManager.php");
 $urlPerfil = urlPerfil();
 $urlEstante = urlEstanteDoSonho();
