@@ -38,8 +38,12 @@ function escreverProdutosETotal($info)
         $info = $info . $linha;
     }
 
-    $cupom = $_COOKIE['desconto'];
-    $desconto = getDiscount($cupom);
+    $desconto = 0;
+
+    if (isset($_COOKIE['desconto'])) {
+        $cupom = $_COOKIE['desconto'];
+        $desconto = getDiscount($cupom);
+    }
     $total = $totalSemDesconto - ($totalSemDesconto * ($desconto / 100));
     $totalPedido = "    > TOTAL DO PEDIDO \n    Total: R$" . number_format($totalSemDesconto, 2, ",", ".") . "\n    Desconto: " . $desconto . "%\n    Total à ser pago: R$" . number_format($total, 2, ",", ".");
     $info = $info . $totalPedido;

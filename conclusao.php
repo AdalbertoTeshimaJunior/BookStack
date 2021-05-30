@@ -17,10 +17,14 @@ $pagamento_CVV = $_POST['cvv'];
 
 //--Atualiza o carrinho do usuário no Banco de Dados--
 session_start();
+$desconto = null;
+if (isset($_COOKIE['desconto'])) {
+    $desconto = $_COOKIE['desconto'];
+}
 $usuario_id = $_SESSION['id'];
 $dados = html_entity_decode($_COOKIE['carrinho']);
 $livrosCarrinho = json_decode($dados, true);
-setBoughtItensCart($usuario_id);
+createInvoice($usuario_id, $desconto);
 setcookie('carrinho', "");
 
 //--Atualiza os dados do usuário no Banco de Dados--

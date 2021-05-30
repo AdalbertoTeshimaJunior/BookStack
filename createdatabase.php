@@ -105,7 +105,7 @@ function create()
 
     $sql = "CREATE TABLE `carrinho` (
     `valor_total` double(4,2) NOT NULL,
-    `nf_itens` int(11) DEFAULT NULL,
+    `nf_itens` varchar(11) DEFAULT NULL,
     `codigo_usuario`int(11) NOT NULL,
     `codigo_livro` int(11) NOT NULL,
     `quantidade` int(3) DEFAULT NULL,
@@ -125,10 +125,11 @@ function create()
     executarQuery($link, $sql);
 
     $sql = "CREATE TABLE `nota_fiscal` (
-    `preco_total` double(4,2) NOT NULL,
+    `preco` double(11,2) NOT NULL,
+    `preco_final` double(11,2) NOT NULL,
     `codigo_usuario` int(11) NOT NULL,
-    `nf_numero` int(11) NOT NULL,
-    `codigo_desconto` int(11) NOT NULL
+    `nf_numero` varchar(11) NOT NULL,
+    `codigo_desconto` varchar(11) NOT NULL
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
     executarQuery($link, $sql);
@@ -162,7 +163,7 @@ ADD PRIMARY KEY (`codigo`);";
     executarQuery($link, $sql);
 
     $sql = "ALTER TABLE `nota_fiscal`
-ADD PRIMARY KEY (`preco_total`, `nf_numero`,`codigo_usuario`,`codigo_desconto`),
+ADD PRIMARY KEY (`preco`, `nf_numero`,`codigo_usuario`,`codigo_desconto`),
 ADD KEY `codigo_usuario` (`codigo_usuario`),
 ADD KEY `codigo_desconto` (`codigo_desconto`);";
 
@@ -204,7 +205,7 @@ ADD CONSTRAINT `favoritos_ibfk_2` FOREIGN KEY (`codigo_usuario`) REFERENCES `usu
 
     $sql = "ALTER TABLE `nota_fiscal`
 ADD CONSTRAINT `nota_fiscal_ibfk_2` FOREIGN KEY (`codigo_usuario`) REFERENCES `carrinho` (`codigo_usuario`),
-ADD CONSTRAINT `nota_fiscal_ibfk_4` FOREIGN KEY (`codigo_desconto`) REFERENCES `desconto` (`codigo`);";
+ADD CONSTRAINT `nota_fiscal_ibfk_4` FOREIGN KEY (`codigo_desconto`) REFERENCES `desconto` (`cupom`);";
 
     executarQuery($link, $sql);
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Organiza os dados do livro requeridos no cookie do carrinho em variávies
  * @param {*recebe o ID do livro} $idDoLivro
@@ -31,7 +32,7 @@ function verificaItensRepetidos($codigo, $destino)
         $carrinhoCookie = $_COOKIE[$destino];
         $carrinhoCookie = json_decode($carrinhoCookie);
 
-        if(!$carrinhoCookie == null){
+        if (!$carrinhoCookie == null) {
             if ($destino == 'favoritos') {
                 foreach ($carrinhoCookie as $item) {
                     if ($codigo == $item->codigo_livro) {
@@ -46,8 +47,9 @@ function verificaItensRepetidos($codigo, $destino)
                 }
             }
             return false;
-        } else { return false; }
-        
+        } else {
+            return false;
+        }
     }
 }
 /**
@@ -80,11 +82,31 @@ function atribuirAEstante($idDoLivro, $imagem)
  * Remove um item (objeto) dos cookies
  * @param {*json preenchido com os livros da tabela favoritos do banco de dados} favbooks 
  */
-function removerItem($index){
+function removerItem($index)
+{
     $favCookie = $_COOKIE['favoritos'];
     $favCookie = json_decode($favCookie);
 
     unset($favCookie[$index]);
     $newFavCookie = array_values($favCookie);
     setcookie('favoritos', json_encode($newFavCookie));
+}
+function calcularTotal()
+{
+    $carrinhoCookie = $_COOKIE['carrinho'];
+    $carrinhoCookie = json_decode($carrinhoCookie);
+    $total = 0;
+    foreach ($carrinhoCookie as $item) {
+        $quantidade = $item->quantidade;
+        $preco = $item->preco;
+        $total += $preco * $quantidade;
+    }
+    return $total;
+}
+function calcularDesconto($total)
+{
+    $cupom = $_COOKIE['desconto'];
+    $desconto = getDiscount($cupom);
+    $totalComDesconto = $total - ($total * ($desconto / 100));
+    return $totalComDesconto;
 }

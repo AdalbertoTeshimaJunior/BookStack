@@ -206,11 +206,11 @@ function updateBooksInCart($usuario_id, $livrosCarrinho)
         mysqli_query($conexao, $insert);
     }
 }
-function setBoughtItensCart($usuario_id)
+function setBoughtItensCart($usuario_id, $nf_numero)
 {
     $conexao = mysqli_connect("localhost", "root", "", "bookstack");
     $update = "UPDATE carrinho SET
-    status_compra = 1
+    status_compra = 1, nf_itens = '$nf_numero'
     WHERE codigo_usuario = $usuario_id AND
     status_compra = 0";
     $executar = mysqli_query($conexao, $update);
@@ -241,6 +241,24 @@ function getDiscount($cupom)
     } else {
         return false;
     }
+}
+function createInvoice($usuario_id, $codigo_desconto)
+{
+    include("managecookies.php");
+    $conexao = mysqli_connect("localhost", "root", "", "bookstack");
+    $id = uniqid();
+    $preco_total = calcularTotal();
+    if ($codigo_desconto != null) {
+        $preco_final = calcularDesconto($preco_total);
+    } else {
+        $preco_final = $preco_total;
+    }
+    $insert = "INSERT INTO nota_fiscal (preco,codigo_usuario, nf_numero,codigo_desconto, preco_final)
+    VALUES
+    ($preco_total, $usuario_id, '$id', '$codigo_desconto', $preco_final) ";
+    $executar =  mysqli_query($conexao, $insert);
+
+    setBoughtItensCart($usuario_id, $id);
 }
 function getAllBooks()
 {
