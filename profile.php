@@ -1,5 +1,13 @@
 <?php
 include("dbmanager.php");
+
+if (isset($_POST['submit'])) {
+    $fileName = $_FILES['imageInput']['name'];
+    $fileTmpName = $_FILES['imageInput']['tmp_name'];
+    $path = "imagens/usuario/" . $fileName;
+
+    move_uploaded_file($fileTmpName, $path);
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -105,7 +113,12 @@ include("dbmanager.php");
                         </div>
                         <div>
                             <button class="change_password" id="btCPW">Alterar Senha</button>
+
                         </div>
+                        <!-- <form action="profile.php" method="POST" enctype="multipart/form-data">
+                            <input type='file' name="imageInput" accept="image/*" />
+                            <input type="submit" value="Upload File" name="submit" />
+                        </form> -->
                     </section>
                 </div>
 
@@ -180,6 +193,7 @@ include("dbmanager.php");
 </body>
 
 <script src="scripts/changePassword.js" type="text/javascript"></script>
+<script src="scripts/upload.js"></script>
 <p id="senha_valor" style="display: none;"><?php echo getPassword(); ?></p>
 
 </html>
