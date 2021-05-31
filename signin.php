@@ -83,6 +83,7 @@
 
 </html>
 <?php
+include("dbmanager.php");
 include("sessionManager.php");
 $urlPerfil = urlPerfil();
 $urlEstante = urlEstanteDoSonho();

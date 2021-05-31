@@ -85,6 +85,7 @@
 
 <?php
 unset($_SESSION['id']);
+include("dbmanager.php");
 include("sessionManager.php");
 $urlPerfil = urlPerfil();
 $urlEstante = urlEstanteDoSonho();
