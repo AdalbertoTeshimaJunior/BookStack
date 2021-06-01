@@ -12,32 +12,14 @@ if (isset($_GET['codigo'])) {
 $linha = getBook($idDoLivro);
 
 if (isset($_GET['adicionar'])) {
+    if(!verificarUsuarioLogado()){
+        header("location: signin.php");
+    }
     if ($_GET['adicionar'] == 'estante') {
-        if (isset($_COOKIE['favoritos'])) {
-
-            if (!verificaItensRepetidos($idDoLivro, 'favoritos')) {
-                atribuirAEstante($idDoLivro, $linha['imagem']);
-            } else {
-                //Livro já existe na estante
-            }
-        } else {
-            setcookie('favoritos', json_encode(getFavoriteBooks(obterIdDoUsuario())));
-        }
+        addShelfButton($idDoLivro, $linha['imagem']);
     } else if ($_GET['adicionar'] == 'carrinho') {
-        if (isset($_COOKIE['carrinho'])) {
-            $dados = html_entity_decode($_COOKIE['carrinho']);
-            $json = json_decode($dados, true);
-            // get all info about the book that's being added to the cart
-            $allBookInfo = getBook($idDoLivro);
-
-            if (!verificaItensRepetidos($idDoLivro, 'carrinho')) {
-                atribuirAoCarrinho($allBookInfo['titulo'], $allBookInfo['autor'], $allBookInfo['preco'], $idDoLivro, $allBookInfo['imagem']);
-            } else {
-                //Livro já existe na estante
-            }
-        } else {
-            setcookie('carrinho', json_encode(getFavoriteBooks(obterIdDoUsuario())));
-        }
+        $allBookInfo = getBook($idDoLivro);
+        addCartButton($idDoLivro, $allBookInfo);
     } else {
         echo "erro na leitura da URL";
     }

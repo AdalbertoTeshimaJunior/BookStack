@@ -114,3 +114,28 @@ function calcularDesconto($total)
         return $total;
     }
 }
+
+function addShelfButton($idDoLivro, $imagem){
+    if (isset($_COOKIE['favoritos'])) {
+
+        if (!verificaItensRepetidos($idDoLivro, 'favoritos')) {
+            atribuirAEstante($idDoLivro, $imagem);
+        } else {
+            echo "<script> alert('Esse produto já foi adicionado') </script>";
+        }
+    } else {
+        setcookie('favoritos', json_encode(getFavoriteBooks(obterIdDoUsuario())));
+    }
+}
+function addCartButton($idDoLivro, $allBookInfo){
+    if (isset($_COOKIE['carrinho'])) {
+        
+        if (!verificaItensRepetidos($idDoLivro, 'carrinho')) {
+            atribuirAoCarrinho($allBookInfo['titulo'], $allBookInfo['autor'], $allBookInfo['preco'], $idDoLivro, $allBookInfo['imagem']);
+        } else {
+            echo "<script> alert('Esse produto já foi adicionado') </script>";
+        }
+    } else {
+        setcookie('carrinho', json_encode(getFavoriteBooks(obterIdDoUsuario())));
+    }
+}

@@ -1,3 +1,9 @@
+<?php
+    if (session_id() != '') {
+        unset($_SESSION['id']);
+    }
+    
+?>
 <html>
 
 <head>
@@ -84,7 +90,6 @@
 </html>
 
 <?php
-unset($_SESSION['id']);
 include("dbmanager.php");
 include("sessionManager.php");
 $urlPerfil = urlPerfil();
