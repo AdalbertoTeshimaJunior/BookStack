@@ -1,19 +1,10 @@
 <?php
 include('sessionManager.php');
+include('managecookies.php');
 include('dbmanager.php');
 
 $usuario = getUserAccount(obterIdDoUsuario());
-
-$userId = obterIdDoUsuario();
-$total = 0;
-$conexao = mysqli_connect("localhost", "root", "", "bookstack");
-$sql = "SELECT *
-        FROM carrinho
-        WHERE codigo_usuario = $userId";
-$tabela = mysqli_query($conexao, $sql);
-while ($linha = mysqli_fetch_array($tabela)) {
-    $total += $linha['valor_total'];
-}
+$total = calcularDesconto(calcularTotal());
 ?>
 
 <html>

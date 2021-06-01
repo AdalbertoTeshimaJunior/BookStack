@@ -105,8 +105,12 @@ function calcularTotal()
 }
 function calcularDesconto($total)
 {
-    $cupom = $_COOKIE['desconto'];
-    $desconto = getDiscount($cupom);
-    $totalComDesconto = $total - ($total * ($desconto / 100));
-    return $totalComDesconto;
+    if (isset($_COOKIE['desconto'])) {
+        $cupom = $_COOKIE['desconto'];
+        $desconto = getDiscount($cupom);
+        $totalComDesconto = $total - ($total * ($desconto / 100));
+        return $totalComDesconto;
+    } else {
+        return $total;
+    }
 }

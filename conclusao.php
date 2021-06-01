@@ -26,6 +26,7 @@ $dados = html_entity_decode($_COOKIE['carrinho']);
 $livrosCarrinho = json_decode($dados, true);
 createInvoice($usuario_id, $desconto);
 setcookie('carrinho', "");
+setcookie('desconto', "");
 
 //--Atualiza os dados do usuário no Banco de Dados--
 $conexao = mysqli_connect("localhost", "root", "", "bookstack");

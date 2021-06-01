@@ -45,7 +45,9 @@ function escreverProdutosETotal($info)
         $desconto = getDiscount($cupom);
     }
     $total = $totalSemDesconto - ($totalSemDesconto * ($desconto / 100));
-    $totalPedido = "    > TOTAL DO PEDIDO \n    Total: R$" . number_format($totalSemDesconto, 2, ",", ".") . "\n    Desconto: " . $desconto . "%\n    Total à ser pago: R$" . number_format($total, 2, ",", ".");
+    $valorParcela = $total / $_POST['parcelamento'];
+    $totalPedido = "    > TOTAL DO PEDIDO \n    Total: R$" . number_format($totalSemDesconto, 2, ",", ".") . "\n    Desconto: " . $desconto . "%\n    Total à ser pago: R$" . number_format($total, 2, ",", ".")
+        . "\n    Parcela (s): " . $_POST['parcelamento'] . "x " . number_format($valorParcela, 2, ",", ".");
     $info = $info . $totalPedido;
     return $info;
 }
