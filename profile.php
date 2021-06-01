@@ -1,11 +1,17 @@
 <?php
 include("dbmanager.php");
+include("sessionManager.php");
 
 if (isset($_POST['submit'])) {
     $fileName = $_FILES['imageInput']['name'];
+    $variavelQqr = explode(".", $fileName);
+    $extension = end($variavelQqr);
     $fileTmpName = $_FILES['imageInput']['tmp_name'];
-    $path = "imagens/usuario/" . $fileName;
 
+    $path = "imagens/usuario/" . obterIdDoUsuario() . "." . $extension;
+    $path_arm = "./" . $path;
+
+    changeImg($path_arm);
     move_uploaded_file($fileTmpName, $path);
 }
 ?>
@@ -91,7 +97,12 @@ if (isset($_POST['submit'])) {
 
                 <div class="content_img">
                     <div class="frame">
-                        <img src="./imagens/ayaya.svg" id="profile_photo">
+                        <img src="<?php echo getImg(); ?>" id="profile_photo">
+
+                        <div class="img_overlay" id="change_img">
+                            <img src="./imagens/camera.png" id="camera_icon">
+                            <p>Mudar Imagem de Perfil</p>
+                        </div>
                     </div>
                 </div>
 
@@ -115,10 +126,6 @@ if (isset($_POST['submit'])) {
                             <button class="change_password" id="btCPW">Alterar Senha</button>
 
                         </div>
-                        <!-- <form action="profile.php" method="POST" enctype="multipart/form-data">
-                            <input type='file' name="imageInput" accept="image/*" />
-                            <input type="submit" value="Upload File" name="submit" />
-                        </form> -->
                     </section>
                 </div>
 
@@ -134,11 +141,26 @@ if (isset($_POST['submit'])) {
                     <input class="input-pw" type="password" id="new-pw">
                     <p>Confirme sua nova senha:</p>
                     <input class="input-pw" type="password" id="new-pw-confirm"><br><br>
-                    <div id="button-box">
+                    <div class="button-box">
                         <button id="cancelCPW" class="cpw-bts">Cancelar</button>
                         <input id="confirm-cpw" class="cpw-bts" type="button" value="Confirmar">
                     </div>
 
+                </form>
+            </div>
+        </div>
+
+        <div id="modal-photo" class="modal-changeImg">
+            <div class="modal-img">
+                <form action="profile.php" method="POST" enctype="multipart/form-data">
+                    <div id="upload-box">
+                        <input type='file' name="imageInput" accept="image/*" id="arq" />
+                    </div>
+                    <br>
+                    <div class="button-box">
+                        <button id="cancelCImg" class="cpw-bts">Cancelar</button>
+                        <input type="button" value="Upload File" name="submit" id="upload-bt" class="cpw-bts" />
+                    </div>
                 </form>
             </div>
         </div>
@@ -189,11 +211,10 @@ if (isset($_POST['submit'])) {
     <!-- FOOTER -->
 
 
-
 </body>
 
 <script src="scripts/changePassword.js" type="text/javascript"></script>
-<script src="scripts/upload.js"></script>
+<script src="scripts/changeImg.js" type="text/javascript"></script>
 <p id="senha_valor" style="display: none;"><?php echo getPassword(); ?></p>
 
 </html>

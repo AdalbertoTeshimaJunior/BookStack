@@ -62,24 +62,138 @@ section{
         grid-template-columns: 1fr 1fr;
     }
 
+
+/*/////////////   IMAGEM DE PERFIL   ///////////// */
         #profile_photo{
+            box-shadow: -25px 25px 0 var(--verde_escuro);
             position: relative;
             top: -4vh;
             left: 2vw;
+            
+            height: 100%;
+            width: 100%;
+
+            object-fit: cover;
+
         }
         .frame{
-            max-width: fit-content;
-            max-height: fit-content;
 
+            height: 41.7vh;
+            width: 21vw;
             margin: 5%;
+
+            position: relative;
         }
         .frame img{
-            box-shadow: -25px 25px 0 var(--verde_escuro);
-
-            max-width: 90%;
-            max-height: 90%;
+            display: block;
         }
 
+            .img_overlay{
+                position: absolute;
+                top: -4vh;
+                left: 2vw;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, .5);
+                color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                opacity: 0;
+                transition: 0.25s;
+            }
+
+            .img_overlay p{
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 25px;
+            }
+
+            .img_overlay:hover{
+                opacity: 1;
+            }
+
+            #camera_icon{
+                width: 35%;
+                height: 40%;
+            }
+
+
+                .modal-changeImg{
+                    width: 100vw;
+                    height: 100vh;
+                    background: rgba(0, 0, 0, .5);
+                    position: fixed;
+                    top: 0px;
+                    left: 0px;
+                    z-index: 2000;
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                
+                
+                    font-family: 'Open Sans';
+                    font-size: 30px;
+                }
+                
+                .modal-changeImg.mostrar{
+                    display: flex;
+                }
+                
+                .modal-img{
+                    background: white;
+                    width: 25%;
+                    min-width: 300px;
+                    padding: 1%;
+                    border-radius: 10px;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                
+                @keyframes modal{
+                    from{
+                        opacity: 0;
+                        transform: translate3d(0, -60px, 0);
+                    }
+                    to{
+                        opacity: 1;
+                        transform: translate3d(0, 0, 0);
+                    }
+                }
+                
+                .mostrar .modal-img{
+                    animation: modal .3s;
+                }
+
+                #upload-box{
+                    font-size: 30px;
+                    background: white;
+                    border-radius: 50px;
+                    width: 350px;
+                    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+                    outline: none;
+                }
+
+                ::-webkit-file-upload-button{
+                    color: white;
+                    background: var(--verde_escuro);
+                    padding: 20px;
+                    border: none;
+                    border-radius: 50px;
+                    box-shadow: 1px 0 1px 1px;
+                    outline: none;
+                }
+
+                ::-webkit-file-upload-button:hover{
+                    background: var(--verde_claro);
+                }
+            
+/*/////////////   CONTEUDO DO PERFIL   ///////////// */
         .pcontent_info{
             display: grid;
             grid-template-columns: 30% 1fr;
@@ -102,6 +216,7 @@ section{
             color: var(--verde_escuro);
         }
 
+/*/////////////   MUDAR SENHA E MODAIS   ///////////// */
         .change_password{
             background-color: var(--verde_escuro);
             width: fit-content;
@@ -111,11 +226,15 @@ section{
             font-size: 30px;
             
             border-radius: 10px;
+            border: none;
             padding: 0.5%;
             color: white;
             padding: 3%;
         }
 
+        .change_password:hover{
+            background-color: var(--verde_claro);
+        }
 
 
 .modal-changepw{
@@ -156,12 +275,16 @@ section{
     font-size: 20px;
                 
     border-radius: 10px;
+    border: none;
     color: white;
     padding: 2%;
     margin: 1%;
 }
+.cpw-bts:hover{
+    background-color: var(--verde_claro);
+}
 
-#button-box{
+.button-box{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -178,17 +301,6 @@ section{
     padding: 1%;
     border-radius: 10px;
 
-}
-
-@keyframes modal{
-    from{
-        opacity: 0;
-        transform: translate3d(0, -60px, 0);
-    }
-    to{
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
 }
 
 .mostrar .modal{

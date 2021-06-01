@@ -138,6 +138,28 @@ function getPassword()
         return $data['senha'];
     }
 }
+function getImg()
+{
+    $link = mysqli_connect("localhost", "root", "", "bookstack");
+
+    if (session_id() == '') {
+        session_start();
+    }
+
+    if (isset($_SESSION['id'])) {
+
+        $getPassword = "SELECT foto FROM usuario 
+        WHERE codigo = " . intval($_SESSION['id']) . ";";
+        $answer = mysqli_query($link, $getPassword);
+
+        $data = mysqli_fetch_array($answer);
+        $path = "./imagens/ayaya.svg";
+        if ($data['foto'] != null) {
+            $path = $data['foto'];
+        }
+        return $path;
+    }
+}
 function changePassword($new_password)
 {
     $link = mysqli_connect("localhost", "root", "", "bookstack");
@@ -156,7 +178,24 @@ function changePassword($new_password)
         return $answer;
     }
 }
+function changeImg($path)
+{
+    $link = mysqli_connect("localhost", "root", "", "bookstack");
 
+    if (session_id() == '') {
+        session_start();
+    }
+
+    if (isset($_SESSION['id'])) {
+
+        $changePassword = "UPDATE usuario
+        SET foto='" . $path . "' 
+        WHERE codigo = " . intval($_SESSION['id']) . ";";
+
+        $answer = mysqli_query($link, $changePassword);
+        return $answer;
+    }
+}
 function getUserCart($usuario_id)
 {
     $conexao = mysqli_connect("localhost", "root", "", "bookstack");
