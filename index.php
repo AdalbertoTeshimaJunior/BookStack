@@ -1,9 +1,6 @@
 <?php
 include("dbmanager.php");
 include("sessionManager.php");
-$urlPerfil = urlPerfil();
-$urlEstante = urlEstanteDoSonho();
-$urlCarrinho = urlCarrinho();
 
 $conexao = mysqli_connect("localhost", "root", "", "bookstack");
 if (!$conexao) {
@@ -47,7 +44,7 @@ if (!$conexao) {
             <input type="text" placeholder="Pesquisar" name="pesquisar" id="barra-pesquisa" onkeypress="iniciarBusca(event)">
             <div id="botoes-menu">
               <li id="Carrinho">
-                <a id="link-menu" href="<?php echo $urlCarrinho ?>"><img id="img-carrinho" src="imagens/carinho.png" alt="Carrinho"></a>
+                <a id="link-menu" href="carrinho.php"><img id="img-carrinho" src="imagens/carinho.png" alt="Carrinho"></a>
               </li>
             </div>
           </div>
@@ -63,11 +60,11 @@ if (!$conexao) {
             LOJA
           </a>
 
-          <a href="<?php echo $urlPerfil ?>">
+          <a href="profile.php">
             PERFIL
           </a>
 
-          <a href="<?php echo $urlEstante ?>">
+          <a href="bookshelf.php">
             ESTANTE<br>DOS SONHOS
           </a>
         </div>

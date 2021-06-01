@@ -2,7 +2,9 @@
 include("dbmanager.php");
 include("sessionManager.php");
 $usuario_id = obterIdDoUsuario();
-
+if (!verificarUsuarioLogado()) {
+    header("location: signin.php");
+}
 if (isset($_GET['desconto'])) {
     $cupom = $_GET['desconto'];
     $valorDesconto = getDiscount($cupom);

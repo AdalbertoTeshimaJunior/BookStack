@@ -2,6 +2,10 @@
 include("dbmanager.php");
 include("sessionManager.php");
 
+if (!verificarUsuarioLogado()) {
+    header("location: signin.php");
+}
+
 if (isset($_POST['submit'])) {
     $fileName = $_FILES['imageInput']['name'];
     $variavelQqr = explode(".", $fileName);
@@ -97,7 +101,13 @@ if (isset($_POST['submit'])) {
 
                 <div class="content_img">
                     <div class="frame">
-                        <img src="<?php echo getImg(); ?>" id="profile_photo">
+                        <img src="<?php
+                                    $file = getImg();
+                                    if (file_exists($file)) {
+                                        echo $file;
+                                    } else {
+                                        echo './imagens/usuario/ayaya.svg';
+                                    } ?>" id="profile_photo">
 
                         <div class="img_overlay" id="change_img">
                             <img src="./imagens/camera.png" id="camera_icon">

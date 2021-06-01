@@ -4,13 +4,16 @@ include("sessionManager.php");
 include("managecookies.php");
 $userId = obterIdDoUsuario();
 
+if (!verificarUsuarioLogado()) {
+    header("location: signin.php");
+}
+
 if (isset($_GET['action'])) {
 
     if ($_GET['action'] == 'comprar') {
         // adicionar o livro no carrinho
         $codigo = $_GET['codigo'];
         executarAdicaoCarrinhoUrl($codigo);
-
         // remover da estante
         removerItem($_GET['index']);
     } else if ($_GET['action'] == 'remover') {
