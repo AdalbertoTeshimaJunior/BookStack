@@ -86,6 +86,12 @@
 include("dbmanager.php");
 include("sessionManager.php");
 
+if (verificarUsuarioLogado()) {
+    unset($_SESSION['id']);
+    setcookie('carrinho', "");
+    setcookie('desconto', "");
+}
+
 $userName = $userPassword = $userEmail = null;
 
 if (isset($_POST['userName'])) {

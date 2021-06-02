@@ -7,6 +7,10 @@ if (!verificarUsuarioLogado()) {
 }
 
 if (isset($_POST['submit'])) {
+    $userFoto = getUserAccount(obterIdDoUsuario())['foto'];
+    if (file_exists($userFoto)) {
+        unlink($userFoto);
+    }
     $fileName = $_FILES['imageInput']['name'];
     $variavelQqr = explode(".", $fileName);
     $extension = end($variavelQqr);

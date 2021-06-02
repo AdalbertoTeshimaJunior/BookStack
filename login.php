@@ -89,6 +89,8 @@ include("sessionManager.php");
 
 if (verificarUsuarioLogado()) {
     unset($_SESSION['id']);
+    setcookie('carrinho', "");
+    setcookie('desconto', "");
 }
 
 $userPassword = $userEmail = null;
