@@ -115,11 +115,13 @@ function calcularDesconto($total)
     }
 }
 
-function addShelfButton($idDoLivro, $imagem){
+function addShelfButton($idDoLivro, $imagem)
+{
     if (isset($_COOKIE['favoritos'])) {
 
         if (!verificaItensRepetidos($idDoLivro, 'favoritos')) {
             atribuirAEstante($idDoLivro, $imagem);
+            setcookie("last_fav", $idDoLivro);
         } else {
             echo "<script> alert('Esse produto já foi adicionado') </script>";
         }
@@ -127,11 +129,13 @@ function addShelfButton($idDoLivro, $imagem){
         setcookie('favoritos', json_encode(getFavoriteBooks(obterIdDoUsuario())));
     }
 }
-function addCartButton($idDoLivro, $allBookInfo){
+function addCartButton($idDoLivro, $allBookInfo)
+{
     if (isset($_COOKIE['carrinho'])) {
-        
+
         if (!verificaItensRepetidos($idDoLivro, 'carrinho')) {
             atribuirAoCarrinho($allBookInfo['titulo'], $allBookInfo['autor'], $allBookInfo['preco'], $idDoLivro, $allBookInfo['imagem']);
+            setcookie("last_cart", $idDoLivro);
         } else {
             echo "<script> alert('Esse produto já foi adicionado') </script>";
         }
