@@ -3,6 +3,9 @@ include('sessionManager.php');
 include('managecookies.php');
 include('dbmanager.php');
 
+if (!isset($_COOKIE['carrinho'])) {
+    header('location:store.php');
+}
 $usuario = getUserAccount(obterIdDoUsuario());
 $total = calcularDesconto(calcularTotal());
 ?>
