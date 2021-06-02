@@ -14,23 +14,10 @@ if (isset($_GET['adicionar'])) {
         header("location: signin.php");
     }
     if ($_GET['adicionar'] == 'estante') {
-        if (isset($_COOKIE['last_fav'])) {
-            if ($_COOKIE['last_fav'] != $idDoLivro) {
-                addShelfButton($idDoLivro, $linha['imagem']);
-            }
-        } else {
-            addShelfButton($idDoLivro, $linha['imagem']);
-        }
+        addShelfButton($idDoLivro, $linha['imagem']);
     } else if ($_GET['adicionar'] == 'carrinho') {
-        if (isset($_COOKIE['last_cart'])) {
-            if ($_COOKIE['last_cart'] != $idDoLivro) {
-                $allBookInfo = getBook($idDoLivro);
-                addCartButton($idDoLivro, $allBookInfo);
-            }
-        } else {
-            $allBookInfo = getBook($idDoLivro);
-            addCartButton($idDoLivro, $allBookInfo);
-        }
+        $allBookInfo = getBook($idDoLivro);
+        addCartButton($idDoLivro, $allBookInfo);
     } else {
         echo "erro na leitura da URL";
     }

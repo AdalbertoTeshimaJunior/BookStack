@@ -123,7 +123,8 @@ function addShelfButton($idDoLivro, $imagem)
             atribuirAEstante($idDoLivro, $imagem);
             setcookie("last_fav", $idDoLivro);
         } else {
-            echo "<script> alert('Esse produto já foi adicionado') </script>";
+            echo "<script src='scripts/addButtons.js'></script>";
+            echo "<script> listenBackButton() </script>";
         }
     } else {
         setcookie('favoritos', json_encode(getFavoriteBooks(obterIdDoUsuario())));
@@ -137,7 +138,8 @@ function addCartButton($idDoLivro, $allBookInfo)
             atribuirAoCarrinho($allBookInfo['titulo'], $allBookInfo['autor'], $allBookInfo['preco'], $idDoLivro, $allBookInfo['imagem']);
             setcookie("last_cart", $idDoLivro);
         } else {
-            echo "<script> alert('Esse produto já foi adicionado') </script>";
+            echo "<script src='scripts/addButtons.js'></script>";
+            echo "<script> listenBackButton() </script>";
         }
     } else {
         setcookie('carrinho', json_encode(getFavoriteBooks(obterIdDoUsuario())));

@@ -1,6 +1,3 @@
-if (performance.navigation.type == 2) {
-    window.location.href = "store.php";
-}
 /**
  * Função que muda a url da página para que o PHP possa acessar o código do livro
  * que será adicionado em um dos destinos.
@@ -26,5 +23,13 @@ function sendButtonsAction(elemento, action) {
         window.location.href = 'bookshelf.php' + '?codigo=' + codigo[0] + '&index=' + codigo[1] + '&action=' + action;
     } else if (action == 'remover') {
         window.location.href = 'bookshelf.php' + '?codigo=' + codigo[0] + '&index=' + codigo[1] + '&action=' + action;
+    }
+}
+
+function listenBackButton() {
+    if (performance.navigation.type == 2) {
+        window.location.href = "store.php";
+    } else {
+        alert('Esse produto já foi adicionado');
     }
 }
