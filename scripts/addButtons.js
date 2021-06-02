@@ -27,7 +27,7 @@ function sendButtonsAction(elemento, action) {
 }
 
 function listenBackButton() {
-    if (performance.navigation.type == 2) {
+    if (String(window.performance.getEntriesByType("navigation")[0].type) === "back_forward") {
         window.location.href = "store.php";
     } else {
         alert('Esse produto já foi adicionado');
