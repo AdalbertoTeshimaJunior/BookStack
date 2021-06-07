@@ -1,6 +1,12 @@
 <?php
+include("sessionManager.php");
+$usuario_id = obterIdDoUsuario();
+if (!verificarUsuarioLogado()) {
+    header("location: signin.php");
+}
 include("gerarcomprovante.php");
 escreverInformacoes();
+
 //--Pega os dados--
 //! Sem Telefone !
 $cpf = $_POST['cpf'];
